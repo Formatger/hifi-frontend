@@ -138,7 +138,7 @@ const ResetPassword = () => {
                     <ErrorMessage
                       name="password"
                       component="div"
-                      className="absolute text-red-500"
+                      className="warning-text"
                     />
                   </div>
                   <div className="relative mt-4 md:mt-[24px]">
@@ -154,7 +154,7 @@ const ResetPassword = () => {
                     <ErrorMessage
                       name="confirmPassword"
                       component="div"
-                      className="absolute text-red-500"
+                      className="warning-text"
                     />
                   </div>
 

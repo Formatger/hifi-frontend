@@ -39,7 +39,7 @@ const NewMemberModal: React.FC<NewMemberModalProps> = ({
 
   const validationSchema = Yup.object().shape({
     email: Yup.string()
-      .email("Email must be a valid email")
+      .email("Please enter a valid email")
       .required("Email is required"),
   });
 

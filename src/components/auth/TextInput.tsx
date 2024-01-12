@@ -29,7 +29,7 @@ const TextInput: React.FC<TextInputProps> = ({
   return (
     <div className="relative">
       <Field
-        className={`w-[260px] sm:w-[334px] h-[34px] px-1.5 pt-1 pb-1 bg-white rounded border text-poppins ${
+        className={`main-input ${
           validation ? "border-[#B0BABF]" : "border-[#B0BABF]"
         } placeholder:text-[#6A7781]`}
         placeholder={placeholder}

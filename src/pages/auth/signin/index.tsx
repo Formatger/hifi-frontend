@@ -39,7 +39,7 @@ const Signin = () => {
 
   const signInValidationSchema = Yup.object({
     email: Yup.string()
-      .email("Email must be a valid email")
+      .email("Please enter a valid email")
       .required("Email is required"),
     password: Yup.string().required("Password is required"),
   });
@@ -114,40 +114,36 @@ const Signin = () => {
   return (
     <>
       <ToastContainer />
-      <div className="bg-image min-h-screen p-6 flex items-center justify-center lg:justify-around">
+      <div className="auth-container signin">
         <LoginSideText />
-        <div className="m-4 min-w-[310px] max-w-[452px] h-auto py-6 px-6 md:py-[48px] md:px-[59px] flex items-center justify-center flex-col rounded-2xl bg-[#F9F9F7] border-[#373389] border-[1px]">
-          <div>
+        <div className="authbox">
+          {/* <div>
             <LogoApp />
-          </div>
-          <div className="text-poppins mt-[16px] text-center text-[#111012] text-[23px] font-semibold">
+          </div> */}
+          {/* <div className="text-poppins mt-[16px] text-center text-[#111012] text-[23px] font-semibold">
             Welcome
+          </div> */}
+          <div className="authbox-title">
+            Sign in to your account
           </div>
-          <div className="text-poppins mt-[8px] text-center text-[#111012] text-[23px] font-semibold">
-            Sign in to HIFI Pay
-          </div>
-          <div className="mt-[16px]">
+          <div className="google-button-wrap">
             <GoogleButton />
           </div>
-          <div className="mt-[22px]">
-            <div className="w-[280px] sm:w-[332px] h-6 justify-center items-center gap-2.5 inline-flex">
-              <div className="w-[100px] sm:w-[147.50px] h-px relative bg-[#E5E9EB]" />
-              <div className="flex-col justify-center items-center inline-flex">
-                <div className="text-center text-poppins text-[#111012] text-base font-normal leading-normal">
+            <div className="option-box">
+              <div className="option-line" />
+              <div className="option-text">
                   or
-                </div>
               </div>
-              <div className="w-[100px] sm:w-[147.50px] h-px relative bg-[#E5E9EB]" />
+              <div className="option-line" />
             </div>
-          </div>
           <Formik
             initialValues={initialValues}
             validationSchema={signInValidationSchema}
             onSubmit={onSubmit}
           >
             {({ errors, touched }) => (
-              <Form className="">
-                <div className="relative mt-[24px]">
+              <Form className="auth-form">
+                <div className="auth-input">
                   <TextInput
                     placeholder="Email address"
                     type="email"
@@ -160,10 +156,10 @@ const Signin = () => {
                   <ErrorMessage
                     name="email"
                     component="div"
-                    className="absolute text-red-500"
+                    className="warning-text"
                   />
                 </div>
-                <div className="relative mt-[32px]">
+                <div className="auth-input">
                   <TextInput
                     placeholder="Password"
                     type="password"
@@ -175,10 +171,10 @@ const Signin = () => {
                   <ErrorMessage
                     name="password"
                     component="div"
-                    className="absolute text-red-500"
+                    className="warning-text"
                   />
                 </div>
-                <div className="mt-[32px]">
+                <div className="button-wrap">
                   {!loader ? (
                     <Button
                       disabled={
@@ -194,24 +190,24 @@ const Signin = () => {
               </Form>
             )}
           </Formik>
-          <div className="mt-[16px]">
+          <div className="pass-wrap">
             <Link
               href="/auth/forgotpassword"
-              className="text-poppins w-[176.65px] text-center text-[#6200EE] font-normal underline"
-            >
+              className="link">
               Forgot password?
             </Link>
           </div>
-          <div className="flex items-center justify-center mt-[7px]">
-            <div className="text-poppins text-center text-[#111012] font-normal leading-normal">
-              Don’t have an account?
+          <div className="getstarted-wrap">
+            <div>
+              <span>
+                Don’t have an account?
+              </span>
+              <Link 
+                href="/auth/signup"
+                className="link getstarted-link">
+                Get Started.
+              </Link>
             </div>
-            <Link
-              href="/auth/signup"
-              className="text-[#6200EE] font-normal underline leading-normal ml-2 text-poppins"
-            >
-              Get Started.
-            </Link>
           </div>
         </div>
       </div>

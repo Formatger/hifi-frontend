@@ -30,7 +30,7 @@ const ForgotPassword = () => {
 
   const forgotPasswordValidationSchema = Yup.object({
     email: Yup.string()
-      .email("Email must be a valid email")
+      .email("Please enter a valid email")
       .required("Email is required"),
   });
 
@@ -94,7 +94,7 @@ const ForgotPassword = () => {
                 <ErrorMessage
                   name="email"
                   component="div"
-                  className="absolute text-red-500"
+                  className="warning-text"
                 />
               </div>
 

@@ -220,7 +220,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
         }`}
         aria-label="Sidebar"
       >
-        <div className="grdiantbackground flex items-center justify-around border-b border-[#E5E9EB] px-[0px] z-10 py-[10px]">
+        <div className="main-grad flex items-center justify-around border-b border-[#E5E9EB] px-[0px] z-10 py-[10px]">
           <div>
             <Image
               src={HifiLogo}
@@ -250,7 +250,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
                     href={"/dashboard/" + data?.url}
                     className={`flex w-[190px] items-center justify-start mt-[0px] px-[8px] py-[8px] rounded-[6px]  ${
                       data?.hookValue
-                        ? "grdiantbackground"
+                        ? "main-grad"
                         : "hover:bg-slate-100"
                     }`}
                   >

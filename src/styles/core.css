@@ -1,0 +1,488 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.root {
+
+  /* Text Sizes */
+
+  --text-xs: 0.75rem; /* 12px */
+  --line-xs: 1rem; /* 16px */
+
+  --text-s: 0.875rem; /* 14px */
+  --line-s: 1.25rem; /* 20px */
+
+  --text-b:	1rem; /* 16px */
+  --line-b: 1.5rem; /* 24px */
+
+  --text-l:	1.125rem; /* 18px */
+  --line-l: 1.75rem; /* 28px */
+
+  --text-1: 1.25rem; /* 20px */
+  --line-1: 1.75rem; /* 28px */
+
+  --text-2: 1.5rem; /* 24px */
+  --line-2: 2rem; /* 32px */
+
+  --text-3:  2rem; /* 32px */
+  --line-3: 2.25rem; /* 36px */
+
+  --text-4: 2.25rem; /* 36px */
+  --line-4: 2.5rem; /* 40px */
+
+  --text-5: 3rem; /* 48px */
+  --text-6: 3.75rem; /* 60px */
+
+  /* Border Radius */
+
+  --r0: 8px;
+  --r1: 10px;
+  --r2: 16px;
+  --r3: 30px;
+  --r4: 40px;
+  --r5: 48px;
+  --r6: 60px;
+
+  /* Border Radius */
+
+  --m0: 2px;
+  --m1: 4px;    /* 0.25rem */
+  --m2: 8px;    /* 0.5rem */
+  --m3: 12px;   /* 0.75rem */
+  --m4: 16px;   /* 1rem */
+  --m5: 20px;   /* 1.25rem */
+  --m6: 24px;   /* 1.5rem */
+  --m7: 32px;   /* 2rem */
+  --m8: 40px;  /* 2.5rem */
+  --m9: 48px;  /* 3rem */
+  --m10: 64px;  /* 4rem */
+  --m11: 80px;  /* 5rem */
+  --m12: 96px;  /* 6rem */
+  --m13: 128px; /* 8rem */
+  --m14: 160px; /* 10rem */
+  --m15: 192px; /* 12rem */
+  --m16: 224px; /* 14rem */
+  --m17: 256px; /* 16rem */
+
+  /* Colors */
+
+  --white: white;
+  --black: var(--dark2);
+  --purple: #6200EE;
+
+  --trans: rgba(0, 0, 0, 0.5);
+
+  --dark1: hsl(245, 80%, 15%); 
+  --dark2: hsl(245, 35%, 20%);
+  --dark3: hsl(245, 20%, 25%);
+  --dark4: hsl(242, 17%, 43%);
+
+  --grey: hsl(240, 100%, 99%);
+  --grey1: hsl(240, 100%, 97%);
+  --grey2: hsl(240, 37%, 95%);
+  --grey3: hsl(240, 37%, 90%);
+  --grey4: hsl(240, 10%, 55%);
+
+  --pblue: hsl(253, 95%, 60%);
+  --pblue1:hsl(253, 100%, 75%);
+  --pblue2: hsl(253, 100%, 80%);
+
+  --blue: hsl(241, 100%, 68%);
+  --green: hsl(174, 98%, 41%);
+
+  --orange: hsl(14, 100%, 68%);
+  --cream: hsl(1, 100%, 78%);
+
+  --purple1: hsl(270, 100%, 65%);
+  --purple2: hsl(263, 70%, 55%);
+  --purple3: hsl(263, 70%, 45%);
+  --purple4: hsl(263, 80%, 40%);
+  --purple5: hsl(263, 80%, 29%);
+
+  --sBlue: #D0CFFF;
+  --sBlue2: #aba8ff;
+
+  --sCyan: #DBF0FF;
+  --sCyan2: #bee4ff;
+
+  --sGreen: #EDFFF2;
+  --sOrange: #fff3ed;
+
+  --red: #ff3414;
+
+  /* ------------ Gradients -------------*/
+
+  --mainGrad: linear-gradient(
+    180deg,
+    #6200ee 0%,
+    #8b37fb 99.98%,
+    #8b37fb 99.99%,
+    #9747ff 100%
+  );
+
+  --purpleGrad: linear-gradient(
+    to right, 
+    var(--pblue),
+    var(--purple)
+  );
+
+  --blueGrad: linear-gradient(
+    to right, 
+    var(--blue),
+    var(--green)
+  );
+
+  --orangeGrad: linear-gradient(
+    to right, 
+    var(--sOrange),
+    var(--orange)
+  );
+
+  --overlay:
+  linear-gradient(180deg, 
+  rgba(0, 0, 0, 0.9),
+  rgba(0, 0, 0, 0.4),
+  rgba(0, 0, 0, 0.3), 
+  rgba(0, 0, 0, 0.3));
+
+  /* Shadow */
+
+  --sh-i: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --sh-s: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --sh-m: 4px 4px 6px 0px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --sh-l: 0 10px 10px -5px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --sh-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --sh-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  --sh-img: 0px 5px 15px rgb(30, 20, 100, 0.1);
+  --sh-box: 5px 0px 20px -12px rgba(0, 0, 0, 0.5);
+  --sh-dropdown: 0px 5px 15px 0px rgba(0, 0, 0, 0.15);
+  --sh-btn: 2px 5px 10px 0px rgba(47, 0, 135, 0.2);
+  --sh-btn-hover: 2px 5px 10px 0px rgba(47, 0, 135, 0.631);
+}
+
+/* Colors */
+
+.main-grad {
+  background: var(--mainGrad);
+}
+
+.custom-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Spacing */
+
+.mt-16 {margin-top: 16px;}
+.mt-20 {margin-top: 20px;}
+.mt-24 {margin-top: 24px;}
+
+/* Text */
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 0.875rem;
+  outline: none;
+  color: hsl(245, 35%, 20%);
+}
+
+.h1 {
+  font-size: 4rem;
+  line-height: 5.4rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.h2 {
+  font-size: 2.75rem;
+  line-height: 3.4rem;
+  font-weight: 700;
+  margin-bottom: 24px;  
+}
+
+.h3 {
+  font-size: 2.5rem;
+  line-height: 3.25rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.h4 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.h5 {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+.h6 {
+  font-size: 1.15rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+
+.h7 {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+/* .text-poppins {
+  font-family: "Poppins", sans-serif;
+} */
+
+.text-nunito {
+  font-family: "Nunito", sans-serif;
+}
+
+.link {
+  color: var(--purple);
+  text-decoration: underline;
+}
+
+.warning-text {
+  color: var(--red);
+  font-size: var(--text-xs);
+  margin-top: var(--m1);
+  font-weight: 300;
+}
+
+/* Button */
+
+/* .button {
+  padding: var(--m5) var(--m1);
+  background-color: #F6F8F9;
+  border-radius: var(--m2);
+  border: 1px solid #E5E9EB;
+  color: #6200EE;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--m2);
+  display: flex;
+} */
+
+/* .main-button {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 0;
+  text-align: center;
+} */
+
+/* .button-wrap {
+  align-self: stretch;
+  justify-content: center;
+  align-items: center;
+  gap: var(--m2);
+  display: inline-flex;
+} */
+
+.auth-button {
+  width: 100%;
+  background: var(--purple);
+  border-radius: var(--r0);
+  color: white;
+  height: 38px;
+}
+
+button[disabled] {
+  opacity: 0.2;
+  filter: saturate(80%);
+  filter: hue-rotate(-8deg)
+}
+
+/* .icon {
+  width: 6px;
+  height: 6px;
+  padding: var(--m0);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+} */
+
+/* Input */
+
+.inputStyle {
+  width: 3rem !important;
+  height: 3rem;
+  margin: 1px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 1px solid #b0babf;
+  background: var(--neutrals-white-pure, #fff);
+
+  @media (max-width: 700px) {
+    width: 2rem !important;
+    height: 2rem;
+    margin: 1px;
+    font-size: 1rem;
+  }
+}
+
+.main-input {
+  width: 100%;
+  height: 38px;
+  padding: var(--m2);
+  background-color: white;
+  border-radius: var(--r0);
+  border: 1px solid var(--grey2);
+}
+
+input:focus {
+  outline: none;
+}
+
+/* Elements */
+
+.custom-radio {
+  cursor: pointer;
+  accent-color: #6200ee;
+}
+
+.custom-axis-label {
+  font-family: "Poppins", sans-serif !important;
+  letter-spacing: 0.24px !important;
+}
+
+.custom-checkbox {
+  cursor: pointer;
+  background-color: #8133f1;
+  accent-color: #8133f1;
+}
+
+.custom-checkbox:hover {
+  background-color: #8133f1;
+  accent-color: #8133f1;
+}
+
+
+/* React Calendar */
+
+.react-calendar {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 16px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  color: #252c32 !important;
+  text-decoration: none !important;
+  width: 326px !important;
+  max-width: 100% !important;
+  padding: 20px !important;
+  background: white !important;
+  border: 1px solid #a0a096 !important;
+  text-transform: capitalize !important;
+  border-radius: 6px !important;
+  border: white;
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+    drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+}
+
+abbr:where([title]) {
+  -webkit-text-decoration: none !important;
+  text-decoration: none !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 16px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  color: #6a7781 !important;
+  text-transform: capitalize !important;
+}
+
+.react-calendar__navigation button {
+  color: #252c32 !important;
+  min-width: auto !important;
+  background: none !important;
+  margin-top: 0px !important;
+  background-color: white !important;
+  color: #252c32 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 16px !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  line-height: 24px !important;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: white !important;
+}
+.react-calendar__navigation button[disabled] {
+  background-color: white !important;
+}
+
+.react-calendar__tile:disabled {
+  background-color: white !important;
+}
+
+.react-calendar__tile--now {
+  background: white !important;
+  color: #252c32 !important;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: #252c32 !important;
+  text-transform: capitalize !important;
+}
+
+.react-calendar__navigation__next2-button {
+  display: none !important;
+}
+
+.react-calendar__navigation__prev2-button {
+  display: none !important;
+}
+
+.react-calendar__tile--active {
+  border-radius: 6px !important;
+  border: 1px solid #6200ee !important;
+  background: #f6f8f9 !important;
+  color: #6200ee !important;
+  width: 42px !important;
+  height: 42px !important;
+  padding: 10px !important;
+}
+
+/* Animations */
+
+.animated-link {
+  position: relative;
+}
+
+.animated-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #6200ee;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.animated-link:hover::after {
+  width: 100%;
+  animation: border-slide 1s ease infinite;
+}
+
+@keyframes border-slide {
+  to {
+    transform: scaleX(0);
+  }
+}

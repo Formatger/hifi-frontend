@@ -3,6 +3,7 @@ import Image from "next/image";
 import WhiteLogo from "../assets/images/whitelogo.png";
 import Check from "../assets/images/check.png";
 import HifiLogoWhite from "@/components/assets/images/hifisvgwhite.svg";
+import TextLogo from "../assets/images/textLogo.svg";
 import Check6 from "@/components/assets/images/check6.svg";
 
 const textData = [
@@ -24,36 +25,37 @@ const textData = [
 
 const LoginSideText = () => {
   return (
-    <div className="hidden min-h-[620px] lg:flex items-start justify-start flex-col">
-      <div className="w-[308px] text-white text-3xl font-normal text-poppins">
+    <div className="auth-left signup">
+      {/* <div className="h6 w-[308px]">
         Get started with
-      </div>
+      </div> */}
       <div className="mt-[16px]">
-        <Image className="w-[250px] h-[60px]" src={HifiLogoWhite} alt="logo" />
+        <Image className="logo-dark" src={TextLogo} alt="logo" />
       </div>
-      <div className="mt-[16px] text-poppins w-[355px] text-white text-base font-medium">
-        We are onboarding select merchants for H2 2023. Please fill out our
+      {/* <div className="auth-note">
+        We are onboarding select merchants for H2 2023. 
+        Please fill out our
         onboarding form to request access and we will be in touch within 24
         hours.
-      </div>
-      <div className="mt-[32px]">
+      </div> */}
+      <div className="start-box-wrap">
         <div>
           {textData.map((data, idx) => {
             return (
-              <div key={idx} className="mt-[28px]">
-                <div className="text-poppins text-white text-base font-semibold">
-                  {data?.titleText}
-                </div>
-                <div className={`flex mt-3 items-start justify-center`}>
-                  <div className="mr-4">
+              <div key={idx} className="start-box">
+                <div className="list-item">
+                  <div className="list-icon">
                     <Image src={Check6} alt="check_arrow" />
                   </div>
-                  <div className="w-[404px] h-[39px] py-0.5 justify-start items-center gap-2.5 inline-flex">
-                    <div className="grow shrink basis-0 text-violet-50 text-base font-medium text-poppins">
+                  <div className="h7">
+                    {data?.titleText}
+                  </div>
+                </div>
+                  <div className="">
+                    <div className="list-text">
                       {data?.bodyText}
                     </div>
                   </div>
-                </div>
               </div>
             );
           })}

@@ -28,7 +28,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="fixed headerwidth w-full top-[48px] lg:top-0  grdiantbackground pl-[20px] pr-[30px] z-20 lg:z-50 py-[10px] border-b border-[#E5E9EB] flex items-center justify-between mb-14 lg:mb-0">
+      <div className="fixed headerwidth w-full top-[48px] lg:top-0  main-grad pl-[20px] pr-[30px] z-20 lg:z-50 py-[10px] border-b border-[#E5E9EB] flex items-center justify-between mb-14 lg:mb-0">
         <div className="capitalize text-white text-2xl md:text-[36px] font-normal text-poppins leading-normal tracking-[0.36px]">
           {businessName ? businessName : "Business Name"}
         </div>

@@ -107,7 +107,7 @@ const GoogleButton = () => {
     <button
       onClick={signInWithGoogle}
       disabled={loader}
-      className="w-[260px] sm:w-[334px] h-[42.49px] px-2 py-1 bg-white rounded-md border border-[#B0BABF] flex-col justify-center items-center gap-2 inline-flex"
+      className="google-button"
     >
       <div className="py-[5px] justify-start items-start gap-5 inline-flex">
         <Image
