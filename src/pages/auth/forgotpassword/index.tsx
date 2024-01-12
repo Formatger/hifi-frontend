@@ -60,17 +60,17 @@ const ForgotPassword = () => {
     <>
       {" "}
       <ToastContainer />
-      <div className="bg-image min-h-screen p-6 flex items-center justify-center">
-        <div className="m-4 min-w-[290px] max-w-[452px] h-auto py-6 px-6 md:py-10 md:px-10 flex items-center justify-center flex-col rounded-2xl bg-[#F9F9F7] border-[#373389] border-[1px]">
-          <div>
+      <div className="auth-container">
+         {/* <div>
             <LogoApp />
-          </div>
+          </div> */}
+        <div className="authbox">
 
-          <div className="mt-4 md:mt-[24px] text-center text-[#111012] text-[23px] font-semibold text-poppins leading-loose">
+          <div className="authbox-title">
             Reset your password
           </div>
 
-          <div className="w-auto sm:w-[334px] mt-4 md:mt-[24px] text-poppins text-center text-[#111012] text-base font-normal leading-normal">
+          <div className="authbox-note">
             Enter your email address and we will send you a link to reset your
             password.
           </div>
@@ -81,7 +81,7 @@ const ForgotPassword = () => {
             onSubmit={onSubmit}
           >
             <Form className="">
-              <div className="relative mt-4 md:mt-[24px]">
+              <div className="auth-input mt-4">
                 <TextInput
                   placeholder="Email address"
                   type="email"
@@ -113,7 +113,7 @@ const ForgotPassword = () => {
           </Formik>
           <div className="mt-4 md:mt-[24px]">
             <Link href="/auth/signin">
-              <div className="text-center text-[#6200EE] text-base font-normal text-poppins underline pb-[1px]">
+              <div className="auth-link">
                 Return to sign in
               </div>
             </Link>

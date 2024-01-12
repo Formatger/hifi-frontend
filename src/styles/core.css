@@ -180,12 +180,6 @@
   justify-content: center;
 }
 
-/* Spacing */
-
-.mt-16 {margin-top: 16px;}
-.mt-20 {margin-top: 20px;}
-.mt-24 {margin-top: 24px;}
-
 /* Text */
 
 body {
@@ -241,17 +235,14 @@ body {
   font-weight: 600;
 }
 
-/* .text-poppins {
-  font-family: "Poppins", sans-serif;
-} */
-
 .text-nunito {
   font-family: "Nunito", sans-serif;
 }
 
-.link {
+.fake-link {
   color: var(--purple);
   text-decoration: underline;
+  margin: var(--m1);
 }
 
 .warning-text {
@@ -259,6 +250,7 @@ body {
   font-size: var(--text-xs);
   margin-top: var(--m1);
   font-weight: 300;
+  position: absolute;
 }
 
 /* Button */
@@ -280,14 +272,6 @@ body {
   flex-shrink: 0;
   flex-basis: 0;
   text-align: center;
-} */
-
-/* .button-wrap {
-  align-self: stretch;
-  justify-content: center;
-  align-items: center;
-  gap: var(--m2);
-  display: inline-flex;
 } */
 
 .auth-button {
@@ -346,29 +330,44 @@ input:focus {
   outline: none;
 }
 
+.logo-wrap {
+  display: flex;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: var(--m2);
+}
+
+.logo-text {
+  width: auto;
+  height: 40px;
+  margin-top: var(--m1);
+}
+
 /* Elements */
 
 .custom-radio {
   cursor: pointer;
-  accent-color: #6200ee;
+  accent-color: var(--purple);
 }
 
 .custom-axis-label {
-  font-family: "Poppins", sans-serif !important;
+  /* font-family: "Poppins", sans-serif !important; */
   letter-spacing: 0.24px !important;
 }
 
 .custom-checkbox {
   cursor: pointer;
-  background-color: #8133f1;
-  accent-color: #8133f1;
+  background-color: var(--purple);
+  accent-color: var(--purple);
 }
 
 .custom-checkbox:hover {
-  background-color: #8133f1;
-  accent-color: #8133f1;
+  background-color: var(--purple3);
+  accent-color: var(--purple3);
 }
-
 
 /* React Calendar */
 

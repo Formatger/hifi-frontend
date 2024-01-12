@@ -25,19 +25,13 @@ const textData = [
 
 const LoginSideText = () => {
   return (
-    <div className="auth-left signup">
+    <div className="signup-start">
       {/* <div className="h6 w-[308px]">
         Get started with
       </div> */}
       <div className="mt-[16px]">
-        <Image className="logo-dark" src={TextLogo} alt="logo" />
+        <Image className="logo-text" src={TextLogo} alt="logo" />
       </div>
-      {/* <div className="auth-note">
-        We are onboarding select merchants for H2 2023. 
-        Please fill out our
-        onboarding form to request access and we will be in touch within 24
-        hours.
-      </div> */}
       <div className="start-box-wrap">
         <div>
           {textData.map((data, idx) => {
@@ -51,7 +45,7 @@ const LoginSideText = () => {
                     {data?.titleText}
                   </div>
                 </div>
-                  <div className="">
+                  <div>
                     <div className="list-text">
                       {data?.bodyText}
                     </div>

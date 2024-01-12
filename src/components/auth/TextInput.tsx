@@ -43,7 +43,7 @@ const TextInput: React.FC<TextInputProps> = ({
           {showPassword ? (
             <div
               onClick={handleOnClick}
-              className="absolute top-2 right-2 cursor-pointer flex items-center justify-center w-[18px] h-[18px] rounded-lg bg-cover"
+              className="eyeicon-wrap"
               style={{
                 backgroundImage: `url(${showPassword ? Eye : null})`,
               }}
@@ -53,7 +53,7 @@ const TextInput: React.FC<TextInputProps> = ({
           ) : (
             <div
               onClick={handleOnClick}
-              className="absolute top-2 right-2 cursor-pointer flex items-center justify-center w-[18px] h-[18px] rounded-lg bg-cover"
+              className="eyeicon-wrap"
             >
               <BiHide />
             </div>

@@ -5,17 +5,9 @@ import Image from "next/image";
 
 const LogoApp = () => {
   return (
-    <div className="flex items-center justify-start">
-      <div>
-        <Image className="w-[41px] h-[41px]" src={Logo} alt="hifi_logo" />
-      </div>
-      <div className="ml-1 md:ml-[13px]">
-        <Image
-          className="w-[162px] h-[41px] mt-2"
-          src={TextLogo}
-          alt="hifi pay"
-        />
-      </div>
+    <div className="logo-wrap">
+      <Image className="logo" src={Logo} alt="hifi logo" />
+      <Image className="logo-text" src={TextLogo} alt="hifi pay" />
     </div>
   );
 };

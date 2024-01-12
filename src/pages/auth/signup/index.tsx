@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 import Loading from "@/components/auth/Loading";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import LoginSideText from "@/components/auth/LoginSideText";
 
 interface loginFormValues {
   email: string;
@@ -78,27 +79,24 @@ const Signup = () => {
     <>
       <ToastContainer />
       <div className="auth-container signup">
-          {/* <div className="logo-signup">
-            <LogoApp />
-          </div> */}
+        <LoginSideText />
         <div className="authbox">
-          <div className="text-poppins mt-[8px] text-center text-[#111012] text-[23px] font-semibold">
+          <div className="authbox-title">
             Sign up to HIFI Pay
           </div>
-                <div className="signup-note">
-        {/* We are onboarding select merchants for H2 2023.  */}
-        Please fill out our
-        onboarding form to request access and we will be in touch within 24
-        hours.
-      </div>
+          <div className="authbox-note">
+            Please fill out our
+            onboarding form to request access and we will be in touch within 24
+            hours.
+          </div>
 
           <Formik
             initialValues={initialValues}
             validationSchema={signUpValidationSchema}
             onSubmit={onSubmit}
           >
-            <Form className="">
-              <div className="relative mt-[20px]">
+            <Form>
+              <div className="signup-input">
                 <TextInput
                   placeholder="Business Name"
                   type="text"
@@ -113,7 +111,7 @@ const Signup = () => {
                   className="warning-text"
                 />
               </div>
-              <div className="relative mt-[30px]">
+              <div className="signup-input">
                 <TextInput
                   placeholder="Full Name"
                   type="fullName"
@@ -128,7 +126,7 @@ const Signup = () => {
                   className="warning-text"
                 />
               </div>
-              <div className="relative mt-[30px]">
+              <div className="signup-input">
                 <TextInput
                   placeholder="Phone Number"
                   type="text"
@@ -143,7 +141,7 @@ const Signup = () => {
                   className="warning-text"
                 />
               </div>
-              <div className="relative mt-[30px]">
+              <div className="signup-input">
                 <TextInput
                   placeholder="Email address"
                   type="email"
@@ -162,26 +160,22 @@ const Signup = () => {
 
           <div className="terms-box">
             <input
-                    type="checkbox"
-                    id="confirmAccuracy"
-                    name="confirmAccuracy"
-                    className="text-[#6200EE] mt-2"
-                    // onChange={handleCheckboxChange}
-                    // checked={confirmAccuracy}
-                  />
+              type="checkbox"
+              className="custom-checkbox"
+            />
             <div className="terms-wrap">
               By continuing I acknowledge that I have read the
-              <span className="text-[#6200EE] underline mx-2">
+              <span className="fake-link">
                 Privacy Policy
               </span>
                 &
-              <span className="text-[#6200EE] underline mx-2">
+              <span className="fake-link">
                 Terms and Conditions.
               </span>
             </div>
           </div>
 
-              <div className="mt-[30px]">
+              <div className="button-wrap">
                 {!loader ? (
                   <Button
                     disabled={
@@ -203,13 +197,13 @@ const Signup = () => {
             </Form>
           </Formik>
 
-          <div className="flex items-center justify-center flex-col sm:flex-row mt-4">
-            <div className="text-poppins text-center text-[#111012] font-normal leading-normal">
+          <div className="pass-wrap">
+            <div>
               Already have an account?
             </div>
             <Link
               href="/auth/signin"
-              className="text-[#6200EE] font-normal underline leading-normal ml-2"
+              className="auth-link"
             >
               Sign In.
             </Link>

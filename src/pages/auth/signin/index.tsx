@@ -6,7 +6,6 @@ import LogoApp from "@/components/auth/LogoApp";
 import { Formik, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import AutoSubmitToken from "@/components/auth/AutoSubmitToken";
-import LoginSideText from "@/components/auth/LoginSideText";
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -115,98 +114,96 @@ const Signin = () => {
     <>
       <ToastContainer />
       <div className="auth-container signin">
-        <LoginSideText />
-        <div className="authbox">
-          {/* <div>
-            <LogoApp />
-          </div> */}
-          {/* <div className="text-poppins mt-[16px] text-center text-[#111012] text-[23px] font-semibold">
-            Welcome
-          </div> */}
-          <div className="authbox-title">
-            Sign in to your account
+        <div className="signin-wrap">
+          <div className="logo-signup">
+              <LogoApp />
           </div>
-          <div className="google-button-wrap">
-            <GoogleButton />
-          </div>
-            <div className="option-box">
-              <div className="option-line" />
-              <div className="option-text">
-                  or
-              </div>
-              <div className="option-line" />
+          <div className="authbox">
+            <div className="authbox-title">
+              Sign in to your account
             </div>
-          <Formik
-            initialValues={initialValues}
-            validationSchema={signInValidationSchema}
-            onSubmit={onSubmit}
-          >
-            {({ errors, touched }) => (
-              <Form className="auth-form">
-                <div className="auth-input">
-                  <TextInput
-                    placeholder="Email address"
-                    type="email"
-                    name="email"
-                    id="email"
-                    password={false}
-                    validation={errors?.email && touched?.email ? true : false}
-                  />
-
-                  <ErrorMessage
-                    name="email"
-                    component="div"
-                    className="warning-text"
-                  />
+            <div className="google-button-wrap">
+              <GoogleButton />
+            </div>
+              <div className="option-box">
+                <div className="option-line" />
+                <div className="option-text">
+                    or
                 </div>
-                <div className="auth-input">
-                  <TextInput
-                    placeholder="Password"
-                    type="password"
-                    name="password"
-                    id="password"
-                    password={true}
-                    validation={errors?.email && touched?.email ? true : false}
-                  />
-                  <ErrorMessage
-                    name="password"
-                    component="div"
-                    className="warning-text"
-                  />
-                </div>
-                <div className="button-wrap">
-                  {!loader ? (
-                    <Button
-                      disabled={
-                        formValue?.email && formValue?.password ? false : true
-                      }
-                      buttonText="Sign in"
+                <div className="option-line" />
+              </div>
+            <Formik
+              initialValues={initialValues}
+              validationSchema={signInValidationSchema}
+              onSubmit={onSubmit}
+            >
+              {({ errors, touched }) => (
+                <Form className="signin-form relative">
+                  <div className="relative">
+                    <TextInput
+                      placeholder="Email address"
+                      type="email"
+                      name="email"
+                      id="email"
+                      password={false}
+                      validation={errors?.email && touched?.email ? true : false}
                     />
-                  ) : (
-                    <Loading />
-                  )}
-                </div>
-                <AutoSubmitToken setFormValue={setFormValue} />
-              </Form>
-            )}
-          </Formik>
-          <div className="pass-wrap">
-            <Link
-              href="/auth/forgotpassword"
-              className="link">
-              Forgot password?
-            </Link>
-          </div>
-          <div className="getstarted-wrap">
-            <div>
-              <span>
-                Don’t have an account?
-              </span>
-              <Link 
-                href="/auth/signup"
-                className="link getstarted-link">
-                Get Started.
+
+                    <ErrorMessage
+                      name="email"
+                      component="div"
+                      className="warning-text"
+                    />
+                  </div>
+                  <div>
+                    <TextInput
+                      placeholder="Password"
+                      type="password"
+                      name="password"
+                      id="password"
+                      password={true}
+                      validation={errors?.email && touched?.email ? true : false}
+                    />
+                    <ErrorMessage
+                      name="password"
+                      component="div"
+                      className="warning-text"
+                    />
+                  </div>
+                  <div className="button-wrap">
+                    {!loader ? (
+                      <Button
+                        disabled={
+                          formValue?.email && formValue?.password ? false : true
+                        }
+                        buttonText="Sign in"
+                      />
+                    ) : (
+                      <Loading />
+                    )}
+                  </div>
+                  <AutoSubmitToken setFormValue={setFormValue} />
+                </Form>
+              )}
+            </Formik>
+            <div className="pass-wrap">
+              <Link
+                href="/auth/forgotpassword"
+                className="auth-link">
+                Forgot password?
               </Link>
+            </div>
+            <div className="linktext-wrap">
+              <div>
+                <span>
+                  Don’t have an account?
+                </span>
+                <Link 
+                  href="/auth/signup"
+                  className="auth-link">
+                  Get Started.
+                </Link>
+              </div>
             </div>
           </div>
         </div>
