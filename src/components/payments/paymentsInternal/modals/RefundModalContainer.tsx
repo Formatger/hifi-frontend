@@ -598,7 +598,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                             <input
                               {...props}
                               inputMode="numeric"
-                              className="w-full h-full select-none text-[#252C32] text-[32px] font-medium text-poppins tracking-tight"
+                              className="authkey-number"
                             />
                           </div>
                         )}
@@ -609,7 +609,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                               <input
                                 {...props}
                                 inputMode="numeric"
-                                className="w-full h-full select-none text-[#252C32] text-[32px] font-medium text-poppins tracking-tight"
+                                className="authkey-number"
                               />
                             </div>
                           </div>
@@ -619,7 +619,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                             <input
                               {...props}
                               inputMode="numeric"
-                              className="w-full h-full select-none text-[#252C32] text-[32px] font-medium text-poppins tracking-tight"
+                              className="authkey-number"
                             />
                           </div>
                         )}
@@ -628,7 +628,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                             <input
                               {...props}
                               inputMode="numeric"
-                              className="w-full h-full select-none text-[#252C32] text-[32px] font-medium text-poppins tracking-tight"
+                              className="authkey-number"
                             />
                           </div>
                         )}
@@ -637,7 +637,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                             <input
                               {...props}
                               inputMode="numeric"
-                              className="w-full h-full select-none text-[#252C32] text-[32px] font-medium text-poppins tracking-tight"
+                              className="authkey-number"
                             />
                           </div>
                         )}
@@ -646,7 +646,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                             <input
                               {...props}
                               inputMode="numeric"
-                              className="w-full h-full select-none text-[#252C32] text-[32px] font-medium text-poppins tracking-tight"
+                              className="authkey-number"
                             />
                           </div>
                         )}

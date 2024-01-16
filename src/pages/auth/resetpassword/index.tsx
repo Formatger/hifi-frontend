@@ -104,18 +104,19 @@ const ResetPassword = () => {
   return (
     <>
       <ToastContainer />
-      <div className="bg-image min-h-screen p-6 flex items-center justify-center">
-        <div className="m-4 min-w-[290px] max-w-[452px] w-[452px] h-auto py-6 px-6 md:py-10 md:px-10 flex items-center justify-center flex-col rounded-2xl bg-[#F9F9F7] border-[#373389] border-[1px]">
-          <div>
+      <div className="auth-container">
+          {/* <div>
             <LogoApp />
-          </div>
+          </div> */}
+        <div className="authbox">
+
           {!validation ? (
             <>
-              <div className="text-poppins mt-4 md:mt-[24px] text-center text-[#111012] text-[23px] font-semibold leading-loose">
+              <div className="authbox-title">
                 Reset your password
               </div>
 
-              <div className="w-[260px] mt-4 md:mt-[24px] text-poppins text-center text-[#111012] text-base font-normal leading-[24px]">
+              <div className="authbox-note">
                 Enter a new password to reset your password.
               </div>
 
@@ -124,8 +125,8 @@ const ResetPassword = () => {
                 validationSchema={resetPasswordValidationSchema}
                 onSubmit={onSubmit}
               >
-                <Form className="">
-                  <div className="relative mt-4 md:mt-[24px]">
+                <Form className="auth-form">
+                  <div>
                     <TextInput
                       placeholder="New Password"
                       type="password"
@@ -141,7 +142,7 @@ const ResetPassword = () => {
                       className="warning-text"
                     />
                   </div>
-                  <div className="relative mt-4 md:mt-[24px]">
+                  <div>
                     <TextInput
                       placeholder="Re-enter new password"
                       type="password"
@@ -158,16 +159,16 @@ const ResetPassword = () => {
                     />
                   </div>
 
-                  <div className="mt-[24px]">
+                  <div>
                     {!loader ? (
-                      <Button
+                      <button className="auth-button"
                         disabled={
                           formValue?.password && formValue?.confirmPassword
                             ? false
                             : true
-                        }
-                        buttonText="Reset Password"
-                      />
+                        }>
+                          Reset Password
+                        </button>
                     ) : (
                       <Loading />
                     )}

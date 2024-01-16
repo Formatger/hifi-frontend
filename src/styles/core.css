@@ -45,30 +45,30 @@
 
   /* Border Radius */
 
-  --m0: 2px;
-  --m1: 4px;    /* 0.25rem */
-  --m2: 8px;    /* 0.5rem */
-  --m3: 12px;   /* 0.75rem */
-  --m4: 16px;   /* 1rem */
-  --m5: 20px;   /* 1.25rem */
-  --m6: 24px;   /* 1.5rem */
-  --m7: 32px;   /* 2rem */
-  --m8: 40px;  /* 2.5rem */
-  --m9: 48px;  /* 3rem */
-  --m10: 64px;  /* 4rem */
-  --m11: 80px;  /* 5rem */
-  --m12: 96px;  /* 6rem */
-  --m13: 128px; /* 8rem */
-  --m14: 160px; /* 10rem */
-  --m15: 192px; /* 12rem */
-  --m16: 224px; /* 14rem */
-  --m17: 256px; /* 16rem */
+  --m0: 0.125rem;   /* 2px */
+  --m1: 0.25rem;    /* 4px */
+  --m2: 0.5rem;     /* 8px */
+  --m3: 0.75rem;    /* 12px */
+  --m4: 1rem;       /* 16px */
+  --m5: 1.25rem;    /* 20px */
+  --m6: 1.5rem;     /* 24px */
+  --m7: 2rem;       /* 32px */
+  --m8: 2.5rem;     /* 40px */
+  --m9: 3rem;       /* 48px */
+  --m10: 4rem;      /* 64px */
+  --m11: 5rem;      /* 80px */
+  --m12: 6rem;      /* 96px */
+  --m13: 8rem;      /* 128px */
+  --m14: 10rem;     /* 160px */
+  --m15: 12rem;     /* 192px */
+  --m16: 14rem;     /* 224px */
+  --m17: 16rem;     /* 256px */
 
   /* Colors */
 
   --white: white;
   --black: var(--dark2);
-  --purple: #6200EE;
+  --main: var(--pblue);
 
   --trans: rgba(0, 0, 0, 0.5);
 
@@ -81,7 +81,8 @@
   --grey1: hsl(240, 100%, 97%);
   --grey2: hsl(240, 37%, 95%);
   --grey3: hsl(240, 37%, 90%);
-  --grey4: hsl(240, 10%, 55%);
+  --grey4: hsl(240, 10%, 80%);
+  --grey5: hsl(240, 10%, 70%);
 
   --pblue: hsl(253, 95%, 60%);
   --pblue1:hsl(253, 100%, 75%);
@@ -180,6 +181,28 @@
   justify-content: center;
 }
 
+/* Spacing */
+
+.mt-box { margin-top: var(--m8); }
+.mt-text { margin-top: var(--m7) }
+
+.ml-text { margin-left: var(--m1); }
+.mr-text { margin-right: var(--m1); }
+
+.ml-1 { margin-left: var(--m1); }
+
+/* Position */
+
+.row-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
 /* Text */
 
 body {
@@ -240,7 +263,7 @@ body {
 }
 
 .fake-link {
-  color: var(--purple);
+  color: var(--main);
   text-decoration: underline;
   margin: var(--m1);
 }
@@ -253,7 +276,28 @@ body {
   position: absolute;
 }
 
+.warning-text-2 {
+  color: var(--red);
+  font-size: var(--text-xs);
+  margin-top: var(--m2);
+  font-weight: 300;
+  position: absolute;
+}
+
 /* Button */
+
+button:active, 
+button:hover,
+button:focus,
+a:active,
+a:focus,
+a:hover {
+  cursor: pointer;
+}
+
+button[disabled] {
+  cursor: auto;
+}
 
 /* .button {
   padding: var(--m5) var(--m1);
@@ -274,20 +318,6 @@ body {
   text-align: center;
 } */
 
-.auth-button {
-  width: 100%;
-  background: var(--purple);
-  border-radius: var(--r0);
-  color: white;
-  height: 38px;
-}
-
-button[disabled] {
-  opacity: 0.2;
-  filter: saturate(80%);
-  filter: hue-rotate(-8deg)
-}
-
 /* .icon {
   width: 6px;
   height: 6px;
@@ -296,6 +326,15 @@ button[disabled] {
   align-items: center;
   display: flex;
 } */
+
+/* Loader */
+
+.button-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* Input */
 
@@ -350,7 +389,7 @@ input:focus {
 
 .custom-radio {
   cursor: pointer;
-  accent-color: var(--purple);
+  accent-color: var(--main);
 }
 
 .custom-axis-label {
@@ -360,8 +399,8 @@ input:focus {
 
 .custom-checkbox {
   cursor: pointer;
-  background-color: var(--purple);
-  accent-color: var(--purple);
+  background-color: var(--main);
+  accent-color: var(--main);
 }
 
 .custom-checkbox:hover {

@@ -4,16 +4,16 @@ import Link from "next/link";
 
 const PasswordChanged = () => {
   return (
-    <div className="bg-image min-h-screen p-6 flex items-center justify-center">
-      <div className="m-4 min-w-[300px] max-w-[452px] h-auto py-6 px-6 md:py-[48px] md:px-[59px] flex items-center justify-center flex-col rounded-2xl bg-[#F9F9F7] border-[#373389] border-[1px]">
+    <div className="auth-container">
+      <div className="authbox-wrap">
         <div>
           <LogoApp />
         </div>
-        <div className="text-center mt-4 md:mt-[24px] text-[#111012] text-[23px] font-semibold text-poppins leading-loose">
+        <div className="authbox-title">
           Password changed!
         </div>
 
-        <div className="w-[270px] md:w-[296px] text-center mt-4 md:mt-[24px] text-[#111012] text-base font-normal text-poppins leading-normal">
+        <div className="authbox-note">
           You have successfully changed your password.
         </div>
         <div className="mt-4 md:mt-[24px]">

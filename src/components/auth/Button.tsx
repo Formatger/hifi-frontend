@@ -3,6 +3,8 @@ import React from "react";
 interface ButtonProps {
   buttonText: string;
   disabled: boolean;
+  // active?: boolean;
+  // onClick?: () => void;
 }
 
 

@@ -240,7 +240,7 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({
                 </div>
                 {!isValid && (
                   <p className="hidden sm:block absolute text-red-500 sm:pl-9">
-                    Please enter number only
+                    Please enter numbers only
                   </p>
                 )}
                 <div className="sticky bottom-0 w-full mt-8">

@@ -113,9 +113,9 @@ const Signin = () => {
   return (
     <>
       <ToastContainer />
-      <div className="auth-container signin">
-        <div className="signin-wrap">
-          <div className="logo-signup">
+      <div className="auth-container Signin">
+        <div className="authbox-wrap">
+          <div>
               <LogoApp />
           </div>
           <div className="authbox">
@@ -138,8 +138,8 @@ const Signin = () => {
               onSubmit={onSubmit}
             >
               {({ errors, touched }) => (
-                <Form className="signin-form relative">
-                  <div className="relative">
+                <Form className="auth-form">
+                  <div>
                     <TextInput
                       placeholder="Email address"
                       type="email"
@@ -170,14 +170,14 @@ const Signin = () => {
                       className="warning-text"
                     />
                   </div>
-                  <div className="button-wrap">
-                    {!loader ? (
-                      <Button
-                        disabled={
-                          formValue?.email && formValue?.password ? false : true
-                        }
-                        buttonText="Sign in"
-                      />
+                  <div>
+                  {!loader ? (
+                      <button
+                        disabled={formValue?.email && formValue?.password ? false : true}
+                        className="auth-button"
+                        >
+                        Sign in
+                      </button>
                     ) : (
                       <Loading />
                     )}
@@ -186,21 +186,21 @@ const Signin = () => {
                 </Form>
               )}
             </Formik>
-            <div className="pass-wrap">
-              <Link
-                href="/auth/forgotpassword"
-                className="auth-link">
-                Forgot password?
-              </Link>
-            </div>
-            <div className="linktext-wrap">
+            <div className="footnote-wrap">
+              <div>
+                <Link
+                  href="/auth/forgotpassword"
+                  className="auth-link">
+                  Forgot password?
+                </Link>
+              </div>
               <div>
                 <span>
                   Don’t have an account?
                 </span>
                 <Link 
                   href="/auth/signup"
-                  className="auth-link">
+                  className="auth-link ml-text">
                   Get Started.
                 </Link>
               </div>

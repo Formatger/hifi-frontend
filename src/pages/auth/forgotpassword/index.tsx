@@ -61,62 +61,64 @@ const ForgotPassword = () => {
       {" "}
       <ToastContainer />
       <div className="auth-container">
-         {/* <div>
-            <LogoApp />
-          </div> */}
-        <div className="authbox">
+        <div className="authbox-wrap">
+          <div>
+              <LogoApp />
+            </div>
+          <div className="authbox">
 
-          <div className="authbox-title">
-            Reset your password
-          </div>
+            <div className="authbox-title">
+              Reset your password
+            </div>
 
-          <div className="authbox-note">
-            Enter your email address and we will send you a link to reset your
-            password.
-          </div>
+            <div className="authbox-note">
+              Enter your email address and we will send you a link to reset your
+              password.
+            </div>
 
-          <Formik
-            initialValues={initialValues}
-            validationSchema={forgotPasswordValidationSchema}
-            onSubmit={onSubmit}
-          >
-            <Form className="">
-              <div className="auth-input mt-4">
-                <TextInput
-                  placeholder="Email address"
-                  type="email"
-                  name="email"
-                  id="email"
-                  password={false}
-                  validation={false}
-                />
-
-                <ErrorMessage
-                  name="email"
-                  component="div"
-                  className="warning-text"
-                />
-              </div>
-
-              <div className="mt-[24px]">
-                {!loader ? (
-                  <Button
-                    disabled={formValue?.email ? false : true}
-                    buttonText="Send Email"
+            <Formik
+              initialValues={initialValues}
+              validationSchema={forgotPasswordValidationSchema}
+              onSubmit={onSubmit}
+            >
+              <Form className="auth-form">
+                <div className="auth-input">
+                  <TextInput
+                    placeholder="Email address"
+                    type="email"
+                    name="email"
+                    id="email"
+                    password={false}
+                    validation={false}
                   />
-                ) : (
-                  <Loading />
-                )}
-              </div>
-              <AutoSubmitToken setFormValue={setFormValue} />
-            </Form>
-          </Formik>
-          <div className="mt-4 md:mt-[24px]">
-            <Link href="/auth/signin">
-              <div className="auth-link">
-                Return to sign in
-              </div>
-            </Link>
+
+                  <ErrorMessage
+                    name="email"
+                    component="div"
+                    className="warning-text"
+                  />
+                </div>
+
+                <div>
+                  {!loader ? (
+                    <Button
+                      disabled={formValue?.email ? false : true}
+                      buttonText="Send Email"
+                    />
+                  ) : (
+                    <Loading />
+                  )}
+                </div>
+                <AutoSubmitToken setFormValue={setFormValue} />
+              </Form>
+            </Formik>
+            <div className="footnote">
+              <Link href="/auth/signin">
+                <div className="auth-link">
+                  Return to Sign In
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

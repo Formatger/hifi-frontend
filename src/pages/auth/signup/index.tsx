@@ -78,7 +78,7 @@ const Signup = () => {
   return (
     <>
       <ToastContainer />
-      <div className="auth-container signup">
+      <div className="auth-container Signup">
         <LoginSideText />
         <div className="authbox">
           <div className="authbox-title">
@@ -95,8 +95,8 @@ const Signup = () => {
             validationSchema={signUpValidationSchema}
             onSubmit={onSubmit}
           >
-            <Form>
-              <div className="signup-input">
+            <Form className="auth-form Signup">
+              <div>
                 <TextInput
                   placeholder="Business Name"
                   type="text"
@@ -111,7 +111,7 @@ const Signup = () => {
                   className="warning-text"
                 />
               </div>
-              <div className="signup-input">
+              <div>
                 <TextInput
                   placeholder="Full Name"
                   type="fullName"
@@ -126,7 +126,7 @@ const Signup = () => {
                   className="warning-text"
                 />
               </div>
-              <div className="signup-input">
+              <div>
                 <TextInput
                   placeholder="Phone Number"
                   type="text"
@@ -141,7 +141,7 @@ const Signup = () => {
                   className="warning-text"
                 />
               </div>
-              <div className="signup-input">
+              <div>
                 <TextInput
                   placeholder="Email address"
                   type="email"
@@ -163,7 +163,7 @@ const Signup = () => {
               type="checkbox"
               className="custom-checkbox"
             />
-            <div className="terms-wrap">
+            <div>
               By continuing I acknowledge that I have read the
               <span className="fake-link">
                 Privacy Policy
@@ -175,7 +175,7 @@ const Signup = () => {
             </div>
           </div>
 
-              <div className="button-wrap">
+              <div>
                 {!loader ? (
                   <Button
                     disabled={
@@ -197,15 +197,15 @@ const Signup = () => {
             </Form>
           </Formik>
 
-          <div className="pass-wrap">
+          <div className="footnote">
             <div>
               Already have an account?
             </div>
             <Link
               href="/auth/signin"
-              className="auth-link"
+              className="auth-link ml-text"
             >
-              Sign In.
+            Sign In.
             </Link>
           </div>
 
