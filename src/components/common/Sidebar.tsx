@@ -213,25 +213,25 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
 
       <aside
         id="default-sidebar"
-        className={`fixed top-0 left-0 z-40 transition-transform ${
+        className={`sidebar ${
           !mSidebar
             ? "-translate-x-full lg:translate-x-0"
             : "translate-x-0 lg:-translate-x-full"
         }`}
         aria-label="Sidebar"
       >
-        <div className="main-grad flex items-center justify-around border-b border-[#E5E9EB] px-[0px] z-10 py-[10px]">
+        <div className="logo-box">
           <div>
             <Image
               src={HifiLogo}
               alt="logo"
-              className="w-[119px] h-[54px] ml-2"
+              className="dash-logo"
             />
           </div>
           <div></div>
         </div>
         {/* sidebar */}
-        <div className="relative px-[32px] py-[16px] overflow-y-auto w-[274px] h-[85vh] lg:h-[90vh] bg-[#FFF] border-r border-gray-200">
+        <div className="sidebar-box">
           <div
             onClick={sidebar}
             className="absolute right-4 top-5 text-black border-2 inline-flex lg:hidden items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium rounded-full"
@@ -266,7 +266,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
                       />
                     </div>
                     <div
-                      className={`w-[158px] xl:text-[18px] text-base not-italic text-poppins leading-normal ${
+                      className={`w-[158px] xl:text-[18px] text-base not-italic poppins-remove leading-normal ${
                         data?.hookValue
                           ? "font-bold text-white"
                           : "font-normal text-[#111012]"
@@ -290,7 +290,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
               <div className="mr-[8px]">
                 <Image src={Documentation} className="w-[24px]" alt="logo" />
               </div>
-              <div className="w-[158px] xl:text-[18px] text-[#111012] text-base font-normal text-poppins leading-normal">
+              <div className="w-[158px] xl:text-[18px] text-[#111012] text-base font-normal poppins-remove leading-normal">
                 Documentation
               </div>
             </Link>
@@ -302,7 +302,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
               <div className="mr-[8px]">
                 <Image src={Logout} className="w-[24px]" alt="logo" />
               </div>
-              <div className="w-[158px] xl:text-[18px] text-[#111012] text-base font-normal text-poppins leading-normal">
+              <div className="w-[158px] xl:text-[18px] text-[#111012] text-base font-normal poppins-remove leading-normal">
                 Logout
               </div>
             </Link>

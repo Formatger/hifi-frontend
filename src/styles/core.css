@@ -88,7 +88,7 @@
   --pblue1:hsl(253, 100%, 75%);
   --pblue2: hsl(253, 100%, 80%);
 
-  --blue: hsl(241, 100%, 68%);
+  --blue: #5545fa;
   --green: hsl(174, 98%, 41%);
 
   --orange: hsl(14, 100%, 68%);
@@ -299,34 +299,6 @@ button[disabled] {
   cursor: auto;
 }
 
-/* .button {
-  padding: var(--m5) var(--m1);
-  background-color: #F6F8F9;
-  border-radius: var(--m2);
-  border: 1px solid #E5E9EB;
-  color: #6200EE;
-  justify-content: flex-start;
-  align-items: center;
-  gap: var(--m2);
-  display: flex;
-} */
-
-/* .main-button {
-  flex-grow: 1;
-  flex-shrink: 0;
-  flex-basis: 0;
-  text-align: center;
-} */
-
-/* .icon {
-  width: 6px;
-  height: 6px;
-  padding: var(--m0);
-  justify-content: center;
-  align-items: center;
-  display: flex;
-} */
-
 /* Loader */
 
 .button-loader {
@@ -334,7 +306,6 @@ button[disabled] {
   justify-content: center;
   align-items: center;
 }
-
 
 /* Input */
 
@@ -368,6 +339,8 @@ button[disabled] {
 input:focus {
   outline: none;
 }
+
+/* Images */
 
 .logo-wrap {
   display: flex;

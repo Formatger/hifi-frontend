@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { Oval } from "react-loader-spinner";
+import Loading from "@/components/auth/Loading";
 
 const Invite = () => {
   const router = useRouter();
@@ -66,7 +67,7 @@ const Invite = () => {
                   disabled={loader}
                 >
                   {loader ? (
-                    <Oval width={20} height={20} color="#fff" />
+                    <Loading />
                   ) : (
                     "Accept Invite"
                   )}

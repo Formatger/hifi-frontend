@@ -9,7 +9,7 @@ import OtpInput from "react-otp-input";
 import Loading from "@/components/auth/Loading";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import AuthCode from "@/components/auth/AuthCode";
+// import AuthCodeOtp from "@/components/auth/AuthCodeOtp";
 
 const AuthCode = () => {
   const [loader, setLoader] = useState<boolean>(false);
@@ -94,7 +94,13 @@ const AuthCode = () => {
             </div>
 
             <div>
-            {/* <AuthCode otp={otp} handleChange={handleChange} /> */}
+              {/* <AuthCodeOtp
+                otp={otp}
+                handleChange={handleChange}
+                isValid={isValid}
+                onSubmit={onSubmit}
+                loader={loader}
+              /> */}
               <div className="authcode-wrap">
                 <OtpInput
                   value={otp}
@@ -174,9 +180,6 @@ const AuthCode = () => {
                 {!loader ? (
                   <button
                     className="auth-button"
-                    // {`auth-button ${
-                    //   otp.length > 5 ? "otp-confirmed" : ""
-                    // }`}
                     onClick={onSubmit}
                     disabled={otp.length <= 5}
                   >
@@ -188,22 +191,23 @@ const AuthCode = () => {
                   <Loading />
                 )}
               </div>
+              </div>
+              {isVerified !== "true" && (
+                <div className="mt-4">
+                  <ScanQr />
+                  test
+                </div>
+              )}
+              <div className="footnote-wrap">
+                <div className="auth-link">
+                  Use another authentication method
+                </div>
+                <div className="auth-link">
+                  Need help authenticating?
+                </div>
+              </div>
             </div>
-            {isVerified !== "true" && (
-              <div className="mt-4">
-                <ScanQr />
-                test
-              </div>
-            )}
-            <div className="footnote-wrap">
-              <div className="auth-link">
-                Use another authentication method
-              </div>
-              <div className="auth-link">
-                Need help authenticating?
-              </div>
-            </div>
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </div>

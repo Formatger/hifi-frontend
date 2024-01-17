@@ -29,3 +29,78 @@
     width: 100%;
   }
 }
+
+
+/* Dashboard */
+
+
+/* Toolbar */
+
+
+/* Sidebar */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 40;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-hide {
+  transform: translateX(-100%);
+}
+.sidebar-show {
+  transform: translateX(0);
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    z-index: 10;
+    padding-top: 10px;
+    background: var(--main);
+    height: 70px;
+    padding-left: var(--m6);
+  }
+
+.dash-logo {
+  width: auto;
+  height: 25px;
+}
+
+.sidebar-box {
+  position: relative;
+  padding: 16px 32px;
+  overflow-y: auto;
+  width: 274px;
+  height: 85vh;
+  border-right: 1px solid #ccc;
+  background-color: #FFF;
+}
+
+
+
+.exit-button {
+  position: absolute;
+  right: 4px;
+  top: 5px;
+  color: #000;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.75rem;
+  height: 0.75rem;
+  padding: 0.75rem;
+  margin-left: 0.75rem;
+  border-radius: 50%;
+}
+
+
+@media (min-width: 1024px) {
+  .element {
+    height: 100vh;
+  }
+}

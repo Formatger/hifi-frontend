@@ -129,7 +129,7 @@ const VerifyEmailOtp = () => {
                   renderInput={(props, keys) => (
                     <>
                       {keys === 0 && (
-                        <div className="w-[41px] h-14 px-[4px] py-1 bg-white rounded-tl-lg rounded-bl-lg border-l border-t border-b border-[#B0BABF]">
+                        <div className="authkey left">
                           <input
                             {...props}
                             inputMode="numeric"
@@ -138,9 +138,9 @@ const VerifyEmailOtp = () => {
                         </div>
                       )}
                       {keys === 3 && (
-                        <div className="flex items-center justify-center">
-                          <hr className="w-2 h-1 bg-[#B0BABF] rounded-lg mx-4" />
-                          <div className="w-[41px] h-14 px-[4px] py-1 bg-white rounded-tl-lg rounded-bl-lg border-l border-t border-b border-[#B0BABF]">
+                        <div className="authkey-space-wrap">
+                          <hr className="authkey-space" />
+                          <div className="authkey left">
                             <input
                               {...props}
                               inputMode="numeric"
@@ -150,7 +150,7 @@ const VerifyEmailOtp = () => {
                         </div>
                       )}
                       {keys === 1 && (
-                        <div className="w-[41px] h-14 px-[4px] py-1 bg-white border-l border-t border-b border-[#B0BABF]">
+                        <div className="authkey center">
                           <input
                             {...props}
                             inputMode="numeric"
@@ -159,7 +159,7 @@ const VerifyEmailOtp = () => {
                         </div>
                       )}
                       {keys === 4 && (
-                        <div className="w-[41px] h-14 px-[4px] py-1 bg-white border-l border-t border-b border-[#B0BABF]">
+                        <div className="authkey center">
                           <input
                             {...props}
                             inputMode="numeric"
@@ -168,7 +168,7 @@ const VerifyEmailOtp = () => {
                         </div>
                       )}
                       {keys === 2 && (
-                        <div className="w-[41px] h-14 px-[4px] py-1 bg-white rounded-tr-lg rounded-br-lg border border-[#B0BABF]">
+                        <div className="authkey right">
                           <input
                             {...props}
                             inputMode="numeric"
@@ -177,7 +177,7 @@ const VerifyEmailOtp = () => {
                         </div>
                       )}
                       {keys === 5 && (
-                        <div className="w-[41px] h-14 px-[4px] py-1 bg-white rounded-tr-lg rounded-br-lg border border-[#B0BABF]">
+                        <div className="authkey right">
                           <input
                             {...props}
                             inputMode="numeric"
@@ -191,7 +191,7 @@ const VerifyEmailOtp = () => {
               </div>
               {!isValid && (
                 <div className="row-center">
-                 <p className="warning-text-2">Please enter numbers only</p>
+                <p className="warning-text-2">Please enter numbers only</p>
                 </div>
               )}
               <div className="mt-box">
