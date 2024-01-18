@@ -263,12 +263,12 @@ const Payments = () => {
   };
 
   return (
-    <div className="w-full relative flex xl:h-screen flex-col text-poppins">
+    <div className="w-full relative flex xl:h-screen flex-col poppins-remove">
       <div className="w-full  ">
         <Header />
         <div className="w-full px-6 mt-4 flex flex-col relative">
           <div className="fixed lg:sticky w-full lg:w-auto top-[105px] lg:top-[78px] z-20 bg-white">
-            <h1 className="text-[#111012] lg:-mt-3 mb-0 lg:mb-3 font-semibold text-poppins text-[20px] lg:text-[36px] tracking-[0.36px] py-0 lg:py-0">
+            <h1 className="text-[#111012] lg:-mt-3 mb-0 lg:mb-3 font-semibold poppins-remove text-[20px] lg:text-[36px] tracking-[0.36px] py-0 lg:py-0">
               Payments
             </h1>
           </div>
@@ -332,10 +332,10 @@ const Payments = () => {
           <>
             {paymentData?.length === 0 ? (
               <div className="flex items-center justify-center flex-col mt-10 lg:mt-20 p-4 lg:p-0">
-                <div className="font-semibold text-poppins">
+                <div className="font-semibold poppins-remove">
                   "No Records Found"
                 </div>
-                <div className="text-poppins">
+                <div className="poppins-remove">
                   There are no records matching your search criteria in the
                   table.
                 </div>

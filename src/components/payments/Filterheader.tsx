@@ -39,7 +39,7 @@ const FilterHeader: React.FC<FilterHeaderProps> = ({
             onClick={() => onTabClick(index, item)}
           >
             <div
-              className={`h-auto justify-start items-start gap-3.5 inline-flex text-base font-normal text-poppins leading-normal max-sm:text-xs  ${
+              className={`h-auto justify-start items-start gap-3.5 inline-flex text-base font-normal poppins-remove leading-normal max-sm:text-xs  ${
                 activeTabIndex === index
                   ? " text-[#6200EE]"
                   : "text-[#4B5563] hover:text-[#6200EE]"

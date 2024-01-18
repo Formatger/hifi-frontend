@@ -38,7 +38,7 @@ const Profile = () => {
   }, []);
 
   return (
-    <div className="w-full relative flex xl:h-screen flex-col text-poppins">
+    <div className="w-full relative flex xl:h-screen flex-col poppins-remove">
       <div className="w-full">
         <Header />
         {loader ? (
@@ -69,7 +69,7 @@ const Profile = () => {
                 {/* <SettingsForm /> */}
                 <BusinessSettings />
                 <div className="flex flex-col gap-2">
-                  <p className="text-[#111012] text-xl mt-10 font-semibold text-poppins">
+                  <p className="text-[#111012] text-xl mt-10 font-semibold poppins-remove">
                     Close account
                   </p>
                   <div className="flex flex-col lg:flex-row items-start lg:items-start justify-between gap-5 lg:gap-0">
@@ -88,7 +88,7 @@ const Profile = () => {
                         before closing your Hifi Pay account. */}
                       </div>
                     </div>
-                    <button className="w-[142px] h-8 text-[#F9F9F7] text-poppins py-1 bg-[#F00] rounded-md">
+                    <button className="w-[142px] h-8 text-[#F9F9F7] poppins-remove py-1 bg-[#F00] rounded-md">
                       Close Account
                     </button>
                   </div>

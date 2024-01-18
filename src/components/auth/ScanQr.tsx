@@ -26,7 +26,7 @@ const ScanQr = () => {
     <div>
       <div
         onClick={openModal}
-        className="text-poppins cursor-pointer text-center text-[#6200EE] font-normal underline"
+        className="poppins-remove cursor-pointer text-center text-[#6200EE] font-normal underline"
       >
         Scan QR
       </div>

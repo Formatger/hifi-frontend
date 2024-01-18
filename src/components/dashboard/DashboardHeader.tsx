@@ -81,7 +81,7 @@ const DashboardHeader = ({ sections }: any) => {
           } ${index !== 2 ? "lg:border-r border-[#E5E9EB]" : ""}`}
         >
           <div className="flex-col justify-center items-center gap-4">
-            <h1 className="text-[#4B5563] text-sm xl:text-base font-semibold text-poppins ">
+            <h1 className="text-[#4B5563] text-sm xl:text-base font-semibold poppins-remove ">
               {section.title}
             </h1>
             <div className="flex items-center gap-[6.11px]">
@@ -106,12 +106,12 @@ const DashboardHeader = ({ sections }: any) => {
                 <MdTrendingDown className="bg-[#ffffe6] text-red-600 w-4 h-4 rounded-full p-[2px]" />
               )} */}
               {section.change && (
-                <p className="text-[#4B5563] text-xs font-normal text-poppins leading-[18px] tracking-tight">
+                <p className="text-[#4B5563] text-xs font-normal poppins-remove leading-[18px] tracking-tight">
                   {section?.change}%
                 </p>
               )}
             </div>
-            <p className="text-[#252C32] mt-4 text-sm xl:text-xl font-semibold text-poppins capitalize">
+            <p className="text-[#252C32] mt-4 text-sm xl:text-xl font-semibold poppins-remove capitalize">
               {section?.dataType === "revenueData"
                 ? formatCurrency(section?.value)
                 : section?.value}

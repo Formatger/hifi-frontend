@@ -26,36 +26,36 @@ const Details: React.FC<CustomerDetails> = ({ CustomerDetails }) => {
               } `}
             />
           </button>
-          <p className="text-[#111012] text-xl font-semibold text-poppins leading-loose">
+          <p className="text-[#111012] text-xl font-semibold poppins-remove leading-loose">
             Details
           </p>
         </div>
-        {/* <button className="text-violet-700 w-[60px] h-8 text-poppins bg-gray-100 rounded-md border border-[#E5E9EB]">
+        {/* <button className="text-violet-700 w-[60px] h-8 poppins-remove bg-gray-100 rounded-md border border-[#E5E9EB]">
           Edit
         </button> */}
       </div>
       {isDetailsExpanded && (
         <div className="">
-          <p className="text-[#111012] truncate px-3 py-0.5 my-3 bg-[#F6F8F9] rounded border border-gray-400 w-32 h-[22px] flex items-center justify-center text-xs font-medium text-poppins ">
+          <p className="text-[#111012] truncate px-3 py-0.5 my-3 bg-[#F6F8F9] rounded border border-gray-400 w-32 h-[22px] flex items-center justify-center text-xs font-medium poppins-remove ">
             {CustomerDetails?.latest_order_id}
           </p>
 
           <div className="flex flex-col border-t border-[#E5E9EB] py-4">
-            <p className="text-[#4B5563] text-base font-normal text-poppins leading-normal">
+            <p className="text-[#4B5563] text-base font-normal poppins-remove leading-normal">
               Account details
             </p>
-            <p className="text-[#252C32] text-base font-normal text-poppins leading-normal">
+            <p className="text-[#252C32] text-base font-normal poppins-remove leading-normal">
               {CustomerDetails.name}
             </p>
-            <p className="text-[#252C32] text-base font-normal text-poppins leading-normal">
+            <p className="text-[#252C32] text-base font-normal poppins-remove leading-normal">
               {CustomerDetails.mail}
             </p>
           </div>
           <div className="flex flex-col">
-            <p className="text-[#4B5563] text-base font-normal text-poppins leading-normal">
+            <p className="text-[#4B5563] text-base font-normal poppins-remove leading-normal">
               Customer Wallet
             </p>
-            <p className="text-[#252C32] text-base font-normal text-poppins leading-normal truncate">
+            <p className="text-[#252C32] text-base font-normal poppins-remove leading-normal truncate">
               {CustomerDetails?.wallet}
             </p>
           </div>

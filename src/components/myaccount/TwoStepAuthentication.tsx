@@ -41,26 +41,26 @@ const TwoStepAuthentication = () => {
     <>
       <div className="flex flex-col lg:flex-row gap-4 lg:gap-0 mt-5 py-4 border-b border-[#E5E9EB]">
         <div className="flex flex-col">
-          <p className="text-[#111012] text-base lg:text-xl font-semibold text-poppins">
+          <p className="text-[#111012] text-base lg:text-xl font-semibold poppins-remove">
             Two-Step authentication
           </p>
-          <div className="text-[#4B5563] text-base font-normal text-poppins">
+          <div className="text-[#4B5563] text-base font-normal poppins-remove">
             Increase security for your account by using multiple authentication
             steps.
           </div>
         </div>
         <button
-          className="w-[220px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[F6F8F9] text-[#6200EE] text-poppins lg:ml-auto"
+          className="w-[220px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[F6F8F9] text-[#6200EE] poppins-remove lg:ml-auto"
           onClick={openInstructionModal}
         >
           Add authentication step
         </button>
       </div>
       {/* <div className="flex items-center justify-between border-y py-5 border-[#E5E9EB]">
-        <p className="text-[#4B5563] text-base font-normal text-poppins">
+        <p className="text-[#4B5563] text-base font-normal poppins-remove">
           Authenticator app
         </p>
-        <button className="w-[115px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[F6F8F9] text-[#6200EE] text-poppins flex items-center justify-between px-2 gap-2">
+        <button className="w-[115px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[F6F8F9] text-[#6200EE] poppins-remove flex items-center justify-between px-2 gap-2">
           <span className="">Update</span>
           <span className="w-px h-full bg-[#E5E9EB]"></span>
           <Image src={x} alt="x" className="" />

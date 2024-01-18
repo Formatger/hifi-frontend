@@ -243,7 +243,7 @@ const Userid = () => {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center text-poppins">
+    <div className="w-full flex flex-col justify-center poppins-remove">
       <div className="w-full">
         <Header />
         <div className="w-full flex flex-col  gap-6 relative -mt-2">

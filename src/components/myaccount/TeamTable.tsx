@@ -42,15 +42,15 @@ const TeamTable: React.FC<TeamTableProps> = ({ teamData }) => {
             >
               <td style={{ margin: "4px 0" }}>
                 <div className="flex flex-col">
-                  {/* <p className="text-[#111012] gap-3 flex items-center text-base font-semibold text-poppins leading-normal">
+                  {/* <p className="text-[#111012] gap-3 flex items-center text-base font-semibold poppins-remove leading-normal">
                   {item.name}
                   <span className="bg-violet-200 text-[#111012] text-xs font-semibold px-1.5 py-0.5 rounded">
                     You
                   </span>
                 </p> */}
-                  <p className="text-[#4B5563] text-base font-normal text-poppins leading-normal flex items-center gap-3">
+                  <p className="text-[#4B5563] text-base font-normal poppins-remove leading-normal flex items-center gap-3">
                     <div className="flex items-start justify-start flex-col">
-                      <div className="text-poppins text-[#111012] font-semibold flex items-start justify-start flex-row">
+                      <div className="poppins-remove text-[#111012] font-semibold flex items-start justify-start flex-row">
                         <div className="pr-[10px] capitalize">
                           {item?.fullName}
                         </div>
@@ -79,7 +79,7 @@ const TeamTable: React.FC<TeamTableProps> = ({ teamData }) => {
               </td>
               <td className="px-3">
                 <div className="flex flex-col">
-                  <p className="text-gray-800 text-base font-normal text-poppins leading-normal">
+                  <p className="text-gray-800 text-base font-normal poppins-remove leading-normal">
                     {item.roleName === "SUPER_ADMIN" ? (
                       <>Owner</>
                     ) : (
@@ -89,7 +89,7 @@ const TeamTable: React.FC<TeamTableProps> = ({ teamData }) => {
                 </div>
               </td>
               <td className="px-3">
-                <div className="text-sm h-[22px] text-poppins">
+                <div className="text-sm h-[22px] poppins-remove">
                   {item?.isAccepted
                     ? item.roleName === "SUPER_ADMIN"
                       ? ""

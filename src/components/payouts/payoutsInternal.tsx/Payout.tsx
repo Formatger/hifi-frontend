@@ -45,10 +45,10 @@ const Payout = ({ order_id, receiptDetails }: any) => {
       <div className="flex flex-col lg:flex-row items-start justify-between lg:items-center w-full">
         <div className="flex items-center gap-3">
           <Image src={cardholder} alt="cardholder" className="" />
-          <p className="text-poppins text-[#4B5563]">ACH PAYOUT</p>
+          <p className="poppins-remove text-[#4B5563]">ACH PAYOUT</p>
         </div>
         <div className="flex items-center gap-3">
-          <p className="text-poppins order-2 lg:order-1 text-[#4B5563]">
+          <p className="poppins-remove order-2 lg:order-1 text-[#4B5563]">
             {order_id}
           </p>
           <Image src={cardholder} alt="cardholder" className="order-1" />
@@ -75,7 +75,7 @@ const Payout = ({ order_id, receiptDetails }: any) => {
             </button>
           </CSVLink>
           {showMessage && (
-            <div className="absolute top-10 -left-52 gap-2 lg:w-[334px] h-24 text-indigo-900 text-poppins mt-2 bg-white shadow-md rounded-md flex flex-col justify-center items-center self-end p-5">
+            <div className="absolute top-10 -left-52 gap-2 lg:w-[334px] h-24 text-indigo-900 poppins-remove mt-2 bg-white shadow-md rounded-md flex flex-col justify-center items-center self-end p-5">
               <div className="flex items-center justify-between">
                 {message === "Downloading CSV" ? (
                   <TailSpin height={30} width={30} color="black" />
@@ -89,7 +89,7 @@ const Payout = ({ order_id, receiptDetails }: any) => {
                   <Image src={x} alt="close" className="" />
                 </button>
               </div>
-              <p className="text-[#252C32] text-xl text-poppins font-semibold">
+              <p className="text-[#252C32] text-xl poppins-remove font-semibold">
                 {message}
               </p>
             </div>

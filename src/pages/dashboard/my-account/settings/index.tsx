@@ -11,7 +11,7 @@ const items = [
 
 const Settings = () => {
   return (
-    <div className="w-full relative flex xl:h-screen flex-col text-poppins">
+    <div className="w-full relative flex xl:h-screen flex-col poppins-remove">
       <div className="w-full">
         <Header />
         <div className="w-full p-3 lg:p-6 ">
@@ -20,7 +20,7 @@ const Settings = () => {
             <SettingsForm />
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mt-10 gap-5 lg:gap-0">
               <div className="flex flex-col lg:w-[80%]">
-                <p className="text-[#111012] text-xl font-semibold text-poppins">
+                <p className="text-[#111012] text-xl font-semibold poppins-remove">
                   Close account
                 </p>
                 <div className=" text-[#4B5563] text-base font-normal font-poppins leading-normal">
@@ -35,7 +35,7 @@ const Settings = () => {
                   before closing your Hifi Pay account.
                 </div>
               </div>
-              <button className="w-[142px] h-8 text-stone-50 text-poppins py-1 bg-red-600 rounded-md">
+              <button className="w-[142px] h-8 text-stone-50 poppins-remove py-1 bg-red-600 rounded-md">
                 Close Account
               </button>
             </div>

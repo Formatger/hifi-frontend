@@ -54,14 +54,14 @@ const NewMemberModal: React.FC<NewMemberModalProps> = ({
         isOpen={isOpen}
         onRequestClose={closeModal}
         contentLabel="Add Account Modal"
-        className="w-[90%] sidebarModal relative rounded-lg text-poppins sm:w-[452px] shadow-xl bg-white max-h-[90vh]"
+        className="w-[90%] sidebarModal relative rounded-lg poppins-remove sm:w-[452px] shadow-xl bg-white max-h-[90vh]"
         overlayClassName="bg-black bg-opacity-60 fixed inset-0 flex justify-center items-center z-50"
       >
         <div className="h-[80px] bg-[#F6F8F9] border-[#E5E9EB] border flex rounded-t-lg items-center justify-center sticky top-0 z-20">
           <button className="" onClick={closeModal}>
             <Image src={x} alt="close" className="top-2 right-2 absolute" />
           </button>
-          <h2 className="font-semibold  text-neutral-900 mt-4 text-poppins text-[23px]">
+          <h2 className="font-semibold  text-neutral-900 mt-4 poppins-remove text-[23px]">
             Invite team members
           </h2>
         </div>
@@ -119,7 +119,7 @@ const NewMemberModal: React.FC<NewMemberModalProps> = ({
                     >
                       <label
                         htmlFor={category.category}
-                        className=" text-poppins bg-gray-200 opacity-80 px-8 py-2.5 text-[#111012] font-semibold"
+                        className=" poppins-remove bg-gray-200 opacity-80 px-8 py-2.5 text-[#111012] font-semibold"
                       >
                         {category.category}
                       </label>
@@ -135,7 +135,7 @@ const NewMemberModal: React.FC<NewMemberModalProps> = ({
                           />
                           <label
                             htmlFor={role}
-                            className="text-black text-poppins"
+                            className="text-black poppins-remove"
                           >
                             {role}
                           </label>
@@ -186,7 +186,7 @@ const NewMemberModal: React.FC<NewMemberModalProps> = ({
 export const Title = () => {
   return (
     <>
-      <p className=" text-[#111012] text-base font-medium text-poppins uppercase leading-normal tracking-tight">
+      <p className=" text-[#111012] text-base font-medium poppins-remove uppercase leading-normal tracking-tight">
         enter team member email address
       </p>
     </>

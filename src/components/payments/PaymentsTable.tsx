@@ -126,8 +126,8 @@ const Table = ({ currentPage, onPageChange }: any) => {
         <table className="w-full ">
           <thead>
             <tr className="border-b border-[#e5e9eb] py-2 mb-3 h-12 sticky top-0 z-10 bg-white">
-              <th className="text-left text-base  text-[#111012] px-4 py-3 flex font-semibold text-poppins">
-                <div className="w-6 h-6 relative text-poppins">
+              <th className="text-left text-base  text-[#111012] px-4 py-3 flex font-semibold poppins-remove">
+                <div className="w-6 h-6 relative poppins-remove">
                   <input type="checkbox" onClick={() => AllCheck()} />
                 </div>
                 AMOUNT

@@ -12,7 +12,7 @@ const formatWalletName = (wallet: any) => {
 const PaymentMethod = ({ payment_method }: { payment_method: string }) => {
   return (
     <div className="flex flex-col  justify-center lg:px-5 lg:border-r">
-      <p className="text-[#4B5563] text-base font-normal text-poppins">
+      <p className="text-[#4B5563] text-base font-normal poppins-remove">
         Payment Method
       </p>
       <p className="flex gap-3 text-[#252C32]">

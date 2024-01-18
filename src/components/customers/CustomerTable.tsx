@@ -103,13 +103,13 @@ const CustomerTable = ({ customerAll }: any) => {
   return (
     <div className="w-full mb-8 overflow-hidden rounded-lg shadow-xs text-sm">
       <div className="w-full overflow-x-auto">
-        <p className="text-[#111012] text-xl  font-semibold text-poppins leading-loose mb-3">
+        <p className="text-[#111012] text-xl  font-semibold poppins-remove leading-loose mb-3">
           Payments
         </p>
         <table className="w-full ">
           <thead>
             <tr className="border-y border-[#e5e9eb] py-2 mb-3 h-12  bg-white">
-              <th className="text-left text-base  text-[#111012] pr-4  py-3 flex font-semibold text-poppins ">
+              <th className="text-left text-base  text-[#111012] pr-4  py-3 flex font-semibold poppins-remove ">
                 AMOUNT
               </th>
 

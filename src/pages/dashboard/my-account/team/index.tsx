@@ -134,14 +134,14 @@ const Team = () => {
   };
 
   return (
-    <div className="w-full relative flex xl:h-screen flex-col text-poppins">
+    <div className="w-full relative flex xl:h-screen flex-col poppins-remove">
       <div className="w-full">
         <Header />
         <div className="w-full p-3 lg:px-6 relative">
           <div className="w-full flex flex-col  mt-3  sticky top-[105px] lg:top-[78px] z-20 bg-white gap-4">
             <Breadcrumbs items={items} />
 
-            <h1 className="text-[#111012] mb-3 text-xl lg:text-4xl font-semibold text-poppins tracking-tight text-poppins">
+            <h1 className="text-[#111012] mb-3 text-xl lg:text-4xl font-semibold poppins-remove tracking-tight poppins-remove">
               Team
             </h1>
           </div>
@@ -150,10 +150,10 @@ const Team = () => {
               <ToggleButton />
             </div>
             <div className="flex flex-col">
-              <p className="text-[#111012] text-base font-semibold text-poppins leading-normal">
+              <p className="text-[#111012] text-base font-semibold poppins-remove leading-normal">
                 Require two-step authentication for your team
               </p>
-              <p className=" text-[#4B5563] text-base font-normal text-poppins leading-normal">
+              <p className=" text-[#4B5563] text-base font-normal poppins-remove leading-normal">
                 This will require any team member without two-step
                 authentication to enable it the next time they sign in.
               </p>
@@ -182,7 +182,7 @@ const Team = () => {
                   )}
                 </CSVLink>
                 {showMessage && (
-                  <div className="absolute top-10 -left-40 gap-2 lg:w-[334px] h-24 text-indigo-900 text-poppins mt-2 bg-white shadow-md rounded-md flex flex-col justify-center items-center self-end p-5">
+                  <div className="absolute top-10 -left-40 gap-2 lg:w-[334px] h-24 text-indigo-900 poppins-remove mt-2 bg-white shadow-md rounded-md flex flex-col justify-center items-center self-end p-5">
                     <div className="flex items-center justify-between">
                       {message === "Downloading CSV" ? (
                         <TailSpin height={30} width={30} color="black" />
@@ -196,7 +196,7 @@ const Team = () => {
                         <Image src={x} alt="close" className="" />
                       </button>
                     </div>
-                    <p className="text-[#252C32] text-xl text-center text-poppins font-semibold mb-3">
+                    <p className="text-[#252C32] text-xl text-center poppins-remove font-semibold mb-3">
                       {message}
                     </p>
                   </div>
@@ -211,7 +211,7 @@ const Team = () => {
                   <div className="w-6 h-6 p-0.5 flex items-center">
                     <Image src={newcustomericon} alt="NewCustomerIcon" />
                   </div>
-                  <button className="text-[#F9F9F7] text-base font-normal text-poppins">
+                  <button className="text-[#F9F9F7] text-base font-normal poppins-remove">
                     New Member
                   </button>
                 </div>
@@ -240,7 +240,7 @@ const Team = () => {
               <>
                 {teamData?.length === 0 ? (
                   <div className="flex items-center justify-center flex-col mt-10 lg:mt-20 p-4 lg:p-0">
-                    <div className="font-semibold text-poppins">
+                    <div className="font-semibold poppins-remove">
                       "No Records Found"
                     </div>
                   </div>

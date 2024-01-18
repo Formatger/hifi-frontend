@@ -97,7 +97,7 @@ const Items: React.FC<ItemsProps> = ({ currentItems }) => {
           <table className="w-full">
             <thead>
               <tr className="border-b border-[#e5e9eb] py-2 mb-3 h-12  bg-white">
-                <th className="text-left text-base w-[30%] text-[#111012] pr-4 pl-2 py-3 flex font-semibold text-poppins">
+                <th className="text-left text-base w-[30%] text-[#111012] pr-4 pl-2 py-3 flex font-semibold poppins-remove">
                   AMOUNT
                 </th>
                 <th className="text-left text-base w-[30%]  text-[#111012] font-semibold px-4">

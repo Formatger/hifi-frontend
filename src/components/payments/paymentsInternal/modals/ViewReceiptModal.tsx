@@ -128,7 +128,7 @@ const ViewReceiptModal: React.FC<{
         <button onClick={handleClose}>
           <Image src={x} alt="close" className="top-2 right-2 absolute" />
         </button>
-        <h2 className="font-semibold text-[#111012] mt-4 text-poppins text-[23px]">
+        <h2 className="font-semibold text-[#111012] mt-4 poppins-remove text-[23px]">
           View Receipt
         </h2>
       </div>
@@ -149,17 +149,17 @@ const ViewReceiptModal: React.FC<{
         </div>
 
         <div className="flex flex-col gap-1 p-2">
-          <p className="text-gray-800 text-base font-semibold text-poppins leading-normal">
+          <p className="text-gray-800 text-base font-semibold poppins-remove leading-normal">
             {moment(receiptDetails.createDate).format("MMM DD, YYYY h:mm A")}
           </p>
-          <p className="text-[#4B5563] text-base font-normal text-poppins leading-normal">
+          <p className="text-[#4B5563] text-base font-normal poppins-remove leading-normal">
             Order ID
           </p>
-          <p className="text-gray-800 text-base font-normal text-poppins leading-normal">
+          <p className="text-gray-800 text-base font-normal poppins-remove leading-normal">
             {receiptDetails.actual_order_id}
           </p>
         </div>
-        <p className="text-[#4B5563] text-base font-normal text-poppins leading-normal  w-full p-2 flex flex-wrap gap-2">
+        <p className="text-[#4B5563] text-base font-normal poppins-remove leading-normal  w-full p-2 flex flex-wrap gap-2">
           <span className=""> You made a payment of</span>
           <span className="font-semibold whitespace-nowrap">
             {formatCurrency(receiptDetails.fiatCurrencyAmount)} USD
@@ -168,7 +168,7 @@ const ViewReceiptModal: React.FC<{
           <span className="font-semibold">{receiptDetails?.receiver}</span>
         </p>
         <table className="table-auto w-full">
-          <tr className="text-[#111012] font-medium text-poppins border-b border-gray-200 h-10">
+          <tr className="text-[#111012] font-medium poppins-remove border-b border-gray-200 h-10">
             <td className="p-2 w-[70%]">DESCRIPTION</td>
             <td className="p-2 w-[30%]">SUBTOTAL</td>
           </tr>
@@ -196,7 +196,7 @@ const ViewReceiptModal: React.FC<{
           </tr>
         </table>
         <div className="flex flex-col p-2">
-          <p className="w-[394px] text-[#111012] text-base font-medium text-poppins uppercase leading-normal tracking-tight">
+          <p className="w-[394px] text-[#111012] text-base font-medium poppins-remove uppercase leading-normal tracking-tight">
             Paid with
           </p>
           <div className="flex items-center gap-2">
@@ -215,7 +215,7 @@ const ViewReceiptModal: React.FC<{
       </div>
       <div className="w-full flex h-[80px] rounded-b-lg items-center justify-between bg-gray-50 p-2 lg:p-5">
         <button
-          className="h-8 w-20 text-[#6200EE] border rounded-md border-gray-200 text-poppins"
+          className="h-8 w-20 text-[#6200EE] border rounded-md border-gray-200 poppins-remove"
           onClick={handleClose}
           type="button"
         >
@@ -225,7 +225,7 @@ const ViewReceiptModal: React.FC<{
           data={getCSVData(receiptDetails)}
           filename="receipt.csv"
           target="_blank"
-          className="text-center py-1 px-4 rounded-md text-stone-50 hover:text-[#6200EE] bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] border-[1px] text-poppins"
+          className="text-center py-1 px-4 rounded-md text-stone-50 hover:text-[#6200EE] bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] border-[1px] poppins-remove"
           onClick={handleExport}
         >
           Export

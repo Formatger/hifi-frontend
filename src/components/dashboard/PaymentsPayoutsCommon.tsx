@@ -77,7 +77,7 @@ const PaymentsPayoutsCommon = ({ type, tableData }: any) => {
       style={{ boxShadow: "2px 4px 24px  rgba(0, 0, 0, 0.05)" }}
     >
       <div className="w-full flex flex-col items-start p-5">
-        <h1 className="text-[#111012] text-base md:text-xl font-semibold text-poppins leading-loose ">
+        <h1 className="text-[#111012] text-base md:text-xl font-semibold poppins-remove leading-loose ">
           <Link href={`${type === "Payments" ? "payments" : "payouts"}`}>
             {type}
           </Link>
@@ -86,12 +86,12 @@ const PaymentsPayoutsCommon = ({ type, tableData }: any) => {
           <thead>
             <tr className="border-b border-[#e5e9eb] py-2 mb-3 ">
               <th className="text-left text-base font-medium text-[#6A7781] flex items-center ">
-                <div className="flex text-[#111012] font-semibold items-center py-3 gap-2 text-poppins">
+                <div className="flex text-[#111012] font-semibold items-center py-3 gap-2 poppins-remove">
                   AMOUNT
                 </div>
               </th>
               <th className="text-left text-base font-medium text-[#6A7781] px-4"></th>
-              <th className="text-left text-[#111012] font-semibold  text-base px-4 text-poppins">
+              <th className="text-left text-[#111012] font-semibold  text-base px-4 poppins-remove">
                 DATE
               </th>
             </tr>
@@ -111,7 +111,7 @@ const PaymentsPayoutsCommon = ({ type, tableData }: any) => {
                 <td
                   className={`text-left  ${
                     row?.status === "done" ? "text-[#111012]" : "text-[#4B5563]"
-                  } font-semibold text-poppins py-4 flex items-center justify-start gap-2 text-poppins`}
+                  } font-semibold poppins-remove py-4 flex items-center justify-start gap-2 poppins-remove`}
                 >
                   {type !== "Payments"
                     ? formatCurrency(
@@ -122,9 +122,9 @@ const PaymentsPayoutsCommon = ({ type, tableData }: any) => {
                     ? formatCurrency(row?.outwardBaseAmount)
                     : "Null"} */}
                 </td>
-                <td className="text-left py-2 text-poppins ">
+                <td className="text-left py-2 poppins-remove ">
                   <div
-                    className="flex items-center h-7 w-7 lg:w-10 lg:h-10 gap-3 font-semibold justify-center  rounded-md text-poppins ml-auto"
+                    className="flex items-center h-7 w-7 lg:w-10 lg:h-10 gap-3 font-semibold justify-center  rounded-md poppins-remove ml-auto"
                     style={{
                       color: getStatusColor(row?.action),
                       backgroundColor: `${getStatusColor(row?.action)}10`,
@@ -134,7 +134,7 @@ const PaymentsPayoutsCommon = ({ type, tableData }: any) => {
                     {/* {row?.status} */}
                   </div>
                 </td>
-                <td className=" py-2 px-4 text-[#252C32] text-poppins ">
+                <td className=" py-2 px-4 text-[#252C32] poppins-remove ">
                   {row.createDate
                     ? moment(row?.createDate).format("MMM DD, YYYY h:mm A")
                     : moment(row?.date).format("MMM DD, YYYY h:mm A")}

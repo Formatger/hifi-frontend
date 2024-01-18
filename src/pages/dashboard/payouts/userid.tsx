@@ -176,7 +176,7 @@ const Userid = () => {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center text-poppins">
+    <div className="w-full flex flex-col justify-center poppins-remove">
       <div className="w-full  ">
         <Header />
         {transactionData && transactionSummaryData && (
@@ -184,7 +184,7 @@ const Userid = () => {
             <div className="w-full flex flex-col relative -mt-2">
               <div className="sticky top-[105px] p-6 pb-0 lg:top-[74px] z-20 bg-white flex flex-col gap-6">
                 <Breadcrumbs items={breadcrumbItems} />
-                <h1 className="text-[#111012] text-4xl font-semibold text-poppins tracking-tight mb-3">
+                <h1 className="text-[#111012] text-4xl font-semibold poppins-remove tracking-tight mb-3">
                   Payouts
                 </h1>
                 <Payout receiptDetails={receiptDetails} order_id={transferId} />

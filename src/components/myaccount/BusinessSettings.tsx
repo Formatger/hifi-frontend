@@ -5,10 +5,10 @@ const BusinessSettings = () => {
   return (
     <div className="flex flex-col mt-6">
       <div className="flex flex-col border-b border-b-[#E5E9EB] py-3 gap-2">
-        <h1 className="text-4xl text-[#111012] text-poppins font-semibold">
+        <h1 className="text-4xl text-[#111012] poppins-remove font-semibold">
           Business Settings
         </h1>
-        <p className="text-base text-[#4B5563] text-poppins">
+        <p className="text-base text-[#4B5563] poppins-remove">
           Please select a link to view your business and team account
           information
         </p>

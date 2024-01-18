@@ -13,7 +13,7 @@ interface AllActivityProps {
 const AllActivity = ({ activityDetails }: AllActivityProps) => {
   return (
     <div className="flex flex-col gap-3 w-full items-start lg:border-r border-r-gray-200">
-      <p className="text-[#111012] text-base font-normal text-poppins leading-normal">
+      <p className="text-[#111012] text-base font-normal poppins-remove leading-normal">
         ALL ACTIVITY
       </p>
       {activityDetails.map((activity, index) => (

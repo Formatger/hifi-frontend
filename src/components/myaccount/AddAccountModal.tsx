@@ -53,14 +53,14 @@ const AddAccountModal: React.FC<AddAccountModalProps> = ({
       isOpen={isOpen}
       onRequestClose={closeModal}
       contentLabel="Add Account Modal"
-      className="w-[90%] sidebarModal relative rounded-lg text-poppins sm:w-[452px] shadow-xl bg-white max-h-[90vh]"
+      className="w-[90%] sidebarModal relative rounded-lg poppins-remove sm:w-[452px] shadow-xl bg-white max-h-[90vh]"
       overlayClassName="bg-black bg-opacity-60 fixed inset-0 flex justify-center items-center z-50"
     >
       <div className="h-[80px] bg-[#F6F8F9] border-[#E5E9EB] border flex rounded-lg items-center justify-center sticky top-0 z-20">
         <button className="" onClick={closeModal}>
           <Image src={x} alt="close" className="top-2 right-2 absolute" />
         </button>
-        <h2 className="font-semibold  text-neutral-900 mt-4 text-poppins text-[23px]">
+        <h2 className="font-semibold  text-neutral-900 mt-4 poppins-remove text-[23px]">
           {isEdit ? "Edit Bank Account" : "Add Bank Account"}
         </h2>
       </div>
@@ -287,13 +287,13 @@ const AddAccountModal: React.FC<AddAccountModalProps> = ({
             </>
             <div className="sticky bottom-0 w-full z-10 rounded-b-lg">
               <div className="border-t border-b rounded-b-lg bg-[#F6F8F9] pl-5 pr-1 pt-5 text-sm lg:text-base">
-                <span className="text-gray-600  font-normal text-poppins leading-normal">
+                <span className="text-gray-600  font-normal poppins-remove leading-normal">
                   By clicking ‘Confirm’ I agree to the
                 </span>
                 <Link
                   href={"https://www.hifibridge.com/terms"}
                   target="_blank"
-                  className="text-violet-500  font-normal text-poppins underline leading-normal mx-2"
+                  className="text-violet-500  font-normal poppins-remove underline leading-normal mx-2"
                 >
                   term and conditions
                 </Link>

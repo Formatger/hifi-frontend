@@ -228,7 +228,7 @@ const Customer = () => {
   };
 
   return (
-    <div className="w-full relative flex xl:h-screen flex-col text-poppins">
+    <div className="w-full relative flex xl:h-screen flex-col poppins-remove">
       <div className="w-full  ">
         <Header />
         <div className="w-full px-6 relative">
@@ -295,10 +295,10 @@ const Customer = () => {
           <>
             {customerData?.length === 0 ? (
               <div className="flex items-center justify-center flex-col mt-10 lg:mt-20 p-4 lg:p-0">
-                <div className="font-semibold text-poppins">
+                <div className="font-semibold poppins-remove">
                   "No Records Found"
                 </div>
-                <div className="text-poppins m-4">
+                <div className="poppins-remove m-4">
                   There are no records matching your search criteria in the
                   table.
                 </div>

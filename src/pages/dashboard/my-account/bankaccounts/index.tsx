@@ -156,14 +156,14 @@ const BankAccounts = () => {
   return (
     <>
       <ToastContainer />
-      <div className="w-full relative flex xl:h-screen flex-col text-poppins">
+      <div className="w-full relative flex xl:h-screen flex-col poppins-remove">
         <div className="w-full">
           <Header />
           <div className="w-full p-3 lg:px-6 ">
             <div className="w-full px-3 flex flex-col mt-3 gap-4 relative">
               <div className="sticky top-[105px] lg:top-[78px] z-20 bg-white flex flex-col gap-4 ">
                 <Breadcrumbs items={items} />
-                <h1 className="text-[#111012] text-2xl lg:text-4xl font-semibold text-poppins tracking-tight mb-3">
+                <h1 className="text-[#111012] text-2xl lg:text-4xl font-semibold poppins-remove tracking-tight mb-3">
                   Bank Accounts
                 </h1>
               </div>
@@ -174,7 +174,7 @@ const BankAccounts = () => {
                   {" "}
                   {role === "0" || role === "1" ? (
                     <button
-                      className="bg-[#6200ee] text-[#F9F9F7] w-[162px] h-8 text-poppins flex items-center justify-center gap-2 rounded-md ml-auto"
+                      className="bg-[#6200ee] text-[#F9F9F7] w-[162px] h-8 poppins-remove flex items-center justify-center gap-2 rounded-md ml-auto"
                       onClick={openAddAccountModal}
                     >
                       <Image src={plus} alt="plus" className="" />
@@ -211,7 +211,7 @@ const BankAccounts = () => {
                         {" "}
                         <table className="w-full ">
                           <thead>
-                            <tr className=" text-[#111012] text-left text-poppins font-semibold border-y border-y-[#E5E9EB] h-14">
+                            <tr className=" text-[#111012] text-left poppins-remove font-semibold border-y border-y-[#E5E9EB] h-14">
                               <th className="py-2 px-4">CURRENCY</th>
                               <th className="py-2 px-4">BANK ACCOUNT</th>
                               <th className="py-2 px-4">
@@ -227,7 +227,7 @@ const BankAccounts = () => {
                             {bankdata?.map((account: any, index: any) => (
                               <tr
                                 key={index}
-                                className="border-b border-b-[#E5E9EB] h-14 text-poppins text-[#252C32]"
+                                className="border-b border-b-[#E5E9EB] h-14 poppins-remove text-[#252C32]"
                               >
                                 <td className="py-2 px-4">
                                   <div className="flex items-center gap-3">
@@ -297,10 +297,10 @@ const BankAccounts = () => {
                     ) : (
                       <>
                         <div className="flex items-center justify-center flex-col mt-10 lg:mt-20 p-4 lg:p-0">
-                          <div className="font-semibold text-poppins">
+                          <div className="font-semibold poppins-remove">
                             "No Records Found"
                           </div>
-                          <div className="text-poppins">
+                          <div className="poppins-remove">
                             Please add bank account first.
                           </div>
                         </div>
@@ -328,14 +328,14 @@ const BankAccounts = () => {
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
           contentLabel="Add Account Modal"
-          className="w-[90%] sidebarModal relative rounded-lg text-poppins sm:w-[452px] shadow-xl bg-white max-h-[90vh]"
+          className="w-[90%] sidebarModal relative rounded-lg poppins-remove sm:w-[452px] shadow-xl bg-white max-h-[90vh]"
           overlayClassName="bg-black bg-opacity-60 fixed inset-0 flex justify-center items-center z-50"
         >
           <div className="h-[80px] bg-[#F6F8F9] border-[#E5E9EB] border flex rounded-t-lg items-center justify-center sticky top-0 z-20">
             <button className="" onClick={closeModal}>
               <Image src={x} alt="close" className="top-2 right-2 absolute" />
             </button>
-            <h2 className="font-semibold  text-neutral-900 mt-4 text-poppins text-[23px]">
+            <h2 className="font-semibold  text-neutral-900 mt-4 poppins-remove text-[23px]">
               Verify Bank Account
             </h2>
           </div>

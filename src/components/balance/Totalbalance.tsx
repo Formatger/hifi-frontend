@@ -17,7 +17,7 @@ export default function Totalbalance(props: TotalBalanceProps) {
     <div className="w-[100%] justify-between items-start gap-5 inline-flex px-5 py-2.5 max-sm:flex-col ">
       <div className="w-[70%] flex-col justify-start items-start inline-flex max-sm:w-[100%]">
         <div className="self-stretch pr-2.5 py-2.5 bg-white border-b border-gray-200 justify-start items-center gap-2.5 inline-flex">
-          <div className="text-[#111012] text-xl font-semibold text-poppins capitalize leading-loose text-poppins">
+          <div className="text-[#111012] text-xl font-semibold poppins-remove capitalize leading-loose poppins-remove">
             {props?.title}
           </div>
         </div>
@@ -34,7 +34,7 @@ export default function Totalbalance(props: TotalBalanceProps) {
                 id == 1
                   ? `font-bold text-[#111012] `
                   : `font-normal text-[#4B5563]`
-              }  text-poppins leading-normal text-poppins `}
+              }  poppins-remove leading-normal poppins-remove `}
             >
               {data?.title}
             </div>
@@ -44,7 +44,7 @@ export default function Totalbalance(props: TotalBalanceProps) {
                   id === 1
                     ? `font-bold text-[#111012] `
                     : `font-normal text-[#4B5563]`
-                } text-poppins leading-normal`}
+                } poppins-remove leading-normal`}
               >
                 {data?.usd}
               </div>
@@ -55,18 +55,18 @@ export default function Totalbalance(props: TotalBalanceProps) {
       <div className="w-[30%] p-2 bg-[#F6F8F9] rounded-lg flex-col justify-start items-start gap-1 inline-flex max-sm:w-[100%]">
         <div className="py-px flex-col justify-start items-start flex">
           <div className="px-1.5 py-0.5 bg-[#E5E9EB] rounded justify-center items-center gap-2.5 inline-flex">
-            <div className="text-[#111012] text-xs font-semibold text-poppins leading-[18px] tracking-tight">
+            <div className="text-[#111012] text-xs font-semibold poppins-remove leading-[18px] tracking-tight">
               Highlighted Report
             </div>
           </div>
         </div>
         <div className="self-stretch justify-start items-start inline-flex">
-          <div className="grow shrink basis-0 self-stretch text-[#6200EE] text-sm font-semibold text-poppins leading-normal">
+          <div className="grow shrink basis-0 self-stretch text-[#6200EE] text-sm font-semibold poppins-remove leading-normal">
             Balance
           </div>
         </div>
         <div className="self-stretch justify-start items-start inline-flex">
-          <div className="grow shrink basis-0 self-stretch text-[#6A7781] text-sm font-normal text-poppins leading-normal">
+          <div className="grow shrink basis-0 self-stretch text-[#6A7781] text-sm font-normal poppins-remove leading-normal">
             Reconcile your HIFI Pay balance and download your categorized
             transaction history.
           </div>

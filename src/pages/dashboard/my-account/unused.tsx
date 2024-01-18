@@ -32,11 +32,11 @@ const BankAccountsEntries = [
 
 const MyAccount = () => {
   return (
-    <div className="w-full relative mb-4 flex xl:h-screen flex-col text-poppins">
+    <div className="w-full relative mb-4 flex xl:h-screen flex-col poppins-remove">
       <div className="w-full">
         <Header />
         <div className="w-full px-6 mt-4 flex flex-col lg:flex-row justify-between">
-          <h1 className="text-[#111012] mb-3 text-3xl font-semibold text-poppins tracking-tight text-poppins">
+          <h1 className="text-[#111012] mb-3 text-3xl font-semibold poppins-remove tracking-tight poppins-remove">
             My Account
           </h1>
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-5">

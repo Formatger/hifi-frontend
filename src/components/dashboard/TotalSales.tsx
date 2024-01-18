@@ -26,7 +26,7 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({
 }) => {
   if (active && payload) {
     return (
-      <div className="p-2 text-poppins relative rounded-lg  bg-[#252C32] text-white">
+      <div className="p-2 poppins-remove relative rounded-lg  bg-[#252C32] text-white">
         <div className="w-0 h-0 border-t-[10px] border-t-transparent border-r-[15px] border-r-[#252C32] border-b-[10px] border-b-transparent absolute -left-[14px] top-[40%]"></div>
         {payload.map((entry, index) => (
           <p key={index} className={`text-${entry.color} uppercase `}>
@@ -80,7 +80,7 @@ const TotalSales = ({ chartdata }: any) => {
       style={{ boxShadow: "2px 4px 24px  rgba(0, 0, 0, 0.05)" }}
     >
       <div className="w-full flex justify-between items-center p-3">
-        <h1 className="text-[#111012] text-base md:text-xl font-semibold text-poppins leading-loose ">
+        <h1 className="text-[#111012] text-base md:text-xl font-semibold poppins-remove leading-loose ">
           Total Sales
         </h1>
         <div className="flex items-center gap-3">

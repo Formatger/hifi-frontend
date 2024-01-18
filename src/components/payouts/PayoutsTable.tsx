@@ -113,7 +113,7 @@ const Table = () => {
                 className="border-b border-[#E5E9EB] h-[4vh]"
                 style={{ borderBottomColor: "#e5e9eb" }}
               >
-                <td className="text-left py-2  px-2 text-poppins">
+                <td className="text-left py-2  px-2 poppins-remove">
                   {row.type === "Automatic Weekly" && (
                     <div className="flex items-center gap-3">
                       <Image src={automatic} alt="automatic" />
@@ -121,7 +121,7 @@ const Table = () => {
                     </div>
                   )}
                 </td>
-                <td className="text-left py-2  px-2 text-poppins">
+                <td className="text-left py-2  px-2 poppins-remove">
                   {row?.date}
                 </td>
                 <td className="text-left py-2 px-2 ">
@@ -136,7 +136,7 @@ const Table = () => {
                     {row?.status}
                   </div>
                 </td>
-                <td className="text-left py-2 px-2 text-poppins text-[#4B5563]">
+                <td className="text-left py-2 px-2 poppins-remove text-[#4B5563]">
                   {row?.description}
                 </td>
                 <td className="text-right py-2  px-2">${row?.amountPaid}</td>

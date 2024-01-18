@@ -105,7 +105,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
           {filterbox && (
             <div className="flex flex-col absolute top-[60px] md:top-10 z-30">
               <div className="lg:w-[334px] p-4 bg-white shadow-lg rounded-md flex flex-col">
-                <p className=" text-[#111012] text-base font-semibold text-poppins">
+                <p className=" text-[#111012] text-base font-semibold poppins-remove">
                   Filter by Date
                 </p>
 
@@ -190,7 +190,7 @@ const RangeCount = ({
         <div className="relative">
           <div className="border w-20 py-1.5 pl-[6px] rounded-md border-[#E5E9EB] bg-white">
             <input
-              className="color-[#252C32] text-poppins w-16"
+              className="color-[#252C32] poppins-remove w-16"
               type="number"
               value={inputRangeValue}
               onChange={handleInputChange}
@@ -241,7 +241,7 @@ export const AddFilterButton = ({ showDateButton }: any) => {
   return (
     <button
       onClick={showDateButton}
-      className="text-poppins w-[138px] h-8 flex text-violet-700 border rounded-md  gap-2 bg-gray-50 border-gray-200 items-center justify-center ml-auto mb-10"
+      className="poppins-remove w-[138px] h-8 flex text-violet-700 border rounded-md  gap-2 bg-gray-50 border-gray-200 items-center justify-center ml-auto mb-10"
     >
       <Image src={Funnel} alt="filter" className="" />
       Add Filters
@@ -253,7 +253,7 @@ const CancelFilterButton = ({ clearFilters }: any) => {
   return (
     <button
       onClick={clearFilters}
-      className="text-poppins -mt-20 md:mt-0 w-[138px] mr-5 h-8 flex text-violet-700 border gap-3 rounded-md  bg-gray-50 border-gray-200 items-center justify-center -ml-[20px] md:ml-auto"
+      className="poppins-remove -mt-20 md:mt-0 w-[138px] mr-5 h-8 flex text-violet-700 border gap-3 rounded-md  bg-gray-50 border-gray-200 items-center justify-center -ml-[20px] md:ml-auto"
     >
       <Image src={x} alt="filter" className="" />
       Clear Filters
@@ -314,7 +314,7 @@ const Button2 = ({
           </div>
           Date
           <span className="h-4 w-px bg-gray-400"></span>
-          <span className="text-violet-700 text-base font-semibold text-poppins">
+          <span className="text-violet-700 text-base font-semibold poppins-remove">
             {finalValue ? finalValue : "Starting from"}
           </span>
           <Image src={caretdown} alt="arrow" className="" />
@@ -330,7 +330,7 @@ const CustomeDropdown = ({ selectedFilter, handleFilterChange }: any) => {
       <select
         value={selectedFilter}
         onChange={handleFilterChange}
-        className="bg-white cursor-pointer w-full appearance-none mt-4 border border-[#E5E9EB] rounded text-poppins py-1 px-3"
+        className="bg-white cursor-pointer w-full appearance-none mt-4 border border-[#E5E9EB] rounded poppins-remove py-1 px-3"
       >
         <option value="is between">is between</option>
         <option value="is on or before">is on or before</option>

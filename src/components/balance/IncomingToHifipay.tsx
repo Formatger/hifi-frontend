@@ -25,7 +25,7 @@ interface TransactionsProps {
 
 export default function IncomingToHifipay(props: TransactionsProps) {
   return (
-    <div className="lg:w-[70%] px-5 py-2.5 text-poppins">
+    <div className="lg:w-[70%] px-5 py-2.5 poppins-remove">
       <div className="w-full pr-2.5 py-2.5 bg-white border-b border-gray-200 flex items-center">
         <div className="text-[#111012] text-xl font-semibold leading-loose">
           Incoming to HIFI Pay
@@ -41,7 +41,7 @@ export default function IncomingToHifipay(props: TransactionsProps) {
         </div>
       </div>
       <div className="w-full py-1 bg-white flex gap-5">
-        <p className=" text-[#4B5563] text-base font-normal text-poppins underline">
+        <p className=" text-[#4B5563] text-base font-normal poppins-remove underline">
           Transactions since last payout
         </p>
       </div>

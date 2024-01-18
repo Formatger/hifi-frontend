@@ -134,7 +134,7 @@ const UploadLogo = () => {
           <div className="flex flex-col lg:flex-row items-center gap-10 border-b border-[#E5E9EB] py-5 lg:py-0 lg:pb-5">
             {displayLogo ? (
               <div className="flex flex-col">
-                <p className="text-[#111012] text-base font-semibold text-poppins">
+                <p className="text-[#111012] text-base font-semibold poppins-remove">
                   Business profile logo
                 </p>
                 <Image
@@ -151,10 +151,10 @@ const UploadLogo = () => {
             <div className="flex flex-col">
               {displayLogo ? null : (
                 <>
-                  <p className="text-[#111012] text-base font-semibold text-poppins">
+                  <p className="text-[#111012] text-base font-semibold poppins-remove">
                     Upload your business logo
                   </p>
-                  <p className="text-[#4B5563] text-base font-normal text-poppins">
+                  <p className="text-[#4B5563] text-base font-normal poppins-remove">
                     Suggested logo size 300px x 300px
                   </p>
                 </>
@@ -164,13 +164,13 @@ const UploadLogo = () => {
               <>
                 {/* <div className="ml-auto flex items-center gap-3">
               <button
-                className="w-[123px] h-8 py-1 bg-[#F6F8F9] rounded-md text-[#6200EE] border border-[#7856E4] text-poppins"
+                className="w-[123px] h-8 py-1 bg-[#F6F8F9] rounded-md text-[#6200EE] border border-[#7856E4] poppins-remove"
                 onClick={handleRemoveLogo}
               >
                 Remove Logo
               </button>
               <button
-                className="w-[123px] h-8 py-1 bg-[#6200EE] rounded-md text-stone-50 text-poppins "
+                className="w-[123px] h-8 py-1 bg-[#6200EE] rounded-md text-stone-50 poppins-remove "
                 onClick={handleClickChooseFile}
               >
                 Change Logo
@@ -178,7 +178,7 @@ const UploadLogo = () => {
             </div> */}
                 {role === "0" || role === "1" ? (
                   <button
-                    className="w-[123px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] text-[#6200EE] text-poppins lg:ml-auto"
+                    className="w-[123px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] text-[#6200EE] poppins-remove lg:ml-auto"
                     onClick={openPopup}
                   >
                     Upload logo
@@ -189,7 +189,7 @@ const UploadLogo = () => {
               </>
             ) : (
               <button
-                className="w-[123px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] text-[#6200EE] text-poppins lg:ml-auto"
+                className="w-[123px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] text-[#6200EE] poppins-remove lg:ml-auto"
                 onClick={openPopup}
               >
                 Upload logo
@@ -218,22 +218,22 @@ const UploadLogo = () => {
             <button onClick={closePopup}>
               <Image src={x} alt="close" className="top-2 right-2 absolute" />
             </button>
-            <p className="text-[#111012] text-[23px] font-semibold text-poppins leading-loose">
+            <p className="text-[#111012] text-[23px] font-semibold poppins-remove leading-loose">
               Upload business logo
             </p>
           </div>
           <Image src={uploadsimple} alt="" />
           <div className="flex flex-col px-3 lg:px-0">
-            <p className="text-gray-800 text-base font-semibold text-poppins leading-normal">
+            <p className="text-gray-800 text-base font-semibold poppins-remove leading-normal">
               Drop your image here to upload
             </p>
-            <p className="text-[#4B5563] text-base font-normal text-poppins leading-normal">
+            <p className="text-[#4B5563] text-base font-normal poppins-remove leading-normal">
               Works with any .JPG or .PNG File.
             </p>
           </div>
           {!loader ? (
             <button
-              className="w-[117px] h-8 py-1 bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] text-stone-50 hover:text-[#6200EE] border-[1px] rounded-md text-poppins"
+              className="w-[117px] h-8 py-1 bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] text-stone-50 hover:text-[#6200EE] border-[1px] rounded-md poppins-remove"
               onClick={handleClickChooseFile}
               disabled={loader}
             >

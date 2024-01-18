@@ -47,15 +47,15 @@ const AccountOverview = ({ data, value }: any) => {
       className="w-full border border-gray-200 rounded-2xl"
       style={{ boxShadow: "2px 4px 24px  rgba(0, 0, 0, 0.05)" }}
     >
-      <h1 className=" text-[#111012] text-base md:text-xl font-semibold text-poppins leading-loose p-3">
+      <h1 className=" text-[#111012] text-base md:text-xl font-semibold poppins-remove leading-loose p-3">
         Account Overview
       </h1>
       <div className="flex flex-col sm:flex-row items-center justify-between px-3 mb-3 gap-3 sm:gap-0">
         <div className="flex items-center gap-3">
-          <p className=" text-[#111012] text-base md:text-xl font-semibold text-poppins capitalize leading-loose">
+          <p className=" text-[#111012] text-base md:text-xl font-semibold poppins-remove capitalize leading-loose">
             Total Revenue
           </p>
-          <p className="text-[#6200EE] text-base md:text-xl font-semibold text-poppins capitalize leading-loose">
+          <p className="text-[#6200EE] text-base md:text-xl font-semibold poppins-remove capitalize leading-loose">
             {value ? formatCurrency(value) : 0} USD
           </p>
         </div>
@@ -64,7 +64,7 @@ const AccountOverview = ({ data, value }: any) => {
             {" "}
             <select
               id="dateRangeSelect"
-              className="bg-[white] text-poppins w-[120px] h-8 px-2.5 py-1 text-[#111012] cursor-pointer rounded border border-gray-400"
+              className="bg-[white] poppins-remove w-[120px] h-8 px-2.5 py-1 text-[#111012] cursor-pointer rounded border border-gray-400"
             >
               <option value="6months" className="cursor-pointer">
                 6 Months

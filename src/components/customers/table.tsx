@@ -46,18 +46,18 @@ const Items: React.FC<ItemsProps> = ({ currentItems }) => {
           <table className="w-full">
             <thead>
               <tr className="border-b border-[#e5e9eb] py-2 mb-3 h-12 sticky top-0 z-10 bg-white">
-                <th className="text-left w-[20%] text-base  text-[#111012] font-semibold text-poppins pr-4">
+                <th className="text-left w-[20%] text-base  text-[#111012] font-semibold poppins-remove pr-4">
                   <span className="flex items-center justify-start">
                     <span>NAME</span>
                   </span>
                 </th>
-                <th className="text-left text-base w-[30%]  text-[#111012] font-semibold  text-poppins px-4">
+                <th className="text-left text-base w-[30%]  text-[#111012] font-semibold  poppins-remove px-4">
                   EMAIL
                 </th>
-                <th className="text-left text-base w-[25%] font-semibold text-[#111012] text-poppins px-4">
+                <th className="text-left text-base w-[25%] font-semibold text-[#111012] poppins-remove px-4">
                   WALLET ADDRESS
                 </th>
-                <th className="text-left pl-20 text-base w-[25%] font-semibold text-[#111012] text-poppins px-4">
+                <th className="text-left pl-20 text-base w-[25%] font-semibold text-[#111012] poppins-remove px-4">
                   CREATED
                 </th>
               </tr>
@@ -71,12 +71,12 @@ const Items: React.FC<ItemsProps> = ({ currentItems }) => {
                   onClick={() => handleTableRowClick(row?.customerAddress)}
                 >
                   <td className="text-left py-2 ml-2">
-                    <div className="flex items-center justify-start w-full gap-3 xl:gap-5 text-poppins text-[#111012]">
+                    <div className="flex items-center justify-start w-full gap-3 xl:gap-5 poppins-remove text-[#111012]">
                       <span className="w-full font-semibold">{row?.name}</span>
                     </div>
                   </td>
 
-                  <td className="text-left py-2 px-4 text-[#4B5563] leading-[24px] text-poppins">
+                  <td className="text-left py-2 px-4 text-[#4B5563] leading-[24px] poppins-remove">
                     <span className="">{row?.email}</span>
                   </td>
 
@@ -91,17 +91,17 @@ const Items: React.FC<ItemsProps> = ({ currentItems }) => {
                         />
                       </div>
                       <div className="items-center gap-2.5 px-2 flex">
-                        <span className="bg-[#E5E9EB] text-[#111012] rounded px-1.5 py-1 font-semibold  uppercase text-poppins">
+                        <span className="bg-[#E5E9EB] text-[#111012] rounded px-1.5 py-1 font-semibold  uppercase poppins-remove">
                           {row?.inwardCurrency}
                         </span>
                       </div>
-                      <p className="text-[#252C32] leaning-[24px] text-poppins truncate w-[236px]">
+                      <p className="text-[#252C32] leaning-[24px] poppins-remove truncate w-[236px]">
                         {row?.customerAddress}
                       </p>
                     </div>
                   </td>
 
-                  <td className="text-left pl-20 py-2 px-4 text-[#252C32] leaning-[24px] text-poppins">
+                  <td className="text-left pl-20 py-2 px-4 text-[#252C32] leaning-[24px] poppins-remove">
                     {moment(row?.createDate).format("MMM DD, YYYY h:mm A")}
                   </td>
                 </tr>

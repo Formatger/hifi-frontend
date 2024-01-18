@@ -132,7 +132,7 @@ const CustomerDetail = () => {
     fetchData();
   }, [router]);
   return (
-    <div className="w-full flex flex-col justify-center text-poppins">
+    <div className="w-full flex flex-col justify-center poppins-remove">
       <div className="w-full  ">
         <Header />
         <div className="w-full flex flex-col  gap-6 -mt-2">
@@ -167,7 +167,7 @@ const CustomerDetail = () => {
                 <div className="w-full lg:w-[60%]">
                   {customerAll?.length === 0 ? (
                     <div className="flex items-center justify-center flex-col mt-10 lg:mt-20 p-4 lg:p-0 mb-20">
-                      <div className="font-semibold text-poppins">
+                      <div className="font-semibold poppins-remove">
                         "No Records Found"
                       </div>
                     </div>
