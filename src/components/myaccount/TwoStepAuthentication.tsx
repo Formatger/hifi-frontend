@@ -50,7 +50,7 @@ const TwoStepAuthentication = () => {
           </div>
         </div>
         <button
-          className="w-[220px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[F6F8F9] text-[#6200EE] poppins-remove lg:ml-auto"
+          className="w-[220px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[F6F8F9] blue-text poppins-remove lg:ml-auto"
           onClick={openInstructionModal}
         >
           Add authentication step
@@ -60,7 +60,7 @@ const TwoStepAuthentication = () => {
         <p className="text-[#4B5563] text-base font-normal poppins-remove">
           Authenticator app
         </p>
-        <button className="w-[115px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[F6F8F9] text-[#6200EE] poppins-remove flex items-center justify-between px-2 gap-2">
+        <button className="w-[115px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[F6F8F9] blue-text poppins-remove flex items-center justify-between px-2 gap-2">
           <span className="">Update</span>
           <span className="w-px h-full bg-[#E5E9EB]"></span>
           <Image src={x} alt="x" className="" />
@@ -68,7 +68,7 @@ const TwoStepAuthentication = () => {
       </div> */}
       <p className="text-base font-normal text-[#4B5563] font-poppins leading-normal">
         If you lose your mobile device or security key, you can{" "}
-        <button className="text-[#6200ee] underline" onClick={openScanQrModal}>
+        <button className="blue-text underline" onClick={openScanQrModal}>
           generate a backup code
         </button>{" "}
         to sign in to your account.

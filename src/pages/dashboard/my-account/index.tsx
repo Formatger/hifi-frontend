@@ -81,7 +81,7 @@ const Profile = () => {
                         disputes.
                         {/* <br />
                         Please go through{" "}
-                        <a href="#" className="text-[#6200EE] underline">
+                        <a href="#" className="blue-text underline">
                           this link for more implications and recommended
                           actions
                         </a>{" "}

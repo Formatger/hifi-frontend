@@ -266,7 +266,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
                       />
                     </div>
                     <div
-                      className={`w-[158px] xl:text-[18px] text-base not-italic poppins-remove leading-normal ${
+                      className={`w-[158px] text-base text-base not-italic poppins-remove leading-normal ${
                         data?.hookValue
                           ? "font-bold text-white"
                           : "font-normal text-[#111012]"
@@ -290,7 +290,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
               <div className="mr-[8px]">
                 <Image src={Documentation} className="w-[24px]" alt="logo" />
               </div>
-              <div className="w-[158px] xl:text-[18px] text-[#111012] text-base font-normal poppins-remove leading-normal">
+              <div className="w-[158px] text-base text-[#111012] text-base font-normal poppins-remove leading-normal">
                 Documentation
               </div>
             </Link>
@@ -302,7 +302,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
               <div className="mr-[8px]">
                 <Image src={Logout} className="w-[24px]" alt="logo" />
               </div>
-              <div className="w-[158px] xl:text-[18px] text-[#111012] text-base font-normal poppins-remove leading-normal">
+              <div className="w-[158px] text-base text-[#111012] text-base font-normal poppins-remove leading-normal">
                 Logout
               </div>
             </Link>

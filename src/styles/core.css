@@ -68,7 +68,7 @@
 
   --white: white;
   --black: var(--dark2);
-  --main: var(--pblue);
+  --main: var(--blue);
 
   --trans: rgba(0, 0, 0, 0.5);
 
@@ -165,7 +165,26 @@
 /* Colors */
 
 .main-grad {
-  background: var(--mainGrad);
+  background: var(--main);
+}
+
+/* text-[#6200EE] */
+.blue-text {
+  color: var(--main);
+}
+
+/* text-violet-700 */
+.blue-text2 {
+  color: var(--main);
+}
+
+/* text-violet-500 */
+.blue-text3 {
+  color: var(--main);
+}
+
+.text-base {
+  font-size: 1rem;
 }
 
 .custom-modal-overlay {

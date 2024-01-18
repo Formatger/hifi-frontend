@@ -261,7 +261,7 @@ const BankAccounts = () => {
                                               onClick={() =>
                                                 VerifyBankAccount(account?.id)
                                               }
-                                              className="w-[100px] h-[32px] bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] border-[1px] rounded-md text-white hover:text-[#6200EE]"
+                                              className="w-[100px] h-[32px] bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] border-[1px] rounded-md text-white hover:blue-text"
                                             >
                                               Verify
                                             </button>
@@ -358,7 +358,7 @@ const BankAccounts = () => {
             </div>
             <div className="flex h-[80px] rounded-b-lg items-center justify-between bg-[#F6F8F9] p-2 lg:p-5">
               <button
-                className="h-8 w-20 text-[#6200EE] border bg-white rounded-md border-[#E5E9EB]"
+                className="h-8 w-20 blue-text border bg-white rounded-md border-[#E5E9EB]"
                 onClick={closeModal}
               >
                 Cancel

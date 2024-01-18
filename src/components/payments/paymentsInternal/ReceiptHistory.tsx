@@ -88,7 +88,7 @@ const ReceiptHistory = (receiptDetails: any) => {
         </h1>
         <div className="flex items-center gap-3">
           <button
-            className="text-[#6200EE] px-2 lg:px-0 lg:w-[125px] text-sm lg:text-base h-8 poppins-remove bg-[#F6F8F9] rounded-md border border-[#E5E9EB]"
+            className="blue-text px-2 lg:px-0 lg:w-[125px] text-sm lg:text-base h-8 poppins-remove bg-[#F6F8F9] rounded-md border border-[#E5E9EB]"
             onClick={handleViewReceipt}
           >
             View receipt
@@ -100,13 +100,13 @@ const ReceiptHistory = (receiptDetails: any) => {
                 data={getCSVData(receiptDetails.receiptDetails)}
                 filename="receipt.csv"
                 target="_blank"
-                className="text-[#6200EE] flex items-center px-2 lg:px-0 lg:w-[168px] gap-4 justify-center border text-sm lg:text-base border-[#E5E9EB] h-8 poppins-remove bg-[#F6F8F9] rounded-md"
+                className="blue-text flex items-center px-2 lg:px-0 lg:w-[168px] gap-4 justify-center border text-sm lg:text-base border-[#E5E9EB] h-8 poppins-remove bg-[#F6F8F9] rounded-md"
                 onClick={handleExportReceipt}
               >
                 <Image
                   src={exporticon}
                   alt="export"
-                  className="text-violet-700"
+                  className="blue-text2"
                 />
                 Export receipt
               </CSVLink>

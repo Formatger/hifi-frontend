@@ -164,7 +164,7 @@ const UploadLogo = () => {
               <>
                 {/* <div className="ml-auto flex items-center gap-3">
               <button
-                className="w-[123px] h-8 py-1 bg-[#F6F8F9] rounded-md text-[#6200EE] border border-[#7856E4] poppins-remove"
+                className="w-[123px] h-8 py-1 bg-[#F6F8F9] rounded-md blue-text border border-[#7856E4] poppins-remove"
                 onClick={handleRemoveLogo}
               >
                 Remove Logo
@@ -178,7 +178,7 @@ const UploadLogo = () => {
             </div> */}
                 {role === "0" || role === "1" ? (
                   <button
-                    className="w-[123px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] text-[#6200EE] poppins-remove lg:ml-auto"
+                    className="w-[123px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] blue-text poppins-remove lg:ml-auto"
                     onClick={openPopup}
                   >
                     Upload logo
@@ -189,7 +189,7 @@ const UploadLogo = () => {
               </>
             ) : (
               <button
-                className="w-[123px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] text-[#6200EE] poppins-remove lg:ml-auto"
+                className="w-[123px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] blue-text poppins-remove lg:ml-auto"
                 onClick={openPopup}
               >
                 Upload logo
@@ -233,7 +233,7 @@ const UploadLogo = () => {
           </div>
           {!loader ? (
             <button
-              className="w-[117px] h-8 py-1 bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] text-stone-50 hover:text-[#6200EE] border-[1px] rounded-md poppins-remove"
+              className="w-[117px] h-8 py-1 bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] text-stone-50 hover:blue-text border-[1px] rounded-md poppins-remove"
               onClick={handleClickChooseFile}
               disabled={loader}
             >

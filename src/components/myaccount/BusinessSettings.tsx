@@ -14,27 +14,27 @@ const BusinessSettings = () => {
         </p>
       </div>
       <ul className="mt-5 flex flex-col gap-2">
-        <li className="text-[#6200EE]">
+        <li className="blue-text">
           <Link href="/dashboard/my-account/bankaccounts" className="">
             Bank Accounts
           </Link>
         </li>
-        {/* <li className="text-[#6200EE]">
+        {/* <li className="blue-text">
           <Link href="" className="">
             Business Information
           </Link>
         </li>
-        <li className="text-[#6200EE]">
+        <li className="blue-text">
           <Link href="" className="">
             Documents
           </Link>
         </li>
-        <li className="text-[#6200EE]">
+        <li className="blue-text">
           <Link href="" className="">
             Subscriptions
           </Link>
         </li> */}
-        <li className="text-[#6200EE]">
+        <li className="blue-text">
           <Link href="/dashboard/my-account/team" className="">
             Team
           </Link>

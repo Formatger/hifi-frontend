@@ -22,7 +22,7 @@ const JSONDisplay = ({ data }: { data: Record<string, any> }) => {
           <span className="text-gray-500 text-base mr-10 poppins-remove">
             {index + 2}
           </span>
-          <span className="text-violet-500">"{key}":</span>{" "}
+          <span className="blue-text3">"{key}":</span>{" "}
           <span className="text-green-700 ml-5 lg:ml-0">
             {typeof value === "object" ? JSON.stringify(value, null, 2) : value}
           </span>
@@ -53,7 +53,7 @@ const LatestActivity = () => {
       <p className="text-[#111012] text-base font-semibold poppins-remove leading-normal">
         invoice.payment_succeeded
       </p>
-      <a className="text-violet-500 text-base font-normal poppins-remove underline">
+      <a className="blue-text3 text-base font-normal poppins-remove underline">
         View event detail
       </a>
       <JSONDisplay data={mockjson} />

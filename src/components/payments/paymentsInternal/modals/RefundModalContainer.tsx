@@ -60,7 +60,7 @@ const ModalHeader: React.FC<{ title: string; toggleModal: () => void }> = ({
       <button className="" onClick={toggleModal}>
         <Image src={x} alt="close" className="top-2 right-2 absolute" />
       </button>
-      <h2 className="font-semibold  text-[#111012] mt-4 text-poppins text-[23px]">
+      <h2 className="font-semibold  text-[#111012] mt-4 poppins-remove text-[23px]">
         {title}
       </h2>
     </div>
@@ -81,7 +81,7 @@ const RenderRadiobutton = ({ name, value, title, selectedoption }: any) => {
       <label
         className={`grow shrink basis-0 text-base leading-normal ${
           selectedoption === value
-            ? "text-[#6200EE] font-semibold"
+            ? "blue-text font-semibold"
             : "text-[#4B5563] font-normal"
         }`}
       >
@@ -297,7 +297,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
             <button className="" onClick={toggleModal}>
               <Image src={x} alt="close" className="top-2 right-2 absolute" />
             </button>
-            <h2 className="font-semibold  text-[#111012] mt-4 text-poppins text-[23px]">
+            <h2 className="font-semibold  text-[#111012] mt-4 poppins-remove text-[23px]">
               {currentStep === "initiation"
                 ? "Refund Initiation"
                 : currentStep === "confirmation"
@@ -318,7 +318,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                   <>
                     <div className="overflow-auto max-h-[60vh] p-4 px-2">
                       <div className="relative flex flex-col  p-2 lg:p-5">
-                        <div className="font-medium text-black text-poppins">
+                        <div className="font-medium text-black poppins-remove">
                           SELECT REFUND AMOUNT*
                         </div>
                         <div className="relative w-full">
@@ -362,7 +362,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                         />
                       </div>
                       <div className="flex relative flex-col gap-3 lg:gap-2 p-2 lg:p-5">
-                        <div className="font-medium text-black text-poppins">
+                        <div className="font-medium text-black poppins-remove">
                           SELECT REFUND REASON*
                         </div>
                         <ReasonDropdown />
@@ -373,7 +373,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                         />
                       </div>
                       <div className=" relative flex flex-col  p-2 lg:p-5">
-                        <div className="font-medium text-black text-poppins">
+                        <div className="font-medium text-black poppins-remove">
                           CONFIRM RECIPIENT WALLET ADDRESS*
                         </div>
 
@@ -421,14 +421,14 @@ const RefundModal: React.FC<RefundModalProps> = ({
                     </div>
                     <div className="w-full flex h-[80px] rounded-b-lg items-center justify-between bg-gray-50 p-2 lg:p-5 sticky bottom-0 mt-2">
                       <button
-                        className="h-8 w-20 text-[#6200EE] border bg-white rounded-md border-gray-200"
+                        className="h-8 w-20 blue-text border bg-white rounded-md border-gray-200"
                         type="submit"
                         onClick={toggleModal}
                       >
                         Cancel
                       </button>
                       <button
-                        className="bg-[#6200EE] text-[#F9F9F7]  flex items-center justify-center gap-3 h-8 w-28 rounded-md"
+                        className="main-grad text-[#F9F9F7]  flex items-center justify-center gap-3 h-8 w-28 rounded-md"
                         type="submit"
                       >
                         Continue
@@ -482,7 +482,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                   </p>
                 </div>
                 <button
-                  className="flex items-center justify-center gap-3 text-[#6200EE] ml-auto mr-5 w-20 h-8 bg-[#F9F9F7] border border-gray-200 rounded-md"
+                  className="flex items-center justify-center gap-3 blue-text ml-auto mr-5 w-20 h-8 bg-[#F9F9F7] border border-gray-200 rounded-md"
                   onClick={handleEditClick}
                 >
                   <Image src={pencilsimple} alt="edit" className="" />
@@ -497,13 +497,13 @@ const RefundModal: React.FC<RefundModalProps> = ({
                     type="checkbox"
                     id="confirmAccuracy"
                     name="confirmAccuracy"
-                    className="text-[#6200EE] mt-2"
+                    className="blue-text mt-2"
                     onChange={handleCheckboxChange}
                     checked={confirmAccuracy}
                   />
                   <label
                     htmlFor="confirmAccuracy"
-                    className="text-[#4B5563] text-poppins"
+                    className="text-[#4B5563] poppins-remove"
                   >
                     By checking this box you are confirming that all of the
                     above details are accurate. Please review closely and make
@@ -513,7 +513,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
               </div>
               <div className="w-full flex h-[80px] rounded-b-lg items-center justify-between bg-gray-50 p-2 lg:p-5 sticky bottom-0">
                 <button
-                  className="h-8 w-20 text-[#6200EE] border rounded-md border-gray-200"
+                  className="h-8 w-20 blue-text border rounded-md border-gray-200"
                   type="submit"
                   onClick={toggleModal}
                 >
@@ -523,7 +523,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                   className={` ${
                     !confirmAccuracy || loader
                       ? "bg-[#B0BABF]"
-                      : "bg-[#6200EE]  border-[#6200EE] border-[1px]"
+                      : "main-grad  border-[#6200EE] border-[1px]"
                   } flex items-center justify-center  text-[#F9F9F7] gap-3 h-8 w-[120px] rounded-md  ${
                     !confirmAccuracy || loader
                       ? "text-[#F9F9F7]"
@@ -560,28 +560,28 @@ const RefundModal: React.FC<RefundModalProps> = ({
           {currentStep === "underway" && (
             <div className="px-2 pt-4">
               <div className="flex flex-col gap-2 px-5 py-2">
-                <h2 className=" text-[#111012] text-base font-semibold text-poppins uppercase leading-normal tracking-tight">
+                <h2 className=" text-[#111012] text-base font-semibold poppins-remove uppercase leading-normal tracking-tight">
                   PROCESSING TIME
                 </h2>
-                <p className=" text-[#4B5563] text-base font-normal text-poppins leading-normal">
+                <p className=" text-[#4B5563] text-base font-normal poppins-remove leading-normal">
                   Refunds typically take sometime to process. We appreciate your
                   patience as we work to complete the refund transactions.
                 </p>
               </div>
               <div className="flex flex-col gap-2 px-5 py-2">
-                <h2 className=" text-[#111012] text-base font-semibold text-poppins uppercase leading-normal tracking-tight">
+                <h2 className=" text-[#111012] text-base font-semibold poppins-remove uppercase leading-normal tracking-tight">
                   STATUS UPDATES
                 </h2>
-                <p className=" text-[#4B5563] text-base font-normal text-poppins leading-normal">
+                <p className=" text-[#4B5563] text-base font-normal poppins-remove leading-normal">
                   Check status in the Payments Detail view of the Payments
                   dashboard.
                 </p>
               </div>
               <div className="flex flex-col gap-2 px-5 py-2">
-                <h2 className=" text-[#111012] text-base font-semibold text-poppins uppercase leading-normal tracking-tight">
+                <h2 className=" text-[#111012] text-base font-semibold poppins-remove uppercase leading-normal tracking-tight">
                   OTP
                 </h2>
-                <p className=" text-[#4B5563] text-base font-normal text-poppins leading-normal">
+                <p className=" text-[#4B5563] text-base font-normal poppins-remove leading-normal">
                   Please wait for 2 mintues to recieve otp into your email id.
                 </p>
                 <div className="-mt-1 lg:mt-2 relative flex items-center justify-center">
@@ -594,7 +594,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                     renderInput={(props, keys) => (
                       <>
                         {keys === 0 && (
-                          <div className="lg:w-[41px] lg:h-14 px-[4px] py-1 bg-white rounded-tl-lg rounded-bl-lg border-l border-t border-b border-[#B0BABF]">
+                          <div className="authkey left">
                             <input
                               {...props}
                               inputMode="numeric"
@@ -603,9 +603,9 @@ const RefundModal: React.FC<RefundModalProps> = ({
                           </div>
                         )}
                         {keys === 3 && (
-                          <div className="flex items-center justify-center">
-                            <hr className="w-2 h-1 bg-[#B0BABF] rounded-lg mx-4" />
-                            <div className="lg:w-[41px] lg:h-14 px-[4px] py-1 bg-white rounded-tl-lg rounded-bl-lg border-l border-t border-b border-[#B0BABF]">
+                          <div className="authkey-space-wrap">
+                            <hr className="authkey-space" />
+                            <div className="authkey left">
                               <input
                                 {...props}
                                 inputMode="numeric"
@@ -615,7 +615,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                           </div>
                         )}
                         {keys === 1 && (
-                          <div className="lg:w-[41px] lg:h-14 px-[4px] py-1 bg-white border-l border-t border-b border-[#B0BABF]">
+                          <div className="authkey center">
                             <input
                               {...props}
                               inputMode="numeric"
@@ -624,7 +624,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                           </div>
                         )}
                         {keys === 4 && (
-                          <div className="lg:w-[41px] lg:h-14 px-[4px] py-1 bg-white border-l border-t border-b border-[#B0BABF]">
+                          <div className="authkey center">
                             <input
                               {...props}
                               inputMode="numeric"
@@ -633,7 +633,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                           </div>
                         )}
                         {keys === 2 && (
-                          <div className="lg:w-[41px] lg:h-14 px-[4px] py-1 bg-white rounded-tr-lg rounded-br-lg border border-[#B0BABF]">
+                          <div className="authkey right">
                             <input
                               {...props}
                               inputMode="numeric"
@@ -642,7 +642,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                           </div>
                         )}
                         {keys === 5 && (
-                          <div className="lg:w-[41px] lg:h-14 px-[4px] py-1 bg-white rounded-tr-lg rounded-br-lg border border-[#B0BABF]">
+                          <div className="authkey right">
                             <input
                               {...props}
                               inputMode="numeric"
@@ -659,7 +659,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                 <button
                   className={`${
                     otp.length > 5
-                      ? "bg-[#6200EE] hover:bg-[#F6F8F9] hover:text-[#6200EE] border-[#6200EE] border-[1px]"
+                      ? "main-grad hover:bg-[#F6F8F9] hover:blue-text border-[#6200EE] border-[1px]"
                       : "bg-[#B0BABF]"
                   } text-stone-50 flex items-center justify-center gap-3 h-8 w-[178px] self-center rounded-md`}
                   type="button"

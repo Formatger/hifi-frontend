@@ -171,7 +171,7 @@ const Team = () => {
                 >
                   {role === "0" || role === "1" ? (
                     <button
-                      className="flex text-[#6200EE] bg-[#F6F8F9] items-center gap-2 rounded-md border border-[#E5E9EB] w-[182px] xl:w-[164px] justify-center h-8  "
+                      className="flex blue-text bg-[#F6F8F9] items-center gap-2 rounded-md border border-[#E5E9EB] w-[182px] xl:w-[164px] justify-center h-8  "
                       type="button"
                     >
                       <Image src={downloadsimple} alt="export" />

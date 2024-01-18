@@ -10,7 +10,7 @@ const WalletAddress = ({ walletaddress }: { walletaddress: string }) => {
       <Link
         href={`https://goerli.etherscan.io/address/${walletaddress}`}
         target="_blank"
-        className="text-[#6200EE] underline w-[200px] truncate"
+        className="blue-text underline w-[200px] truncate"
       >
         {walletaddress}
       </Link>

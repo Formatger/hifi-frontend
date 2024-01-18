@@ -76,13 +76,13 @@ const TransactionSection = ({ transactionSummaryData }: any) => {
       <span className="poppins-remove text-[#4B5563]">
         These amounts are estimated because transactions are still accumulating.
         Payouts are scheduled to
-        <span className="text-[#6200EE] underline poppins-remove ml-2">
+        <span className="blue-text underline poppins-remove ml-2">
           automatically send daily.
         </span>
       </span>
     </div> */}
 
-      {/* <p className="grow shrink basis-0 self-stretch text-[#6200EE] text-base font-normal poppins-remove underline">
+      {/* <p className="grow shrink basis-0 self-stretch blue-text text-base font-normal poppins-remove underline">
       Transactions since last payout
     </p> */}
 

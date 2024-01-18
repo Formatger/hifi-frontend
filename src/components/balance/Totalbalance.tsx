@@ -61,7 +61,7 @@ export default function Totalbalance(props: TotalBalanceProps) {
           </div>
         </div>
         <div className="self-stretch justify-start items-start inline-flex">
-          <div className="grow shrink basis-0 self-stretch text-[#6200EE] text-sm font-semibold poppins-remove leading-normal">
+          <div className="grow shrink basis-0 self-stretch blue-text text-sm font-semibold poppins-remove leading-normal">
             Balance
           </div>
         </div>

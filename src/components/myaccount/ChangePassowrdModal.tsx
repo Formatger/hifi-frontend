@@ -143,7 +143,7 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({
         isOpen={isOpen}
         onRequestClose={closeModal}
         contentLabel="New Customer Modal"
-        className="w-[90%] sidebarModal relative rounded-lg text-poppins sm:w-[452px] shadow-xl bg-white max-h-[90vh] overflow-y-auto"
+        className="w-[90%] sidebarModal relative rounded-lg poppins-remove sm:w-[452px] shadow-xl bg-white max-h-[90vh] overflow-y-auto"
         overlayClassName="bg-black bg-opacity-60 fixed inset-0 flex justify-center items-center z-50"
       >
         <Formik
@@ -156,7 +156,7 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({
               <button className="" onClick={closeModal}>
                 <Image src={x} alt="close" className="top-2 right-2 absolute" />
               </button>
-              <h2 className="font-semibold  text-[#111012] mt-4 text-poppins text-lg lg:text-[23px]">
+              <h2 className="font-semibold  text-[#111012] mt-4 poppins-remove text-lg lg:text-[23px]">
                 {!verification ? "Change password" : "Verification required"}
               </h2>
             </div>
@@ -174,63 +174,62 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({
                     numInputs={6}
                     containerStyle=""
                     inputStyle="inputStyle"
-                    // renderSeparator={<span>-</span>}
                     renderInput={(props, keys) => (
                       <>
                         {keys === 0 && (
-                          <div className="w-[41px] h-14 px-[4px] py-1 bg-white rounded-tl-lg rounded-bl-lg border-l border-t border-b border-[#B0BABF]">
+                          <div className="authkey left">
                             <input
                               {...props}
                               inputMode="numeric"
-                              className="w-full h-full select-none text-gray-800 text-[32px] font-medium text-poppins tracking-tight"
+                              className="authkey-number"
                             />
                           </div>
                         )}
                         {keys === 3 && (
-                          <div className="flex items-center justify-center">
-                            <hr className="w-2 h-1 bg-[#B0BABF] rounded-lg mx-4" />
-                            <div className="w-[41px] h-14 px-[4px] py-1 bg-white rounded-tl-lg rounded-bl-lg border-l border-t border-b border-[#B0BABF]">
+                          <div className="authkey-space-wrap">
+                            <hr className="authkey-space" />
+                            <div className="authkey left">
                               <input
                                 {...props}
                                 inputMode="numeric"
-                                className="w-full h-full select-none text-gray-800 text-[32px] font-medium text-poppins tracking-tight"
+                                className="authkey-number"
                               />
                             </div>
                           </div>
                         )}
                         {keys === 1 && (
-                          <div className="w-[41px] h-14 px-[4px] py-1 bg-white border-l border-t border-b border-[#B0BABF]">
+                          <div className="authkey center">
                             <input
                               {...props}
                               inputMode="numeric"
-                              className="w-full h-full select-none text-gray-800 text-[32px] font-medium text-poppins tracking-tight"
+                              className="authkey-number"
                             />
                           </div>
                         )}
                         {keys === 4 && (
-                          <div className="w-[41px] h-14 px-[4px] py-1 bg-white border-l border-t border-b border-[#B0BABF]">
+                          <div className="authkey center">
                             <input
                               {...props}
                               inputMode="numeric"
-                              className="w-full h-full select-none text-gray-800 text-[32px] font-medium text-poppins tracking-tight"
+                              className="authkey-number"
                             />
                           </div>
                         )}
                         {keys === 2 && (
-                          <div className="w-[41px] h-14 px-[4px] py-1 bg-white rounded-tr-lg rounded-br-lg border border-[#B0BABF]">
+                          <div className="authkey right">
                             <input
                               {...props}
                               inputMode="numeric"
-                              className="w-full h-full select-none text-gray-800 text-[32px] font-medium text-poppins tracking-tight"
+                              className="authkey-number"
                             />
                           </div>
                         )}
                         {keys === 5 && (
-                          <div className="w-[41px] h-14 px-[4px] py-1 bg-white rounded-tr-lg rounded-br-lg border border-[#B0BABF]">
+                          <div className="authkey right">
                             <input
                               {...props}
                               inputMode="numeric"
-                              className="w-full h-full select-none text-gray-800 text-[32px] font-medium text-poppins tracking-tight"
+                              className="authkey-number"
                             />
                           </div>
                         )}
@@ -246,7 +245,7 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({
                 <div className="sticky bottom-0 w-full mt-8">
                   <div className="flex  px-4 h-[80px] rounded-b-lg items-center justify-between bg-[#F6F8F9] p-2 lg:p-5">
                     <button
-                      className="h-8 w-20 text-[#6200EE] border bg-white rounded-md border-[#E5E9EB]"
+                      className="h-8 w-20 blue-text border bg-white rounded-md border-[#E5E9EB]"
                       onClick={closeModal}
                     >
                       Cancel
@@ -256,7 +255,7 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({
                         disabled={otp.length < 6}
                         className={`${
                           otp.length === 6
-                            ? "bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] border-[1px] text-stone-50 hover:text-[#6200EE]"
+                            ? "main-grad hover:bg-[#F6F8F9] border-[#6200EE] border-[1px] text-stone-50 hover:blue-text"
                             : "bg-[#B0BABF] text-[#F9F9F7]"
                         }  flex items-center justify-center gap-3 h-8 w-[100px] rounded-md`}
                       >
@@ -289,7 +288,7 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({
                       <ErrorMessage
                         name="password"
                         component="div"
-                        className="absolute text-[#6200ee]"
+                        className="absolute blue-text"
                       />
                     </div>
                   </div>
@@ -310,7 +309,7 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({
                       <ErrorMessage
                         name="confirmPassword"
                         component="div"
-                        className="absolute text-[#6200ee]"
+                        className="absolute blue-text"
                       />
                     </div>
                   </div>
@@ -331,7 +330,7 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({
                       <ErrorMessage
                         name="confirmPassword2"
                         component="div"
-                        className="absolute text-[#6200ee]"
+                        className="absolute blue-text"
                       />
                     </div>
                   </div>
@@ -339,7 +338,7 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({
                 <div className="sticky bottom-0 w-full mt-8">
                   <div className="flex  px-4 h-[80px] rounded-b-lg items-center justify-between bg-[#F6F8F9] p-2 lg:p-5">
                     <button
-                      className="h-8 w-20 text-[#6200EE] border bg-white rounded-md border-[#E5E9EB]"
+                      className="h-8 w-20 blue-text border bg-white rounded-md border-[#E5E9EB]"
                       onClick={closeModal}
                     >
                       Cancel
@@ -357,7 +356,7 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({
                           formValue?.password &&
                           formValue?.confirmPassword &&
                           formValue?.confirmPassword2
-                            ? "bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] border-[1px] text-stone-50 hover:text-[#6200EE]"
+                            ? "main-grad hover:bg-[#F6F8F9] border-[#6200EE] border-[1px] text-stone-50 hover:blue-text"
                             : "bg-[#B0BABF] text-[#F9F9F7]"
                         }  flex items-center justify-center gap-3 h-8 w-[100px] rounded-md`}
                       >

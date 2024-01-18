@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       style={{ backgroundColor: bgColor }}
-      className="px-5 py-1 bg-[#F6F8F9] rounded-md border text-[#6200EE] border-[#E5E9EB] justify-start items-center gap-2 flex"
+      className="px-5 py-1 bg-[#F6F8F9] rounded-md border blue-text border-[#E5E9EB] justify-start items-center gap-2 flex"
       {...props}
     >
       {iconSrc && (

@@ -29,7 +29,7 @@ const Settings = () => {
                   charges and refunds, and respond to new disputes.
                   <br />
                   Please go through{" "}
-                  <a href="#" className="text-violet-700 underline">
+                  <a href="#" className="blue-text2 underline">
                     this link for more implications and recommended actions
                   </a>{" "}
                   before closing your Hifi Pay account.

@@ -207,7 +207,7 @@ const ViewReceiptModal: React.FC<{
               height={17}
               className=""
             />
-            <p className="text-violet-700 truncate">
+            <p className="blue-text2 truncate">
               {receiptDetails.customerAddress}
             </p>
           </div>
@@ -215,7 +215,7 @@ const ViewReceiptModal: React.FC<{
       </div>
       <div className="w-full flex h-[80px] rounded-b-lg items-center justify-between bg-gray-50 p-2 lg:p-5">
         <button
-          className="h-8 w-20 text-[#6200EE] border rounded-md border-gray-200 poppins-remove"
+          className="h-8 w-20 blue-text border rounded-md border-gray-200 poppins-remove"
           onClick={handleClose}
           type="button"
         >
@@ -225,7 +225,7 @@ const ViewReceiptModal: React.FC<{
           data={getCSVData(receiptDetails)}
           filename="receipt.csv"
           target="_blank"
-          className="text-center py-1 px-4 rounded-md text-stone-50 hover:text-[#6200EE] bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] border-[1px] poppins-remove"
+          className="text-center py-1 px-4 rounded-md text-stone-50 hover:blue-text bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] border-[1px] poppins-remove"
           onClick={handleExport}
         >
           Export

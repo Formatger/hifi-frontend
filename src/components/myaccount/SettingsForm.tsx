@@ -19,7 +19,7 @@ const SettingsForm = () => {
           Account Settings
         </p>
         <div className="flex items-center gap-3">
-          <button className="w-[85px] h-8 px-3.5 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] text-[#6200EE] poppins-remove">
+          <button className="w-[85px] h-8 px-3.5 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] blue-text poppins-remove">
             Cancel
           </button>
           <button className="w-[66px] h-8 pl-3 pr-3.5 py-1 bg-[#6200EE] rounded-md text-stone-50 poppins-remove">
@@ -42,7 +42,7 @@ const SettingsForm = () => {
           Phone verification
         </p>
         <div className="flex items-center gap-3">
-          <button className="w-[109px] h-8  py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] text-[#6200EE] poppins-remove">
+          <button className="w-[109px] h-8  py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] blue-text poppins-remove">
             Verify Now
           </button>
           <span className="w-[77px] h-[22px] px-1.5 py-0.5 bg-[#E5E9EB] rounded justify-center items-center gap-2.5 inline-flex text-xs text-[#111012] font-semibold poppins-remove">

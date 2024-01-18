@@ -21,7 +21,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
         {items?.map((item, index) => (
           <li key={index} className="flex items-center">
             {item?.current || index === items?.length - 1 ? (
-              <span className="text-[#6200EE]  w-40 truncate">
+              <span className="blue-text  w-40 truncate">
                 {item?.label}
               </span>
             ) : (

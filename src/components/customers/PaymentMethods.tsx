@@ -103,7 +103,7 @@ const PaymentMethods = ({ payment_method_wallets }: any) => {
                 <Link
                   href={`${CRYPTOADDRESS}/${method?.wallet_address}`}
                   target="_blank"
-                  className=" text-sm lg:text-base font-normal text-violet-500 underline poppins-remove "
+                  className=" text-sm lg:text-base font-normal blue-text3 underline poppins-remove "
                 >
                   {method?.blockchain_record}
                 </Link>

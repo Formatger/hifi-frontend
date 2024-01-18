@@ -55,7 +55,7 @@ const AccountOverview = ({ data, value }: any) => {
           <p className=" text-[#111012] text-base md:text-xl font-semibold poppins-remove capitalize leading-loose">
             Total Revenue
           </p>
-          <p className="text-[#6200EE] text-base md:text-xl font-semibold poppins-remove capitalize leading-loose">
+          <p className="blue-text text-base md:text-xl font-semibold poppins-remove capitalize leading-loose">
             {value ? formatCurrency(value) : 0} USD
           </p>
         </div>

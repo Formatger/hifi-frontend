@@ -62,7 +62,7 @@ const ProfileInfo = (userData: any) => {
         {/* {isEditing ? (
           <div className="flex items-center gap-4">
             <button
-              className="w-[87px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] text-[#6200EE] poppins-remove flex items-center justify-center gap-3"
+              className="w-[87px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] blue-text poppins-remove flex items-center justify-center gap-3"
               onClick={handleEdit}
             >
               Cancel
@@ -76,7 +76,7 @@ const ProfileInfo = (userData: any) => {
           </div>
         ) : (
           <button
-            className="w-[87px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] text-[#6200EE] poppins-remove ml-auto flex items-center justify-center gap-3"
+            className="w-[87px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] blue-text poppins-remove ml-auto flex items-center justify-center gap-3"
             onClick={handleEdit}
           >
             <Image src={pencilsimple} alt="edit" className="" />
@@ -130,7 +130,7 @@ const ProfileInfo = (userData: any) => {
           {isEditing ? (
             <div className="flex items-center gap-3">
               <button
-                className="w-[174px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] text-[#6200EE] poppins-remove flex items-center justify-center gap-3"
+                className="w-[174px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] blue-text poppins-remove flex items-center justify-center gap-3"
                 onClick={openPasswordModal}
               >
                 Change Password

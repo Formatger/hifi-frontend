@@ -33,7 +33,7 @@ const FilterHeader: React.FC<FilterHeaderProps> = ({
             key={index}
             className={`flex-col justify-start pt-1 items-start gap-1.5 inline-flex cursor-pointer px-2 h-9 rounded-sm hover:border-b-2 border-[#6200EE]  hover:bg-[#6200EE] hover:bg-opacity-5  ${
               activeTabIndex === index
-                ? "border-b-2 border-[#6200EE] text-[#6200EE]"
+                ? "border-b-2 border-[#6200EE] blue-text"
                 : ""
             }`}
             onClick={() => onTabClick(index, item)}
@@ -41,8 +41,8 @@ const FilterHeader: React.FC<FilterHeaderProps> = ({
             <div
               className={`h-auto justify-start items-start gap-3.5 inline-flex text-base font-normal poppins-remove leading-normal max-sm:text-xs  ${
                 activeTabIndex === index
-                  ? " text-[#6200EE]"
-                  : "text-[#4B5563] hover:text-[#6200EE]"
+                  ? " blue-text"
+                  : "text-[#4B5563] hover:blue-text"
               }`}
             >
               {item.label}

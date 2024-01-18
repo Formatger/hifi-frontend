@@ -30,7 +30,7 @@ const Details: React.FC<CustomerDetails> = ({ CustomerDetails }) => {
             Details
           </p>
         </div>
-        {/* <button className="text-violet-700 w-[60px] h-8 poppins-remove bg-gray-100 rounded-md border border-[#E5E9EB]">
+        {/* <button className="blue-text2 w-[60px] h-8 poppins-remove bg-gray-100 rounded-md border border-[#E5E9EB]">
           Edit
         </button> */}
       </div>

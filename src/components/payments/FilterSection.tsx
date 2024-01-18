@@ -241,7 +241,7 @@ export const AddFilterButton = ({ showDateButton }: any) => {
   return (
     <button
       onClick={showDateButton}
-      className="poppins-remove w-[138px] h-8 flex text-violet-700 border rounded-md  gap-2 bg-gray-50 border-gray-200 items-center justify-center ml-auto mb-10"
+      className="poppins-remove w-[138px] h-8 flex blue-text2 border rounded-md  gap-2 bg-gray-50 border-gray-200 items-center justify-center ml-auto mb-10"
     >
       <Image src={Funnel} alt="filter" className="" />
       Add Filters
@@ -253,7 +253,7 @@ const CancelFilterButton = ({ clearFilters }: any) => {
   return (
     <button
       onClick={clearFilters}
-      className="poppins-remove -mt-20 md:mt-0 w-[138px] mr-5 h-8 flex text-violet-700 border gap-3 rounded-md  bg-gray-50 border-gray-200 items-center justify-center -ml-[20px] md:ml-auto"
+      className="poppins-remove -mt-20 md:mt-0 w-[138px] mr-5 h-8 flex blue-text2 border gap-3 rounded-md  bg-gray-50 border-gray-200 items-center justify-center -ml-[20px] md:ml-auto"
     >
       <Image src={x} alt="filter" className="" />
       Clear Filters
@@ -265,7 +265,7 @@ const ApplyButton = ({ onClick }: any) => {
   return (
     <button
       onClick={onClick}
-      className="w-[294px] h-8 px-3.5 py-1 text-[#F9F9F7] hover:text-[#6200EE] bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] border-[1px] rounded-md mt-4"
+      className="w-[294px] h-8 px-3.5 py-1 text-[#F9F9F7] hover:blue-text bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] border-[1px] rounded-md mt-4"
     >
       Apply
     </button>
@@ -314,7 +314,7 @@ const Button2 = ({
           </div>
           Date
           <span className="h-4 w-px bg-gray-400"></span>
-          <span className="text-violet-700 text-base font-semibold poppins-remove">
+          <span className="blue-text2 text-base font-semibold poppins-remove">
             {finalValue ? finalValue : "Starting from"}
           </span>
           <Image src={caretdown} alt="arrow" className="" />

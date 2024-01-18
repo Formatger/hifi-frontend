@@ -293,7 +293,7 @@ const AddAccountModal: React.FC<AddAccountModalProps> = ({
                 <Link
                   href={"https://www.hifibridge.com/terms"}
                   target="_blank"
-                  className="text-violet-500  font-normal poppins-remove underline leading-normal mx-2"
+                  className="blue-text3  font-normal poppins-remove underline leading-normal mx-2"
                 >
                   term and conditions
                 </Link>
@@ -305,7 +305,7 @@ const AddAccountModal: React.FC<AddAccountModalProps> = ({
 
               <div className="flex h-[80px] rounded-b-lg items-center justify-between bg-[#F6F8F9] p-2 lg:p-5">
                 <button
-                  className="h-8 w-20 text-[#6200EE] border bg-white rounded-md border-[#E5E9EB]"
+                  className="h-8 w-20 blue-text border bg-white rounded-md border-[#E5E9EB]"
                   onClick={closeModal}
                 >
                   Cancel
@@ -343,7 +343,7 @@ const AddAccountModal: React.FC<AddAccountModalProps> = ({
                         formValue?.bankname &&
                         formValue?.swiftnumber &&
                         formValue?.currency
-                          ? "bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] border-[1px] text-stone-50 hover:text-[#6200EE]"
+                          ? "bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] border-[1px] text-stone-50 hover:blue-text"
                           : "bg-[#B0BABF] text-[#F9F9F7]"
                       }  flex items-center justify-center gap-3 h-8 px-4 rounded-md`}
                     >
@@ -389,7 +389,7 @@ export const RenderRadiobutton = ({
       <label
         className={`grow shrink basis-0 text-base leading-normal ${
           selectedoption === title
-            ? "text-[#6200EE] font-semibold"
+            ? "blue-text font-semibold"
             : "text-[#4B5563] font-normal"
         }`}
       >

@@ -61,7 +61,7 @@ const PaymentMethodFull = ({
             <Link
               href={`https://goerli.etherscan.io/tx/${paymentMethodDetails?.txHash}`}
               target="_blank"
-              className=" text-sm lg:text-base font-normal text-violet-500 underline poppins-remove "
+              className=" text-sm lg:text-base font-normal blue-text3 underline poppins-remove "
             >
               {paymentMethodDetails?.blockchain_record}
             </Link>
