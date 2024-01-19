@@ -73,7 +73,7 @@ const PaymentsPayoutsCommon = ({ type, tableData }: any) => {
   };
   return (
     <div
-      className="w-full min-h-[393.6px] max-h-[393.6px] text-xs lg:text-base  border border-gray-200 mb-5 rounded-lg shadow-xs"
+      className="w-full min-h-[393.6px] max-h-[393.6px] text-xs lg:text-base  border border-gray-200 rounded-lg shadow-xs"
       style={{ boxShadow: "2px 4px 24px  rgba(0, 0, 0, 0.05)" }}
     >
       <div className="w-full flex flex-col items-start p-5">

@@ -30,27 +30,58 @@
   }
 }
 
-/* Dashboard Index */
+/* Main Container */
 
-.element {
+.main-container {
   width: 100%;
-  height: auto;
-  min-height: 146px; /* or use the actual minimum height needed */
-  background-color: white;
-  border-radius: 2xl;
-  border: 1px solid #E5E9EB;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 5px;
-  gap: 5px;
+  padding: var(--m4);
 }
 
-@media (min-width: 768px) {
-  .element {
-    height: 146px;
+/* Dashboard Index */
+
+#dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--m4);
+}
+
+.summary-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--m4);
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.databox-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--m4);
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.databox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--m4);
+}
+
+@media (min-width: 1280px) {
+
+  .databox-wrap {
     flex-direction: row;
-    gap: 0;
+  }
+
+  .databox.account-data {
+    width: 60%;
+  }
+  .databox.payments-data {
+    width: 40%;
   }
 }

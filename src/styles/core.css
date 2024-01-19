@@ -35,13 +35,15 @@
 
   /* Border Radius */
 
-  --r0: 8px;
-  --r1: 10px;
-  --r2: 16px;
-  --r3: 30px;
-  --r4: 40px;
-  --r5: 48px;
-  --r6: 60px;
+  --r1: 4px; 
+  --r2: 6px; 
+  --r3: 8px; 
+  --r4: 10px; 
+  --r5: 16px; 
+  --r6: 30px; 
+  --r7: 40px; 
+  --r8: 48px; 
+  --r9: 60px; 
 
   /* Border Radius */
 
@@ -64,25 +66,37 @@
   --m16: 14rem;     /* 224px */
   --m17: 16rem;     /* 256px */
 
+  /* Size */
+
+  --toolbar-h: 65px;
+  --sidebar-w: 274px;
+
   /* Colors */
 
   --white: white;
   --black: var(--dark2);
   --main: var(--blue);
+  --text: var(--dark3);
+
+  --sidebar: var(--grey);
+  --border: var(--grey4);
+  --softBorder: var(--grey3);
+
 
   --trans: rgba(0, 0, 0, 0.5);
 
-  --dark1: hsl(245, 80%, 15%); 
+  --dark1: hsl(245, 50%, 15%); 
   --dark2: hsl(245, 35%, 20%);
   --dark3: hsl(245, 20%, 25%);
   --dark4: hsl(242, 17%, 43%);
 
-  --grey: hsl(240, 100%, 99%);
-  --grey1: hsl(240, 100%, 97%);
-  --grey2: hsl(240, 37%, 95%);
-  --grey3: hsl(240, 37%, 90%);
+  --grey: hsl(240, 50%, 99%);
+  --grey1: hsl(240, 50%, 97%);
+  --grey2: hsl(240, 40%, 95%);
+  --grey3: hsl(240, 40%, 90%);
   --grey4: hsl(240, 10%, 80%);
   --grey5: hsl(240, 10%, 70%);
+  --grey6: hsl(240, 10%, 65%);
 
   --pblue: hsl(253, 95%, 60%);
   --pblue1:hsl(253, 100%, 75%);
@@ -183,7 +197,7 @@
   color: var(--main);
 }
 
-.text-base {
+.text-16px {
   font-size: 1rem;
 }
 
@@ -351,7 +365,7 @@ button[disabled] {
   height: 38px;
   padding: var(--m2);
   background-color: white;
-  border-radius: var(--r0);
+  border-radius: var(--r3);
   border: 1px solid var(--grey2);
 }
 

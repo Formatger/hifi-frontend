@@ -15,7 +15,7 @@ input[type="number"] {
 .auth-button {
   width: 100%;
   background: var(--main);
-  border-radius: var(--r0);
+  border-radius: var(--r3);
   color: white;
   height: 38px;
 }
@@ -243,14 +243,14 @@ button[disabled] {
 }
 
 .authkey.left {
-  border-top-left-radius: var(--r0);
-  border-bottom-left-radius: var(--r0);
+  border-top-left-radius: var(--r3);
+  border-bottom-left-radius: var(--r3);
   border-right: 0px solid;
 }
 
 .authkey.right {
-  border-top-right-radius: var(--r0);
-  border-bottom-right-radius: var(--r0);
+  border-top-right-radius: var(--r3);
+  border-bottom-right-radius: var(--r3);
   border-left: 0px solid;
 }
 

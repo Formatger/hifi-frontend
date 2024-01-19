@@ -11,7 +11,7 @@ import Balances from "../assets/images/balance.svg";
 import Customers from "../assets/images/Users.svg";
 import { BiX } from "react-icons/bi";
 import { useRouter } from "next/router";
-import HifiLogo from "@/components/assets/images/hifisvgwhite.svg";
+import HifiLogo from "@/components/assets/images/textLogo.svg";
 import Whitehome from "@/components/assets/images/whitehome.svg";
 import Whitecoin from "@/components/assets/images/whitecoin.svg";
 import Whiteuser from "@/components/assets/images/whiteuser.svg";
@@ -185,14 +185,14 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
 
   return (
     <div className={`${opacityCheck ? "opacity-0" : "opacity-100"} `}>
-      <div className="fixed top-0 z-20 w-full bg-white">
+      <div className="mobile-toolbar">
         <button
           data-drawer-target="default-sidebar"
           data-drawer-toggle="default-sidebar"
           aria-controls="default-sidebar"
           type="button"
           onClick={sidebar}
-          className="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+          className="mobile-button"
         >
           <span className="sr-only">Open sidebar</span>
           <svg
@@ -211,8 +211,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
         </button>
       </div>
 
-      <aside
-        id="default-sidebar"
+      <aside id="default-sidebar"
         className={`sidebar ${
           !mSidebar
             ? "-translate-x-full lg:translate-x-0"
@@ -220,26 +219,20 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
         }`}
         aria-label="Sidebar"
       >
-        <div className="logo-box">
-          <div>
-            <Image
-              src={HifiLogo}
-              alt="logo"
-              className="dash-logo"
-            />
-          </div>
-          <div></div>
-        </div>
         {/* sidebar */}
-        <div className="sidebar-box">
-          <div
-            onClick={sidebar}
-            className="absolute right-4 top-5 text-black border-2 inline-flex lg:hidden items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium rounded-full"
+        <div className="logo-box">
+          <Image src={HifiLogo} alt="logo" className="dash-logo" />
+          <div 
+             className="exit-button" 
+             onClick={sidebar}
           >
             <span className="text-2xl">
               <BiX />
             </span>
           </div>
+        </div>
+
+        <div className="menu-box">
           <ul className="space-y-2">
             {/* <Image src={HifiLogo} alt="logo" className="mb-[32px] w-[126px]" /> */}
 
@@ -249,9 +242,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
                   <Link
                     href={"/dashboard/" + data?.url}
                     className={`flex w-[190px] items-center justify-start mt-[0px] px-[8px] py-[8px] rounded-[6px]  ${
-                      data?.hookValue
-                        ? "main-grad"
-                        : "hover:bg-slate-100"
+                      data?.hookValue ? "main-grad" : "hover:bg-slate-100"
                     }`}
                   >
                     <div className="mr-[8px]">
@@ -266,7 +257,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
                       />
                     </div>
                     <div
-                      className={`w-[158px] text-base text-base not-italic poppins-remove leading-normal ${
+                      className={`w-[158px] text-16px text-base not-italic poppins-remove leading-normal ${
                         data?.hookValue
                           ? "font-bold text-white"
                           : "font-normal text-[#111012]"
@@ -279,7 +270,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
               );
             })}
           </ul>
-          <div className="absolute bottom-0 mb-[32px]">
+          <div>
             <Link
               href={"https://docs.hifibridge.com/reference/getting-started"}
               target="_blank"
@@ -290,7 +281,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
               <div className="mr-[8px]">
                 <Image src={Documentation} className="w-[24px]" alt="logo" />
               </div>
-              <div className="w-[158px] text-base text-[#111012] text-base font-normal poppins-remove leading-normal">
+              <div className="w-[158px] text-16px text-[#111012] text-base font-normal poppins-remove leading-normal">
                 Documentation
               </div>
             </Link>
@@ -302,7 +293,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
               <div className="mr-[8px]">
                 <Image src={Logout} className="w-[24px]" alt="logo" />
               </div>
-              <div className="w-[158px] text-base text-[#111012] text-base font-normal poppins-remove leading-normal">
+              <div className="w-[158px] text-16px text-[#111012] text-base font-normal poppins-remove leading-normal">
                 Logout
               </div>
             </Link>

@@ -84,14 +84,18 @@ const Balance = () => {
     {
       name: "payments",
       total_no: balanceData?.payment_count ? balanceData?.payment_count : 0,
-      usd: balanceData?.payment ? formatCurrency(balanceData?.payment) : formatCurrency(0),
+      usd: balanceData?.payment
+        ? formatCurrency(balanceData?.payment)
+        : formatCurrency(0),
       icon: "",
       status: "positive",
     },
     {
       name: "refund",
       total_no: balanceData?.refund_count ? balanceData?.refund_count : 0,
-      usd: balanceData?.refund ? formatCurrency(balanceData?.refund) : formatCurrency(0),
+      usd: balanceData?.refund
+        ? formatCurrency(balanceData?.refund)
+        : formatCurrency(0),
       icon: warning,
       status: "positive",
     },
@@ -109,13 +113,15 @@ const Balance = () => {
   const TotalTransaction = [
     {
       name: "Total transactions",
-      usd: balanceData?.total ? formatCurrency(balanceData?.total) : formatCurrency(0),
+      usd: balanceData?.total
+        ? formatCurrency(balanceData?.total)
+        : formatCurrency(0),
       status: balanceData?.total > -0.0001 ? "positive" : "negative",
     },
   ];
 
   return (
-    <div className="w-full flex  flex-col justify-center">
+    <div className="main-dashboard">
       <Header />
       <div className="w-full -mt-3 relative">
         <Balanceheader

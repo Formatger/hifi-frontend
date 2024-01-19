@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import "@/styles/core.css";
 import "@/styles/globals.css";
+import "@/styles/pages.css";
 import "@/styles/auth.css";
 import type { AppProps } from "next/app";
 import store from "../store/store";

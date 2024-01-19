@@ -3,10 +3,13 @@ import Chat from "../assets/images/chatwhite.svg";
 import User from "@/components/assets/images/userWhite.svg";
 import Image from "next/image";
 import axios from "axios";
+import useMediaQuery from "@/components/common/hooks/useMediaQuery";
+
 
 const Header = () => {
   const [businessName, setBusinessName] = useState<any>("Business Name");
   const [displayLogo, setDisplayLogo] = useState<any>();
+  const isDesktop = useMediaQuery('(min-width: 1025px)');
 
   useEffect(() => {
     setBusinessName(localStorage.getItem("businessName"));
@@ -28,17 +31,15 @@ const Header = () => {
 
   return (
     <>
-      <div className="fixed headerwidth w-full h-[74px] top-[48px] lg:top-0  main-grad pl-[20px] pr-[30px] z-20 lg:z-50 py-[10px] flex items-center justify-between mb-14 lg:mb-0">
-        <div className="capitalize text-white text-2xl md:text-[36px] font-normal poppins-remove leading-normal tracking-[0.36px]">
+      <div 
+      className="header"
+      // className="fixed headerwidth main-grad w-full h-[60px] top-[48px] lg:top-0 pl-[20px] pr-[30px] z-20 lg:z-50 py-[10px] flex items-center justify-between mb-14 lg:mb-0"
+      >
+       <div className="">
           {/* {businessName ? businessName : "Business Name"} */}
         </div>
         <div className="flex items-center justify-center">
-          <Image
-            src={Chat}
-            alt="chat"
-            className="mr-[28px] w-[24px] h-[24px]"
-          />
-          <div className="w-[24px] h-[24px] flex justify-center items-center">
+          <div className="user-wrap">
             <Image
               src={displayLogo ? displayLogo : User}
               alt="userlogo"
@@ -50,27 +51,8 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="sticky top-[48px] lg:top-0  bg-white px-[20px] z-0 py-[10px] border-b border-[#E5E9EB] flex items-center justify-between mb-14 lg:mb-0">
-        <div className="capitalize text-white text-2xl md:text-[36px] font-normal poppins-remove leading-normal tracking-[0.36px]">
-          {businessName ? businessName : "Business Name"}
-        </div>
-        <div className="flex items-center justify-center">
-          <Image
-            src={Chat}
-            alt="chat"
-            className="mr-[28px] w-[24px] h-[24px]"
-          />
-          <div className="w-[24px] h-[24px]">
-            <Image
-              src={displayLogo ? displayLogo : User}
-              alt="userlogo"
-              className="rounded-full w-full"
-              width="24"
-              height="24"
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-        </div>
+      <div className="sticky-header">
+
       </div>
     </>
   );

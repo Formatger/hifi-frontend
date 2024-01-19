@@ -351,13 +351,14 @@ const Overview = () => {
         </>
       ) : (
         <>
-          <div className="w-full  flex flex-col items-center justify-center p-1 sm:p-4 gap-4">
-            <DashboardHeader sections={sections} chartData={chartData} />
+          <div className="main-container" id="dashboard">
+            <div className="summary-wrap">
+              <DashboardHeader sections={sections} chartData={chartData} />
+            </div>
             <div
-              className="flex w-full flex-col xl:flex-row  gap-8
-         justify-center  items-start"
+              className="databox-wrap"
             >
-              <div className="flex w-full xl:w-[59%] flex-col gap-5 items-center justify-start">
+              <div className="databox account-data">
                 <AccountOverview
                   data={
                     dashboardData?.totalPurchaseVolume.length > 1
@@ -369,7 +370,7 @@ const Overview = () => {
                 {<TotalSales chartdata={transformedArray} />}
               </div>
 
-              <div className="flex w-full xl:w-[39%] flex-col items-center justify-start">
+              <div className="databox payments-data">
                 {dashboardData?.paymentData &&
                 dashboardData?.paymentData.length > 0 ? (
                   <PaymentsPayoutsCommon

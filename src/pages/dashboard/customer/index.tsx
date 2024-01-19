@@ -228,7 +228,7 @@ const Customer = () => {
   };
 
   return (
-    <div className="w-full relative flex xl:h-screen flex-col poppins-remove">
+    <div className="main-pages">
       <div className="w-full  ">
         <Header />
         <div className="w-full px-6 relative">
