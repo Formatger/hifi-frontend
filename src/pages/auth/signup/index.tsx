@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import TextInput from "@/components/auth/TextInput";
-import Button from "@/components/auth/Button";
 import LogoApp from "@/components/auth/LogoApp";
 import { Formik, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -175,23 +174,25 @@ const Signup = () => {
             </div>
           </div>
 
-              <div>
-                {!loader ? (
-                  <Button
-                    disabled={
-                      formValue?.email &&
-                      formValue?.businessName &&
-                      formValue?.phoneNumber &&
-                      formValue?.fullName
-                        ? false
-                        : true
-                    }
-                    buttonText="Sign up"
-                  />
+          <div>
+              {!loader ? (
+                  <button
+                  disabled={
+                    formValue?.email &&
+                    formValue?.businessName &&
+                    formValue?.phoneNumber &&
+                    formValue?.fullName
+                      ? false
+                      : true
+                  }
+                  className="app-button"
+                    >
+                    Sign up
+                  </button>
                 ) : (
                   <Loading />
-                )}
-              </div>
+              )}
+            </div>
 
               <AutoSubmitToken setFormValue={setFormValue} />
             </Form>

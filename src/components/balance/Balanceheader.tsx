@@ -14,7 +14,7 @@ interface balanceHeaderProps {
 
 export default function Balanceheader(props: balanceHeaderProps) {
   return (
-    <div className="w-[100%] px-5 py-[10px] bg-white justify-between items-center inline-flex max-sm:flex-col sticky top-[105px] lg:top-[68px] z-20">
+    <div className="w-[100%] py-[10px] bg-white justify-between items-center inline-flex max-sm:flex-col sticky top-[105px] lg:top-[68px] z-20">
       <div className="text-[#111012] text-[36px] font-semibold tracking-[0.36px] poppins-remove">
         {props.title}
       </div>

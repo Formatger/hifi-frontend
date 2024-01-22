@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import GoogleButton from "@/components/auth/GoogleButton";
 import TextInput from "@/components/auth/TextInput";
-import Button from "@/components/auth/Button";
 import LogoApp from "@/components/auth/LogoApp";
 import { Formik, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -174,7 +173,7 @@ const Signin = () => {
                   {!loader ? (
                       <button
                         disabled={formValue?.email && formValue?.password ? false : true}
-                        className="auth-button"
+                        className="app-button"
                         >
                         Sign in
                       </button>

@@ -7,8 +7,8 @@ import Modal from "react-modal";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Loading2 } from "@/components/auth/Loading";
-import { Oval } from "react-loader-spinner";
+import Loading from "@/components/auth/Loading";
+import MainLoader from "@/components/common/Loader";
 import { useRouter } from "next/router";
 
 const customStyles = {
@@ -112,23 +112,7 @@ const UploadLogo = () => {
     <div>
       <ToastContainer />
       {loadermain ? (
-        <>
-          {" "}
-          <div className="flex items-center justify-center mt-10">
-            <Oval
-              height={50}
-              width={50}
-              color="#E5E9EB"
-              wrapperStyle={{}}
-              wrapperClass=""
-              visible={true}
-              ariaLabel="oval-loading"
-              secondaryColor="bg-slate-100"
-              strokeWidth={3}
-              strokeWidthSecondary={3}
-            />
-          </div>
-        </>
+          <MainLoader />
       ) : (
         <>
           <div className="flex flex-col lg:flex-row items-center gap-10 border-b border-[#E5E9EB] py-5 lg:py-0 lg:pb-5">
@@ -233,14 +217,14 @@ const UploadLogo = () => {
           </div>
           {!loader ? (
             <button
-              className="w-[117px] h-8 py-1 bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] text-stone-50 hover:blue-text border-[1px] rounded-md poppins-remove"
+              className="w-[117px] h-8 py-1 bg-[#6200EE] hover:bg-[#c7c2ff] border-[#6200EE] text-stone-50 hover:blue-text border-[1px] rounded-md poppins-remove"
               onClick={handleClickChooseFile}
               disabled={loader}
             >
               Choose File
             </button>
           ) : (
-            <Loading2 />
+            <Loading />
           )}
 
           <div className="bg-[#F6F8F9] w-full h-7 mt-auto"></div>

@@ -5,7 +5,7 @@ import FilterHeader from "@/components/payments/Filterheader";
 import FilterSection from "@/components/payments/FilterSection";
 import { useEffect, useState } from "react";
 import PayoutTable from "@/components/payouts/PayoutTable";
-import { Oval } from "react-loader-spinner";
+import MainLoader from "@/components/common/Loader";
 import moment from "moment";
 
 interface PayoutData {
@@ -248,9 +248,9 @@ const Payouts = () => {
   };
 
   return (
-    <div className="w-full relative flex xl:h-screen flex-col poppins-remove">
-      <div className="w-full  ">
-        <Header />
+    <div className="main-container">
+      <Header />
+      <div className="page-container" id="payouts">
         <div className="w-full px-6 mt-4 flex flex-col relative">
           <div className="fixed lg:sticky w-full lg:w-auto top-[105px] lg:top-[78px] z-20 bg-white">
             <h1 className="text-[#111012] lg:-mt-3 mb-0 lg:mb-3 font-semibold poppins-remove text-[20px] lg:text-[36px] tracking-[0.36px] py-0">
@@ -299,20 +299,7 @@ const Payouts = () => {
           )}
         </div>
         {loader ? (
-          <div className="flex items-center justify-center mt-10 lg:mt-20">
-            <Oval
-              height={50}
-              width={50}
-              color="#E5E9EB"
-              wrapperStyle={{}}
-              wrapperClass=""
-              visible={true}
-              ariaLabel="oval-loading"
-              secondaryColor="bg-slate-100"
-              strokeWidth={3}
-              strokeWidthSecondary={3}
-            />
-          </div>
+          <MainLoader />
         ) : (
           <>
             {payoutData?.length === 0 ? (

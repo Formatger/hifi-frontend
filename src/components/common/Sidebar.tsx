@@ -232,37 +232,29 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
           </div>
         </div>
 
-        <div className="menu-box">
-          <ul className="space-y-2">
-            {/* <Image src={HifiLogo} alt="logo" className="mb-[32px] w-[126px]" /> */}
-
+        <div className="nav-box">
+          <ul>
             {sidebarData.map((data, idx) => {
               return (
                 <li key={idx}>
                   <Link
                     href={"/dashboard/" + data?.url}
-                    className={`flex w-[190px] items-center justify-start mt-[0px] px-[8px] py-[8px] rounded-[6px]  ${
-                      data?.hookValue ? "main-grad" : "hover:bg-slate-100"
+                    className={`navlink-wrap ${
+                      data?.hookValue ? "navlink-active" : "navlink-inactive"
                     }`}
                   >
-                    <div className="mr-[8px]">
+                    <div>
                       <Image
                         src={
                           data?.hookValue
                             ? data?.imageSrcSelect
                             : data?.imageSrc
                         }
-                        className="w-[24px]"
+                        className="nav-image"
                         alt="logo"
                       />
                     </div>
-                    <div
-                      className={`w-[158px] text-16px text-base not-italic poppins-remove leading-normal ${
-                        data?.hookValue
-                          ? "font-bold text-white"
-                          : "font-normal text-[#111012]"
-                      }`}
-                    >
+                    <div>
                       {data?.title === "MyAccount" ? "My Account" : data?.title}
                     </div>
                   </Link>
@@ -271,38 +263,40 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
             })}
           </ul>
           <div>
-            <Link
-              href={"https://docs.hifibridge.com/reference/getting-started"}
-              target="_blank"
-              className={`flex items-center justify-start mt-[4px] px-[4px] py-[8px] rounded-[6px]  ${
-                documentation ? "bg-[#E5E9EB]" : "hover:bg-slate-100"
-              }`}
-            >
-              <div className="mr-[8px]">
-                <Image src={Documentation} className="w-[24px]" alt="logo" />
-              </div>
-              <div className="w-[158px] text-16px text-[#111012] text-base font-normal poppins-remove leading-normal">
-                Documentation
-              </div>
-            </Link>
-            <Link
-              href={"/auth/signin"}
-              onClick={onClickLogout}
-              className={`flex items-center justify-start mt-[4px] px-[4px] py-[8px] hover:bg-slate-100`}
-            >
-              <div className="mr-[8px]">
-                <Image src={Logout} className="w-[24px]" alt="logo" />
-              </div>
-              <div className="w-[158px] text-16px text-[#111012] text-base font-normal poppins-remove leading-normal">
-                Logout
-              </div>
-            </Link>
+            <li>
+              <Link
+                href={"https://docs.hifibridge.com/reference/getting-started"}
+                target="_blank"
+                className="navlink-wrap"
+              >
+                <div>
+                  <Image src={Documentation} className="nav-image" alt="logo" />
+                </div>
+                <div>
+                  Documentation
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={"/auth/signin"}
+                onClick={onClickLogout}
+                className="navlink-wrap"
+              >
+                <div>
+                  <Image src={Logout} className="nav-image" alt="logo" />
+                </div>
+                <div>
+                  Logout
+                </div>
+              </Link>
+            </li>
           </div>
         </div>
       </aside>
 
       <div className="lg:ml-[274px]">
-        <div className="">{layout}</div>
+        <div>{layout}</div>
       </div>
     </div>
   );

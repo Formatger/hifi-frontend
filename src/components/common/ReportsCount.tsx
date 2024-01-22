@@ -7,7 +7,7 @@ interface reportsCountProps {
 
 const ReportsCount = (props: reportsCountProps) => {
   return (
-    <p className="h-[4vh] text-center lg:text-left  flex items-center px-4 text-gray-500 font-semibold text-base">
+    <p className="h-[4vh] text-center lg:text-left  flex items-center text-gray-500 font-semibold text-base">
       {props.amount} {props.type}
     </p>
   );

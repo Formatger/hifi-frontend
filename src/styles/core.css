@@ -68,7 +68,7 @@
 
   /* Size */
 
-  --toolbar-h: 65px;
+  --toolbar-h: 74px;
   --sidebar-w: 274px;
 
   /* Colors */
@@ -76,12 +76,11 @@
   --white: white;
   --black: var(--dark2);
   --main: var(--blue);
-  --text: var(--dark3);
 
+  --text: var(--dark3);
   --sidebar: var(--grey);
   --border: var(--grey4);
   --softBorder: var(--grey3);
-
 
   --trans: rgba(0, 0, 0, 0.5);
 
@@ -98,21 +97,15 @@
   --grey5: hsl(240, 10%, 70%);
   --grey6: hsl(240, 10%, 65%);
 
-  --pblue: hsl(253, 95%, 60%);
-  --pblue1:hsl(253, 100%, 75%);
-  --pblue2: hsl(253, 100%, 80%);
-
   --blue: #5545fa;
+  --blue2: #8d83fb;
+
   --green: hsl(174, 98%, 41%);
+  --green2: hsl(174, 40%, 70%);
 
-  --orange: hsl(14, 100%, 68%);
-  --cream: hsl(1, 100%, 78%);
-
-  --purple1: hsl(270, 100%, 65%);
-  --purple2: hsl(263, 70%, 55%);
-  --purple3: hsl(263, 70%, 45%);
-  --purple4: hsl(263, 80%, 40%);
-  --purple5: hsl(263, 80%, 29%);
+  --red: hsl(8, 100%, 56%);
+  --red2: hsl(1, 100%, 75%);
+  --red3: hsl(1, 100%, 80%);
 
   --sBlue: #D0CFFF;
   --sBlue2: #aba8ff;
@@ -123,7 +116,16 @@
   --sGreen: #EDFFF2;
   --sOrange: #fff3ed;
 
-  --red: #ff3414;
+    /* --pblue: hsl(253, 95%, 60%);
+  --pblue1:hsl(253, 100%, 75%);
+  --pblue2: hsl(253, 100%, 80%); */
+
+    /* --purple1: hsl(270, 100%, 65%);
+  --purple2: hsl(263, 70%, 55%);
+  --purple3: hsl(263, 70%, 45%);
+  --purple4: hsl(263, 80%, 40%);
+  --purple5: hsl(263, 80%, 29%); */
+
 
   /* ------------ Gradients -------------*/
 
@@ -240,7 +242,8 @@
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 0.875rem;
+  /* font-size: 0.875rem; */
+  font-size: 0.9375rem;
   outline: none;
   color: hsl(245, 35%, 20%);
 }
@@ -332,6 +335,29 @@ button[disabled] {
   cursor: auto;
 }
 
+.app-button {
+  width: 100%;
+  background: var(--main); 
+  border-radius: var(--r3);
+  color: white;
+  min-height: 34px;
+}
+
+.app-button:hover {
+  filter:brightness(110%)
+}
+
+.app-button:hover[disabled],
+button[disabled] {
+  opacity: 0.4;
+  filter: saturate(80%);
+  filter: hue-rotate(-8deg);
+}
+
+/* 
+background: #5545fa;
+ */
+
 /* Loader */
 
 .button-loader {
@@ -340,25 +366,42 @@ button[disabled] {
   align-items: center;
 }
 
+.main-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .main-loader {
+    margin-top: 2.5rem;
+  }
+}
+
+
 /* Input */
 
-.inputStyle {
+/* .inputStyle {
   width: 3rem !important;
   height: 3rem;
   margin: 1px;
   font-size: 1rem;
   font-weight: bold;
   border-radius: 8px;
-  border: 1px solid #b0babf;
   background: var(--neutrals-white-pure, #fff);
+  background: red !important;
+  border: 1px solid #ff0000 !important;
+}
 
-  @media (max-width: 700px) {
+@media (max-width: 700px) {
+  .inputStyle {
     width: 2rem !important;
     height: 2rem;
     margin: 1px;
     font-size: 1rem;
   }
-}
+} */
 
 .main-input {
   width: 100%;
@@ -399,7 +442,6 @@ input:focus {
 }
 
 .custom-axis-label {
-  /* font-family: "Poppins", sans-serif !important; */
   letter-spacing: 0.24px !important;
 }
 
@@ -410,14 +452,14 @@ input:focus {
 }
 
 .custom-checkbox:hover {
-  background-color: var(--purple3);
-  accent-color: var(--purple3);
+  background-color: var(--main);
+  accent-color: var(--main);
 }
 
 /* React Calendar */
 
 .react-calendar {
-  font-family: "Poppins", sans-serif !important;
+  /* font-family: "Poppins", sans-serif !important; */
   font-size: 16px !important;
   font-style: normal !important;
   font-weight: 400 !important;

@@ -8,7 +8,7 @@ import UploadLogo from "@/components/myaccount/UploadLogo";
 import SettingsForm from "@/components/myaccount/SettingsForm";
 import BusinessSettings from "@/components/myaccount/BusinessSettings";
 import axios from "axios";
-import { Oval } from "react-loader-spinner";
+import MainLoader from "@/components/common/Loader";
 
 const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
@@ -42,22 +42,7 @@ const Profile = () => {
       <div className="w-full">
         <Header />
         {loader ? (
-          <>
-            <div className="flex items-center justify-center mt-10 lg:mt-20">
-              <Oval
-                height={50}
-                width={50}
-                color="#E5E9EB"
-                wrapperStyle={{}}
-                wrapperClass=""
-                visible={true}
-                ariaLabel="oval-loading"
-                secondaryColor="bg-slate-100"
-                strokeWidth={3}
-                strokeWidthSecondary={3}
-              />
-            </div>
-          </>
+            <MainLoader />
         ) : (
           <>
             <div className="w-full p-3 lg:p-6 ">

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import TextInput from "@/components/auth/TextInput";
-import Button from "@/components/auth/Button";
 import LogoApp from "@/components/auth/LogoApp";
 import { Formik, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -161,7 +160,7 @@ const ResetPassword = () => {
 
                   <div>
                     {!loader ? (
-                      <button className="auth-button"
+                      <button className="app-button"
                         disabled={
                           formValue?.password && formValue?.confirmPassword
                             ? false
@@ -263,7 +262,7 @@ const ResetPassword = () => {
               <div className="mt-box">
                 {!loader ? (
                   <button
-                    className="auth-button"
+                    className="app-button"
                     onClick={onSubmit2}
                     disabled={otp.length <= 5}
                   >

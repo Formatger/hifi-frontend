@@ -2,7 +2,7 @@ import React from "react";
 
 export default function OutGoinghifipay({ TotalTransaction }: any) {
   return (
-    <div className="w-[100%] px-5 py-2.5 justify-start items-start gap-5 inline-flex max-sm:flex-col poppins-remove">
+    <div className="w-[100%] py-2.5 justify-start items-start gap-5 inline-flex max-sm:flex-col poppins-remove">
       <div className="w-[70%] flex-col justify-start items-start inline-flex max-sm:w-[100%]">
         <div className=" pr-2.5 py-2.5 bg-white border-b border-gray-200 justify-start items-center gap-2.5 inline-flex">
           <div className="text-[#111012] text-xl font-semibold poppins-remove leading-loose">

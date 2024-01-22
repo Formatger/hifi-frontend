@@ -41,7 +41,7 @@ const Items: React.FC<ItemsProps> = ({ currentItems }) => {
   };
   return (
     <div>
-      <div className="w-full mb-8 px-4 overflow-hidden rounded-lg shadow-xs text-sm">
+      <div className="w-full mb-8 overflow-hidden rounded-lg shadow-xs text-sm">
         <div className="w-full   overflow-x-auto">
           <table className="w-full">
             <thead>

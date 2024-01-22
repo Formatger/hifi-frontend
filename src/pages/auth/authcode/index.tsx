@@ -179,7 +179,7 @@ const AuthCode = () => {
               <div className="mt-box">
                 {!loader ? (
                   <button
-                    className="auth-button"
+                    className="app-button"
                     onClick={onSubmit}
                     disabled={otp.length <= 5}
                   >

@@ -10,7 +10,7 @@ import warning from "@/components/assets/images/WarningCircle.svg";
 import OutGoinghifipay from "@/components/balance/OutGoinghifipay";
 import { formatCurrency } from "@/utils/formatCurrency";
 import axios from "axios";
-import { Oval } from "react-loader-spinner";
+import MainLoader from "@/components/common/Loader";
 
 interface MyData {
   currently_way_to_bank_account: null | string;
@@ -121,34 +121,17 @@ const Balance = () => {
   ];
 
   return (
-    <div className="main-dashboard">
+    <div className="main-container">
       <Header />
-      <div className="w-full -mt-3 relative">
+      <div className="page-container" id="balances">
         <Balanceheader
           title={"Balances"}
           BalanceheaderData={BalanceheaderData}
         />
         {loader ? (
-          <>
-            {" "}
-            <div className="flex items-center justify-center mt-10 lg:mt-20">
-              <Oval
-                height={50}
-                width={50}
-                color="#E5E9EB"
-                wrapperStyle={{}}
-                wrapperClass=""
-                visible={true}
-                ariaLabel="oval-loading"
-                secondaryColor="bg-slate-100"
-                strokeWidth={3}
-                strokeWidthSecondary={3}
-              />
-            </div>
-          </>
+          <MainLoader />
         ) : (
           <>
-            {" "}
             <Totalbalance
               title={" USD Balance"}
               TotalbalanceData={TotalbalanceData}

@@ -7,7 +7,7 @@ import FilterSection from "@/components/payments/FilterSection";
 import FilterHeader from "@/components/payments/Filterheader";
 import moment from "moment";
 import axios from "axios";
-import { Oval } from "react-loader-spinner";
+import MainLoader from "@/components/common/Loader";
 
 interface User {
   createDate: any;
@@ -228,10 +228,10 @@ const Customer = () => {
   };
 
   return (
-    <div className="main-pages">
-      <div className="w-full  ">
-        <Header />
-        <div className="w-full px-6 relative">
+    <div className="main-container">
+      <Header />
+      <div className="page-container" id="customer">
+        <div>
           <div className="sticky top-14 lg:top-[74px] z-20">
             <Customerheader />
           </div>
@@ -277,20 +277,7 @@ const Customer = () => {
           )}
         </div>
         {loader ? (
-          <div className="flex items-center justify-center mt-10 lg:mt-20">
-            <Oval
-              height={50}
-              width={50}
-              color="#E5E9EB"
-              wrapperStyle={{}}
-              wrapperClass=""
-              visible={true}
-              ariaLabel="oval-loading"
-              secondaryColor="bg-slate-100"
-              strokeWidth={3}
-              strokeWidthSecondary={3}
-            />
-          </div>
+          <MainLoader />
         ) : (
           <>
             {customerData?.length === 0 ? (

@@ -265,7 +265,7 @@ const ApplyButton = ({ onClick }: any) => {
   return (
     <button
       onClick={onClick}
-      className="w-[294px] h-8 px-3.5 py-1 text-[#F9F9F7] hover:blue-text bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] border-[1px] rounded-md mt-4"
+      className="app-button"
     >
       Apply
     </button>

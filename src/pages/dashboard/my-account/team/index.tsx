@@ -18,7 +18,8 @@ import checkcircle from "@/components/assets/images/CheckCircleGreen.svg";
 import { CSVLink } from "react-csv";
 import downloadsimple from "@/components/assets/images/downloadsimple.svg";
 import axios from "axios";
-import { Oval, TailSpin } from "react-loader-spinner";
+import { TailSpin } from "react-loader-spinner";
+import MainLoader from "@/components/common/Loader";
 import moment from "moment";
 
 const items = [
@@ -222,20 +223,7 @@ const Team = () => {
           </div>
           <div className="flex flex-col">
             {loader ? (
-              <div className="flex items-center justify-center mt-10">
-                <Oval
-                  height={50}
-                  width={50}
-                  color="#E5E9EB"
-                  wrapperStyle={{}}
-                  wrapperClass=""
-                  visible={true}
-                  ariaLabel="oval-loading"
-                  secondaryColor="bg-slate-100"
-                  strokeWidth={3}
-                  strokeWidthSecondary={3}
-                />
-              </div>
+              <MainLoader />
             ) : (
               <>
                 {teamData?.length === 0 ? (

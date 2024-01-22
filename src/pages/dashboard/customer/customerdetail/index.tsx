@@ -10,7 +10,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import coinbaseicon from "@/components/assets/images/Coinbase Icon.svg";
 import metamaskicon from "@/components/assets/images/metamask.png";
-import { Oval } from "react-loader-spinner";
+import MainLoader from "@/components/common/Loader";
 
 interface User {
   algoId: any;
@@ -133,29 +133,14 @@ const CustomerDetail = () => {
   }, [router]);
   return (
     <div className="w-full flex flex-col justify-center poppins-remove">
-      <div className="w-full  ">
+      <div className="w-full">
         <Header />
         <div className="w-full flex flex-col  gap-6 -mt-2">
           <div className="sticky h-20 top-[105px] lg:top-[74px] px-6 pt-0 pb-0 z-20 bg-white flex items-center mt-0">
             <Breadcrumbs items={breadcrumbItems} />
           </div>
           {loader ? (
-            <>
-              <div className="flex items-center justify-center mt-10 lg:mt-20">
-                <Oval
-                  height={50}
-                  width={50}
-                  color="#E5E9EB"
-                  wrapperStyle={{}}
-                  wrapperClass=""
-                  visible={true}
-                  ariaLabel="oval-loading"
-                  secondaryColor="bg-slate-100"
-                  strokeWidth={3}
-                  strokeWidthSecondary={3}
-                />
-              </div>
-            </>
+            <MainLoader />
           ) : (
             <>
               {" "}

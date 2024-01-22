@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import TextInput from "@/components/auth/TextInput";
-import Button from "@/components/auth/Button";
 import LogoApp from "@/components/auth/LogoApp";
 import { Formik, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -101,14 +100,17 @@ const ForgotPassword = () => {
 
                 <div>
                   {!loader ? (
-                    <Button
+                    <button
                       disabled={formValue?.email ? false : true}
-                      buttonText="Send Email"
-                    />
+                      className="app-button"
+                    >
+                    Send Email
+                    </button>
                   ) : (
                     <Loading />
                   )}
                 </div>
+                
                 <AutoSubmitToken setFormValue={setFormValue} />
               </Form>
             </Formik>

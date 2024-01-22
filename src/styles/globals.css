@@ -20,39 +20,6 @@
   }
 }
 
-/* .headerwidth {
-  width: calc(100vw - 274px);
-}
-
-@media (min-width: 1024px) {
-  .headerwidth {
-    width: 100%;
-  }
-} */
-
-/* Mobile Button */
-
-.mobile-toolbar {
-  position: fixed;
-  height: var(--toolbar-h);
-  top: 0;
-  z-index: 21;
-  width: 100%;
-  display: flex;
-}
-
-.mobile-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: var(--m0);
-  margin-left: var(--m3);
-  font-size: 0.875rem;
-  color: var(--dark4);
-  border-radius: 0.5rem;
-}
-
 /* Header */
 
 .header {
@@ -64,12 +31,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 20;
+  z-index: 30;
   padding-left: 20px;
   padding-right: 30px;
-  /* border-bottom: 1px solid #E5E9EB; */
-  background: var(--white);
-  /* border: 1px solid rgb(30, 255, 0); */
+  background: var(--grey);
   border-bottom: 1px solid var(--softBorder);
 }
 
@@ -86,13 +51,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-@media (min-width: 1024px) {
-
-  .header {
-    padding-left: var(--sidebar-w);
-  }
 }
 
 /* Sidebar */
@@ -120,7 +78,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 25;
+  z-index: 40;
   padding-top: 6px;
   height: var(--toolbar-h);
   padding-left: var(--m8);
@@ -131,7 +89,7 @@
     height: 25px;
   }
 
-.menu-box {
+.nav-box {
   position: relative;
   padding: var(--m4) var(--m7);
   overflow-y: auto;
@@ -139,6 +97,40 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-top: var(--m1);
+}
+
+.nav-box li {
+  margin: var(--m2) 0;
+  list-style-type: none;
+}
+
+.nav-image {
+  margin-right: var(--m2);
+  width: 24px;
+  height: auto;
+}
+
+.navlink-wrap {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 0;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.navlink-wrap:hover {
+  background: var(--grey2);
+}
+
+.navlink-active,
+.navlink-active:hover {
+  background: var(--main);
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.01rem;
 }
 
 .exit-button {
@@ -157,7 +149,36 @@
   cursor: pointer;
 }
 
+/* Mobile Button */
+
+.mobile-toolbar {
+  position: fixed;
+  height: var(--toolbar-h);
+  top: 0;
+  z-index: 35;
+  width: 100%;
+  display: flex;
+}
+
+.mobile-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--m0);
+  margin-left: var(--m3);
+  font-size: 0.875rem;
+  color: var(--dark4);
+  border-radius: 0.5rem;
+}
+
 @media (min-width: 1024px) {
+
+  .header {
+    padding-left: var(--sidebar-w);
+  }
+
+  .mobile-toolbar,
   .exit-button {
     display: none;
   }

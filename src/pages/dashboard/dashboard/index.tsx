@@ -7,7 +7,7 @@ import PaymentsPayoutsCommon from "@/components/dashboard/PaymentsPayoutsCommon"
 import Header from "@/components/common/Header";
 import axios from "axios";
 import upstream from "@/components/assets/images/upstream.svg";
-import { Oval } from "react-loader-spinner";
+import MainLoader from "@/components/common/Loader";
 import Link from "next/link";
 import { numericToWordMonth } from "@/utils/monthconverter";
 
@@ -321,7 +321,7 @@ const Overview = () => {
             {type}
           </Link>
         </h1>
-        <p className="font-semibold poppins-remove text-center self-center mt-4">
+        <p className="font-semibold text-center self-center mt-4">
           "No Records Found"
         </p>
       </div>
@@ -329,29 +329,13 @@ const Overview = () => {
   );
 
   return (
-    <div className="w-full flex flex-col justify-center">
+    <div className="main-container">
       <Header />
       {loader ? (
-        <>
-          {" "}
-          <div className="flex items-center justify-center mt-10 lg:mt-20">
-            <Oval
-              height={50}
-              width={50}
-              color="#E5E9EB"
-              wrapperStyle={{}}
-              wrapperClass=""
-              visible={true}
-              ariaLabel="oval-loading"
-              secondaryColor="bg-slate-100"
-              strokeWidth={3}
-              strokeWidthSecondary={3}
-            />
-          </div>
-        </>
+          <MainLoader />
       ) : (
         <>
-          <div className="main-container" id="dashboard">
+          <div className="page-container" id="dashboard">
             <div className="summary-wrap">
               <DashboardHeader sections={sections} chartData={chartData} />
             </div>

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import LogoApp from "@/components/auth/LogoApp";
 import { useRouter } from "next/router";
-import Button from "@/components/auth/Button";
 import axios from "axios";
 import Loading from "@/components/auth/Loading";
 import { ToastContainer, toast } from "react-toastify";
@@ -58,7 +57,7 @@ const PasswordReset = () => {
               {!loader ? (
                 <button
                   onClick={handleClick}
-                  className={`auth-button`}
+                  className={`app-button`}
                 >
                   Resend Email
                 </button>

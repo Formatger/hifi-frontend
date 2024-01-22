@@ -62,7 +62,7 @@ const Invite = () => {
             <div className="mt-text">
               <div>
                 <button
-                  className={"auth-button"}
+                  className={"app-button"}
                   onClick={acceptinvite}
                   disabled={loader}
                 >

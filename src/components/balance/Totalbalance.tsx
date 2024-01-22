@@ -14,7 +14,7 @@ interface TotalBalanceProps {
 
 export default function Totalbalance(props: TotalBalanceProps) {
   return (
-    <div className="w-[100%] justify-between items-start gap-5 inline-flex px-5 py-2.5 max-sm:flex-col ">
+    <div className="w-[100%] justify-between items-start gap-5 inline-flex py-2.5 max-sm:flex-col ">
       <div className="w-[70%] flex-col justify-start items-start inline-flex max-sm:w-[100%]">
         <div className="self-stretch pr-2.5 py-2.5 bg-white border-b border-gray-200 justify-start items-center gap-2.5 inline-flex">
           <div className="text-[#111012] text-xl font-semibold poppins-remove capitalize leading-loose poppins-remove">

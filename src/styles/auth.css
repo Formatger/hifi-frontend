@@ -12,25 +12,6 @@ input[type="number"] {
 
 /* AUTH */
 
-.auth-button {
-  width: 100%;
-  background: var(--main);
-  border-radius: var(--r3);
-  color: white;
-  height: 38px;
-}
-
-.auth-button:hover {
-  filter:brightness(110%)
-}
-
-.auth-button:hover[disabled],
-button[disabled] {
-  opacity: 0.4;
-  filter: saturate(80%);
-  filter: hue-rotate(-8deg);
-}
-
 .auth-container {
   min-height: 100vh;
   padding: var(--m2);
@@ -38,6 +19,10 @@ button[disabled] {
   align-items: center;
   justify-content: space-around;
   background: linear-gradient(120deg,#ffffff 55%, var(--main) 45%);
+}
+
+.auth-container .app-button {
+  height: 38px;
 }
 
 .authbox-wrap {
@@ -121,18 +106,18 @@ button[disabled] {
 }
 
 .auth-link {
-  color: var(--pblue);
+  color: var(--main);
   text-decoration: underline;
 }
 
 .disabled-link {
-  color: var(--pblue);
+  color: var(--main);
   opacity: 0.7;
   text-decoration: none;
 }
 
 .disabled-link-focus {
-  color: var(--pblue);
+  color: var(--main);
   text-decoration: none;
   opacity: 0.5;
 }
@@ -165,8 +150,11 @@ button[disabled] {
   margin-top: 6px;
 }
 
+.start-box .list-icon {
+}
+
 .start-box .h7 {
-  color: var(--blue);
+  color: var(--main);
 }
 
 .start-box .list-text {

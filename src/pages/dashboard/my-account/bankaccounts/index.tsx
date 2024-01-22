@@ -11,7 +11,7 @@ import pencilsimple from "@/components/assets/images/PencilSimpleBlack.svg";
 import AddAccountModal from "@/components/myaccount/AddAccountModal";
 import axios from "axios";
 import { BiCheck, BiSolidTrashAlt } from "react-icons/bi";
-import { Oval } from "react-loader-spinner";
+import MainLoader from "@/components/common/Loader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loading from "@/components/auth/Loading";
@@ -188,22 +188,7 @@ const BankAccounts = () => {
 
               <div className="w-full overflow-y-scroll overflow-x-auto lg:overflow-hidden">
                 {loader ? (
-                  <>
-                    <div className="flex items-center justify-center mt-10 lg:mt-20">
-                      <Oval
-                        height={50}
-                        width={50}
-                        color="#E5E9EB"
-                        wrapperStyle={{}}
-                        wrapperClass=""
-                        visible={true}
-                        ariaLabel="oval-loading"
-                        secondaryColor="bg-slate-100"
-                        strokeWidth={3}
-                        strokeWidthSecondary={3}
-                      />
-                    </div>
-                  </>
+                   <MainLoader />
                 ) : (
                   <>
                     {bankdata?.length > 0 ? (

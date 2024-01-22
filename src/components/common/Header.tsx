@@ -9,7 +9,7 @@ import useMediaQuery from "@/components/common/hooks/useMediaQuery";
 const Header = () => {
   const [businessName, setBusinessName] = useState<any>("Business Name");
   const [displayLogo, setDisplayLogo] = useState<any>();
-  const isDesktop = useMediaQuery('(min-width: 1025px)');
+  // const isDesktop = useMediaQuery('(min-width: 1025px)');
 
   useEffect(() => {
     setBusinessName(localStorage.getItem("businessName"));
@@ -38,12 +38,11 @@ const Header = () => {
        <div className="">
           {/* {businessName ? businessName : "Business Name"} */}
         </div>
-        <div className="flex items-center justify-center">
+        <div>
           <div className="user-wrap">
             <Image
               src={displayLogo ? displayLogo : User}
               alt="userlogo"
-              className="rounded-full w-full "
               width="24"
               height="24"
               style={{ objectFit: "cover" }}

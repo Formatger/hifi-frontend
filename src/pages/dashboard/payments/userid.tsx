@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import DetailsPayment from "@/components/payments/paymentsInternal/DetailsPayment";
-import { Oval } from "react-loader-spinner";
+import MainLoader from "@/components/common/Loader";
 
 interface TransactionDataProps {
   algoId: any;
@@ -252,22 +252,7 @@ const Userid = () => {
             {transactionData && <Payment paymentDetails={payment_details} />}
           </div>
           {loader ? (
-            <>
-              <div className="flex items-center justify-center mt-10 lg:mt-20">
-                <Oval
-                  height={50}
-                  width={50}
-                  color="#E5E9EB"
-                  wrapperStyle={{}}
-                  wrapperClass=""
-                  visible={true}
-                  ariaLabel="oval-loading"
-                  secondaryColor="bg-slate-100"
-                  strokeWidth={3}
-                  strokeWidthSecondary={3}
-                />
-              </div>
-            </>
+            <MainLoader />
           ) : (
             <>
               {" "}
