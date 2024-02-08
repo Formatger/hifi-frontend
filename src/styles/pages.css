@@ -33,7 +33,7 @@
   /* border: 2px solid rgb(0, 255, 0); */
 }
 
-.databox-wrap {
+.databox-group {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -43,7 +43,7 @@
   /* border: 2px solid rgb(0, 255, 0); */
 }
 
-.databox {
+.databox-wrap {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -53,16 +53,64 @@
   /* border: 2px solid rgb(217, 91, 255); */
 }
 
+.databox {
+  width: 100%;
+  border: var(--sborder);
+  border-radius: var(--radius);
+  padding: var(--padBox);
+  /* box-shadow: var(--sh-box); */
+}
+
+.databox-content {
+  padding-top: var(--m2);
+}
+
+.dash-header {
+  width: 100%;
+  height: auto;
+  min-height: 140px;
+  border: var(--sborder);
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: var(--padBox);
+  gap: var(--m4);
+}
+
+.dash-header-box {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .dash-header-box {
+    width: 33.333%;
+  }
+}
+
+
 @media (min-width: 1280px) {
 
-  .databox-wrap {
+  .databox-group {
     flex-direction: row;
   }
 
-  .databox.account-data {
+  .databox-wrap.account {
     width: 60%;
   }
-  .databox.payments-data {
+  .databox-wrap.transactions {
     width: 40%;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .dash-header {
+    flex-direction: row;
+    gap: var(--m3);
   }
 }

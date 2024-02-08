@@ -281,11 +281,11 @@ const Customer = () => {
         ) : (
           <>
             {customerData?.length === 0 ? (
-              <div className="flex items-center justify-center flex-col mt-10 lg:mt-20 p-4 lg:p-0">
-                <div className="font-semibold poppins-remove">
+              <div className="no-records-wrap">
+                <div className="bold">
                   "No Records Found"
                 </div>
-                <div className="poppins-remove m-4">
+                <div className="m-4">
                   There are no records matching your search criteria in the
                   table.
                 </div>

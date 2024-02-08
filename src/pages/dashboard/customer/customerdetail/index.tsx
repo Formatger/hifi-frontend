@@ -151,8 +151,8 @@ const CustomerDetail = () => {
                 </div>
                 <div className="w-full lg:w-[60%]">
                   {customerAll?.length === 0 ? (
-                    <div className="flex items-center justify-center flex-col mt-10 lg:mt-20 p-4 lg:p-0 mb-20">
-                      <div className="font-semibold poppins-remove">
+                    <div className="no-records-wrap">
+                      <div className="bold">
                         "No Records Found"
                       </div>
                     </div>

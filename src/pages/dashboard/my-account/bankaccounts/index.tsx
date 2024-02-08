@@ -281,11 +281,11 @@ const BankAccounts = () => {
                       </>
                     ) : (
                       <>
-                        <div className="flex items-center justify-center flex-col mt-10 lg:mt-20 p-4 lg:p-0">
-                          <div className="font-semibold poppins-remove">
+                        <div className="no-records-wrap">
+                          <div className="bold">
                             "No Records Found"
                           </div>
-                          <div className="poppins-remove">
+                          <div>
                             Please add bank account first.
                           </div>
                         </div>

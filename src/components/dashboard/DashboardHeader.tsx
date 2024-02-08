@@ -13,8 +13,8 @@ import {
 import { formatCurrency } from "@/utils/formatCurrency";
 
 const gradientColors: any = {
-  purchasesData: { start: "#6418C370", end: "#C751FF0D" },
-  revenueData: { start: "#9A98FFBF", end: "#8FD0FF24" },
+  purchasesData: { start: "#02cfbb70", end: "#02cfbb0D" },
+  revenueData: { start: "#5E5BFFBF", end: "#8FD0FF24" },
   customersData: { start: "#FF967E80", end: "#FFC67221" },
 };
 
@@ -39,7 +39,7 @@ const Chart = ({ data, dataType, valueName }: any) => {
 
   return (
     <div className="">
-      <ResponsiveContainer width={136} height={75}>
+      <ResponsiveContainer width={120} height={75}>
         <AreaChart data={data}>
           <defs>
             <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
@@ -68,11 +68,11 @@ const Chart = ({ data, dataType, valueName }: any) => {
 
 const DashboardHeader = ({ sections }: any) => {
   return (
-    <div className="w-full md:h-[146px] bg-white rounded-2xl border border-[#E5E9EB] flex justify-center items-center flex-col md:flex-row p-5 gap-5 md:gap-0">
+    <div className="dash-header">
       {sections.map((section: any, index: any) => (
         <div
           key={index}
-          className={`h-[106px] w-full flex md:w-[33.333%] text-sm items-center ${
+          className={`dash-header-box ${
             index === 0
               ? "justify-center lg:justify-start"
               : index === 2
@@ -80,11 +80,11 @@ const DashboardHeader = ({ sections }: any) => {
               : "justify-center"
           } ${index !== 2 ? "lg:border-r border-[#E5E9EB]" : ""}`}
         >
-          <div className="flex-col justify-center items-center gap-4">
-            <h1 className="text-[#4B5563] text-sm xl:text-base font-semibold poppins-remove ">
+          <div>
+            <p className="h7">
               {section.title}
-            </h1>
-            <div className="flex items-center gap-[6.11px]">
+            </p>
+            <div className="row-wrap mt-1">
               {section?.icon === "n/a" ? (
                 <></>
               ) : (
@@ -95,7 +95,7 @@ const DashboardHeader = ({ sections }: any) => {
                       <Image
                         src={section.icon}
                         alt="icon"
-                        className="bg-[#F0FDF4] w-4 h-4 rounded-full p-[2px]"
+                        className="arrow-up"
                       />
                     </>
                   )}
@@ -106,12 +106,12 @@ const DashboardHeader = ({ sections }: any) => {
                 <MdTrendingDown className="bg-[#ffffe6] text-red-600 w-4 h-4 rounded-full p-[2px]" />
               )} */}
               {section.change && (
-                <p className="text-[#4B5563] text-xs font-normal poppins-remove leading-[18px] tracking-tight">
+                <p className="h9">
                   {section?.change}%
                 </p>
               )}
             </div>
-            <p className="text-[#252C32] mt-4 text-sm xl:text-xl font-semibold poppins-remove capitalize">
+            <p className="h7 mt-4">
               {section?.dataType === "revenueData"
                 ? formatCurrency(section?.value)
                 : section?.value}

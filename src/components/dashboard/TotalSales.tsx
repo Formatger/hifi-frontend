@@ -75,14 +75,11 @@ const TotalSales = ({ chartdata }: any) => {
       : { left: 30, right: 30, top: 20, bottom: 5 };
 
   return (
-    <div
-      className="w-full mr-auto border border-gray-200 rounded-2xl"
-      style={{ boxShadow: "2px 4px 24px  rgba(0, 0, 0, 0.05)" }}
-    >
-      <div className="w-full flex justify-between items-center p-3">
-        <h1 className="text-[#111012] text-base md:text-xl font-semibold poppins-remove leading-loose ">
+    <div className="databox">
+        <h4>
           Total Sales
-        </h1>
+        </h4>
+      <div className="databox-content">
         <div className="flex items-center gap-3">
           {currencies.map((currency: any, index: any) => (
             <p

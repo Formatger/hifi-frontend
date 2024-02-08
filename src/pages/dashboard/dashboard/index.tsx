@@ -316,7 +316,7 @@ const Overview = () => {
   const NoRecordsFound = ({ type }: { type: string }) => (
     <div className="w-full text-xs lg:text-base shadow border border-gray-200 mb-8 rounded-lg shadow-xs p-5">
       <div className="w-full flex flex-col items-start  ">
-        <h1 className=" mb-3 text-[#111012] text-lg font-semibold poppins-remove leading-loose">
+        <h1 className="mb-3 text-[#111012] text-lg font-semibold poppins-remove leading-loose">
           <Link href={`${type === "Payments" ? "payments" : "payouts"}`}>
             {type}
           </Link>
@@ -340,9 +340,9 @@ const Overview = () => {
               <DashboardHeader sections={sections} chartData={chartData} />
             </div>
             <div
-              className="databox-wrap"
+              className="databox-group"
             >
-              <div className="databox account-data">
+              <div className="databox-wrap account">
                 <AccountOverview
                   data={
                     dashboardData?.totalPurchaseVolume.length > 1
@@ -354,7 +354,7 @@ const Overview = () => {
                 {<TotalSales chartdata={transformedArray} />}
               </div>
 
-              <div className="databox payments-data">
+              <div className="databox-wrap transactions">
                 {dashboardData?.paymentData &&
                 dashboardData?.paymentData.length > 0 ? (
                   <PaymentsPayoutsCommon

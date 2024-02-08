@@ -42,9 +42,9 @@ const getStatusText = (status: string) => {
 const getStatusColor = (status: string) => {
   switch (status) {
     case "deposit":
-      return "#0E5D33";
+      return "#02cf8b";
     case "payout":
-      return "#0E5D33";
+      return "#02cf8b";
     case "CANCELED":
       return "#C41200";
     case "approval required":
@@ -72,16 +72,14 @@ const PaymentsPayoutsCommon = ({ type, tableData }: any) => {
     }
   };
   return (
-    <div
-      className="w-full min-h-[393.6px] max-h-[393.6px] text-xs lg:text-base  border border-gray-200 rounded-lg shadow-xs"
-      style={{ boxShadow: "2px 4px 24px  rgba(0, 0, 0, 0.05)" }}
-    >
-      <div className="w-full flex flex-col items-start p-5">
-        <h1 className="text-[#111012] text-base md:text-xl font-semibold poppins-remove leading-loose ">
+    <div className="databox">
+        <h4>
           <Link href={`${type === "Payments" ? "payments" : "payouts"}`}>
             {type}
           </Link>
-        </h1>
+        </h4>
+      <div className="databox-content">
+
         <table className="w-full mt-2">
           <thead>
             <tr className="border-b border-[#e5e9eb] py-2 mb-3 ">

@@ -43,21 +43,18 @@ const AccountOverview = ({ data, value }: any) => {
       : { left: 30, right: 30, top: 20, bottom: 5 };
 
   return (
-    <div
-      className="w-full border border-gray-200 rounded-2xl"
-      style={{ boxShadow: "2px 4px 24px  rgba(0, 0, 0, 0.05)" }}
-    >
-      <h1 className=" text-[#111012] text-base md:text-xl font-semibold poppins-remove leading-loose p-3">
-        Account Overview
-      </h1>
-      <div className="flex flex-col sm:flex-row items-center justify-between px-3 mb-3 gap-3 sm:gap-0">
-        <div className="flex items-center gap-3">
-          <p className=" text-[#111012] text-base md:text-xl font-semibold poppins-remove capitalize leading-loose">
+    <div className="databox">
+        <h4 className="">
+          Account Overview
+        </h4>
+      <div className="databox-content">
+        <div className="row-wrap-2">
+          <h6>
             Total Revenue
-          </p>
-          <p className="blue-text text-base md:text-xl font-semibold poppins-remove capitalize leading-loose">
+          </h6>
+          <h6 className="blue-text">
             {value ? formatCurrency(value) : 0} USD
-          </p>
+          </h6>
         </div>
         {data?.legth > 12 && (
           <>
@@ -81,12 +78,12 @@ const AccountOverview = ({ data, value }: any) => {
       </div>
 
       <>
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer className="mt-3" width="100%" height={300}>
           <AreaChart data={data} margin={chartMargin}>
             <defs>
               <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#6200EE70" />
-                <stop offset="100%" stopColor="#C751FF0D" />
+                <stop offset="0%" stopColor="#5545fa70" />
+                <stop offset="100%" stopColor="#5545fa0D" />
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" vertical={false} />

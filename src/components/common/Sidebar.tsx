@@ -1,23 +1,25 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import House from "../assets/images/house.svg";
-import Payments from "../assets/images/Cardholder.svg";
+import House from "../assets/images/home.svg";
+import Payments from "../assets/images/payments.svg";
 import Payouts from "../assets/images/payouts.svg";
-import MyAccount from "../assets/images/myaccount.svg";
-import Documentation from "../assets/images/documentation.svg";
+import MyAccount from "../assets/images/account.svg";
+import Documentation from "../assets/images/document.svg";
 import Logout from "../assets/images/logout.svg";
-import Balances from "../assets/images/balance.svg";
-import Customers from "../assets/images/Users.svg";
+import Balances from "../assets/images/balances.svg";
+import Customers from "../assets/images/customers.svg";
 import { BiX } from "react-icons/bi";
 import { useRouter } from "next/router";
 import HifiLogo from "@/components/assets/images/textLogo.svg";
-import Whitehome from "@/components/assets/images/whitehome.svg";
-import Whitecoin from "@/components/assets/images/whitecoin.svg";
-import Whiteuser from "@/components/assets/images/whiteuser.svg";
-import WhitePayments from "@/components/assets/images/whitepayments.svg";
+import Whitehome from "@/components/assets/images/home-white.svg";
+import Whitecoin from "@/components/assets/images/balances-white.svg";
+import Whiteuser from "@/components/assets/images/customers-white.svg";
+import WhitePayments from "@/components/assets/images/payments-white.svg";
 import WhitePayouts from "@/components/assets/images/whitepayouts.svg";
-import Whiteaccounts from "@/components/assets/images/whiteaccount.svg";
+import Whiteaccounts from "@/components/assets/images/account-white.svg";
+
+const svgIconClass = "svg-icon";
 
 interface SidebarProps {
   layout: React.ReactNode;
