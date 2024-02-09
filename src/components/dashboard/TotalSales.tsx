@@ -129,7 +129,7 @@ const TotalSales = ({ chartdata }: any) => {
               radius={[5, 5, 5, 5]}
             />
           ))}
-          {/* <Bar
+          <Bar
             dataKey="eth"
             stackId="a"
             fill="#D0CBF2"
@@ -149,7 +149,7 @@ const TotalSales = ({ chartdata }: any) => {
             fill="#6200ee"
             barSize={5}
             radius={[5, 5, 5, 5]}
-          /> */}
+          />
         </BarChart>
       </ResponsiveContainer>
     </div>

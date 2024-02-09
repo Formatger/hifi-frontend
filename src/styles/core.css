@@ -9,6 +9,9 @@
   --text-xs: 0.75rem; /* 12px */
   --line-xs: 1rem; /* 16px */
 
+  --text-ss: 0.8rem; /* 14px */
+  --line-ss: 1.25rem; /* 20px */
+
   --text-s: 0.875rem; /* 14px */
   --line-s: 1.25rem; /* 20px */
 
@@ -73,6 +76,8 @@
 
   --padBox: var(--m5);
   --radius: var(--r4);
+  --padCell: var(--m2) var(--m3);
+
 
   /* Colors */
 
@@ -185,6 +190,17 @@
 }
 
 /* Colors */
+
+
+.finder {
+  border: 1px solid red;
+}
+.finder2 {
+  border: 1px solid rgb(0, 224, 75);
+}
+.finder3 {
+  border: 1px solid rgb(255, 187, 0);
+}
 
 .main-grad {
   background: var(--main);

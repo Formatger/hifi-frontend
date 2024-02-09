@@ -11,6 +11,7 @@ import { formatCurrency } from "@/utils/formatCurrency";
 import ReactPaginate from "react-paginate";
 import ReportsCount from "@/components/common/ReportsCount";
 import { useRouter } from "next/router";
+import StatusIndicator from '@/components/common/StatusIndicator';
 
 interface Item {
   id: any;
@@ -36,50 +37,50 @@ interface PaginatedItemsProps {
   activeTab: string | null;
 }
 
-const getStatusImage = (status: string) => {
-  switch (status) {
-    case "deposit":
-      return greencheck;
-    case "CANCELED":
-      return x;
-    case "approval required":
-      return clockclockwise;
-    case "withdraw":
-      return clockclockwise;
-    default:
-      return arrowcounterclockwise;
-  }
-};
+// const getStatusImage = (status: string) => {
+//   switch (status) {
+//     case "deposit":
+//       return greencheck;
+//     case "CANCELED":
+//       return x;
+//     case "approval required":
+//       return clockclockwise;
+//     case "withdraw":
+//       return clockclockwise;
+//     default:
+//       return arrowcounterclockwise;
+//   }
+// };
 
-const getStatusText = (status: string) => {
-  switch (status) {
-    case "deposit":
-      return "Succeeded";
-    case "CANCELED":
-      return "Cancelled";
-    case "approval required":
-      return "Pending";
-    case "withdraw":
-      return "Refunded";
-    default:
-      return "none";
-  }
-};
+// const getStatusText = (status: string) => {
+//   switch (status) {
+//     case "deposit":
+//       return "Succeeded";
+//     case "CANCELED":
+//       return "Cancelled";
+//     case "approval required":
+//       return "Pending";
+//     case "withdraw":
+//       return "Refunded";
+//     default:
+//       return "none";
+//   }
+// };
 
-const getStatusColor = (status: string) => {
-  switch (status) {
-    case "deposit":
-      return "#0E5D33";
-    case "CANCELED":
-      return "#C41200";
-    case "approval required":
-      return "#876401";
-    case "withdraw":
-      return "#876401";
-    default:
-      return "#4B5563";
-  }
-};
+// const getStatusColor = (status: string) => {
+//   switch (status) {
+//     case "deposit":
+//       return "#0E5D33";
+//     case "CANCELED":
+//       return "#C41200";
+//     case "approval required":
+//       return "#876401";
+//     case "withdraw":
+//       return "#876401";
+//     default:
+//       return "#4B5563";
+//   }
+// };
 
 const Items: React.FC<ItemsProps> = ({ currentItems }) => {
   const router = useRouter();
@@ -94,20 +95,23 @@ const Items: React.FC<ItemsProps> = ({ currentItems }) => {
     <div>
       <div className="w-full mb-8 px-4 overflow-hidden rounded-lg shadow-xs text-sm">
         <div className="w-full overflow-x-auto">
-          <table className="w-full">
+          <table className="Table">
             <thead>
-              <tr className="border-b border-[#e5e9eb] py-2 mb-3 h-12  bg-white">
-                <th className="text-left text-base w-[30%] text-[#111012] pr-4 pl-2 py-3 flex font-semibold poppins-remove">
-                  AMOUNT
+              <tr className="table-head">
+                <th className="th-title">
+                  Amount
                 </th>
-                <th className="text-left text-base w-[30%]  text-[#111012] font-semibold px-4">
-                  DESCRIPTION
+                <th className="th-title">
+                  Status
                 </th>
-                <th className="text-left text-base w-[25%] font-semibold text-[#111012]  px-4">
-                  WALLET ADDRESS
+                <th className="th-title">
+                  Description
                 </th>
-                <th className="text-left text-base w-[15%]  font-semibold text-[#111012] pl-4">
-                  DATE
+                <th className="th-title">
+                  Wallet Address
+                </th>
+                <th className="th-title">
+                  Date
                 </th>
               </tr>
             </thead>
@@ -116,13 +120,13 @@ const Items: React.FC<ItemsProps> = ({ currentItems }) => {
               {currentItems?.map((row: any, index: any) => (
                 <tr
                   key={index}
-                  className="border-b border-[#E5E9EB] h-[4.5vh] hover:bg-[#F6F8F9] cursor-pointer"
+                  className="table-row"
                   style={{ borderBottomColor: "#e5e9eb" }}
                   onClick={() => handleTableRowClick(row?.txHash)}
                 >
-                  <td className="text-left py-2 pr-4 pl-2">
-                    <div className="flex items-center">
-                      <div className="flex items-center justify-start  gap-3 xl:gap-5">
+                  <td className="table-col">
+                    <div className="table-cell">
+                      <div className="amount">
                         <span
                           className={`w-16 font-semibold ${
                             row?.status !== "COMPLETE"
@@ -133,46 +137,41 @@ const Items: React.FC<ItemsProps> = ({ currentItems }) => {
                           {formatCurrency(row?.outwardBaseAmount)}
                         </span>
                       </div>
-                      <div className="flex items-center justify-center ml-auto">
-                        <span className="text-[#4B5563] min-w-[40px]">
+                    
+                      <div className="currency-wrap">
+                        <span>
                           {/* {row?.currency} */}
                           USD
                         </span>
-                        <div
-                          className="flex items-center justify-center gap-3 font-semibold w-[131px] h-[31px] px-3 rounded-md ml-[15px] "
-                          style={{
-                            color: getStatusColor(row?.action),
-                            backgroundColor: `${getStatusColor(row?.action)}10`,
-                          }}
-                        >
-                          <Image
-                            src={getStatusImage(row?.action)}
-                            alt=""
-                            className={
-                              row?.action === "withdraw" ? "rotate-90" : ""
-                            }
-                          />
-                          {getStatusText(row?.action)}
-                        </div>{" "}
                       </div>
                     </div>
                   </td>
 
-                  <td className="text-left py-2 px-4 text-[#252C32]">
-                    <div className="flex items-center">
+                  <td className="table-col">
+                      <div className="table-cell">
+                        <StatusIndicator action={row?.action} />
+                    </div>
+                  </td>
+
+                  <td className="table-col">
+                    <div className="table-cell">
                       {" "}
                       {row?.description ? row?.description : "Null"}
                     </div>
                   </td>
-                  <td className="text-left py-2 px-4 text-[#252C32]">
-                    <div className="flex items-center">
+
+                  <td className="table-col">
+                    <div className="table-cell">
                       {row?.customerAddress ? row.customerAddress : "Null"}
                     </div>
                   </td>
-                  <td className="text-left py-2 pl-4  text-[#252C32]">
-                    {row.createDate
+
+                  <td className="table-col">
+                    <div className="table-cell">
+                      {row.createDate
                       ? moment(row?.createDate).format("MMM DD, YYYY h:mm A")
                       : "Null"}
+                    </div>
                   </td>
                 </tr>
               ))}

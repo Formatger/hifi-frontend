@@ -68,22 +68,22 @@
 .dash-header {
   width: 100%;
   height: auto;
-  min-height: 140px;
-  border: var(--sborder);
-  border-radius: var(--radius);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: var(--padBox);
   gap: var(--m4);
 }
 
 .dash-header-box {
-  height: 100px;
   width: 100%;
+  min-height: 140px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  border: var(--sborder);
+  border-radius: var(--radius);
+  padding: var(--padBox);
 }
 
 @media (min-width: 768px) {
@@ -97,6 +97,7 @@
 
   .databox-group {
     flex-direction: row;
+    gap: var(--m3);
   }
 
   .databox-wrap.account {

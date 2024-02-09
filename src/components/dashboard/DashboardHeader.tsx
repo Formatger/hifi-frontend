@@ -72,13 +72,7 @@ const DashboardHeader = ({ sections }: any) => {
       {sections.map((section: any, index: any) => (
         <div
           key={index}
-          className={`dash-header-box ${
-            index === 0
-              ? "justify-center lg:justify-start"
-              : index === 2
-              ? "justify-end"
-              : "justify-center"
-          } ${index !== 2 ? "lg:border-r border-[#E5E9EB]" : ""}`}
+          className="dash-header-box"
         >
           <div>
             <p className="h7">

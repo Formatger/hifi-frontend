@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from "react";
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid,
+  Tooltip, ResponsiveContainer } from "recharts";
 import { formatCurrency } from "@/utils/formatCurrency";
 
 const formatYAxisLabel = (value: number, index: number) => {
@@ -61,7 +54,7 @@ const AccountOverview = ({ data, value }: any) => {
             {" "}
             <select
               id="dateRangeSelect"
-              className="bg-[white] poppins-remove w-[120px] h-8 px-2.5 py-1 text-[#111012] cursor-pointer rounded border border-gray-400"
+              className="select-input"
             >
               <option value="6months" className="cursor-pointer">
                 6 Months
