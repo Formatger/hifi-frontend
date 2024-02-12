@@ -78,6 +78,7 @@
   --radius: var(--r4);
   --padCell: var(--m2) var(--m3);
 
+  --r: 1px solid red;
 
   /* Colors */
 

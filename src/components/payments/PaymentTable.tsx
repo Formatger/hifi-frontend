@@ -37,51 +37,6 @@ interface PaginatedItemsProps {
   activeTab: string | null;
 }
 
-// const getStatusImage = (status: string) => {
-//   switch (status) {
-//     case "deposit":
-//       return greencheck;
-//     case "CANCELED":
-//       return x;
-//     case "approval required":
-//       return clockclockwise;
-//     case "withdraw":
-//       return clockclockwise;
-//     default:
-//       return arrowcounterclockwise;
-//   }
-// };
-
-// const getStatusText = (status: string) => {
-//   switch (status) {
-//     case "deposit":
-//       return "Succeeded";
-//     case "CANCELED":
-//       return "Cancelled";
-//     case "approval required":
-//       return "Pending";
-//     case "withdraw":
-//       return "Refunded";
-//     default:
-//       return "none";
-//   }
-// };
-
-// const getStatusColor = (status: string) => {
-//   switch (status) {
-//     case "deposit":
-//       return "#0E5D33";
-//     case "CANCELED":
-//       return "#C41200";
-//     case "approval required":
-//       return "#876401";
-//     case "withdraw":
-//       return "#876401";
-//     default:
-//       return "#4B5563";
-//   }
-// };
-
 const Items: React.FC<ItemsProps> = ({ currentItems }) => {
   const router = useRouter();
   const handleTableRowClick = (transfer_id: any) => {
@@ -98,21 +53,11 @@ const Items: React.FC<ItemsProps> = ({ currentItems }) => {
           <table className="Table">
             <thead>
               <tr className="table-head">
-                <th className="th-title">
-                  Amount
-                </th>
-                <th className="th-title">
-                  Status
-                </th>
-                <th className="th-title">
-                  Description
-                </th>
-                <th className="th-title">
-                  Wallet Address
-                </th>
-                <th className="th-title">
-                  Date
-                </th>
+                <th className="th-title">AMOUNT</th>
+                <th className="th-title">STATUS</th>
+                <th className="th-title">DESCRIPTION</th>
+                <th className="th-title">WALLET ADDRESS</th>
+                <th className="th-title">DATE</th>
               </tr>
             </thead>
 
@@ -126,24 +71,13 @@ const Items: React.FC<ItemsProps> = ({ currentItems }) => {
                 >
                   <td className="table-col">
                     <div className="table-cell">
-                      <div className="amount">
-                        <span
-                          className={`w-16 font-semibold ${
-                            row?.status !== "COMPLETE"
-                              ? "text-[#4B5563]"
-                              : "text-[#111012]"
-                          }`}
-                        >
+                        <span className="amount">
                           {formatCurrency(row?.outwardBaseAmount)}
                         </span>
-                      </div>
-                    
-                      <div className="currency-wrap">
-                        <span>
+                        <span className="currency">
                           {/* {row?.currency} */}
                           USD
                         </span>
-                      </div>
                     </div>
                   </td>
 
@@ -212,15 +146,11 @@ const PaginatedItems: React.FC<PaginatedItemsProps> = ({
   return (
     <>
       <Items currentItems={currentItems} />
-      <div
-        className={`${
-          windowSize.height > 699 ? "xl:absolute xl:bottom-0" : "none"
-        } pb-5 pt-1 flex items-center justify-start w-full bg-white xl:absolute xl:bottom-0  flex-col xl:flex-row`}
-      >
-        <div className="self-start lg:w-[40%]">
+        <div className="page-count-container">
+        <div className="reports-container">
           <ReportsCount type="Payments" amount={count} />
         </div>
-        <div className="flex items-center justify-start lg:w-[60%]">
+        <div className="pagination-container">
           <ReactPaginate
             onPageChange={handlePageClick}
             pageRangeDisplayed={5}
@@ -231,17 +161,11 @@ const PaginatedItems: React.FC<PaginatedItemsProps> = ({
             breakLabel={"..."}
             breakClassName={"break-me"}
             marginPagesDisplayed={2}
-            containerClassName={
-              "flex h-[4vh] justify-center items-center text-center space-x-2 self-center  "
-            }
-            activeClassName={
-              " text-black bg-gray-200 font-bold shadow text-center rounded-full px-2"
-            }
-            pageClassName={
-              "text-gray-800 h-6 text-center w-6 text-center px-2 hover:bg-slate-100 rounded-full"
-            }
-            previousClassName={"px-2 cursor-pointer"}
-            nextClassName={"px-2 cursor-pointer"}
+            containerClassName={"pagination-controls"}
+            activeClassName={"active-page"}
+            pageClassName={"page-item"}
+            previousClassName={"previous-button"}
+            nextClassName={"next-button"}
           />
         </div>
       </div>
@@ -263,51 +187,30 @@ const PaymentTable: React.FC<TableProps> = ({
   activeTab,
 }) => {
   const windowSize = useWindowSize();
-  let maxRowsToShow;
 
-  if (windowSize.height < 750) {
-    maxRowsToShow = 7;
-  } else if (windowSize.height >= 750 && windowSize.height < 800) {
-    maxRowsToShow = 8;
-  } else if (windowSize.height >= 800 && windowSize.height < 850) {
-    maxRowsToShow = 9;
-  } else if (windowSize.height >= 850 && windowSize.height < 900) {
-    maxRowsToShow = 10;
-  } else if (windowSize.height >= 900 && windowSize.height < 950) {
-    maxRowsToShow = 11;
-  } else if (windowSize.height >= 950 && windowSize.height < 1000) {
-    maxRowsToShow = 12;
-  } else if (windowSize.height >= 1000 && windowSize.height < 1050) {
-    maxRowsToShow = 13;
-  } else if (windowSize.height >= 1050 && windowSize.height < 1100) {
-    maxRowsToShow = 12;
-  } else if (windowSize.height >= 1100 && windowSize.height < 1150) {
-    maxRowsToShow = 13;
-  } else if (windowSize.height >= 1150 && windowSize.height < 1200) {
-    maxRowsToShow = 14;
-  } else {
-    maxRowsToShow = 15;
-  }
+  const calculateMaxRowsToShow = (height: number) => {
+    if (height < 750) return 6;
+    if (height < 800) return 7;
+    if (height < 850) return 8;
+    if (height < 900) return 9;
+    if (height < 950) return 10;
+    if (height < 1000) return 11;
+    if (height < 1050) return 12;
+    if (height < 1100) return 13;
+    if (height < 1150) return 14;
+    if (height < 1200) return 15;
+    return 16;
+  };
+
+  const maxRowsToShow = calculateMaxRowsToShow(windowSize.height);
+
   return (
-    <>
-      {showDateFilter ? (
-        <PaginatedItems
-          itemsPerPage={maxRowsToShow}
-          activeTab={activeTab}
-          items={items}
-          count={maxRowsToShow < items?.length ? maxRowsToShow : items?.length}
-        />
-      ) : (
-        <PaginatedItems
-          itemsPerPage={maxRowsToShow + 1}
-          activeTab={activeTab}
-          items={items}
-          count={
-            maxRowsToShow < items?.length ? maxRowsToShow + 1 : items?.length
-          }
-        />
-      )}
-    </>
+    <PaginatedItems
+      itemsPerPage={showDateFilter ? maxRowsToShow : maxRowsToShow + 1}
+      activeTab={activeTab}
+      items={items}
+      count={Math.min(maxRowsToShow, items.length)}
+    />
   );
 };
 
