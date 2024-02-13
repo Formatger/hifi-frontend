@@ -32,7 +32,7 @@ const BankAccountsEntries = [
 
 const MyAccount = () => {
   return (
-    <div className="w-full relative mb-4 flex xl:h-screen flex-col poppins-remove">
+    <div className="main-container">
       <div className="w-full">
         <Header />
         <div className="w-full px-6 mt-4 flex flex-col lg:flex-row justify-between">

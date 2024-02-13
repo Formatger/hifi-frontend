@@ -20,7 +20,7 @@ const Entry = ({ title }: any) => {
     <>
       <div onClick={openPasswordModal} className="w-full cursor-pointer">
         <div className="flex justify-between items-center  border-b border-b-gray-200 h-12">
-          <h3 className="text-gray-800 text-base font-normal poppins-remove leading-normal">
+          <h3 className="text-gray-800 text-remove  font-remove poppins-remove leading-normal">
             {title}
           </h3>
           <Image src={caretright} alt="arrow" className="text-black" />

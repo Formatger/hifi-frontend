@@ -11,9 +11,48 @@
 
 .page-container {
   width: 100%;
-  padding: var(--m5);
+  padding: var(--m6);
   /* border: 2px solid rgb(0, 255, 0); */
 }
+
+.page-head {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 
+.h1-wrap {
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  top: 105px;
+  z-index: 20;
+  background-color: #fff;
+}
+@media (min-width: 1024px) {
+  .h1-wrap {
+    width: auto;
+    top: 78px;
+  }
+} */
+
+
+.h1 {
+  font-size: 24px;
+  padding-top: 0;
+}
+
+@media (min-width: 1024px) {
+  .h1 {
+    margin-top: -3px;
+    margin-bottom: 0;
+    font-size: 32px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
 
 /* Dashboard / Overview Page */
 
@@ -86,11 +125,7 @@
   padding: var(--padBox);
 }
 
-@media (min-width: 768px) {
-  .dash-header-box {
-    width: 33.333%;
-  }
-}
+
 
 
 @media (min-width: 1280px) {
@@ -114,4 +149,66 @@
     flex-direction: row;
     gap: var(--m3);
   }
+
+  .dash-header-box {
+    width: 33.333%;
+  }
+}
+
+
+/* Payment / Payout Details */
+
+.detail-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--m2);
+}
+
+.address-box-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.address-box {
+  order: 2;
+  border: var(--border);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  padding: var(--m1) var(--m4);
+  border-radius: 4px;
+  background-color: #F6F8F9;
+  width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 1024px) {
+  .detail-type {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+}
+
+
+
+.default-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 20px; 
+  padding-left: 0.09375rem; /* 1.5px */
+  padding-right: 0.09375rem; /* 1.5px */
+  padding-top: 0.03125rem; /* 0.5px */
+  padding-bottom: 0.03125rem; /* 0.5px */
+  background-color: var(--main);
+  color: #fff;
+  font-size: 0.625rem; /* 10px */
+  font-weight: 500;
+  border-radius: var(--r2);
 }

@@ -71,17 +71,17 @@ const TotalStatus: React.FC<TotalStatusProps> = ({
 }) => {
   return (
     <div className="flex items-center gap-3 flex-wrap">
-      <h1 className="text-[#111012] text-base lg:text-[32px] font-semibold">
+      <h1 className="text-[#111012] text-remove lg:text-[32px] font-semibold">
         {outwardCurrency === "usd" ? formatCurrency(total) : total}
         {/* {formatOtherCurrency(total)} */}
         {/* {total} */}
       </h1>
-      <span className="text-base lg:text-[32px] text-[#4B5563] uppercase">
+      <span className="text-remove lg:text-[32px] text-[#4B5563] uppercase">
         {" "}
         {outwardCurrency}
       </span>
       <div
-        className="flex items-center gap-2 lg:gap-3 font-semibold text-xs lg:text-base w-[115px] lg:w-[145px] h-[31px] justify-start px-3 rounded-md"
+        className="flex items-center gap-2 lg:gap-3 font-semibold text-xs lg:text-remove w-[115px] lg:w-[145px] h-[31px] justify-start px-3 rounded-md"
         style={{
           color: getStatusColor(status),
           backgroundColor: `${getStatusColor(status)}10`,

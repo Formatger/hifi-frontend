@@ -67,7 +67,7 @@ const Payout = ({ order_id, receiptDetails }: any) => {
             target="_blank"
           >
             <button
-              className="flex gap-3 items-center rounded-md blue-text justify-center h-8 border-gray-200 border bg-[#F6F8F9]  w-28"
+              className="sec-button"
               onClick={handleExport}
             >
               <Image src={exporticon} alt="arrow" className="" />

@@ -107,75 +107,75 @@ const PaymentDetails = ({ paymentDetails }: any) => {
       <div className="flex flex-col gap-3 lg:flex-row lg:gap-20">
         <div className="flex flex-col gap-3">
           <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-36">
+            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
               Order Total
             </p>
-            <p className="text-[#252C32] text-sm lg:text-base font-normal poppins-remove">
+            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove">
               {typeof paymentDetails?.amount === "number"
                 ? `${formatCurrency(paymentDetails?.amount)}`
                 : paymentDetails?.amount}
             </p>
           </div>
           <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-36">
+            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
               Amount Paid
             </p>
-            <p className="text-[#252C32] text-sm lg:text-base font-normal poppins-remove uppercase">
+            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove uppercase">
               {paymentDetails?.transaction_fee +
                 paymentDetails?.cryptoCurrencyAmount}{" "}
               {paymentDetails?.cryptoCurrency}
             </p>
           </div>
           <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-36">
+            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
               Transaction Fee
             </p>
-            <p className="text-[#252C32] text-sm lg:text-base font-normal poppins-remove uppercase">
+            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove uppercase">
               {paymentDetails?.transaction_fee} {paymentDetails?.cryptoCurrency}
             </p>
           </div>
           <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-36">
+            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
               Actual Amount Received
             </p>
-            <p className="text-[#252C32] text-sm lg:text-base font-normal poppins-remove uppercase">
+            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove uppercase">
               {paymentDetails?.cryptoCurrencyAmount}{" "}
               {paymentDetails?.cryptoCurrency}
             </p>
           </div>
           <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-36">
+            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
               Customer ID
             </p>
-            <p className="text-[#252C32] text-sm lg:text-base font-normal poppins-remove truncate w-40">
+            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove truncate w-40">
               {paymentDetails?.customerAddress}
             </p>
           </div>
           <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-36">
+            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
               Order ID
             </p>
-            <p className="text-[#252C32] text-sm lg:text-base font-normal poppins-remove w-40 truncate">
+            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove w-40 truncate">
               {paymentDetails?.actual_order_id}
             </p>
           </div>
         </div>
         <div className="flex flex-col gap-3">
           <div className="flex gap-3   lg:gap-9">
-            <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-36 lg:w-auto">
+            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36 lg:w-auto">
               Statement Descriptor
             </p>
-            <p className="text-[#252C32] text-sm lg:text-base font-normal poppins-remove">
+            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove">
               {paymentDetails?.statement_descriptor
                 ? paymentDetails?.statement_descriptor
                 : "N/A"}
             </p>
           </div>
           <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-36">
+            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
               Amount
             </p>
-            <p className="text-[#252C32] text-sm lg:text-base font-normal poppins-remove uppercase">
+            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove uppercase">
               {/* {paymentDetails?.fiatCurrencyAmount
                 ? formatCurrency(paymentDetails?.fiatCurrencyAmount)
                 : "N/A"} */}
@@ -187,10 +187,10 @@ const PaymentDetails = ({ paymentDetails }: any) => {
             </p>
           </div>
           <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-36">
+            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
               Fee
             </p>
-            <p className="text-[#252C32] text-sm lg:text-base font-normal poppins-remove flex items-center gap-2 uppercase">
+            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove flex items-center gap-2 uppercase">
               {/* {formatCurrency(paymentDetails?.fees)} */}
               {paymentDetails?.status === "withdraw"
                 ? paymentDetails?.fees + " " + paymentDetails?.outward
@@ -198,29 +198,29 @@ const PaymentDetails = ({ paymentDetails }: any) => {
             </p>
           </div>
           <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-36">
+            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
               Net
             </p>
-            <p className="text-[#252C32] text-sm lg:text-base font-normal poppins-remove uppercase">
+            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove uppercase">
               {paymentDetails?.status === "withdraw"
                 ? paymentDetails?.net + " " + paymentDetails?.outward
                 : formatCurrency(paymentDetails?.net)}
             </p>
           </div>
           <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-36">
+            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
               Status
             </p>
-            <p className="text-[#252C32] text-sm lg:text-base font-normal poppins-remove ">
+            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove ">
               {getStatusText(paymentDetails?.status)}
             </p>
           </div>
           <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-36">
+            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
               Description
             </p>
             <p
-              className={`text-[#252C32] text-sm lg:text-base font-normal poppins-remove whitespace-pre-wrap flex ${
+              className={`text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove whitespace-pre-wrap flex ${
                 !isDescEditable ? "flex-row" : "flex-col"
               } items-start gap-2`}
             >

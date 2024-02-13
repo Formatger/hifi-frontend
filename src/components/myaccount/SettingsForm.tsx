@@ -28,7 +28,7 @@ const SettingsForm = () => {
         </div>
       </div>
       <div className="flex flex-col lg:flex-row gap-5 lg:gap-10 items-center">
-        <p className="text-[#111012] text-base font-semibold poppins-remove w-[148px]">
+        <p className="text-[#111012] text-remove font-semibold poppins-remove w-[148px]">
           Account name
         </p>
         <input
@@ -38,7 +38,7 @@ const SettingsForm = () => {
         />
       </div>
       <div className="flex flex-col lg:flex-row gap-5 lg:gap-10 items-center">
-        <p className="text-[#111012] text-base font-semibold poppins-remove w-[148px]">
+        <p className="text-[#111012] text-remove font-semibold poppins-remove w-[148px]">
           Phone verification
         </p>
         <div className="flex items-center gap-3">
@@ -51,7 +51,7 @@ const SettingsForm = () => {
         </div>
       </div>
       <div className="flex flex-col lg:flex-row gap-5 lg:gap-10 items-center">
-        <p className="text-[#111012] text-base font-semibold poppins-remove w-[148px]">
+        <p className="text-[#111012] text-remove font-semibold poppins-remove w-[148px]">
           Time zone
         </p>
         <div className="relative">

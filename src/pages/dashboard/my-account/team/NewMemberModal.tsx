@@ -186,7 +186,7 @@ const NewMemberModal: React.FC<NewMemberModalProps> = ({
 export const Title = () => {
   return (
     <>
-      <p className=" text-[#111012] text-base font-medium poppins-remove uppercase leading-normal tracking-tight">
+      <p className=" text-[#111012] text-remove font-medium poppins-remove uppercase leading-normal tracking-tight">
         enter team member email address
       </p>
     </>
@@ -197,7 +197,7 @@ export const InputFields = () => {
   return (
     <>
       <div className="self-stretch mt-[6px] mb-[16px] mr-5 w-[240px] sm:w-[400px] h-[34px] px-2 py-1 bg-white rounded border border-gray-400 inline-flex">
-        <div className="grow shrink basis-0 h-6 text-gray-800 text-base font-normal leading-normal">
+        <div className="grow shrink basis-0 h-6 text-gray-800 text-remove  font-remove leading-normal">
           <Field
             type="text"
             className="w-full"

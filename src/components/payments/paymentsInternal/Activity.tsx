@@ -17,7 +17,7 @@ const Activity: React.FC<ActivityProps> = ({ activity, time }) => {
         <div className="w-[2px] h-14 bg-gray-200"></div>
       </div>
       <div className=" h-full p-2 w-[95%] rounded-lg border border-gray-200 flex flex-col items-start gap-2">
-        <p className="text-[#4B5563] whitespace-normal w-[95%] text-sm lg:text-base poppins-remove">
+        <p className="text-[#4B5563] whitespace-normal w-[95%] text-sm lg:text-remove poppins-remove">
           {activity}
         </p>
         <p className="text-[#4B5563] text-xs lg:text-sm poppins-remove">{time}</p>

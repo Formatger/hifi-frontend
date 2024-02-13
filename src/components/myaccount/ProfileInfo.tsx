@@ -86,7 +86,7 @@ const ProfileInfo = (userData: any) => {
       </div>
       <div className="flex flex-col gap-5 lg:gap-10">
         <div className="flex flex-col lg:flex-row gap-5 lg:gap-20 items-center">
-          <p className="text-[#111012] text-base font-semibold poppins-remove w-20">
+          <p className="text-[#111012] text-remove font-semibold poppins-remove w-20">
             Email
           </p>
           {/* {isEditing ? (
@@ -99,13 +99,13 @@ const ProfileInfo = (userData: any) => {
               />
             </>
           ) : ( */}
-          <p className="text-[#252C32] text-base font-normal poppins-remove">
+          <p className="text-[#252C32] text-remove  font-remove poppins-remove">
             {userData?.userData?.data?.email}
           </p>
           {/* )} */}
         </div>
         <div className="flex  flex-col lg:flex-row gap-5 lg:gap-20 items-center">
-          <p className="text-[#111012] text-base font-semibold poppins-remove w-20">
+          <p className="text-[#111012] text-remove font-semibold poppins-remove w-20">
             Name
           </p>
           {/* {isEditing ? (
@@ -118,13 +118,13 @@ const ProfileInfo = (userData: any) => {
               />
             </>
           ) : ( */}
-          <p className="text-[#252C32] text-base font-normal poppins-remove">
+          <p className="text-[#252C32] text-remove  font-remove poppins-remove">
             {userData?.userData?.data?.name}
           </p>
           {/* )} */}
         </div>
         <div className="flex  flex-col lg:flex-row gap-5 lg:gap-20 items-center">
-          <p className="text-[#111012] text-base font-semibold poppins-remove w-20">
+          <p className="text-[#111012] text-remove font-semibold poppins-remove w-20">
             Password
           </p>
           {isEditing ? (
@@ -141,7 +141,7 @@ const ProfileInfo = (userData: any) => {
             </div>
           ) : (
             <div className="flex items-center gap-3">
-              <p className="text-[#252C32] flex justify-center items-center text-center pt-[8px] text-base font-normal poppins-remove">
+              <p className="text-[#252C32] flex justify-center items-center text-center pt-[8px] text-remove  font-remove poppins-remove">
                 {password}
               </p>
               {role === "0" || role === "1" ? (

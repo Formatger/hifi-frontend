@@ -4,7 +4,7 @@ import { formatDate } from "./Payment";
 const LastUpdated = ({ lastUpdated }: { lastUpdated: string }) => {
   return (
     <div className="flex flex-col  justify-center  lg:pl-0 lg:pr-5 lg:border-r">
-      <p className="text-[#4B5563] text-base font-normal poppins-remove">
+      <p className="text-[#4B5563] text-remove  font-remove poppins-remove">
         Last Updated
       </p>
       <p className="text-[#252C32]">

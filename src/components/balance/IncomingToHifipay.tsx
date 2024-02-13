@@ -33,7 +33,7 @@ export default function IncomingToHifipay(props: TransactionsProps) {
       </div>
       <div className="w-full py-2 bg-white border-b border-gray-200 flex gap-5">
         <div className="w-[55%]">
-          <div className="text-[#4B5563] text-base font-normal leading-normal">
+          <div className="text-[#4B5563] text-remove  font-remove leading-normal">
             These amounts are estimated because transactions are still
             accumulating. Payouts are scheduled to{" "}
             <span className="underline">automatically send monthly.</span>
@@ -41,7 +41,7 @@ export default function IncomingToHifipay(props: TransactionsProps) {
         </div>
       </div>
       <div className="w-full py-1 bg-white flex gap-5">
-        <p className=" text-[#4B5563] text-base font-normal poppins-remove underline">
+        <p className=" text-[#4B5563] text-remove  font-remove poppins-remove underline">
           Transactions since last payout
         </p>
       </div>
@@ -50,11 +50,11 @@ export default function IncomingToHifipay(props: TransactionsProps) {
           key={id}
           className="w-full py-1 bg-white flex items-center justify-between"
         >
-          <div className="text-[#4B5563] text-base font-normal">
+          <div className="text-[#4B5563] text-remove  font-remove">
             {transaction?.total_no} {transaction?.name}
           </div>
           <div className="flex gap-2">
-            <div className="text-base font-normal leading-normal text-[#4B5563]">
+            <div className="text-remove  font-remove leading-normal text-[#4B5563]">
               {transaction?.status === "negative"
                 ? `- ${transaction?.usd}`
                 : `${transaction?.usd}`}
@@ -66,7 +66,7 @@ export default function IncomingToHifipay(props: TransactionsProps) {
         <div key={idx}>
           <div className="w-full py-1 bg-white border-b border-gray-200 flex items-center justify-between">
             <div className="w-full flex items-start justify-between">
-              <div className="text-base font-semibold leading-normal text-[#4B5563]">
+              <div className="text-remove font-semibold leading-normal text-[#4B5563]">
                 {data?.name}
               </div>
               {/* <div className="hidden md:flex items-start">
@@ -80,7 +80,7 @@ export default function IncomingToHifipay(props: TransactionsProps) {
                   </div>
                 </div>
                 <div
-                  className={`w-[350px] text-base font-normal leading-normal ${
+                  className={`w-[350px] text-remove  font-remove leading-normal ${
                     data?.status === "negative"
                       ? "text-[#D5672B]"
                       : "blue-text"
@@ -91,28 +91,28 @@ export default function IncomingToHifipay(props: TransactionsProps) {
                 </div>
               </div> */}
               <div className="flex gap-2 items-center">
-                <div className="text-base font-semibold leading-normal text-[#4B5563]">
+                <div className="text-remove font-semibold leading-normal text-[#4B5563]">
                   {data?.usd}
                 </div>
               </div>
             </div>
           </div>
           <div className="w-full py-1 bg-white border-b border-gray-200 flex items-center justify-between">
-            <div className="text-base font-semibold leading-normal">
+            <div className="text-remove font-semibold leading-normal">
               Total for {moment().format("MMMM YYYY")}
             </div>
             <div className="flex gap-2 items-center">
-              <div className="text-base font-semibold leading-normal">
+              <div className="text-remove font-semibold leading-normal">
                 {data?.usd}
               </div>
             </div>
           </div>
           <div className="w-full py-1 bg-white flex items-center justify-between">
-            <div className="text-base font-semibold leading-normal">
+            <div className="text-remove font-semibold leading-normal">
               Total overall
             </div>
             <div className="flex gap-2 items-center">
-              <div className="text-base font-semibold leading-normal">
+              <div className="text-remove font-semibold leading-normal">
                 {data?.usd}
               </div>
             </div>

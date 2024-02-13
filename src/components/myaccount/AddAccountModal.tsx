@@ -286,18 +286,18 @@ const AddAccountModal: React.FC<AddAccountModalProps> = ({
               <AutoSubmitToken setFormValue={setFormValue} />
             </>
             <div className="sticky bottom-0 w-full z-10 rounded-b-lg">
-              <div className="border-t border-b rounded-b-lg bg-[#F6F8F9] pl-5 pr-1 pt-5 text-sm lg:text-base">
-                <span className="text-gray-600  font-normal poppins-remove leading-normal">
+              <div className="border-t border-b rounded-b-lg bg-[#F6F8F9] pl-5 pr-1 pt-5 text-sm lg:text-remove">
+                <span className="text-gray-600   font-remove poppins-remove leading-normal">
                   By clicking ‘Confirm’ I agree to the
                 </span>
                 <Link
                   href={"https://www.hifibridge.com/terms"}
                   target="_blank"
-                  className="blue-text3  font-normal poppins-remove underline leading-normal mx-2"
+                  className="blue-text3   font-remove poppins-remove underline leading-normal mx-2"
                 >
                   term and conditions
                 </Link>
-                <span className="text-[#4B5563]  font-normal leading-normal">
+                <span className="text-[#4B5563]   font-remove leading-normal">
                   associated with my paying my balances to a domiciled bank
                   account.
                 </span>
@@ -363,7 +363,7 @@ const AddAccountModal: React.FC<AddAccountModalProps> = ({
 export const RadioTitle = ({ title }: any) => {
   return (
     <div
-      className={`self-stretch  text-base  uppercase leading-normal tracking-tight mt-[16px] font-medium text-[rgb(17,16,18)]`}
+      className={`self-stretch  text-remove  uppercase leading-normal tracking-tight mt-[16px] font-medium text-[rgb(17,16,18)]`}
     >
       {title}
     </div>
@@ -387,10 +387,10 @@ export const RenderRadiobutton = ({
         />
       </div>
       <label
-        className={`grow shrink basis-0 text-base leading-normal ${
+        className={`grow shrink basis-0 text-remove leading-normal ${
           selectedoption === title
             ? "blue-text font-semibold"
-            : "text-[#4B5563] font-normal"
+            : "text-[#4B5563]  font-remove"
         }`}
       >
         {title}
@@ -403,7 +403,7 @@ export const InputFields = ({ placeholder, name }: any) => {
   return (
     <>
       <div className="self-stretch mt-[6px] mb-[16px] lg:w-full sm:w-[400px] h-[34px] px-2 py-1 bg-white rounded border border-gray-400 ">
-        <div className="grow shrink basis-0 h-6 text-gray-800 text-base font-normal leading-normal">
+        <div className="grow shrink basis-0 h-6 text-gray-800 text-remove  font-remove leading-normal">
           <Field type="text" placeholder={placeholder} name={name} />
         </div>
       </div>
@@ -415,7 +415,7 @@ export const InputFields2 = ({ placeholder, name }: any) => {
   return (
     <>
       <div className="self-stretch mt-[6px] mb-[16px] w-full sm:w-[400px] h-[34px] px-2 py-1 bg-white rounded border border-gray-400 ">
-        <div className="grow shrink basis-0 h-6 text-gray-800 text-base font-normal leading-normal">
+        <div className="grow shrink basis-0 h-6 text-gray-800 text-remove  font-remove leading-normal">
           <Field type="text" placeholder={placeholder} name={name} readOnly />
         </div>
       </div>
@@ -426,7 +426,7 @@ export const InputFields2 = ({ placeholder, name }: any) => {
 export const Dropdown = () => {
   return (
     <div className="self-stretch mt-[6px] mb-[16px] w-full sm:w-[400px] h-[34px] px-2 py-1 bg-white rounded border border-gray-400 ">
-      <div className="grow shrink basis-0 h-6 text-gray-800 text-base font-normal leading-normal">
+      <div className="grow shrink basis-0 h-6 text-gray-800 text-remove  font-remove leading-normal">
         <Field
           as="select"
           name="currency"
@@ -446,12 +446,12 @@ export const Dropdown = () => {
 //       key={index}
 //       className="self-stretch h-[76px] flex-col justify-start items-start gap-0.5 flex"
 //     >
-//       <div className="self-stretch text-[#111012] text-base font-medium uppercase leading-normal tracking-tight">
+//       <div className="self-stretch text-[#111012] text-remove font-medium uppercase leading-normal tracking-tight">
 //         {label}
 //       </div>
 //       <div className="self-stretch h-[50px] py-1 flex-col justify-start items-start flex">
 //         <div className="self-stretch h-[34px] px-1.5 pt-1.5 pb-1 bg-white rounded border border-gray-400 ">
-//           <div className="grow shrink basis-0 h-6 text-gray-800 text-base font-normal leading-normal">
+//           <div className="grow shrink basis-0 h-6 text-gray-800 text-remove  font-remove leading-normal">
 //             {label === "CURRENCY" ? (
 //               <select className="bg-white w-full">
 //                 {currencyOptions.map((currencyOption, optionIndex) => (

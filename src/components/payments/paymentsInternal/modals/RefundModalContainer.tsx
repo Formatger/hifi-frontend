@@ -79,10 +79,10 @@ const RenderRadiobutton = ({ name, value, title, selectedoption }: any) => {
         />
       </div>
       <label
-        className={`grow shrink basis-0 text-base leading-normal ${
+        className={`grow shrink basis-0 text-remove leading-normal ${
           selectedoption === value
             ? "blue-text font-semibold"
-            : "text-[#4B5563] font-normal"
+            : "text-[#4B5563]  font-remove"
         }`}
       >
         {title}
@@ -560,28 +560,28 @@ const RefundModal: React.FC<RefundModalProps> = ({
           {currentStep === "underway" && (
             <div className="px-2 pt-4">
               <div className="flex flex-col gap-2 px-5 py-2">
-                <h2 className=" text-[#111012] text-base font-semibold poppins-remove uppercase leading-normal tracking-tight">
+                <h2 className=" text-[#111012] text-remove font-semibold poppins-remove uppercase leading-normal tracking-tight">
                   PROCESSING TIME
                 </h2>
-                <p className=" text-[#4B5563] text-base font-normal poppins-remove leading-normal">
+                <p className=" text-[#4B5563] text-remove  font-remove poppins-remove leading-normal">
                   Refunds typically take sometime to process. We appreciate your
                   patience as we work to complete the refund transactions.
                 </p>
               </div>
               <div className="flex flex-col gap-2 px-5 py-2">
-                <h2 className=" text-[#111012] text-base font-semibold poppins-remove uppercase leading-normal tracking-tight">
+                <h2 className=" text-[#111012] text-remove font-semibold poppins-remove uppercase leading-normal tracking-tight">
                   STATUS UPDATES
                 </h2>
-                <p className=" text-[#4B5563] text-base font-normal poppins-remove leading-normal">
+                <p className=" text-[#4B5563] text-remove  font-remove poppins-remove leading-normal">
                   Check status in the Payments Detail view of the Payments
                   dashboard.
                 </p>
               </div>
               <div className="flex flex-col gap-2 px-5 py-2">
-                <h2 className=" text-[#111012] text-base font-semibold poppins-remove uppercase leading-normal tracking-tight">
+                <h2 className=" text-[#111012] text-remove font-semibold poppins-remove uppercase leading-normal tracking-tight">
                   OTP
                 </h2>
-                <p className=" text-[#4B5563] text-base font-normal poppins-remove leading-normal">
+                <p className=" text-[#4B5563] text-remove  font-remove poppins-remove leading-normal">
                   Please wait for 2 mintues to recieve otp into your email id.
                 </p>
                 <div className="-mt-1 lg:mt-2 relative flex items-center justify-center">

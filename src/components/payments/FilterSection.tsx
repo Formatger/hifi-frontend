@@ -105,7 +105,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
           {filterbox && (
             <div className="flex flex-col absolute top-[60px] md:top-10 z-30">
               <div className="lg:w-[334px] p-4 bg-white shadow-lg rounded-md flex flex-col">
-                <p className=" text-[#111012] text-base font-semibold poppins-remove">
+                <p className=" text-[#111012] text-remove font-semibold poppins-remove">
                   Filter by Date
                 </p>
 
@@ -190,7 +190,7 @@ const RangeCount = ({
         <div className="relative">
           <div className="border w-20 py-1.5 pl-[6px] rounded-md border-[#E5E9EB] bg-white">
             <input
-              className="color-[#252C32] poppins-remove w-16"
+              className="color-[#252C32] w-16"
               type="number"
               value={inputRangeValue}
               onChange={handleInputChange}
@@ -230,7 +230,7 @@ export const AddFilterDropdown = ({ toggleShowDateFilter }: any) => {
   return (
     <div
       onClick={toggleShowDateFilter}
-      className="absolute top-6 right-0 cursor-pointer w-[216px] h-[60px] z-20"
+      className="filter-drop-container"
     >
       <Image src={Filterdropdown} alt="Filterdropdown" />
     </div>
@@ -241,7 +241,7 @@ export const AddFilterButton = ({ showDateButton }: any) => {
   return (
     <button
       onClick={showDateButton}
-      className="poppins-remove w-[138px] h-8 flex blue-text2 border rounded-md  gap-2 bg-gray-50 border-gray-200 items-center justify-center ml-auto mb-10"
+      className="sec-button"
     >
       <Image src={Funnel} alt="filter" className="" />
       Add Filters
@@ -253,7 +253,7 @@ const CancelFilterButton = ({ clearFilters }: any) => {
   return (
     <button
       onClick={clearFilters}
-      className="poppins-remove -mt-20 md:mt-0 w-[138px] mr-5 h-8 flex blue-text2 border gap-3 rounded-md  bg-gray-50 border-gray-200 items-center justify-center -ml-[20px] md:ml-auto"
+      className="sec-button clear-btn"
     >
       <Image src={x} alt="filter" className="" />
       Clear Filters
@@ -265,7 +265,7 @@ const ApplyButton = ({ onClick }: any) => {
   return (
     <button
       onClick={onClick}
-      className="app-button"
+      className="app-button mt-btn"
     >
       Apply
     </button>
@@ -314,7 +314,7 @@ const Button2 = ({
           </div>
           Date
           <span className="h-4 w-px bg-gray-400"></span>
-          <span className="blue-text2 text-base font-semibold poppins-remove">
+          <span className="blue-text2 text-remove font-semibold poppins-remove">
             {finalValue ? finalValue : "Starting from"}
           </span>
           <Image src={caretdown} alt="arrow" className="" />

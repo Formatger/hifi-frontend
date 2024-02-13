@@ -149,17 +149,17 @@ const ViewReceiptModal: React.FC<{
         </div>
 
         <div className="flex flex-col gap-1 p-2">
-          <p className="text-gray-800 text-base font-semibold poppins-remove leading-normal">
+          <p className="text-gray-800 text-remove font-semibold poppins-remove leading-normal">
             {moment(receiptDetails.createDate).format("MMM DD, YYYY h:mm A")}
           </p>
-          <p className="text-[#4B5563] text-base font-normal poppins-remove leading-normal">
+          <p className="text-[#4B5563] text-remove  font-remove poppins-remove leading-normal">
             Order ID
           </p>
-          <p className="text-gray-800 text-base font-normal poppins-remove leading-normal">
+          <p className="text-gray-800 text-remove  font-remove poppins-remove leading-normal">
             {receiptDetails.actual_order_id}
           </p>
         </div>
-        <p className="text-[#4B5563] text-base font-normal poppins-remove leading-normal  w-full p-2 flex flex-wrap gap-2">
+        <p className="text-[#4B5563] text-remove  font-remove poppins-remove leading-normal  w-full p-2 flex flex-wrap gap-2">
           <span className=""> You made a payment of</span>
           <span className="font-semibold whitespace-nowrap">
             {formatCurrency(receiptDetails.fiatCurrencyAmount)} USD
@@ -173,7 +173,7 @@ const ViewReceiptModal: React.FC<{
             <td className="p-2 w-[30%]">SUBTOTAL</td>
           </tr>
           <tr className=" border-y border-gray-200 h-20">
-            <td className="text-[#4B5563] font-normal p-2">
+            <td className="text-[#4B5563]  font-remove p-2">
               {receiptDetails.description}
             </td>
             <td className="text-gray-800 font-semibold ">
@@ -196,7 +196,7 @@ const ViewReceiptModal: React.FC<{
           </tr>
         </table>
         <div className="flex flex-col p-2">
-          <p className="w-[394px] text-[#111012] text-base font-medium poppins-remove uppercase leading-normal tracking-tight">
+          <p className="w-[394px] text-[#111012] text-remove font-medium poppins-remove uppercase leading-normal tracking-tight">
             Paid with
           </p>
           <div className="flex items-center gap-2">

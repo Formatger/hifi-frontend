@@ -132,7 +132,7 @@ const CustomerDetail = () => {
     fetchData();
   }, [router]);
   return (
-    <div className="w-full flex flex-col justify-center poppins-remove">
+    <div className="main-container">
       <div className="w-full">
         <Header />
         <div className="w-full flex flex-col  gap-6 -mt-2">

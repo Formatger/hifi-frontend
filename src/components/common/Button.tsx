@@ -27,7 +27,7 @@ const Button: React.FC<ButtonProps> = ({
         </div>
       )}
       <div
-        className={`text-base font-normal poppins-remove leading-normal max-sm:text-sm`}
+        className={`text-remove  font-remove poppins-remove leading-normal max-sm:text-sm`}
       >
         {label}
       </div>

@@ -108,7 +108,7 @@ const Payment = ({ paymentDetails }: { paymentDetails: PaymentDetails }) => {
           <div className="flex items-center gap-3">
             {paymentDetails?.status !== "withdraw" && (
               <button
-                className="flex gap-3 items-center rounded-md blue-text justify-center h-8 border-[#E5E9EB] border bg-[#F6F8F9]  w-28"
+                className="sec-button"
                 onClick={openRefundModal}
               >
                 <Image src={arrowbendupleft} alt="arrow" className="" />

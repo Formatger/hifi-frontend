@@ -48,8 +48,8 @@ const Items: React.FC<ItemsProps> = ({ currentItems }) => {
 
   return (
     <div>
-      <div className="w-full mb-8 px-4 overflow-hidden rounded-lg shadow-xs text-sm">
-        <div className="w-full overflow-x-auto">
+      <div className="table-wrap">
+        <div className="scroll-wrap">
           <table className="Table">
             <thead>
               <tr className="table-head">

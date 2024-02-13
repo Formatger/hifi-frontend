@@ -38,7 +38,7 @@ const Profile = () => {
   }, []);
 
   return (
-    <div className="w-full relative flex xl:h-screen flex-col poppins-remove">
+    <div className="main-container">
       <div className="w-full">
         <Header />
         {loader ? (
@@ -59,7 +59,7 @@ const Profile = () => {
                   </p>
                   <div className="flex flex-col lg:flex-row items-start lg:items-start justify-between gap-5 lg:gap-0">
                     <div className="flex flex-col lg:w-[80%]">
-                      <div className=" text-[#4B5563] text-base font-normal font-poppins leading-normal">
+                      <div className=" text-[#4B5563] text-remove  font-remove font-poppins leading-normal">
                         By closing your account, you will not be able to access
                         your financial data for reporting and tax purposes,
                         create future charges and refunds, and respond to new

@@ -17,18 +17,18 @@ const OrderHistory = ({
       </h1>
       <hr className="h-px bg-black w-full" />
       <div className="flex gap-16">
-        <p className="text-[#4B5563] text-base font-normal poppins-remove w-36">
+        <p className="text-[#4B5563] text-remove  font-remove poppins-remove w-36">
           Order created
         </p>
-        <p className="text-gray-800 text-base font-normal poppins-remove">
+        <p className="text-gray-800 text-remove  font-remove poppins-remove">
           {formatDate(orderHistoryDetails?.orderCreatedDate)}
         </p>
       </div>
       <div className="flex gap-16">
-        <p className="text-[#4B5563] text-base font-normal poppins-remove w-36">
+        <p className="text-[#4B5563] text-remove  font-remove poppins-remove w-36">
           Payment Received
         </p>
-        <p className="text-gray-800 text-base font-normal poppins-remove ">
+        <p className="text-gray-800 text-remove  font-remove poppins-remove ">
           {formatDate(orderHistoryDetails?.paymentReceivedDate)}
         </p>
       </div>

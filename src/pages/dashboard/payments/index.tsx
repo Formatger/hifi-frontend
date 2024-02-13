@@ -266,9 +266,9 @@ const Payments = () => {
     <div className="main-container">
       <Header />
       <div className="page-container" id="payments">
-        <div className="w-full px-6 mt-4 flex flex-col relative">
-          <div className="fixed lg:sticky w-full lg:w-auto top-[105px] lg:top-[78px] z-20 bg-white">
-            <h1 className="text-[#111012] lg:-mt-3 mb-0 lg:mb-3 font-semibold poppins-remove text-[20px] lg:text-[36px] tracking-[0.36px] py-0 lg:py-0">
+        <div className="page-head">
+          <div className="h1-wrap">
+            <h1 className="h1">
               Payments
             </h1>
           </div>

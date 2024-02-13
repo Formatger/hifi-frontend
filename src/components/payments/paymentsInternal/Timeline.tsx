@@ -27,10 +27,10 @@ const Timeline = ({ timelineDetails }: { timelineDetails: TimelineProps }) => {
             <div className="w-px h-6 bg-[#E5E9EB]"></div>
           </div>
           <div className="flex flex-col">
-            <div className="text-[#4B5563] text-base font-normal poppins-remove ">
+            <div className="text-[#4B5563] text-remove  font-remove poppins-remove ">
               Payment Succeeded
             </div>
-            <div className="text-[#4B5563] text-sm font-normal poppins-remove ">
+            <div className="text-[#4B5563] text-sm  font-remove poppins-remove ">
               {moment(timelineDetails?.paymentSucceededDate).format(
                 "MMM DD, YYYY h:mm A"
               )}
@@ -43,10 +43,10 @@ const Timeline = ({ timelineDetails }: { timelineDetails: TimelineProps }) => {
             <div className="w-px h-6 bg-[#E5E9EB]"></div>
           </div>{" "}
           <div className="flex flex-col">
-            <div className="text-[#4B5563] text-base font-normal poppins-remove ">
+            <div className="text-[#4B5563] text-remove  font-remove poppins-remove ">
               Payment Initiated
             </div>
-            <div className="text-[#4B5563] text-sm font-normal poppins-remove ">
+            <div className="text-[#4B5563] text-sm  font-remove poppins-remove ">
               {moment(timelineDetails?.paymentStartedDate).format(
                 "MMM DD, YYYY h:mm A"
               )}

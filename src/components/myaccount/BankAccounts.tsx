@@ -23,7 +23,7 @@ const BankAccounts: React.FC<BankAccountsProps> = ({ entries }) => {
           Bank Accounts
         </h2>
         <button
-          className="bg-indigo-900 w-[130px] h-7 lg:h-8 text-sm lg:text-base rounded-md flex text-stone-50 items-center justify-center poppins-remove"
+          className="bg-indigo-900 w-[130px] h-7 lg:h-8 text-sm lg:text-remove rounded-md flex text-stone-50 items-center justify-center poppins-remove"
           onClick={openModal}
         >
           Add Account

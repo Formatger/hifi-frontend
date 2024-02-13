@@ -135,7 +135,7 @@ const Team = () => {
   };
 
   return (
-    <div className="w-full relative flex xl:h-screen flex-col poppins-remove">
+    <div className="main-container">
       <div className="w-full">
         <Header />
         <div className="w-full p-3 lg:px-6 relative">
@@ -151,10 +151,10 @@ const Team = () => {
               <ToggleButton />
             </div>
             <div className="flex flex-col">
-              <p className="text-[#111012] text-base font-semibold poppins-remove leading-normal">
+              <p className="text-[#111012] text-remove font-semibold poppins-remove leading-normal">
                 Require two-step authentication for your team
               </p>
-              <p className=" text-[#4B5563] text-base font-normal poppins-remove leading-normal">
+              <p className=" text-[#4B5563] text-remove  font-remove poppins-remove leading-normal">
                 This will require any team member without two-step
                 authentication to enable it the next time they sign in.
               </p>
@@ -172,7 +172,7 @@ const Team = () => {
                 >
                   {role === "0" || role === "1" ? (
                     <button
-                      className="flex blue-text bg-[#F6F8F9] items-center gap-2 rounded-md border border-[#E5E9EB] w-[182px] xl:w-[164px] justify-center h-8  "
+                      className="sec-button"
                       type="button"
                     >
                       <Image src={downloadsimple} alt="export" />
@@ -212,7 +212,7 @@ const Team = () => {
                   <div className="w-6 h-6 p-0.5 flex items-center">
                     <Image src={newcustomericon} alt="NewCustomerIcon" />
                   </div>
-                  <button className="text-[#F9F9F7] text-base font-normal poppins-remove">
+                  <button className="text-[#F9F9F7] text-remove  font-remove poppins-remove">
                     New Member
                   </button>
                 </div>

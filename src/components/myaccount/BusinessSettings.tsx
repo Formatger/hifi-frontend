@@ -8,7 +8,7 @@ const BusinessSettings = () => {
         <h1 className="text-4xl text-[#111012] poppins-remove font-semibold">
           Business Settings
         </h1>
-        <p className="text-base text-[#4B5563] poppins-remove">
+        <p className="text-remove text-[#4B5563] poppins-remove">
           Please select a link to view your business and team account
           information
         </p>

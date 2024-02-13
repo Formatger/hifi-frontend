@@ -51,10 +51,10 @@ const PaymentMethods = ({ payment_method_wallets }: any) => {
                   }`}
                 />
                 <div className="flex flex-col justify-between items-center">
-                  <p className="text-[#111012] text-base font-semibold poppins-remove leading-normal flex gap-2 items-center">
+                  <p className="text-[#111012] text-remove font-semibold poppins-remove leading-normal flex gap-2 items-center">
                     {method.name}
                     {method.default && (
-                      <span className="w-[58px] h-[22px] px-1.5 py-0.5 bg-cyan-100 text-[#111012] text-xs font-semibold">
+                      <span className="default-tag">
                         Default
                       </span>
                     )}
@@ -73,71 +73,71 @@ const PaymentMethods = ({ payment_method_wallets }: any) => {
           {activeMethod === index && (
             <div className="flex flex-col gap-1">
               <div className="flex gap-3 lg:gap-16">
-                <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-40">
+                <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-40">
                   Currency Paid
                 </p>
-                <p className="text-[#252C32] uppercase text-sm lg:text-base font-normal poppins-remove">
+                <p className="text-[#252C32] uppercase text-sm lg:text-remove  font-remove poppins-remove">
                   {method?.currency_paid}
                 </p>
               </div>
               <div className="flex gap-3 lg:gap-16">
-                <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-40">
+                <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-40">
                   Currency Received
                 </p>
-                <p className="text-[#252C32] text-sm uppercase lg:text-base font-normal poppins-remove ">
+                <p className="text-[#252C32] text-sm uppercase lg:text-remove  font-remove poppins-remove ">
                   {method?.currency_received}
                 </p>
               </div>
               <div className="flex gap-3 lg:gap-16">
-                <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-40">
+                <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-40">
                   Exchange Rate
                 </p>
-                <p className="text-[#252C32] uppercase text-sm lg:text-base font-normal poppins-remove ">
+                <p className="text-[#252C32] uppercase text-sm lg:text-remove  font-remove poppins-remove ">
                   {method?.exchange_rate}
                 </p>
               </div>
               <div className="flex gap-3 lg:gap-16">
-                <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-40">
+                <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-40">
                   Blockchain Record
                 </p>
                 <Link
                   href={`${CRYPTOADDRESS}/${method?.wallet_address}`}
                   target="_blank"
-                  className=" text-sm lg:text-base font-normal blue-text3 underline poppins-remove "
+                  className=" text-sm lg:text-remove  font-remove blue-text3 underline poppins-remove "
                 >
                   {method?.blockchain_record}
                 </Link>
               </div>
 
               <div className="flex gap-3 lg:gap-16">
-                <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-40">
+                <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-40">
                   Wallet Address
                 </p>
-                <p className="text-[#252C32] w-28 lg:w-auto overflow-hidden text-sm lg:text-base font-normal poppins-remove ">
+                <p className="text-[#252C32] w-28 lg:w-auto overflow-hidden text-sm lg:text-remove  font-remove poppins-remove ">
                   {method?.wallet_address}
                 </p>
               </div>
               <div className="flex gap-3 lg:gap-16">
-                <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-40">
+                <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-40">
                   Type
                 </p>
-                <p className="text-[#252C32] text-sm lg:text-base font-normal poppins-remove">
+                <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove">
                   {method?.type}
                 </p>
               </div>
               <div className="flex gap-3 lg:gap-16">
-                <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-40">
+                <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-40">
                   Issuer
                 </p>
-                <p className="text-[#252C32] text-sm lg:text-base font-normal poppins-remove ">
+                <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove ">
                   {method?.issuer}
                 </p>
               </div>
               <div className="hidden flex gap-3 lg:gap-16">
-                <p className="text-[#4B5563] text-sm lg:text-base font-normal poppins-remove w-40">
+                <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-40">
                   Signature Check
                 </p>
-                <p className="text-[#252C32] flex items-center gap-3 text-sm lg:text-base font-normal poppins-remove ">
+                <p className="text-[#252C32] flex items-center gap-3 text-sm lg:text-remove  font-remove poppins-remove ">
                   {method?.signature_check}
                   <Image src={checkcircle} alt="check" className="" />
                 </p>

@@ -19,7 +19,7 @@ const JSONDisplay = ({ data }: { data: Record<string, any> }) => {
     ([key, value], index) => (
       <div key={index}>
         <p className="mt-1">
-          <span className="text-gray-500 text-base mr-10 poppins-remove">
+          <span className="text-gray-500 text-remove mr-10 poppins-remove">
             {index + 2}
           </span>
           <span className="blue-text3">"{key}":</span>{" "}
@@ -33,7 +33,7 @@ const JSONDisplay = ({ data }: { data: Record<string, any> }) => {
 
   return (
     <div className="w-full p-4 bg-white text-sm font-mono text-gray-800">
-      <p className="text-gray-500 text-base mr-10 poppins-remove">
+      <p className="text-gray-500 text-remove mr-10 poppins-remove">
         1 <span className="ml-10 text-gray-800 poppins-remove"> {"{"}</span>
       </p>
       {syntaxHighlightedJson}
@@ -46,14 +46,14 @@ const LatestActivity = () => {
     <div className="w-full flex flex-col justify-start gap-3 lg:p-5 p-3">
       <div className="flex items-center gap-3">
         <Image src={arrowsdownup} alt="arrows" className="" />
-        <p className="text-gray-500 text-sm font-normal poppins-remove leading-normal">
+        <p className="text-gray-500 text-sm  font-remove poppins-remove leading-normal">
           From Hifi Pay
         </p>
       </div>
-      <p className="text-[#111012] text-base font-semibold poppins-remove leading-normal">
+      <p className="text-[#111012] text-remove font-semibold poppins-remove leading-normal">
         invoice.payment_succeeded
       </p>
-      <a className="blue-text3 text-base font-normal poppins-remove underline">
+      <a className="blue-text3 text-remove  font-remove poppins-remove underline">
         View event detail
       </a>
       <JSONDisplay data={mockjson} />

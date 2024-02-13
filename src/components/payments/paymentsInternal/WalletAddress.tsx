@@ -4,7 +4,7 @@ import React from "react";
 const WalletAddress = ({ walletaddress }: { walletaddress: string }) => {
   return (
     <div className="flex flex-col w-[230px]  justify-center lg:px-5 lg:border-r">
-      <p className="text-[#4B5563] text-base font-normal poppins-remove">
+      <p className="text-[#4B5563] text-remove  font-remove poppins-remove">
         Wallet Address
       </p>
       <Link

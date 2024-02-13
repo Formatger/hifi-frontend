@@ -25,8 +25,8 @@ const TransactionItem = ({
     <div
       className={`text-${
         isTotal ? "neutral" : isBold ? "#111012" : "#4B5563"
-      }-600 text-base  poppins-remove leading-normal ${
-        isBold ? "font-semibold" : "font-normal"
+      }-600 text-remove  poppins-remove leading-normal ${
+        isBold ? "font-semibold" : " font-remove"
       }`}
     >
       {label}
@@ -37,7 +37,7 @@ const TransactionItem = ({
           {/* <div className="w-6 h-6 p-0.5 justify-center items-center flex">
             <Image src={warning} alt="" className="" />
           </div>
-          <div className="w-full sm:w-[300px] text-[#D5672B] text-base font-normal poppins-remove leading-normal">
+          <div className="w-full sm:w-[300px] text-[#D5672B] text-remove  font-remove poppins-remove leading-normal">
             Payouts will resume when your available transactions are positive.
           </div> */}
           <div className="ml-10">{amount}</div>
@@ -46,8 +46,8 @@ const TransactionItem = ({
         <div
           className={`text-${
             isTotal ? "neutral" : isBold ? "#111012 " : "#4B5563"
-          }-600 text-base poppins-remove leading-normal ${
-            isBold ? "font-semibold" : "font-normal"
+          }-600 text-remove poppins-remove leading-normal ${
+            isBold ? "font-semibold" : " font-remove"
           }`}
         >
           {amount}
@@ -82,7 +82,7 @@ const TransactionSection = ({ transactionSummaryData }: any) => {
       </span>
     </div> */}
 
-      {/* <p className="grow shrink basis-0 self-stretch blue-text text-base font-normal poppins-remove underline">
+      {/* <p className="grow shrink basis-0 self-stretch blue-text text-remove  font-remove poppins-remove underline">
       Transactions since last payout
     </p> */}
 

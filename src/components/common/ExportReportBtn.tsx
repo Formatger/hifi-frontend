@@ -4,7 +4,7 @@ import downloadsimple from "../assets/images/downloadsimple.svg";
 
 const ExportReportBtn = () => {
   return (
-    <button className="flex blue-text bg-[#F6F8F9] items-center gap-2 rounded-md border border-[#E5E9EB] w-[182px] xl:w-[164px] justify-center h-8  ">
+    <button className="sec-button">
       <Image src={downloadsimple} alt="export" />
       <span>Export Report</span>
     </button>

@@ -30,20 +30,20 @@ export default function Totalbalance(props: TotalBalanceProps) {
             }  border-gray-200 justify-between items-start inline-flex`}
           >
             <div
-              className={`text-base ${
+              className={`text-remove ${
                 id == 1
                   ? `font-bold text-[#111012] `
-                  : `font-normal text-[#4B5563]`
+                  : ` font-remove text-[#4B5563]`
               }  poppins-remove leading-normal poppins-remove `}
             >
               {data?.title}
             </div>
             <div className="justify-start items-start gap-2 flex">
               <div
-                className={`text-base  ${
+                className={`text-remove  ${
                   id === 1
                     ? `font-bold text-[#111012] `
-                    : `font-normal text-[#4B5563]`
+                    : ` font-remove text-[#4B5563]`
                 } poppins-remove leading-normal`}
               >
                 {data?.usd}
@@ -66,7 +66,7 @@ export default function Totalbalance(props: TotalBalanceProps) {
           </div>
         </div>
         <div className="self-stretch justify-start items-start inline-flex">
-          <div className="grow shrink basis-0 self-stretch text-[#6A7781] text-sm font-normal poppins-remove leading-normal">
+          <div className="grow shrink basis-0 self-stretch text-[#6A7781] text-sm  font-remove poppins-remove leading-normal">
             Reconcile your HIFI Pay balance and download your categorized
             transaction history.
           </div>

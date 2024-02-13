@@ -8,14 +8,14 @@ const Entry2 = ({ status }: { status?: string }) => {
     <div className="flex items-start gap-7 py-4 border-b border-gray-200">
       <Image src={bank} alt="" className="" />
       <div className="flex flex-col">
-        <p className="text-gray-800 flex items-center gap-3 text-base font-normal leading-normal">
+        <p className="text-gray-800 flex items-center gap-3 text-remove  font-remove leading-normal">
           DBS Bank/POSB
           <span className="bg-gray-200  px-1.5 py-0.5 text-[#111012] text-xs font-semibold leading-[18px] tracking-tight">
             SGD
           </span>
           {status && <span className="text-red-600">({status})</span>}{" "}
         </p>
-        <p className="text-gray-800 text-base font-normal poppins-remove leading-normal">
+        <p className="text-gray-800 text-remove  font-remove poppins-remove leading-normal">
           •••••23456
         </p>
       </div>
@@ -31,7 +31,7 @@ const BankAccounts2 = ({}) => {
         <h2 className="text-[#111012] text-lg lg:text-2xl font-semibold poppins-remove leading-loose">
           Bank Accounts
         </h2>
-        <button className="bg-indigo-900 w-[130px] h-7 lg:h-8 text-sm lg:text-base rounded-md flex text-stone-50 items-center justify-center poppins-remove">
+        <button className="bg-indigo-900 w-[130px] h-7 lg:h-8 text-sm lg:text-remove rounded-md flex text-stone-50 items-center justify-center poppins-remove">
           Add Account
         </button>
       </section>

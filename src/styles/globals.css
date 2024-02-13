@@ -177,13 +177,15 @@
 
 .table-wrap {
   width: 100%;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  /* padding-left: 1rem;
+  padding-right: 1rem; */
   overflow: hidden;
-  border-radius: 0.375rem;
-  font-size: 0.875rem;
+  /* border-radius: 0.375rem; */
+}
+
+.scroll-wrap {
+  width: 100%;
+  overflow-x: auto;
 }
 
 .Table {
@@ -307,6 +309,111 @@
   border-color: #c2cbd6;
 }
 
+/* Filter Label */
+
+.filter-container {
+  position: relative;
+  margin-top: var(--m3);
+}
+
+.filter-wrap {
+  width: 100%;
+  margin-bottom: 0;
+  padding-top: 0.5rem;
+  background-color: #fff;
+  border-bottom: var(--sborder);
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+  display: inline-flex;
+}
+
+.addfilter {
+  position: absolute;
+  top: 0;
+  right: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .filter-wrap {
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    gap: 1rem;
+  }
+}
+
+.tab {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.375rem;
+  display: inline-flex;
+  padding-top: var(--m1);
+  padding-left: var(--m1);
+  padding-right: var(--m1);
+  height: 2.25rem;
+  border-radius: 0.125rem;
+  cursor: pointer;
+}
+
+.tab-active {
+  border-bottom: 2px solid var(--main);
+  color: var(--main);
+}
+
+.tab:hover {
+  color: var(--main);
+}
+
+/* Add filter button */
+
+.filter-options {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-btn {
+  margin-top: -5rem;
+  margin-right: var(--m5);
+  height: 2rem;
+}
+
+/* .select-filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  border-bottom: 1px solid #cbd5e0;
+} */
+
+.filter-drop-container {
+  position: absolute;
+  top: 24px; 
+  right: 0;
+  cursor: pointer;
+  width: max-content;
+  height:  max-content;
+  z-index: 20;
+}
+
+@media (min-width: 768px) {
+
+  .clear-btn {
+    margin-top: 0;
+    margin-left: auto;
+  }
+
+  .select-filter-container {
+    height: 2rem; /* 16px */
+    padding-top: 0.5rem; /* 16px */
+    padding-bottom: 0.5rem; /* 16px */
+  }
+
+}
+
 /* Pagination */
 
 .page-count-container {
@@ -353,9 +460,9 @@
   font-weight: 500;
 }
 
-.page-item:hover {
+/* .page-item:hover {
   background: var(--grey2);
-}
+} */
 
 .previous-button,
 .next-button {

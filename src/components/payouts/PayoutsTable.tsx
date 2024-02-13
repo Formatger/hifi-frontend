@@ -86,22 +86,22 @@ const Table = () => {
         <table className="w-full ">
           <thead>
             <tr className="border-b border-[#e5e9eb]  mb-1 h-[4vh] sticky top-0 bg-white z-10">
-              <th className="text-left text-base font-medium text-[#6A7781]  px-4">
+              <th className="text-left text-remove font-medium text-[#6A7781]  px-4">
                 TYPE
               </th>
-              <th className="text-left text-base font-medium text-[#6A7781]  px-4">
+              <th className="text-left text-remove font-medium text-[#6A7781]  px-4">
                 <div className="flex items-center gap-2">
                   <p> DATE</p>
                   <Image src={sortAscending} alt="automatic" />
                 </div>
               </th>
-              <th className="text-left text-base font-medium text-[#6A7781]  px-4">
+              <th className="text-left text-remove font-medium text-[#6A7781]  px-4">
                 STATUS
               </th>
-              <th className="text-left text-base font-medium text-[#6A7781]  px-4">
+              <th className="text-left text-remove font-medium text-[#6A7781]  px-4">
                 DESCRIPTION
               </th>
-              <th className="text-right text-base font-medium text-[#6A7781]  px-4">
+              <th className="text-right text-remove font-medium text-[#6A7781]  px-4">
                 AMOUNT PAID
               </th>
             </tr>

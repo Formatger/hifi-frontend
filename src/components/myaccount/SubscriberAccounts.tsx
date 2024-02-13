@@ -12,7 +12,7 @@ const SubscriberAccounts: React.FC<SubScriberAccountsProps> = ({ entries }) => {
         <h2 className="text-[#111012] text-lg lg:text-2xl font-semibold poppins-remove leading-loose">
           Subscriber Accounts
         </h2>
-        <button className="bg-indigo-900 w-[130px] h-7 lg:h-8 text-sm lg:text-base rounded-md flex text-stone-50 items-center justify-center poppins-remove">
+        <button className="bg-indigo-900 w-[130px] h-7 lg:h-8 text-sm lg:text-remove rounded-md flex text-stone-50 items-center justify-center poppins-remove">
           Add Account
         </button>
       </section>

@@ -156,7 +156,7 @@ const BankAccounts = () => {
   return (
     <>
       <ToastContainer />
-      <div className="w-full relative flex xl:h-screen flex-col poppins-remove">
+      <div className="main-container">
         <div className="w-full">
           <Header />
           <div className="w-full p-3 lg:px-6 ">
@@ -385,7 +385,7 @@ const BankAccounts = () => {
 const Title = ({ title }: any) => {
   return (
     <div
-      className={`self-stretch  text-base  uppercase leading-normal tracking-tight mt-[16px] font-medium text-[rgb(17,16,18)]`}
+      className={`self-stretch  text-remove  uppercase leading-normal tracking-tight mt-[16px] font-medium text-[rgb(17,16,18)]`}
     >
       {title}
     </div>
@@ -396,7 +396,7 @@ const InputFields = ({ placeholder, name, onChange }: any) => {
   return (
     <>
       <div className="self-stretch mt-[6px] mb-[16px] w-full sm:w-[400px] h-[34px] px-2 py-1 bg-white rounded border border-gray-400 inline-flex">
-        <div className="grow shrink basis-0 h-6 text-gray-800 text-base font-normal leading-normal">
+        <div className="grow shrink basis-0 h-6 text-gray-800 text-remove  font-remove leading-normal">
           <input
             type="number"
             placeholder={placeholder}

@@ -232,7 +232,7 @@ const Customer = () => {
       <Header />
       <div className="page-container" id="customer">
         <div>
-          <div className="sticky top-14 lg:top-[74px] z-20">
+          <div className="page-head">
             <Customerheader />
           </div>
           <FilterHeader

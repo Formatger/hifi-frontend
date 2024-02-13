@@ -130,7 +130,7 @@ const GoogleButton = () => {
           </div>
         ) : (
           <div className="justify-start items-start flex mt-[0.5px]">
-            <div className="text-[#6A7781] font-normal leading-normal poppins-remove">
+            <div className="text-[#6A7781]  font-remove leading-normal poppins-remove">
               Sign in Using Google
             </div>
           </div>

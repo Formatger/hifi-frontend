@@ -118,7 +118,7 @@ const UploadLogo = () => {
           <div className="flex flex-col lg:flex-row items-center gap-10 border-b border-[#E5E9EB] py-5 lg:py-0 lg:pb-5">
             {displayLogo ? (
               <div className="flex flex-col">
-                <p className="text-[#111012] text-base font-semibold poppins-remove">
+                <p className="text-[#111012] text-remove font-semibold poppins-remove">
                   Business profile logo
                 </p>
                 <Image
@@ -135,10 +135,10 @@ const UploadLogo = () => {
             <div className="flex flex-col">
               {displayLogo ? null : (
                 <>
-                  <p className="text-[#111012] text-base font-semibold poppins-remove">
+                  <p className="text-[#111012] text-remove font-semibold poppins-remove">
                     Upload your business logo
                   </p>
-                  <p className="text-[#4B5563] text-base font-normal poppins-remove">
+                  <p className="text-[#4B5563] text-remove  font-remove poppins-remove">
                     Suggested logo size 300px x 300px
                   </p>
                 </>
@@ -162,7 +162,7 @@ const UploadLogo = () => {
             </div> */}
                 {role === "0" || role === "1" ? (
                   <button
-                    className="w-[123px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] blue-text poppins-remove lg:ml-auto"
+                    className="sec-button lg:ml-auto"
                     onClick={openPopup}
                   >
                     Upload logo
@@ -208,10 +208,10 @@ const UploadLogo = () => {
           </div>
           <Image src={uploadsimple} alt="" />
           <div className="flex flex-col px-3 lg:px-0">
-            <p className="text-gray-800 text-base font-semibold poppins-remove leading-normal">
+            <p className="text-gray-800 text-remove font-semibold poppins-remove leading-normal">
               Drop your image here to upload
             </p>
-            <p className="text-[#4B5563] text-base font-normal poppins-remove leading-normal">
+            <p className="text-[#4B5563] text-remove  font-remove poppins-remove leading-normal">
               Works with any .JPG or .PNG File.
             </p>
           </div>

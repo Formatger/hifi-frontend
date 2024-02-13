@@ -11,7 +11,7 @@ const items = [
 
 const Settings = () => {
   return (
-    <div className="w-full relative flex xl:h-screen flex-col poppins-remove">
+    <div className="main-container">
       <div className="w-full">
         <Header />
         <div className="w-full p-3 lg:p-6 ">
@@ -23,7 +23,7 @@ const Settings = () => {
                 <p className="text-[#111012] text-xl font-semibold poppins-remove">
                   Close account
                 </p>
-                <div className=" text-[#4B5563] text-base font-normal font-poppins leading-normal">
+                <div className=" text-[#4B5563] text-remove  font-remove font-poppins leading-normal">
                   By closing your account, you will not be able to access your
                   financial data for reporting and tax purposes, create future
                   charges and refunds, and respond to new disputes.

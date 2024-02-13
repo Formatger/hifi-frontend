@@ -41,21 +41,21 @@ const Details: React.FC<CustomerDetails> = ({ CustomerDetails }) => {
           </p>
 
           <div className="flex flex-col border-t border-[#E5E9EB] py-4">
-            <p className="text-[#4B5563] text-base font-normal poppins-remove leading-normal">
+            <p className="text-[#4B5563] text-remove  font-remove poppins-remove leading-normal">
               Account details
             </p>
-            <p className="text-[#252C32] text-base font-normal poppins-remove leading-normal">
+            <p className="text-[#252C32] text-remove  font-remove poppins-remove leading-normal">
               {CustomerDetails.name}
             </p>
-            <p className="text-[#252C32] text-base font-normal poppins-remove leading-normal">
+            <p className="text-[#252C32] text-remove  font-remove poppins-remove leading-normal">
               {CustomerDetails.mail}
             </p>
           </div>
           <div className="flex flex-col">
-            <p className="text-[#4B5563] text-base font-normal poppins-remove leading-normal">
+            <p className="text-[#4B5563] text-remove  font-remove poppins-remove leading-normal">
               Customer Wallet
             </p>
-            <p className="text-[#252C32] text-base font-normal poppins-remove leading-normal truncate">
+            <p className="text-[#252C32] text-remove  font-remove poppins-remove leading-normal truncate">
               {CustomerDetails?.wallet}
             </p>
           </div>
