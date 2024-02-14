@@ -46,7 +46,7 @@ const TransactionItem = ({
         <div
           className={`text-${
             isTotal ? "neutral" : isBold ? "#111012 " : "#4B5563"
-          }-600 text-remove poppins-remove leading-normal ${
+          } -600 text-remove poppins-remove leading-normal ${
             isBold ? "font-semibold" : " font-remove"
           }`}
         >

@@ -142,7 +142,7 @@ const Team = () => {
           <div className="w-full flex flex-col  mt-3  sticky top-[105px] lg:top-[78px] z-20 bg-white gap-4">
             <Breadcrumbs items={items} />
 
-            <h1 className="text-[#111012] mb-3 text-xl lg:text-4xl font-semibold poppins-remove tracking-tight poppins-remove">
+            <h1 className="h1">
               Team
             </h1>
           </div>
@@ -160,7 +160,7 @@ const Team = () => {
               </p>
             </div>
           </div> */}
-          <div className="w-full flex flex-col lg:flex-row items-start lg:items-center justify-end py-4 border-b border-[#E5E9EB] gap-3 lg:gap-0 mt-5">
+          <div className="w-full flex flex-col lg:flex-row items-start lg:items-center justify-end py-4 border-b border-[#E5E9EB] gap-3 lg:gap-0">
             <div className="flex flex-col lg:flex-row items-start lg:items-center gap-2">
               {/* <Button label="Filter" iconSrc={Funnel} /> */}
               <div className="relative">
@@ -206,7 +206,7 @@ const Team = () => {
 
               {role === "0" || role === "1" ? (
                 <div
-                  className="flex items-center cursor-pointer rounded-md justify-center gap-2 bg-[#6200EE] w-[167px] h-8"
+                  className="flex items-center cursor-pointer rounded-md justify-center gap-2 bg-[#5545fa] w-[167px] h-8"
                   onClick={openNewCustomerModal}
                 >
                   <div className="w-6 h-6 p-0.5 flex items-center">

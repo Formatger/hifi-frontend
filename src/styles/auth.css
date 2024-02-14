@@ -36,10 +36,9 @@ input[type="number"] {
   margin-bottom: var(--m6);
 }
 
-.authbox-wrap .logo,
-.authbox-wrap .logo-text {
+/* .authbox-wrap .logo-text {
   height: 36px;
-}
+} */
 
 .authbox {
   width: 100%;
@@ -143,11 +142,13 @@ input[type="number"] {
 .start-box .list-item {
   display: flex;
   margin-top: var(--m8);
+  margin-bottom: var(--m2);
+
 }
 
 .start-box .list-icon {
   margin-right: var(--m3);
-  margin-top: 6px;
+  margin-top: 3px;
 }
 
 .start-box .list-icon {
@@ -155,6 +156,7 @@ input[type="number"] {
 
 .start-box .h7 {
   color: var(--main);
+  font-size: var(--text-b);
 }
 
 .start-box .list-text {

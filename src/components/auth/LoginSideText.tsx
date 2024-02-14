@@ -3,7 +3,7 @@ import Image from "next/image";
 import WhiteLogo from "../assets/images/whitelogo.png";
 import Check from "../assets/images/check.png";
 import HifiLogoWhite from "@/components/assets/images/hifisvgwhite.svg";
-import TextLogo from "../assets/images/textLogo.svg";
+import HifiLogo from "../assets/images/hifi-logo.svg";
 import Check6 from "@/components/assets/images/check6.svg";
 
 const textData = [
@@ -30,7 +30,7 @@ const LoginSideText = () => {
         Get started with
       </div> */}
       <div className="mt-[16px]">
-        <Image className="logo-text" src={TextLogo} alt="logo" />
+        <Image className="logo-text" src={HifiLogo} alt="logo" />
       </div>
       <div className="start-box-wrap">
         <div>

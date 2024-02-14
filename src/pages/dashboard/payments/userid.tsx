@@ -144,7 +144,7 @@ const Userid = () => {
       : "N/A",
     fingerprint: "ECWA6LrK2ELGKYml",
     type: transactionData?.walletType ? transactionData?.walletType : "N/A",
-    issuer: "HIFI Bridge",
+    issuer: "HIFI",
     address: "No Address",
     origin: "United States",
     txHash: transactionData?.txHash ? transactionData?.txHash : "N/A",

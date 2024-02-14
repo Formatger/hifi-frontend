@@ -193,22 +193,3 @@
     gap: 0;
   }
 }
-
-
-
-.default-tag {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 20px; 
-  padding-left: 0.09375rem; /* 1.5px */
-  padding-right: 0.09375rem; /* 1.5px */
-  padding-top: 0.03125rem; /* 0.5px */
-  padding-bottom: 0.03125rem; /* 0.5px */
-  background-color: var(--main);
-  color: #fff;
-  font-size: 0.625rem; /* 10px */
-  font-weight: 500;
-  border-radius: var(--r2);
-}

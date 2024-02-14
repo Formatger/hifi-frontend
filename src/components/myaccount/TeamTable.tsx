@@ -24,24 +24,24 @@ const TeamTable: React.FC<TeamTableProps> = ({ teamData }) => {
   }, []);
 
   return (
-    <div className="w-full py-4 overflow-auto">
-      <table className="w-full" style={{ borderCollapse: "collapse" }}>
-        <thead>
-          <tr className="border-b border-[#e5e9eb] py-2 h-12 bg-white text-left">
-            <th className="pr-4">MEMBER</th>
-            <th className="px-3">ROLES</th>
-            <th className="px-3">Status</th>
-            <th className="px-3">LAST LOGIN</th>
+    <div className="scroll-wrap">
+      <table className="Table" >
+        <thead className="table-head">
+          <tr className="table-row">
+            <th className="th-title">MEMBER</th>
+            <th className="th-title">ROLES</th>
+            <th className="th-title">STATUS</th>
+            <th className="th-title">LAST LOGIN</th>
           </tr>
         </thead>
         <tbody>
           {teamData.map((item, index) => (
             <tr
               key={index}
-              className="border-b h-14 py-4 border-[#E5E9EB] hover:bg-[#F6F8F9]"
+              className="table-row wide"
             >
-              <td style={{ margin: "4px 0" }}>
-                <div className="flex flex-col">
+              <td className="table-col">
+                <div className="table-cell">
                   {/* <p className="text-[#111012] gap-3 flex items-center text-remove font-semibold poppins-remove leading-normal">
                   {item.name}
                   <span className="bg-violet-200 text-[#111012] text-xs font-semibold px-1.5 py-0.5 rounded">
@@ -49,7 +49,7 @@ const TeamTable: React.FC<TeamTableProps> = ({ teamData }) => {
                   </span>
                 </p> */}
                   <p className="text-[#4B5563] text-remove  font-remove poppins-remove leading-normal flex items-center gap-3">
-                    <div className="flex items-start justify-start flex-col">
+                    <div className="flex items-start justify-center flex-col">
                       <div className="poppins-remove text-[#111012] font-semibold flex items-start justify-start flex-row">
                         <div className="pr-[10px] capitalize">
                           {item?.fullName}
@@ -59,7 +59,7 @@ const TeamTable: React.FC<TeamTableProps> = ({ teamData }) => {
                           {" "}
                           {item?.roleName === "SUPER_ADMIN" &&
                             item?.email === email && (
-                              <span className="bg-violet-200 text-[#111012] text-xs font-semibold px-1.5 py-0.5 rounded">
+                              <span className="default-tag grey">
                                 You
                               </span>
                             )}
@@ -77,9 +77,9 @@ const TeamTable: React.FC<TeamTableProps> = ({ teamData }) => {
                   </p>
                 </div>
               </td>
-              <td className="px-3">
-                <div className="flex flex-col">
-                  <p className="text-gray-800 text-remove  font-remove poppins-remove leading-normal">
+              <td className="table-col">
+                <div className="table-cell">
+                  <p>
                     {item.roleName === "SUPER_ADMIN" ? (
                       <>Owner</>
                     ) : (
@@ -88,8 +88,8 @@ const TeamTable: React.FC<TeamTableProps> = ({ teamData }) => {
                   </p>
                 </div>
               </td>
-              <td className="px-3">
-                <div className="text-sm h-[22px] poppins-remove">
+              <td className="table-col">
+                <div className="table-cell">
                   {item?.isAccepted
                     ? item.roleName === "SUPER_ADMIN"
                       ? ""
@@ -97,8 +97,8 @@ const TeamTable: React.FC<TeamTableProps> = ({ teamData }) => {
                     : "Invitation Pending"}
                 </div>
               </td>
-              <td className="px-3">
-                <p className="text-sm w-44">
+              <td className="table-col">
+                <p>
                   {moment(item.createDate).format("MMM DD, YYYY h:mm A")}
                 </p>
               </td>

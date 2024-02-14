@@ -13,7 +13,7 @@ const formatYAxisLabel = (value: number, index: number) => {
   return value.toString();
 };
 
-const AccountOverview = ({ data, value }: any) => {
+const AccountOverview2 = ({ data, value }: any) => {
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
@@ -38,17 +38,17 @@ const AccountOverview = ({ data, value }: any) => {
   return (
     <div className="databox">
         <h4 className="">
-          Account Overview
+          Total Sales
         </h4>
       <div className="databox-content">
-        <div className="row-wrap-2">
+        {/* <div className="row-wrap-2">
           <h6>
             Total Revenue
           </h6>
           <h6 className="blue-text">
             {value ? formatCurrency(value) : 0} USD
           </h6>
-        </div>
+        </div> */}
         {data?.legth > 12 && (
           <>
             {" "}
@@ -117,4 +117,4 @@ const AccountOverview = ({ data, value }: any) => {
   );
 };
 
-export default AccountOverview;
+export default AccountOverview2;

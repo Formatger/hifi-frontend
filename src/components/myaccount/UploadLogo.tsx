@@ -124,8 +124,8 @@ const UploadLogo = () => {
                 <Image
                   src={displayLogo}
                   alt="profile"
-                  width={100}
-                  height={100}
+                  width={70}
+                  height={70}
                   className="mt-4 rounded-full"
                 />
               </div>
@@ -217,7 +217,7 @@ const UploadLogo = () => {
           </div>
           {!loader ? (
             <button
-              className="w-[117px] h-8 py-1 bg-[#6200EE] hover:bg-[#c7c2ff] border-[#6200EE] text-stone-50 hover:blue-text border-[1px] rounded-md poppins-remove"
+              className="popup-button"
               onClick={handleClickChooseFile}
               disabled={loader}
             >

@@ -9,15 +9,10 @@ import Documentation from "../assets/images/document.svg";
 import Logout from "../assets/images/logout.svg";
 import Balances from "../assets/images/balances.svg";
 import Customers from "../assets/images/customers.svg";
+import Global from "../assets/images/global.svg";
 import { BiX } from "react-icons/bi";
 import { useRouter } from "next/router";
-import HifiLogo from "@/components/assets/images/textLogo.svg";
-import Whitehome from "@/components/assets/images/home-white.svg";
-import Whitecoin from "@/components/assets/images/balances-white.svg";
-import Whiteuser from "@/components/assets/images/customers-white.svg";
-import WhitePayments from "@/components/assets/images/payments-white.svg";
-import WhitePayouts from "@/components/assets/images/whitepayouts.svg";
-import Whiteaccounts from "@/components/assets/images/account-white.svg";
+import HifiLogo from "@/components/assets/images/hifi-logo.svg";
 
 const svgIconClass = "svg-icon";
 
@@ -34,6 +29,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
   const [balances, setBalances] = useState<boolean>(false);
   const [documentation, setDocumentation] = useState<boolean>(false);
   const [customers, setCustomers] = useState<boolean>(false);
+  const [global, setGlobal] = useState<boolean>(false);
   const [opacityCheck, setOpacityCheck] = useState<boolean>(true);
   const router = useRouter();
 
@@ -52,7 +48,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
       title: "Dashboard",
       imageSrc: House,
       hookValue: dashboard,
-      imageSrcSelect: Whitehome,
+      imageSrcSelect: House,
       url: "dashboard",
     },
     {
@@ -60,35 +56,42 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
       url: "balances",
       imageSrc: Balances,
       hookValue: balances,
-      imageSrcSelect: Whitecoin,
+      imageSrcSelect: Balances,
     },
     {
       title: "Customers",
       url: "customer",
       imageSrc: Customers,
       hookValue: customers,
-      imageSrcSelect: Whiteuser,
+      imageSrcSelect: Customers,
     },
     {
       title: "Payments",
       url: "payments",
       imageSrc: Payments,
       hookValue: payments,
-      imageSrcSelect: WhitePayments,
+      imageSrcSelect: Payments,
     },
     {
       title: "Payouts",
       url: "payouts",
       imageSrc: Payouts,
       hookValue: payouts,
-      imageSrcSelect: WhitePayouts,
+      imageSrcSelect: Payouts,
+    },
+    {
+      title: "Global Settlement",
+      url: "global",
+      imageSrc: Global,
+      hookValue: global,
+      imageSrcSelect: Global,
     },
     {
       title: "MyAccount",
       url: "my-account",
       imageSrc: MyAccount,
       hookValue: myAccount,
-      imageSrcSelect: Whiteaccounts,
+      imageSrcSelect: MyAccount,
     },
   ];
 
@@ -101,6 +104,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
       setDocumentation(false);
       setBalances(false);
       setCustomers(false);
+      setGlobal(false);
     }
     if (
       window.location.pathname === "/dashboard/payments" ||
@@ -113,6 +117,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
       setDocumentation(false);
       setBalances(false);
       setCustomers(false);
+      setGlobal(false);
     }
     if (
       window.location.pathname === "/dashboard/payouts" ||
@@ -125,6 +130,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
       setDocumentation(false);
       setBalances(false);
       setCustomers(false);
+      setGlobal(false);
     }
     if (
       window.location.pathname === "/dashboard/my-account" ||
@@ -138,6 +144,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
       setDocumentation(false);
       setBalances(false);
       setCustomers(false);
+      setGlobal(false);
     }
     if (window.location.pathname === "/dashboard/Documentations") {
       setDashboard(false);
@@ -147,6 +154,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
       setDocumentation(true);
       setBalances(false);
       setCustomers(false);
+      setGlobal(false);
     }
     if (window.location.pathname === "/dashboard/balances") {
       setDashboard(false);
@@ -156,6 +164,17 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
       setDocumentation(false);
       setBalances(true);
       setCustomers(false);
+      setGlobal(false);
+    }
+    if (window.location.pathname === "/dashboard/global") {
+      setDashboard(false);
+      setMyAccount(false);
+      setPayments(false);
+      setPayouts(false);
+      setDocumentation(false);
+      setBalances(false);
+      setCustomers(false);
+      setGlobal(true);
     }
     if (
       window.location.pathname === "/dashboard/customer" ||
@@ -252,7 +271,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
                             ? data?.imageSrcSelect
                             : data?.imageSrc
                         }
-                        className="nav-image"
+                        className={`nav-image ${data?.hookValue ? 'white-icon' : ''}`}
                         alt="logo"
                       />
                     </div>

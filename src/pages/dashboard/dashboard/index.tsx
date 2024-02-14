@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "@/components/common/Sidebar";
 import AccountOverview from "@/components/dashboard/AccountOverview";
+import AccountOverview2 from "@/components/dashboard/AccountOverview2";
 import TotalSales from "@/components/dashboard/TotalSales";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import PaymentsPayoutsCommon from "@/components/dashboard/PaymentsPayoutsCommon";
@@ -351,7 +352,17 @@ const Overview = () => {
                   }
                   value={dashboardData?.totalRevenue}
                 />
-                {<TotalSales chartdata={transformedArray} />}
+                {/* <AccountOverview2
+                  data={
+                    dashboardData?.totalPurchaseVolume.length > 1
+                      ? dashboardData?.totalPurchaseVolume
+                      : zeroChartData.data
+                  }
+                  value={dashboardData?.totalRevenue}
+                /> */}
+                {<TotalSales 
+                // chartdata={transformedArray} 
+                />}
               </div>
 
               <div className="databox-wrap transactions">

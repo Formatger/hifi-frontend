@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <Provider store={store}>
         <div className="root">
-        <Component {...pageProps} />
+          <Component {...pageProps} />
         </div>
       </Provider>
     </>

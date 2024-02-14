@@ -24,11 +24,21 @@ const statusConfig: StatusConfig = {
     image: greencheck,
     className: "status-success",
   },
+  done: {
+    text: "Paid",
+    image: greencheck,
+    className: "status-success",
+  },
   CANCELED: {
     text: "Cancelled",
     image: x,
     className: "status-canceled",
   },
+  // Cancelled: {
+  //   text: "Cancelled",
+  //   image: x,
+  //   className: "status-canceled",
+  // },
   "approval required": {
     text: "Pending",
     image: clockclockwise,

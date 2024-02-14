@@ -111,6 +111,10 @@
   height: 20px;
 }
 
+.white-icon {
+filter: invert();
+}
+
 
 .navlink-wrap {
   display: flex;
@@ -214,9 +218,9 @@
   text-align: left;
   align-items: center;
   font-size: var(--text-s);
-  color: var(--dark4);
+  color: var(--dark2);
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
   padding: var(--padCell)
 }
 
@@ -226,9 +230,13 @@
   padding: var(--m4);
     /* border: 1px solid red; */
 }
-  .table-row:last-child {
+
+.table-row.wide {
+  height: 60px;
+}
+  /* .table-row:last-child {
     border-bottom: none;
-  }
+  } */
 
   .table-row:hover {
     background-color: #F6F8F9;
@@ -255,58 +263,6 @@
 .amount {
   min-width: 56px;
   /* font-weight: 600; */
-}
-
-/* Status Label */
-
-.status-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--m1);
-  font-weight: 400;
-  min-width: 100px;
-  height: 26px;
-  padding-left: var(--m2);
-  padding-right: var(--m3);
-  border-radius: var(--r2);
-  border: 1px solid;
-  font-size: var(--text-ss);
-}
-
-.status-icon {
-  width: 14px;
-  height: auto;
-}
-
-.status-success {
-  color: #008c41;
-  background-color: #009b4810;
-  border-color: #b0e1c7;
-}
-
-.status-canceled {
-  color: #ca1400;
-  background-color: #cb140010;
-  border-color: #ffc3bd;
-}
-
-.status-pending {
-  color: #c46f00;
-  background-color: #ffbb0010;
-  border-color: #c46f00;
-}
-
-.status-refunded {
-  color: #0045aec4;
-  background-color: #0062ff10;
-  border-color: #b0ceff;
-}
-
-.status-default {
-  color: #4B5563;
-  background-color: #062a5d10;
-  border-color: #c2cbd6;
 }
 
 /* Filter Label */

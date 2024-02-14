@@ -163,7 +163,7 @@ const BankAccounts = () => {
             <div className="w-full px-3 flex flex-col mt-3 gap-4 relative">
               <div className="sticky top-[105px] lg:top-[78px] z-20 bg-white flex flex-col gap-4 ">
                 <Breadcrumbs items={items} />
-                <h1 className="text-[#111012] text-2xl lg:text-4xl font-semibold poppins-remove tracking-tight mb-3">
+                <h1 className="h1">
                   Bank Accounts
                 </h1>
               </div>
@@ -222,7 +222,7 @@ const BankAccounts = () => {
                                         : account.currency}
                                     </span>
                                     {account.verificationSent === true && (
-                                      <span className="bg-[#D5F4F8] w-14 h-5 text-xs flex items-center justify-center font-semibold text-[#111012]">
+                                      <span className="default-tag grey">
                                         Default
                                       </span>
                                     )}

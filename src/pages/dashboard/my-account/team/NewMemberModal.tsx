@@ -149,7 +149,7 @@ const NewMemberModal: React.FC<NewMemberModalProps> = ({
               <div className="sticky bottom-0 w-full z-10">
                 <div className="flex h-[80px] rounded-b-lg items-center justify-between bg-[#F6F8F9] p-2 lg:p-5">
                   <button
-                    className="h-8 w-20 blue-text border bg-white rounded-md border-[#E5E9EB]"
+                    className="popup-button grey"
                     onClick={closeModal}
                   >
                     Cancel
@@ -163,12 +163,7 @@ const NewMemberModal: React.FC<NewMemberModalProps> = ({
                       <button
                         type="submit"
                         disabled={!formValue?.email}
-                        className={`${
-                          formValue?.email
-                            ? "bg-[#6200EE] hover:bg-[#F6F8F9] border-[#6200EE] border-[1px] text-stone-50 hover:blue-text"
-                            : "bg-[#B0BABF] text-[#F9F9F7]"
-                        } flex items-center justify-center gap-3 h-8 px-4 rounded-md`}
-                      >
+                        className="popup-button">
                         Confirm
                       </button>
                     </>

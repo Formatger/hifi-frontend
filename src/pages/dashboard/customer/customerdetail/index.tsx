@@ -99,7 +99,7 @@ const CustomerDetail = () => {
       wallet_address: customerData?.customerAddress,
       fingerprint: "ECWA6LrK2ELGKYml",
       type: customerData?.walletType,
-      issuer: "HIFI Bridge",
+      issuer: "HIFI",
       address: "No Address",
       origin: "United States",
       signature_check: "Passes",

@@ -13,9 +13,9 @@ import {
 import { formatCurrency } from "@/utils/formatCurrency";
 
 const gradientColors: any = {
-  purchasesData: { start: "#02cfbb70", end: "#02cfbb0D" },
+  purchasesData: { start: "#5E5BFFBF", end: "#8FD0FF24" },
   revenueData: { start: "#5E5BFFBF", end: "#8FD0FF24" },
-  customersData: { start: "#FF967E80", end: "#FFC67221" },
+  customersData: { start: "#5E5BFFBF", end: "#8FD0FF24" },
 };
 
 const zeroChartData = {

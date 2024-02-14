@@ -41,7 +41,7 @@ const TwoStepAuthentication = () => {
     <>
       <div className="flex flex-col lg:flex-row gap-4 lg:gap-0 mt-5 py-4 border-b border-[#E5E9EB]">
         <div className="flex flex-col">
-          <p className="text-[#111012] text-remove lg:text-xl font-semibold poppins-remove">
+          <p className="text-[#111012] mb-2 text-remove lg:text-xl font-semibold poppins-remove">
             Two-Step authentication
           </p>
           <div className="text-[#4B5563] text-remove  font-remove poppins-remove">

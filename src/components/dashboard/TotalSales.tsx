@@ -7,7 +7,9 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  TooltipProps,
 } from "recharts";
+import Image from "next/image";
 
 const formatYAxisLabel = (value: number) => {
   return `${value}`;
@@ -26,11 +28,11 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({
 }) => {
   if (active && payload) {
     return (
-      <div className="p-2 poppins-remove relative rounded-lg  bg-[#252C32] text-white">
+      <div className="p-2 relative rounded-lg  bg-[#252C32] text-white">
         <div className="w-0 h-0 border-t-[10px] border-t-transparent border-r-[15px] border-r-[#252C32] border-b-[10px] border-b-transparent absolute -left-[14px] top-[40%]"></div>
         {payload.map((entry, index) => (
-          <p key={index} className={`text-${entry.color} uppercase `}>
-            {`${entry.name}: ${entry.value}`}
+         <p key={index} style={{ color: entry.color }} className="uppercase">            
+         {`${entry.name}: ${entry.value}`}
           </p>
         ))}
       </div>
@@ -40,10 +42,29 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({
   return null;
 };
 
-const randomColors = ["#D0CBF2", "#6418C3", "#6200ee"];
+const randomColors = ["#D0CBF2", "#8d83fb", "#5545fa"];
 
-const TotalSales = ({ chartdata }: any) => {
+// const TotalSales = ({ chartdata }: any) => {
+
+const TotalSales = () => {
+  // Hardcoded data 
+  const chartdata = [
+    { monthName: "Jan", eth: 2000, btc: 3000, usdc: 3000 },
+    { monthName: "Feb", eth: 2500, btc: 3500, usdc: 4500 },
+    { monthName: "Mar", eth: 1800, btc: 3800, usdc: 4800 },
+    { monthName: "Apr", eth: 3000, btc: 4000, usdc: 5000 },
+    { monthName: "May", eth: 3200, btc: 4200, usdc: 5200 },
+    { monthName: "Jun", eth: 3400, btc: 4400, usdc: 5400 },
+    { monthName: "Jul", eth: 3600, btc: 4600, usdc: 5600 },
+    { monthName: "Aug", eth: 3800, btc: 4800, usdc: 5800 },
+    { monthName: "Sep", eth: 4000, btc: 5000, usdc: 6000 },
+    { monthName: "Oct", eth: 4200, btc: 5200, usdc: 6200 },
+    { monthName: "Nov", eth: 3600, btc: 4600, usdc: 5600 },
+    { monthName: "Dec", eth: 4000, btc: 5000, usdc: 6000 },
+  ];
+
   const [windowWidth, setWindowWidth] = useState(0);
+
 
   useEffect(() => {
     const updateWindowWidth = () => {
@@ -88,7 +109,7 @@ const TotalSales = ({ chartdata }: any) => {
             >
               <span
                 style={{ backgroundColor: randomColors[index] }}
-                className={` h-2 w-2 rounded-full mr-2`}
+                className={`h-2 w-2 rounded-full mr-2`}
               ></span>
               {currency}
             </p>
@@ -119,39 +140,40 @@ const TotalSales = ({ chartdata }: any) => {
             width={20}
           />
           <Tooltip content={<CustomTooltip />} />
-          {currencies.map((currency: any, index: any) => (
+          {/* {currencies.map((currency: any, index: any) => (
             <Bar
               key={currency}
               dataKey={currency}
               stackId="a"
               fill={`${randomColors[index]}`}
               barSize={5}
-              radius={[5, 5, 5, 5]}
+              radius={[1, 1, 1, 1]}
             />
-          ))}
+          ))} */}
           <Bar
             dataKey="eth"
             stackId="a"
-            fill="#D0CBF2"
+            fill="#8d83fb"
             barSize={5}
-            radius={[5, 5, 5, 5]}
-          />
+            radius={[2, 2, 2, 2]}
+            />
           <Bar
             dataKey="btc"
             stackId="a"
-            fill="#6418C3"
+            fill="#c3bdff"
             barSize={5}
-            radius={[5, 5, 5, 5]}
-          />
+            radius={[2, 2, 2, 2]}
+            />
           <Bar
             dataKey="usdc"
             stackId="a"
-            fill="#6200ee"
+            fill="#5545fa"
             barSize={5}
-            radius={[5, 5, 5, 5]}
-          />
+            radius={[2, 2, 2, 2]}
+            />
         </BarChart>
       </ResponsiveContainer>
+      
     </div>
   );
 };

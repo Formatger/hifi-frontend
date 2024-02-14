@@ -109,7 +109,9 @@
   --blue: #5545fa;
   --blue1: #5E5BFF;
   --blue2: #8d83fb;
-
+  --blue3: #c3bdff;
+  --blue4: #e6e5f7;
+  
   --green: #02cfbb;
   --green2: hsl(174, 40%, 70%);
   --green4: #e4fbeb;
@@ -383,12 +385,14 @@ button[disabled] {
   min-height: 34px;
 }
 
-.app-button:hover {
-  filter:brightness(110%)
+.app-button:hover,
+.popup-button:hover {
+  filter:brightness(110%);
 }
 
 .app-button:hover[disabled],
-button[disabled] {
+button[disabled],
+.popup-button[disabled] {
   opacity: 0.4;
   filter: saturate(80%);
   filter: hue-rotate(-8deg);
@@ -411,9 +415,39 @@ button[disabled] {
   color: var(--main);
 }
 
-/* 
-background: #5545fa;
- */
+.popup-button {
+  border-radius: 6px;
+  min-height: 34px;
+  min-width: 90px;
+  padding: 0 10px;
+  background-color: #5545fa;
+  border: 1px solid #5545fa;
+  color: white;
+}
+
+.popup-button.grey {
+  background-color: white; /* --Grey */
+  border: 1px solid #dbdbf0; /* --Grey3 */
+  color: hsl(245, 35%, 20%);
+}
+
+.popup-button.grey:hover {
+  filter:brightness(100%);
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* Black with 60% opacity */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
 
 /* Loader */
 
@@ -436,29 +470,7 @@ background: #5545fa;
   }
 }
 
-
 /* Input */
-
-/* .inputStyle {
-  width: 3rem !important;
-  height: 3rem;
-  margin: 1px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  background: var(--neutrals-white-pure, #fff);
-  background: red !important;
-  border: 1px solid #ff0000 !important;
-}
-
-@media (max-width: 700px) {
-  .inputStyle {
-    width: 2rem !important;
-    height: 2rem;
-    margin: 1px;
-    font-size: 1rem;
-  }
-} */
 
 .main-input {
   width: 100%;
@@ -480,16 +492,98 @@ input:focus {
 }
 
 .logo {
-  width: 40px;
-  height: 40px;
+  width: auto;
+  height: 36px;
   margin-right: var(--m2);
 }
 
 .logo-text {
   width: auto;
-  height: 40px;
+  height: 36px;
   margin-top: var(--m1);
 }
+
+/* Tags */
+
+.default-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 20px; 
+  padding-left: 1.5px;
+  padding-right: 1.5px;
+  padding-top: 0.5px;
+  padding-bottom:  0.5px;
+  background-color: var(--main);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 500;
+  border-radius: var(--r1);
+}
+
+.default-tag.grey {
+  background-color: var(--blue4);
+  color: var(--dark);
+  height: 18px; 
+}
+
+/* Status Label */
+
+.status-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* gap: var(--m1); */
+  gap: 4px;
+  font-weight: 400;
+  min-width: 100px;
+  height: 28px;
+  padding-left: 8px;
+  padding-right: 12px;
+  border-radius: 6px;
+  /* padding-left: var(--m2);
+  padding-right: var(--m3);
+  border-radius: var(--r2); */
+  border: 1px solid;
+  font-size: var(--text-ss);
+}
+
+.status-icon {
+  width: 14px;
+  height: auto;
+}
+
+.status-success {
+  color: #008c41;
+  background-color: #009b4810;
+  border-color: #b0e1c7;
+}
+
+.status-canceled {
+  color: #ca1400;
+  background-color: #cb140010;
+  border-color: #ffc3bd;
+}
+
+.status-pending {
+  color: #c46f00;
+  background-color: #ffbb0010;
+  border-color: #c46f00;
+}
+
+.status-refunded {
+  color: #0045aec4;
+  background-color: #0062ff10;
+  border-color: #b0ceff;
+}
+
+.status-default {
+  color: #4B5563;
+  background-color: #062a5d10;
+  border-color: #c2cbd6;
+}
+
 
 /* Elements */
 
@@ -629,3 +723,25 @@ abbr:where([title]) {
     transform: scaleX(0);
   }
 }
+
+
+/* .inputStyle {
+  width: 3rem !important;
+  height: 3rem;
+  margin: 1px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  background: var(--neutrals-white-pure, #fff);
+  background: red !important;
+  border: 1px solid #ff0000 !important;
+}
+
+@media (max-width: 700px) {
+  .inputStyle {
+    width: 2rem !important;
+    height: 2rem;
+    margin: 1px;
+    font-size: 1rem;
+  }
+} */

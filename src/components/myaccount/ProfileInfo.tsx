@@ -55,9 +55,9 @@ const ProfileInfo = (userData: any) => {
   return (
     <>
       <div className="flex items-center justify-between border-b border-[#E5E9EB] py-5">
-        <p className="text-[#111012] text-lg lg:text-4xl font-semibold poppins-remove">
+        <h1 className="h1">
           Profile
-        </p>
+        </h1>
 
         {/* {isEditing ? (
           <div className="flex items-center gap-4">

@@ -61,13 +61,13 @@ const AuthCode = () => {
           router.push("/dashboard/dashboard");
         }, 2000);
         localStorage.setItem("userVerified", response?.data?.data?.verified);
-        toast.success(`Login sucessfully...!`, {
+        toast.success(`Login sucessfully!`, {
           position: toast.POSITION.TOP_RIGHT,
         });
       })
       .catch((error) => {
         setLoader(false);
-        toast.error("Enter valid otp and try again...!", {
+        toast.error("Enter valid otp and try again.", {
           position: toast.POSITION.TOP_RIGHT,
         });
         console.log(error);
@@ -76,7 +76,9 @@ const AuthCode = () => {
 
   return (
     <div>
-      <ToastContainer />
+      <ToastContainer 
+      className="custom-toast-container"
+      />
       <div className="auth-container Authcode">
         <div className="authbox-wrap">
           <div>

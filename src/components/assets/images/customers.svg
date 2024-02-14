@@ -1,8 +1,16 @@
-<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M17.0156 21H7.01562C3.01562 21 2.01562 20 2.01562 16V8C2.01562 4 3.01562 3 7.01562 3H17.0156C21.0156 3 22.0156 4 22.0156 8V16C22.0156 20 21.0156 21 17.0156 21Z" stroke="#171717" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M14.0156 8H19.0156" stroke="#171717" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M15.0156 12H19.0156" stroke="#171717" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M17.0156 16H19.0156" stroke="#171717" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M8.51557 11.29C9.5152 11.29 10.3256 10.4797 10.3256 9.48004C10.3256 8.48041 9.5152 7.67004 8.51557 7.67004C7.51593 7.67004 6.70557 8.48041 6.70557 9.48004C6.70557 10.4797 7.51593 11.29 8.51557 11.29Z" stroke="#171717" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12.0156 16.33C11.8756 14.88 10.7256 13.74 9.27563 13.61C8.77563 13.56 8.26562 13.56 7.75562 13.61C6.30562 13.75 5.15563 14.88 5.01562 16.33" stroke="#171717" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 25 24" style="enable-background:new 0 0 25 24;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#171717;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;}
+	.st1{fill:none;stroke:#171717;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<path class="st0" d="M14,8.3h4.8"/>
+<path class="st0" d="M14.9,12.2h3.8"/>
+<path class="st0" d="M16.9,16h1.9"/>
+<path class="st0" d="M8.7,11.5c1,0,1.7-0.8,1.7-1.7c0-1-0.8-1.7-1.7-1.7C7.7,8,7,8.8,7,9.7C7,10.7,7.7,11.5,8.7,11.5z"/>
+<path class="st0" d="M12.1,16.3c-0.1-1.4-1.2-2.5-2.6-2.6c-0.5,0-1,0-1.5,0c-1.4,0.1-2.5,1.2-2.6,2.6"/>
+<path class="st1" d="M21.3,20H3.7c-0.8,0-1.4-0.6-1.4-1.4V5.8C2.3,5,3,4.4,3.7,4.4h17.5c0.8,0,1.4,0.6,1.4,1.4v12.7
+	C22.7,19.4,22,20,21.3,20z"/>
 </svg>
