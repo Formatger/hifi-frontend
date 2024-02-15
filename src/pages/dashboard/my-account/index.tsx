@@ -70,7 +70,7 @@ const Profile = () => {
                           this link for more implications and recommended
                           actions
                         </a>{" "}
-                        before closing your Hifi Pay account. */}
+                        before closing your Hifi account. */}
                       </div>
                     </div>
                     <button className="w-[142px] h-8 text-[#F9F9F7] poppins-remove py-1 bg-[#F00] rounded-md">

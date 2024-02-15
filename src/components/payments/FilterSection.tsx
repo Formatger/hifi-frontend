@@ -185,7 +185,7 @@ const RangeCount = ({
 }: any) => {
   return (
     <div>
-      <div className="flex items-center mt-4 gap-3 relative">
+      <div className="filter-date-box">
         <Image src={arrowbenddownright} alt="arrow" className="" />
         <div className="relative">
           <div className="border w-20 py-1.5 pl-[6px] rounded-md border-[#E5E9EB] bg-white">
@@ -287,10 +287,10 @@ const RadioButtons = () => {
 const Button1 = ({ displayShowCustomDateFilter }: any) => {
   return (
     <button
-      className="px-2.5 py-0.5 bg-[#F9F9F7] rounded-2xl border border-dashed border-[#B0BABF] justify-start items-center gap-0.5 flex text-[#6A7781] font-semibold"
+      className="filter-item-wrap"
       onClick={displayShowCustomDateFilter}
     >
-      <Image src={plusicon} alt="plus" className="" />
+      <Image src={plusicon} alt="plus" className="filter-icon" />
       Date
     </button>
   );
@@ -307,17 +307,17 @@ const Button2 = ({
       {showCustomDateFilter && (
         <button
           onClick={onClickFilterBox}
-          className="px-2.5 min-w-[75vw] md:min-w-[246px] py-0.5 bg-stone-50 rounded-2xl border text-gray-500 font-semibold border-gray-400 justify-start items-center gap-2 flex"
+          className="filter-item-wrap active"
         >
           <div onClick={displayShowCustomDateFilterHide}>
-            <Image src={xcircle} alt="plus" className="" />
+            <Image src={xcircle} alt="plus" className="filter-icon" />
           </div>
           Date
-          <span className="h-4 w-px bg-gray-400"></span>
-          <span className="blue-text2 text-remove font-semibold poppins-remove">
+          <span className="vert-divider"></span>
+          <span className="blue-text">
             {finalValue ? finalValue : "Starting from"}
           </span>
-          <Image src={caretdown} alt="arrow" className="" />
+          <Image src={caretdown} alt="arrow" className="arrow-down" />
         </button>
       )}
     </>
@@ -330,7 +330,7 @@ const CustomeDropdown = ({ selectedFilter, handleFilterChange }: any) => {
       <select
         value={selectedFilter}
         onChange={handleFilterChange}
-        className="bg-white cursor-pointer w-full appearance-none mt-4 border border-[#E5E9EB] rounded poppins-remove py-1 px-3"
+        className="filter-item-select"
       >
         <option value="is between">is between</option>
         <option value="is on or before">is on or before</option>
@@ -366,7 +366,7 @@ const SingleDate = ({
 }: any) => {
   return (
     <>
-      <div className="flex items-center mt-4 gap-3 relative">
+      <div className="filter-date-box">
         <Image src={arrowbenddownright} alt="arrow" className="" />
         <div className="relative cursor-pointer">
           <div
@@ -434,7 +434,7 @@ const BothDate = ({
 }: any) => {
   return (
     <>
-      <div className="flex items-center mt-4 gap-3 relative">
+      <div className="filter-date-box">
         <Image src={arrowbenddownright} alt="arrow" className="" />
         <div className="relative cursor-pointer">
           <div

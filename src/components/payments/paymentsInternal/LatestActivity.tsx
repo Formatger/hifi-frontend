@@ -47,7 +47,7 @@ const LatestActivity = () => {
       <div className="flex items-center gap-3">
         <Image src={arrowsdownup} alt="arrows" className="" />
         <p className="text-gray-500 text-sm  font-remove poppins-remove leading-normal">
-          From Hifi Pay
+          From Hifi
         </p>
       </div>
       <p className="text-[#111012] text-remove font-semibold poppins-remove leading-normal">

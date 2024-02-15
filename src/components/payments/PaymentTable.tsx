@@ -71,10 +71,10 @@ const Items: React.FC<ItemsProps> = ({ currentItems }) => {
                 >
                   <td className="table-col">
                     <div className="table-cell">
-                        <span className="amount">
+                        <span className="cell-amount">
                           {formatCurrency(row?.outwardBaseAmount)}
                         </span>
-                        <span className="currency">
+                        <span className="cell-currency">
                           {/* {row?.currency} */}
                           USD
                         </span>

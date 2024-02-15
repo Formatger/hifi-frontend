@@ -32,7 +32,7 @@ const Settings = () => {
                   <a href="#" className="blue-text2 underline">
                     this link for more implications and recommended actions
                   </a>{" "}
-                  before closing your Hifi Pay account.
+                  before closing your Hifi account.
                 </div>
               </div>
               <button className="w-[142px] h-8 text-stone-50 poppins-remove py-1 bg-red-600 rounded-md">

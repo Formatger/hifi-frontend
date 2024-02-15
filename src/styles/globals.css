@@ -112,7 +112,7 @@
 }
 
 .white-icon {
-filter: invert();
+  filter: invert();
 }
 
 
@@ -255,12 +255,12 @@ filter: invert();
   /* border: 1px solid rgb(60, 255, 0); */
 }
 
-.currency {
+.cell-currency {
   min-width: 24px;
   text-transform: uppercase;
 }
 
-.amount {
+.cell-amount {
   min-width: 56px;
   /* font-weight: 600; */
 }
@@ -284,21 +284,9 @@ filter: invert();
   display: inline-flex;
 }
 
-.addfilter {
-  position: absolute;
-  top: 0;
-  right: 1.25rem;
-}
+/* Filter Tabs */
 
-@media (max-width: 640px) {
-  .filter-wrap {
-    flex-wrap: wrap;
-    margin-bottom: 0;
-    gap: 1rem;
-  }
-}
-
-.tab {
+.filter-tab {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
@@ -312,18 +300,59 @@ filter: invert();
   cursor: pointer;
 }
 
-.tab-active {
+.filter-tab.active {
   border-bottom: 2px solid var(--main);
   color: var(--main);
 }
 
-.tab:hover {
+.filter-tab:hover {
   color: var(--main);
+}
+
+.filter-wrap {
+  position: relative;
+}
+
+.filter-tab {
+  /* Your existing styles */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-vertical) var(--padding-horizontal);
+}
+
+.filter-tab.active {
+  /* Your active tab styles */
+}
+
+.indicator {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--main); /* Adjust this color as needed */
+  transition: left 0.3s ease-out, width 0.3s ease-out;
+}
+
+
+
+.addfilter {
+  position: absolute;
+  top: 0;
+  right: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .filter-wrap {
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    gap: 4%;
+  }
 }
 
 /* Add filter button */
 
-.filter-options {
+.addfilter-button {
   position: relative;
   display: flex;
   align-items: center;
@@ -355,6 +384,47 @@ filter: invert();
   z-index: 20;
 }
 
+.filter-item-wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--grey);
+  border-radius: var(--r5);
+  border: 1px dashed var(--grey4);
+  padding: var(--m1) var(--m3) var(--m1) var(--m2);
+  gap: var(--m2);
+  color: var(--dark4);
+  font-weight: 600;
+}
+
+.filter-item-wrap.active {
+  padding: var(--m1) var(--m2);
+  border: 1px solid var(--grey4); 
+}
+
+.filter-item-select {
+  background-color: #ffffff;
+  cursor: pointer;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-top: 16px;
+  border: var(--sborder);
+  border-radius: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.filter-icon {
+  width: 18px;
+  height: 18px;
+}
+
+
+
 @media (min-width: 768px) {
 
   .clear-btn {
@@ -362,11 +432,11 @@ filter: invert();
     margin-left: auto;
   }
 
-  .select-filter-container {
-    height: 2rem; /* 16px */
-    padding-top: 0.5rem; /* 16px */
-    padding-bottom: 0.5rem; /* 16px */
-  }
+  /* .select-filter-container {
+    height: 2rem; 
+    padding-top: 0.5rem; 
+    padding-bottom: 0.5rem; 
+  } */
 
 }
 

@@ -28,11 +28,15 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({
 }) => {
   if (active && payload) {
     return (
-      <div className="p-2 relative rounded-lg  bg-[#252C32] text-white">
-        <div className="w-0 h-0 border-t-[10px] border-t-transparent border-r-[15px] border-r-[#252C32] border-b-[10px] border-b-transparent absolute -left-[14px] top-[40%]"></div>
-        {payload.map((entry, index) => (
-         <p key={index} style={{ color: entry.color }} className="uppercase">            
-         {`${entry.name}: ${entry.value}`}
+      <div className="tooltip-box">
+        <div className="tooltip-arrow"></div>
+         {payload.map((entry, index) => (
+         <p key={index}>     
+         <span
+         style={{ backgroundColor: randomColors[index] }}
+                className="chart-dot">
+        </span>       
+         {`${entry.name}: $${entry.value}`}
           </p>
         ))}
       </div>
@@ -100,25 +104,20 @@ const TotalSales = () => {
         <h4>
           Total Sales
         </h4>
-      <div className="databox-content">
-        <div className="flex items-center gap-3">
+      <div>
+        <div className="databox-content">
           {currencies.map((currency: any, index: any) => (
             <p
-              className="flex items-center text-xs text-[#4B5563] uppercase"
+              className="chart-currency"
               key={currency}
             >
               <span
                 style={{ backgroundColor: randomColors[index] }}
-                className={`h-2 w-2 rounded-full mr-2`}
+                className="chart-dot"
               ></span>
               {currency}
             </p>
           ))}
-
-          {/* <p className="flex items-center text-xs text-[#4B5563]">
-            <span className="bg-[#6418C3] h-2 w-2 rounded-full mr-2"></span>{" "}
-            USDC
-          </p> */}
         </div>
       </div>
 
@@ -140,17 +139,17 @@ const TotalSales = () => {
             width={20}
           />
           <Tooltip content={<CustomTooltip />} />
-          {/* {currencies.map((currency: any, index: any) => (
+          {currencies.map((currency: any, index: any) => (
             <Bar
               key={currency}
               dataKey={currency}
               stackId="a"
               fill={`${randomColors[index]}`}
               barSize={5}
-              radius={[1, 1, 1, 1]}
+              radius={[2, 2, 2, 2]}
             />
-          ))} */}
-          <Bar
+          ))}
+          {/* <Bar
             dataKey="eth"
             stackId="a"
             fill="#8d83fb"
@@ -170,7 +169,7 @@ const TotalSales = () => {
             fill="#5545fa"
             barSize={5}
             radius={[2, 2, 2, 2]}
-            />
+            /> */}
         </BarChart>
       </ResponsiveContainer>
       

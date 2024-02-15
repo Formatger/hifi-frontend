@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Hifi Pay</title>
+        <title>Hifi</title>
       </Head>
       <Provider store={store}>
         <div className="root">
