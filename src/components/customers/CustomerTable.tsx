@@ -58,11 +58,15 @@ const CustomerTable = ({ customerAll }: any) => {
   };
 
   return (
-    <div className="w-full mb-8 overflow-hidden rounded-lg shadow-xs text-sm">
-      <div className="w-full overflow-x-auto">
-        <p className="text-[#111012] text-xl  font-semibold poppins-remove leading-loose mb-3">
+    <div 
+    // className="w-full mb-8 overflow-hidden rounded-lg shadow-xs text-sm"
+    >
+      <div className="section-box">
+      <div className="section-title">
+        <h4>
           Payments
-        </p>
+        </h4>
+      </div>
         <table className="Table">
         <thead>
               <tr className="table-head">

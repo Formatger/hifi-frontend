@@ -286,7 +286,7 @@ const BankAccounts = () => {
                             "No Records Found"
                           </div>
                           <div>
-                            Please add bank account first.
+                            Please add a bank account first.
                           </div>
                         </div>
                       </>

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "@/components/common/Sidebar";
 import AccountOverview from "@/components/dashboard/AccountOverview";
-import AccountOverview2 from "@/components/dashboard/AccountOverview2";
 import TotalSales from "@/components/dashboard/TotalSales";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import PaymentsPayoutsCommon from "@/components/dashboard/PaymentsPayoutsCommon";
@@ -317,12 +316,12 @@ const Overview = () => {
   const NoRecordsFound = ({ type }: { type: string }) => (
     <div className="w-full text-xs lg:text-remove shadow border border-gray-200 mb-8 rounded-lg shadow-xs p-5">
       <div className="w-full flex flex-col items-start  ">
-        <h1 className="mb-3 text-[#111012] text-lg font-semibold poppins-remove leading-loose">
+        <h1 className="mb-3 text-[#111012] text-lg font-semibold leading-loose">
           <Link href={`${type === "Payments" ? "payments" : "payouts"}`}>
             {type}
           </Link>
         </h1>
-        <p className="font-semibold text-center self-center mt-4">
+        <p className="bold">
           "No Records Found"
         </p>
       </div>
@@ -352,14 +351,6 @@ const Overview = () => {
                   }
                   value={dashboardData?.totalRevenue}
                 />
-                {/* <AccountOverview2
-                  data={
-                    dashboardData?.totalPurchaseVolume.length > 1
-                      ? dashboardData?.totalPurchaseVolume
-                      : zeroChartData.data
-                  }
-                  value={dashboardData?.totalRevenue}
-                /> */}
                 {<TotalSales 
                 // chartdata={transformedArray} 
                 />}
