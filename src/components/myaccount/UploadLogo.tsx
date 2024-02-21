@@ -53,7 +53,7 @@ const UploadLogo = () => {
         console.log(error);
         setLoadermain(false);
       });
-  }, [isPopupOpen]);
+  }, [isPopupOpen, baseUrl]);
 
   useEffect(() => {
     if (uploadedImage) {
@@ -85,7 +85,7 @@ const UploadLogo = () => {
           console.log(error);
         });
     }
-  }, [uploadedImage]);
+  }, [uploadedImage, baseUrl, router]);
 
   const openPopup = () => {
     setPopupOpen(true);

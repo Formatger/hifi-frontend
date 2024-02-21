@@ -52,7 +52,7 @@ const Balance = () => {
         });
     };
     fetchData();
-  }, []);
+  }, [baseUrl]);
 
   const BalanceheaderData = [
     { title: "Add to balance", icon: Plusicon },

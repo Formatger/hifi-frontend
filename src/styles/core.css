@@ -74,6 +74,7 @@
   --toolbar-h: 74px;
   --sidebar-w: 274px;
   --btn-h: 34px;
+  --padding: var(--m6);
 
   --btn-rad: var(--r1);
 
@@ -100,8 +101,8 @@
   --dark2: hsl(245, 35%, 20%);
   --dark3: hsl(245, 20%, 25%);
   --dark4: hsl(242, 10%, 43%);
-  --dark5: hsl(242, 10%, 45%);
-  --dark6: hsl(242, 10%, 50%);
+  --dark5: hsl(242, 0%, 45%);
+  --dark6: hsl(242, 0%, 50%);
 
   --grey: hsl(240, 50%, 99%);
   --grey1: hsl(240, 50%, 97%);
@@ -254,9 +255,17 @@
   justify-content: center;
 }
 
+.row-align-center  {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .text-center {
   text-align: center;
 }
+
+
 
 /* Text */
 
@@ -375,6 +384,12 @@ button[disabled],
   opacity: 0.4;
   filter: saturate(80%);
   filter: hue-rotate(-8deg);
+}
+
+.button-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--m3);
 }
 
 .sec-button {

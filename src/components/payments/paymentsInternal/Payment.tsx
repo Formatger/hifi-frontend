@@ -96,16 +96,16 @@ const Payment = ({ paymentDetails }: { paymentDetails: PaymentDetails }) => {
   };
 
   return (
-    <div className="w-full  flex flex-col gap-4 justify-between text-[#4B5563] ">
+    <div className="pay-heading-wrap">
       <PaymentTitle customer_address={paymentDetails?.customerAddress} />
-      <div className="flex flex-col mt-4 lg:mt-0 lg:flex-row gap-4 lg:gap-0 justify-between w-full items-center">
+      <div className="total-status-container">
         <TotalStatus
           total={paymentDetails?.amount}
           status={paymentDetails?.status}
           outwardCurrency={paymentDetails?.fiatCurrency}
         />
         {role === "0" || role === "1" ? (
-          <div className="flex items-center gap-3">
+          <div className="button-wrap">
             {paymentDetails?.status !== "withdraw" && (
               <button
                 className="sec-button"
@@ -120,7 +120,6 @@ const Payment = ({ paymentDetails }: { paymentDetails: PaymentDetails }) => {
           ""
         )}
       </div>
-      <hr className="h-[1px] w-full bg-black" />
 
       {isRefundModalOpen && (
         <RefundModalContainer

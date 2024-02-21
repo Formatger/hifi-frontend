@@ -33,7 +33,7 @@ const DetailsPayment = ({
   paymentDetails: PaymentDetails;
 }) => {
   return (
-    <div className="flex flex-col lg:flex-row items-start lg:items-center justify-start gap-4 lg:gap-0">
+    <div className="details-payment-wrap">
       <LastUpdated lastUpdated={paymentDetails?.createDate} />
       {/* <Customer customer={paymentDetails?.customer} /> */}
       <WalletAddress walletaddress={paymentDetails?.customerAddress} />

@@ -14,12 +14,11 @@ interface TimelineProps {
 const Timeline = ({ timelineDetails }: { timelineDetails: TimelineProps }) => {
   return (
     <div>
-      <div className="flex items-center justify-between">
-        <h1 className="text-[#111012] text-xl font-semibold poppins-remove leading-loose">
+      <div className="section-title">
+        <h4>
           Timeline
-        </h1>
+        </h4>
       </div>
-      <hr className="h-px bg-black mt-1" />
       <div className="flex flex-col">
         <div className="flex gap-3 items-start py-2">
           <div className="flex flex-col items-center">

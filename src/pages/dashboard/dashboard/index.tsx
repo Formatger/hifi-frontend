@@ -108,7 +108,7 @@ const Overview = () => {
         });
     };
     fetchData();
-  }, []);
+  }, [baseUrl]);
 
   // chart data
   const chartData = {

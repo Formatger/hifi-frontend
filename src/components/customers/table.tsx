@@ -68,38 +68,38 @@ const Items: React.FC<ItemsProps> = ({ currentItems }) => {
                   style={{ borderBottomColor: "#E5E9EB" }}
                   onClick={() => handleTableRowClick(row?.customerAddress)}
                 >
-                  <td className="table-col">
+                  <td className="table-col customer">
                     <div className="table-cell">
                       <span className="w-full font-semibold">{row?.name}</span>
                     </div>
                   </td>
 
-                  <td className="table-col">
+                  <td className="table-col email">
                     <span className="table-cell">{row?.email}</span>
                   </td>
 
-                  <td className="table-col">
+                  <td className="table-col wallet">
                     <div className="table-cell">
-                      <div className="rounded w-5 mr-[8px]  items-center gap-2.5 inline-flex">
+                      {/* <div className="rounded w-5 mr-[8px]  items-center gap-2.5 inline-flex">
                         <Image
                           src={getCurrencyIcon(row?.inwardCurrency)}
                           width={100}
                           height={100}
                           alt="currency"
                         />
-                      </div>
-                      <div className="table-col">
-                        <span className="bg-[#E5E9EB] text-[#111012] rounded px-1.5 py-1 font-semibold  uppercase poppins-remove">
+                      </div> */}
+                      <div className="table-cell">
+                        <span className="wallet-tag">
                           {row?.inwardCurrency}
                         </span>
                       </div>
-                      <p className="text-[#252C32] leaning-[24px] poppins-remove truncate w-[236px]">
+                      <p className="truncate">
                         {row?.customerAddress}
                       </p>
                     </div>
                   </td>
 
-                  <td className="table-col">
+                  <td className="table-col created">
                     {moment(row?.createDate).format("MMM DD, YYYY h:mm A")}
                   </td>
                 </tr>

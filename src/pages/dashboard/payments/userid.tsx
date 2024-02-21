@@ -122,7 +122,7 @@ const Userid = () => {
 
       fetchData();
     }
-  }, [transferId]);
+  }, [transferId, baseUrl]);
 
   const breadcrumbItems = [
     { label: "Payments", link: "./" },
@@ -246,17 +246,18 @@ const Userid = () => {
     <div className="main-container">
       <div className="w-full">
         <Header />
-        <div className="w-full flex flex-col  gap-6 relative -mt-2">
-          <div className="sticky top-[105px] p-6 pb-0 lg:top-[74px] z-20 bg-white">
-            <Breadcrumbs items={breadcrumbItems} />
-            {transactionData && <Payment paymentDetails={payment_details} />}
-          </div>
+        <div className="sticky-heading-column">
+          <Breadcrumbs items={breadcrumbItems} />
+          {transactionData && <Payment paymentDetails={payment_details} />}
+        </div>
+
+        <div className="page-container">
           {loader ? (
             <MainLoader />
           ) : (
             <>
               {" "}
-              <div className="p-6 w-full flex flex-col  gap-6">
+              <div className="paydetail-page">
                 {payment_details && (
                   <>
                     <DetailsPayment paymentDetails={payment_details} />

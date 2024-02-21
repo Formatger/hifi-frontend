@@ -102,7 +102,7 @@ const Payouts = () => {
         });
     };
     fetchData();
-  }, [finalValue]);
+  }, [finalValue, baseUrl, CustomDateRange, filterStatus, startdatestamp, enddatestamp]);
 
   const handleTabClick = (index: number) => {
     setActiveTabIndex(index);

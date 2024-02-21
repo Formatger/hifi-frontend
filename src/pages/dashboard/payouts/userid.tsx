@@ -128,7 +128,7 @@ const Userid = () => {
         });
     };
     fetchData();
-  }, [transferId]);
+  }, [transferId, baseUrl]);
 
   const breadcrumbItems = [
     { label: "Payouts", link: "./" },

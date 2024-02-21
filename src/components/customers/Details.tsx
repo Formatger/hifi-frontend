@@ -14,7 +14,7 @@ const Details: React.FC<CustomerDetails> = ({ CustomerDetails }) => {
   };
 
   return (
-    <div className="w-full flex flex-col">
+    <div>
       <div className="section-title">
         <div className="flex items-center gap-2">
           <button onClick={toggleDropdown}>
@@ -30,10 +30,11 @@ const Details: React.FC<CustomerDetails> = ({ CustomerDetails }) => {
             Details
           </h4>
         </div>
-        <button className="small-btn">
+        {/* <button className="small-btn">
           Edit
-        </button>
+        </button> */}
       </div>
+
       {isDetailsExpanded && (
         <div className="">
           <p className="customer-id">
