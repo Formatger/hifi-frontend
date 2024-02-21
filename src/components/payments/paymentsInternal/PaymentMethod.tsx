@@ -12,17 +12,17 @@ const formatWalletName = (wallet: any) => {
 const PaymentMethod = ({ payment_method }: { payment_method: string }) => {
   return (
     <div className="flex flex-col  justify-center lg:px-5 lg:border-r">
-      <p className="text-[#4B5563] text-remove  font-remove poppins-remove">
+      <p className="text-[#4B5563]">
         Payment Method
       </p>
       <p className="flex gap-3 text-[#252C32]">
-        <Image
+        {/* <Image
           src={getWalletIcon(payment_method)}
           alt="icon"
           className=""
           width={24}
           height={24}
-        />
+        /> */}
         {payment_method}
         {/* {formatWalletName(payment_method)} */}
       </p>

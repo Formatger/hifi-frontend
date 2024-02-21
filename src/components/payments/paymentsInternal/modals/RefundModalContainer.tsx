@@ -258,7 +258,44 @@ const RefundModal: React.FC<RefundModalProps> = ({
     }
   };
 
+  // useEffect(() => {
+  //   if (rid) {
+  //     setTimeout(() => {
+  //       setState(!state);
+  //       if (atxid === "null") {
+  //         getStatus();
+  //       }
+  //     }, 5000);
+  //   }
+  // }, [state, atxid, getStatus, rid]);
+
+  // const getStatus = () => {
+  //   const baseUrl: any = process.env.NEXT_PUBLIC_API_BASE_URL;
+  //   const userId = localStorage.getItem("userId");
+  //   axios
+  //     .get(baseUrl + `/user/${userId}/refund/${rid}/status`)
+  //     .then((response) => {
+  //       setatxid(response?.data?.data?.aTxId);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
+
   useEffect(() => {
+    const getStatus = () => {
+      const baseUrl: any = process.env.NEXT_PUBLIC_API_BASE_URL;
+      const userId = localStorage.getItem("userId");
+      axios
+        .get(baseUrl + `/user/${userId}/refund/${rid}/status`)
+        .then((response) => {
+          setatxid(response?.data?.data?.aTxId);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+  
     if (rid) {
       setTimeout(() => {
         setState(!state);
@@ -267,20 +304,8 @@ const RefundModal: React.FC<RefundModalProps> = ({
         }
       }, 5000);
     }
-  }, [state]);
-
-  const getStatus = () => {
-    const baseUrl: any = process.env.NEXT_PUBLIC_API_BASE_URL;
-    const userId = localStorage.getItem("userId");
-    axios
-      .get(baseUrl + `/user/${userId}/refund/${rid}/status`)
-      .then((response) => {
-        setatxid(response?.data?.data?.aTxId);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  }, [state, atxid, rid]);
+  
 
   return (
     <>

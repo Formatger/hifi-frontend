@@ -31,7 +31,7 @@ const AuthCode = () => {
 
     setUserId(localStorage.getItem("userId"));
     setIsVerified(localStorage.getItem("isVerified"));
-  }, []);
+  }, [router]);
 
   const handleChange = (otpValue: any) => {
     // Custom validation logic (e.g., allowing only digits)

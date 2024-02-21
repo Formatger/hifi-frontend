@@ -130,13 +130,14 @@ const CustomerDetail = () => {
     };
 
     fetchData();
-  }, [router]);
+  }, [baseUrl, router.query?.customer_id]);
+
   return (
     <div className="main-container">
       <div className="w-full">
         <Header />
-        <div className="w-full flex flex-col  gap-6 -mt-2">
-          <div className="sticky h-20 top-[105px] lg:top-[74px] px-6 pt-0 pb-0 z-20 bg-white flex items-center mt-0">
+        <div className="">
+          <div className="sticky-heading">
             <Breadcrumbs items={breadcrumbItems} />
           </div>
           {loader ? (
@@ -144,25 +145,27 @@ const CustomerDetail = () => {
           ) : (
             <>
               {" "}
-              <div className="flex flex-col p-6 -mt-12 lg:flex-row justify-between">
-                <div className="w-full lg:w-[30%] flex flex-col gap-5">
-                  <Customer CustomerDetails={CustomerDetails} />
-                  <Details CustomerDetails={CustomerDetails} />
-                </div>
-                <div className="w-full lg:w-[60%]">
-                  {customerAll?.length === 0 ? (
-                    <div className="no-records-wrap">
-                      <div className="bold">
-                        "No Records Found"
+              <div className="page-container sub">
+                <div className="customer-page">
+                  <div className="customer-left">
+                    <Customer CustomerDetails={CustomerDetails} />
+                    <Details CustomerDetails={CustomerDetails} />
+                  </div>
+                  <div className="customer-right">
+                    {customerAll?.length === 0 ? (
+                      <div className="no-records-wrap">
+                        <div className="bold">
+                          "No Records Found"
+                        </div>
                       </div>
-                    </div>
-                  ) : (
-                    <CustomerTable customerAll={customerAll} />
-                  )}
+                    ) : (
+                      <CustomerTable customerAll={customerAll} />
+                    )}
 
-                  <PaymentMethods
-                    payment_method_wallets={payment_method_wallets}
-                  />
+                    <PaymentMethods
+                      payment_method_wallets={payment_method_wallets}
+                    />
+                  </div>
                 </div>
               </div>
             </>

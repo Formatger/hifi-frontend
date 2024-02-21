@@ -82,11 +82,13 @@ const ReceiptHistory = (receiptDetails: any) => {
 
   return (
     <div className="w-full flex flex-col gap-4 mt-5 mb-5">
-      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 lg:gap-0  relative border-b border-[#E5E9EB] py-3">
-        <h1 className="text-[#111012] text-xl font-semibold poppins-remove">
-          Receipt History
-        </h1>
-        <div className="flex items-center gap-3">
+      <div className="section-title">
+        <div>
+          <h4>
+            Receipt History
+          </h4>
+        </div>
+        <div className="button-wrap">
           <button
             className="sec-button"
             onClick={handleViewReceipt}

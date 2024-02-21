@@ -41,7 +41,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
     } else {
       setOpacityCheck(false);
     }
-  }, []);
+  }, [router]);
 
   const sidebarData = [
     {

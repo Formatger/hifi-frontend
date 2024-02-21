@@ -13,6 +13,7 @@ interface StatusConfig {
   };
 }
 
+/* Need to change these in the backend */
 const statusConfig: StatusConfig = {
   deposit: {
     text: "Succeeded",
@@ -34,11 +35,6 @@ const statusConfig: StatusConfig = {
     image: x,
     className: "status-canceled",
   },
-  // Cancelled: {
-  //   text: "Cancelled",
-  //   image: x,
-  //   className: "status-canceled",
-  // },
   "approval required": {
     text: "Pending",
     image: clockclockwise,

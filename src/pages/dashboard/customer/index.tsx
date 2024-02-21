@@ -90,7 +90,7 @@ const Customer = () => {
         });
     };
     fetchData();
-  }, [finalValue]);
+  }, [finalValue, baseUrl, CustomDateRange, startdatestamp, enddatestamp, filterStatus]);
 
   const handleTabClick = (index: number, item: any) => {
     setfilterValue(item.value);

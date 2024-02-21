@@ -107,7 +107,7 @@ const Payments = () => {
 
       fetchData();
     }
-  }, [finalValue, activeTab]);
+  }, [finalValue, activeTab, CustomDateRange, baseUrl, startdatestamp, enddatestamp, filterStatus]);
 
   const handleTabClick = (index: number) => {
     setActiveTabIndex(index);
@@ -266,7 +266,7 @@ const Payments = () => {
     <div className="main-container">
       <Header />
       <div className="page-container" id="payments">
-        <div className="page-head">
+        <div className="">
           <div className="h1-wrap">
             <h1 className="h1">
               Payments

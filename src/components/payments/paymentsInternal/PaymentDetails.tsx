@@ -100,10 +100,48 @@ const PaymentDetails = ({ paymentDetails }: any) => {
 
   return (
     <div className="w-full flex flex-col gap-4">
-      <h1 className="text-[#111012] text-xl font-semibold poppins-remove">
-        Payment Details
-      </h1>
-      <hr className="h-px bg-black w-full" />
+      <div className="section-title">
+        <h4>
+          Payment Details
+        </h4>
+      </div>
+{/* 
+      <table className="payment-details">
+  <tbody>
+    <tr>
+      <td className="labels">
+        <p>Order Total</p>
+        <p>Amount Paid</p>
+        <p>Transaction Fee</p>
+        <p>Actual Amount Received</p>
+        <p>Customer ID</p>
+        <p>Order ID</p>
+        <p>Statement Descriptor</p>
+        <p>Amount</p>
+        <p>Fee</p>
+        <p>Net</p>
+        <p>Status</p>
+      </td>
+      <td className="values">
+        <p>{typeof paymentDetails?.amount === "number" ? `${formatCurrency(paymentDetails?.amount)}` : paymentDetails?.amount}</p>
+        <p className="uppercase">{paymentDetails?.transaction_fee + paymentDetails?.cryptoCurrencyAmount} {paymentDetails?.cryptoCurrency}</p>
+        <p className="uppercase">{paymentDetails?.transaction_fee} {paymentDetails?.cryptoCurrency}</p>
+        <p className="uppercase">{paymentDetails?.cryptoCurrencyAmount} {paymentDetails?.cryptoCurrency}</p>
+        <p className="truncate">{paymentDetails?.customerAddress}</p>
+        <p className="truncate">{paymentDetails?.actual_order_id}</p>
+        <p>{paymentDetails?.statement_descriptor ? paymentDetails?.statement_descriptor : "N/A"}</p>
+        <p className="uppercase">{paymentDetails?.status === "withdraw" ? paymentDetails?.fiatCurrencyAmount + " " + paymentDetails?.outward : formatCurrency(paymentDetails?.fiatCurrencyAmount)}</p>
+        <p className="uppercase">{paymentDetails?.status === "withdraw" ? paymentDetails?.fees + " " + paymentDetails?.outward : formatCurrency(paymentDetails?.fees)}</p>
+        <p className="uppercase">{paymentDetails?.status === "withdraw" ? paymentDetails?.net + " " + paymentDetails?.outward : formatCurrency(paymentDetails?.net)}</p>
+        <p>{getStatusText(paymentDetails?.status)}</p>
+      </td>
+    </tr>
+  </tbody>
+</table> */}
+
+
+
+
       <div className="flex flex-col gap-3 lg:flex-row lg:gap-20">
         <div className="flex flex-col gap-3">
           <div className="flex gap-3  lg:gap-16">
@@ -176,9 +214,9 @@ const PaymentDetails = ({ paymentDetails }: any) => {
               Amount
             </p>
             <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove uppercase">
-              {/* {paymentDetails?.fiatCurrencyAmount
+              {paymentDetails?.fiatCurrencyAmount
                 ? formatCurrency(paymentDetails?.fiatCurrencyAmount)
-                : "N/A"} */}
+                : "N/A"}
               {paymentDetails?.status === "withdraw"
                 ? paymentDetails?.fiatCurrencyAmount +
                   " " +
@@ -215,6 +253,8 @@ const PaymentDetails = ({ paymentDetails }: any) => {
               {getStatusText(paymentDetails?.status)}
             </p>
           </div>
+
+
           <div className="flex gap-3  lg:gap-16">
             <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
               Description
@@ -224,26 +264,37 @@ const PaymentDetails = ({ paymentDetails }: any) => {
                 !isDescEditable ? "flex-row" : "flex-col"
               } items-start gap-2`}
             >
-              {/* {isDescEditable ? (
+              {isDescEditable ? (
                 <input
                   type="text"
                   value={descriptionInput}
                   className="border border-[#E5E9EB] w-40 lg:w-auto px-1"
                   onChange={(e) => setDescriptionInput(e.target.value)}
                 />
-              ) : ( */}
+              ) : (
               <span className="w-auto overflow-hidden text-ellipsis">
                 {paymentDetails?.description
                   ? paymentDetails?.description
                   : "N/A"}
               </span>
-              {/* )} */}
+               )} 
+            </p> 
+
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PaymentDetails;
+
 
               {/* {!isDescEditable && (
                 <button onClick={handleDescriptionEdit}>
                   <Image src={pencilsimple} alt="edit" className="" />
                 </button>
-              )} */}
+              )}
               {isDescEditable && (
                 <div className="flex items-center gap-4">
                   <button
@@ -261,13 +312,4 @@ const PaymentDetails = ({ paymentDetails }: any) => {
                     Cancel
                   </button>
                 </div>
-              )}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default PaymentDetails;
+              )} */}

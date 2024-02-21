@@ -87,7 +87,7 @@ const BankAccounts = () => {
         });
     };
     fetchData();
-  }, [state, isAddAccountModalOpen]);
+  }, [state, isAddAccountModalOpen, baseUrl]);
 
   const openAddAccountModal = () => {
     setIsAddAccountModalOpen(true);
@@ -167,14 +167,14 @@ const BankAccounts = () => {
                   Bank Accounts
                 </h1>
               </div>
-              {bankdata?.length > 0 ? (
+              {/* {bankdata?.length > 0 ? (
                 <></>
               ) : (
                 <>
                   {" "}
                   {role === "0" || role === "1" ? (
                     <button
-                      className="bg-[#6200ee] text-[#F9F9F7] w-[162px] h-8 poppins-remove flex items-center justify-center gap-2 rounded-md ml-auto"
+                      className=" text-[#F9F9F7] w-[162px] h-8 poppins-remove flex items-center justify-center gap-2 rounded-md ml-auto"
                       onClick={openAddAccountModal}
                     >
                       <Image src={plus} alt="plus" className="" />
@@ -184,7 +184,7 @@ const BankAccounts = () => {
                     <></>
                   )}
                 </>
-              )}
+              )} */}
 
               <div className="w-full overflow-y-scroll overflow-x-auto lg:overflow-hidden">
                 {loader ? (
@@ -286,7 +286,7 @@ const BankAccounts = () => {
                             "No Records Found"
                           </div>
                           <div>
-                            Please add bank account first.
+                            Please add a bank account first.
                           </div>
                         </div>
                       </>
