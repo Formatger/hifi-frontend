@@ -9,7 +9,7 @@ import ReceiptHistory from "@/components/payments/paymentsInternal/ReceiptHistor
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import DetailsPayment from "@/components/payments/paymentsInternal/DetailsPayment";
+import PaymentSummary from "@/components/payments/paymentsInternal/PaymentSummary";
 import MainLoader from "@/components/common/Loader";
 
 interface TransactionDataProps {
@@ -260,7 +260,7 @@ const Userid = () => {
               <div className="paydetail-page">
                 {payment_details && (
                   <>
-                    <DetailsPayment paymentDetails={payment_details} />
+                    <PaymentSummary paymentDetails={payment_details} />
                     <ReceiptHistory receiptDetails={receiptDetails} />
                     <Timeline timelineDetails={timeline_details} />
                     {/* <OrderHistory orderHistoryDetails={orderHistoryDetails} /> */}

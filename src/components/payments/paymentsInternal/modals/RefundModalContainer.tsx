@@ -306,7 +306,6 @@ const RefundModal: React.FC<RefundModalProps> = ({
     }
   }, [state, atxid, rid]);
   
-
   return (
     <>
       <Modal

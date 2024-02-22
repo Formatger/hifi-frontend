@@ -36,7 +36,7 @@ export default function IncomingToHifipay(props: TransactionsProps) {
           <div className="text-[#4B5563] text-remove  font-remove leading-normal">
             These amounts are estimated because transactions are still
             accumulating. Payouts are scheduled to{" "}
-            <span className="">automatically send monthly.</span>
+            <span className="">automatically send daily.</span>
           </div>
         </div>
       </div>

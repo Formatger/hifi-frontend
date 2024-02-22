@@ -42,58 +42,59 @@ const Payout = ({ order_id, receiptDetails }: any) => {
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row items-start justify-between lg:items-center w-full">
-        <div className="flex items-center gap-3">
-          <Image src={cardholder} alt="cardholder" className="" />
-          <p className="poppins-remove text-[#4B5563]">ACH PAYOUT</p>
+     <div className="pay-heading-wrap">
+        <div className="detail-type">
+          <div className="row-wrap">
+            <Image src={cardholder} alt="cardholder" />
+            <p>ACH PAYOUT</p>
+          </div>
+          <div className="address-box">
+              {order_id}
+            {/* <Image src={cardholder} alt="cardholder" className="order-1" /> */}
+          </div>
         </div>
-        <div className="flex items-center gap-3">
-          <p className="poppins-remove order-2 lg:order-1 text-[#4B5563]">
-            {order_id}
-          </p>
-          <Image src={cardholder} alt="cardholder" className="order-1" />
-        </div>
-      </div>
-      <div className="flex flex-col mt-4 lg:mt-0 lg:flex-row gap-4 lg:gap-0 justify-between w-full items-center">
-        <TotalStatus
-          total={receiptDetails?.total}
-          status={receiptDetails?.status}
-          outwardCurrency={receiptDetails?.outwardCurrency}
-        />
-        <div className="flex items-center gap-3 relative">
-          <CSVLink
-            data={getCSVData(receiptDetails)}
-            filename="receipt.csv"
-            target="_blank"
-          >
-            <button
-              className="sec-button"
-              onClick={handleExport}
+        <div className="total-status-container">
+          <TotalStatus
+            total={receiptDetails?.total}
+            status={receiptDetails?.status}
+            outwardCurrency={receiptDetails?.outwardCurrency}
+          />
+          
+          <div className="button-wrap">
+            <CSVLink
+              data={getCSVData(receiptDetails)}
+              filename="receipt.csv"
+              target="_blank"
             >
-              <Image src={exporticon} alt="arrow" className="" />
-              <span>Export</span>
-            </button>
-          </CSVLink>
-          {showMessage && (
-            <div className="absolute top-10 -left-52 gap-2 lg:w-[334px] h-24 text-indigo-900 poppins-remove mt-2 bg-white shadow-md rounded-md flex flex-col justify-center items-center self-end p-5">
-              <div className="flex items-center justify-between">
-                {message === "Downloading CSV" ? (
-                  <TailSpin height={30} width={30} color="black" />
-                ) : (
-                  <Image src={checkcircle} alt="complete" className="" />
-                )}
-                <button
-                  onClick={handleCloseMessage}
-                  className="self-start absolute top-2 right-2"
-                >
-                  <Image src={x} alt="close" className="" />
-                </button>
+              <button
+                className="sec-button"
+                onClick={handleExport}
+              >
+                <Image src={exporticon} alt="arrow" className="" />
+                <span>Export</span>
+              </button>
+            </CSVLink>
+            {showMessage && (
+              <div className="download-box2">
+                <div className="flex items-center justify-between">
+                  {message === "Downloading CSV" ? (
+                    <TailSpin height={30} width={30} color="black" />
+                  ) : (
+                    <Image height={30} width={30} src={checkcircle} alt="complete" className="" />
+                  )}
+                  <button
+                    onClick={handleCloseMessage}
+                    className="self-start absolute top-2 right-2"
+                  >
+                    <Image src={x} alt="close" className="" />
+                  </button>
+                </div>
+                <p>
+                  {message}
+                </p>
               </div>
-              <p className="text-[#252C32] text-xl poppins-remove font-semibold">
-                {message}
-              </p>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </>

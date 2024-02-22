@@ -61,7 +61,7 @@ const Balance = () => {
 
   const TotalbalanceData = [
     {
-      title: "Currently on the way to your bank account",
+      title: "Currently on the way to your bank account.",
       usd: balanceData?.currently_way_to_bank_account
         ? formatCurrency(balanceData?.currently_way_to_bank_account)
         : formatCurrency(0),

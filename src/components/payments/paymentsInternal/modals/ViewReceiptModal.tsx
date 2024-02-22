@@ -160,33 +160,36 @@ const ViewReceiptModal: React.FC<{
           <span className="font-semibold">{receiptDetails?.receiver}</span>
         </p>
         <table className="table-auto w-full">
-          <tr className="text-[#111012] font-medium poppins-remove border-b border-gray-200 h-10">
-            <td className="p-2 w-[70%]">DESCRIPTION</td>
-            <td className="p-2 w-[30%]">SUBTOTAL</td>
-          </tr>
-          <tr className=" border-y border-gray-200 h-20">
-            <td className="text-[#4B5563]  font-remove p-2">
-              {receiptDetails.description}
-            </td>
-            <td className="text-gray-800 font-semibold ">
-              <div className="flex items-center gap-3 p-2">
+          <tbody>
+            <tr className="text-[#111012] font-medium poppins-remove border-b border-gray-200 h-10">
+              <td className="p-2 w-[70%]">DESCRIPTION</td>
+              <td className="p-2 w-[30%]">SUBTOTAL</td>
+            </tr>
+            <tr className=" border-y border-gray-200 h-20">
+              <td className="text-[#4B5563]  font-remove p-2">
+                {receiptDetails.description}
+              </td>
+              <td className="text-gray-800 font-semibold ">
+                <div className="flex items-center gap-3 p-2">
+                  {formatCurrency(receiptDetails.amount)}
+                  <p className="w-[37px] h-[22px] px-1.5 py-0.5 text-xs bg-gray-200 rounded justify-center items-center flex">
+                    <p>USD</p>
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <tr className="h-10 border-b border-gray-200">
+              <td className="text-[#111012] font-medium p-2">TOTAL</td>
+              <td className="text-gray-800 font-semibold flex items-center gap-3 p-2 align-middle">
                 {formatCurrency(receiptDetails.amount)}
-                <p className="w-[37px] h-[22px] px-1.5 py-0.5 text-xs bg-gray-200 rounded justify-center items-center flex">
+                <div className="w-[37px] h-[22px] px-1.5 py-0.5 text-xs bg-gray-200 rounded justify-center items-center flex">
                   <p>USD</p>
-                </p>
-              </div>
-            </td>
-          </tr>
-          <tr className="h-10 border-b border-gray-200">
-            <td className="text-[#111012] font-medium p-2">TOTAL</td>
-            <td className="text-gray-800 font-semibold flex items-center gap-3 p-2 align-middle">
-              {formatCurrency(receiptDetails.amount)}
-              <div className="w-[37px] h-[22px] px-1.5 py-0.5 text-xs bg-gray-200 rounded justify-center items-center flex">
-                <p>USD</p>
-              </div>
-            </td>
-          </tr>
+                </div>
+              </td>
+            </tr>
+          </tbody>
         </table>
+
         <div className="flex flex-col p-2">
           <p className="w-[394px] text-[#111012] text-remove font-medium poppins-remove uppercase leading-normal tracking-tight">
             Paid with

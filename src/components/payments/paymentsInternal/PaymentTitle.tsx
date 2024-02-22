@@ -11,7 +11,7 @@ const PaymentTitle: React.FC<PaymentTitleProps> = ({ customer_address }) => {
   return (
     <div className="detail-type">
       <div className="row-wrap">
-        <Image src={cardholder} alt="cardholder" className="" />
+        <Image src={cardholder} alt="cardholder" />
         <p>PAYMENT</p>
       </div>
       <div className="address-box-wrap">

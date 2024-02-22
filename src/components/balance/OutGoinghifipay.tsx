@@ -13,7 +13,7 @@ export default function OutGoinghifipay({ TotalTransaction }: any) {
           <div className="flex-col justify-start items-start inline-flex">
             <div className="w-[100%] py-1 bg-white justify-start items-start gap-[95px] inline-flex">
               <div className="  text-[#111012] text-remove font-semibold poppins-remove leading-normal">
-                Currently on the way to your bank account
+                Currently on the way to your bank account.
               </div>
             </div>
             <div className="w-[100%] py-1 bg-white justify-start items-start gap-[95px] inline-flex">

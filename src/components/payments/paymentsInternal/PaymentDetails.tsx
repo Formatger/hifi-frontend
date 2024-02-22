@@ -99,217 +99,103 @@ const PaymentDetails = ({ paymentDetails }: any) => {
   }
 
   return (
-    <div className="w-full flex flex-col gap-4">
+    <div className="section-wrap">
       <div className="section-title">
         <h4>
           Payment Details
         </h4>
       </div>
-{/* 
-      <table className="payment-details">
-  <tbody>
-    <tr>
-      <td className="labels">
-        <p>Order Total</p>
-        <p>Amount Paid</p>
-        <p>Transaction Fee</p>
-        <p>Actual Amount Received</p>
-        <p>Customer ID</p>
-        <p>Order ID</p>
-        <p>Statement Descriptor</p>
-        <p>Amount</p>
-        <p>Fee</p>
-        <p>Net</p>
-        <p>Status</p>
-      </td>
-      <td className="values">
-        <p>{typeof paymentDetails?.amount === "number" ? `${formatCurrency(paymentDetails?.amount)}` : paymentDetails?.amount}</p>
-        <p className="uppercase">{paymentDetails?.transaction_fee + paymentDetails?.cryptoCurrencyAmount} {paymentDetails?.cryptoCurrency}</p>
-        <p className="uppercase">{paymentDetails?.transaction_fee} {paymentDetails?.cryptoCurrency}</p>
-        <p className="uppercase">{paymentDetails?.cryptoCurrencyAmount} {paymentDetails?.cryptoCurrency}</p>
-        <p className="truncate">{paymentDetails?.customerAddress}</p>
-        <p className="truncate">{paymentDetails?.actual_order_id}</p>
-        <p>{paymentDetails?.statement_descriptor ? paymentDetails?.statement_descriptor : "N/A"}</p>
-        <p className="uppercase">{paymentDetails?.status === "withdraw" ? paymentDetails?.fiatCurrencyAmount + " " + paymentDetails?.outward : formatCurrency(paymentDetails?.fiatCurrencyAmount)}</p>
-        <p className="uppercase">{paymentDetails?.status === "withdraw" ? paymentDetails?.fees + " " + paymentDetails?.outward : formatCurrency(paymentDetails?.fees)}</p>
-        <p className="uppercase">{paymentDetails?.status === "withdraw" ? paymentDetails?.net + " " + paymentDetails?.outward : formatCurrency(paymentDetails?.net)}</p>
-        <p>{getStatusText(paymentDetails?.status)}</p>
-      </td>
-    </tr>
-  </tbody>
-</table> */}
 
+      <table className="details-table">
+        <tbody>
+          <tr className="details-table-row">
 
+            <td className="first-column">
+              <p>Order Total</p>
+              <p>Amount Paid</p>
+              <p>Transaction Fee</p>
+              <p>Actual Amount Received</p>
+              <p>Customer ID</p>
+              <p>Order ID</p>
+              <p>Statement Descriptor</p>
+              <p>Amount</p>
+              <p>Fee</p>
+              <p>Net</p>
+              <p>Status</p>
+              <p>Description</p>
+            </td>
 
-
-      <div className="flex flex-col gap-3 lg:flex-row lg:gap-20">
-        <div className="flex flex-col gap-3">
-          <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
-              Order Total
-            </p>
-            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove">
-              {typeof paymentDetails?.amount === "number"
-                ? `${formatCurrency(paymentDetails?.amount)}`
-                : paymentDetails?.amount}
-            </p>
-          </div>
-          <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
-              Amount Paid
-            </p>
-            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove uppercase">
-              {paymentDetails?.transaction_fee +
-                paymentDetails?.cryptoCurrencyAmount}{" "}
-              {paymentDetails?.cryptoCurrency}
-            </p>
-          </div>
-          <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
-              Transaction Fee
-            </p>
-            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove uppercase">
-              {paymentDetails?.transaction_fee} {paymentDetails?.cryptoCurrency}
-            </p>
-          </div>
-          <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
-              Actual Amount Received
-            </p>
-            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove uppercase">
-              {paymentDetails?.cryptoCurrencyAmount}{" "}
-              {paymentDetails?.cryptoCurrency}
-            </p>
-          </div>
-          <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
-              Customer ID
-            </p>
-            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove truncate w-40">
-              {paymentDetails?.customerAddress}
-            </p>
-          </div>
-          <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
-              Order ID
-            </p>
-            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove w-40 truncate">
-              {paymentDetails?.actual_order_id}
-            </p>
-          </div>
-        </div>
-        <div className="flex flex-col gap-3">
-          <div className="flex gap-3   lg:gap-9">
-            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36 lg:w-auto">
-              Statement Descriptor
-            </p>
-            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove">
-              {paymentDetails?.statement_descriptor
-                ? paymentDetails?.statement_descriptor
-                : "N/A"}
-            </p>
-          </div>
-          <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
-              Amount
-            </p>
-            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove uppercase">
-              {paymentDetails?.fiatCurrencyAmount
-                ? formatCurrency(paymentDetails?.fiatCurrencyAmount)
-                : "N/A"}
-              {paymentDetails?.status === "withdraw"
-                ? paymentDetails?.fiatCurrencyAmount +
-                  " " +
-                  paymentDetails?.outward
-                : formatCurrency(paymentDetails?.fiatCurrencyAmount)}
-            </p>
-          </div>
-          <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
-              Fee
-            </p>
-            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove flex items-center gap-2 uppercase">
-              {/* {formatCurrency(paymentDetails?.fees)} */}
-              {paymentDetails?.status === "withdraw"
-                ? paymentDetails?.fees + " " + paymentDetails?.outward
-                : formatCurrency(paymentDetails?.fees)}
-            </p>
-          </div>
-          <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
-              Net
-            </p>
-            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove uppercase">
-              {paymentDetails?.status === "withdraw"
-                ? paymentDetails?.net + " " + paymentDetails?.outward
-                : formatCurrency(paymentDetails?.net)}
-            </p>
-          </div>
-          <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
-              Status
-            </p>
-            <p className="text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove ">
-              {getStatusText(paymentDetails?.status)}
-            </p>
-          </div>
-
-
-          <div className="flex gap-3  lg:gap-16">
-            <p className="text-[#4B5563] text-sm lg:text-remove  font-remove poppins-remove w-36">
-              Description
-            </p>
-            <p
-              className={`text-[#252C32] text-sm lg:text-remove  font-remove poppins-remove whitespace-pre-wrap flex ${
-                !isDescEditable ? "flex-row" : "flex-col"
-              } items-start gap-2`}
-            >
-              {isDescEditable ? (
-                <input
-                  type="text"
-                  value={descriptionInput}
-                  className="border border-[#E5E9EB] w-40 lg:w-auto px-1"
-                  onChange={(e) => setDescriptionInput(e.target.value)}
-                />
-              ) : (
-              <span className="w-auto overflow-hidden text-ellipsis">
-                {paymentDetails?.description
-                  ? paymentDetails?.description
+            <td className="second-column">
+              <p>
+                {typeof paymentDetails?.amount === "number"
+                  ? `${formatCurrency(paymentDetails?.amount)}`
+                  : paymentDetails?.amount}
+              </p>
+              <p>
+                {paymentDetails?.transaction_fee +
+                  paymentDetails?.cryptoCurrencyAmount}{" "}
+                {paymentDetails?.cryptoCurrency}
+              </p>
+              <p>
+                {paymentDetails?.transaction_fee} {paymentDetails?.cryptoCurrency}
+              </p>
+              <p>
+                {paymentDetails?.cryptoCurrencyAmount}{" "}
+                {paymentDetails?.cryptoCurrency}
+              </p>
+              <p>
+                {paymentDetails?.customerAddress}
+              </p>
+              <p>
+                {paymentDetails?.actual_order_id}
+              </p>
+              <p>
+                {paymentDetails?.statement_descriptor
+                  ? paymentDetails?.statement_descriptor
                   : "N/A"}
-              </span>
-               )} 
-            </p> 
+              </p>
+              <p>
+                {paymentDetails?.status === "withdraw"
+                  ? `${paymentDetails?.fiatCurrencyAmount} ${paymentDetails?.outward}`
+                  : formatCurrency(paymentDetails?.fiatCurrencyAmount)}
+                {/* {paymentDetails?.fiatCurrencyAmount
+                  ? formatCurrency(paymentDetails?.fiatCurrencyAmount)
+                  : "N/A"}
+                {paymentDetails?.status === "withdraw"
+                  ? paymentDetails?.fiatCurrencyAmount +
+                    " " +
+                    paymentDetails?.outward
+                  : formatCurrency(paymentDetails?.fiatCurrencyAmount)} */}
+              </p>
+              <p>
+                {paymentDetails?.status === "withdraw"
+                  ? paymentDetails?.fees + " " + paymentDetails?.outward
+                  : formatCurrency(paymentDetails?.fees)}
+              </p>
+              <p>
+                {paymentDetails?.status === "withdraw"
+                  ? paymentDetails?.net + " " + paymentDetails?.outward
+                  : formatCurrency(paymentDetails?.net)}
+              </p>
+              <p>
+                {getStatusText(paymentDetails?.status)}
+              </p>
+              <p>
+                <span className="w-auto overflow-hidden text-ellipsis">
+                  {paymentDetails?.description
+                    ? paymentDetails?.description
+                    : "N/A"}
+                </span>
+              </p>
 
-          </div>
-        </div>
-      </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
     </div>
   );
 };
 
 export default PaymentDetails;
 
-
-              {/* {!isDescEditable && (
-                <button onClick={handleDescriptionEdit}>
-                  <Image src={pencilsimple} alt="edit" className="" />
-                </button>
-              )}
-              {isDescEditable && (
-                <div className="flex items-center gap-4">
-                  <button
-                    className="bg-[#6200EE] text-[#F9F9F7]  flex items-center justify-center text-sm gap-3 h-6 w-20 rounded-md"
-                    type="button"
-                    onClick={handleDescriptionSubmit}
-                  >
-                    Submit
-                  </button>
-                  <button
-                    className="bg-[#6200EE] text-[#F9F9F7]  flex items-center justify-center gap-3 text-sm h-6 w-20 rounded-md"
-                    type="button"
-                    onClick={() => setIsDescEditable(false)}
-                  >
-                    Cancel
-                  </button>
-                </div>
-              )} */}

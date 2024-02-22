@@ -86,12 +86,27 @@
 
   /* Colors */
 
+  /* sidebar white mode */
+  --sidebar-bg: var(--grey);
+  --nav-font: var(--dark);
+  --nav-font-active: var(--white);
+  --nav-bg: var(--main);
+  --nav-bg-hover: var(--grey2);
+
+  /* sidebar blue mode */
+  --sidebar-bg: var(--main);
+  --nav-font: var(--white);
+  --nav-font-active: var(--dark);
+  --nav-bg: var(--white);
+  --nav-bg-hover: var(--blue1);
+
+  /**/
+
   --white: white;
   --black: var(--dark2);
   --main: var(--blue);
 
   --text: var(--dark3);
-  --sidebar: var(--grey);
   --border: 1px solid var(--grey3);
   --sborder: 1px solid var(--grey2);
 
@@ -118,6 +133,8 @@
   --blue3: #c3bdff;
   --blue4: #e6e5f7;
   
+  --darkgreen: #139b8e;
+
   --green: #02cfbb;
   --green2: hsl(174, 40%, 70%);
   --green4: #e4fbeb;
@@ -198,9 +215,8 @@
 }
 
 .grey-text {
-  color: var(--dark5);
+  color: var(--dark4);
 }
-
 
 .custom-modal-overlay {
   position: fixed;
@@ -265,7 +281,10 @@
   text-align: center;
 }
 
-
+.column-wrap {
+  display: flex;
+  flex-direction: column;
+}
 
 /* Text */
 

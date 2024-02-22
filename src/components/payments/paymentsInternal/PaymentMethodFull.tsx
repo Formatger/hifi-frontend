@@ -23,15 +23,16 @@ const PaymentMethodFull = ({
   paymentMethodDetails: any;
 }) => {
   return (
-    <div className="w-full flex flex-col gap-3">
+    <div className="section-wrap">
       <div className="section-title">
       <h4>
         Payment Method
       </h4>
       </div>
 
-      <table className="pay-method-table">
-          <tr className="pay-method">
+      <table className="details-table">
+        <tbody>
+          <tr className="details-table-row">
             <td className="first-column">
               <p>Currency Paid</p>
               <p>Currency Received</p>
@@ -76,8 +77,15 @@ const PaymentMethodFull = ({
               </p> */}
             </td>
           </tr>
+        </tbody>
       </table>
-      
+    </div>
+  );
+};
+
+export default PaymentMethodFull;
+
+
 
       {/* <div className="flex flex-col lg:flex-row lg:gap-20">
         <div className="flex flex-col gap-3">
@@ -158,9 +166,3 @@ const PaymentMethodFull = ({
           </div>
         </div>
       </div> */}
-
-    </div>
-  );
-};
-
-export default PaymentMethodFull;

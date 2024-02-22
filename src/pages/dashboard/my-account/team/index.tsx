@@ -4,7 +4,6 @@ import Header from "@/components/common/Header";
 import Sidebar from "@/components/common/Sidebar";
 import Breadcrumbs from "@/components/payments/Breadcrumbs";
 import Search from "@/components/payments/Search";
-import Button from "@/components/common/Button";
 import Funnel from "@/components/assets/images/Funnel.svg";
 import ExportReportBtn from "@/components/common/ExportReportBtn";
 import Image from "next/image";

@@ -7,10 +7,8 @@ import arrowcounterclockwise from "../../assets/images/ArrowCounterClockwise.svg
 import arrowbendupleft from "../../assets/images/ArrowBendUpLeft.svg";
 import threedots from "../../assets/images/DotsThreeOutline.svg";
 import RefundModalContainer from "./modals/RefundModalContainer";
-
 import PaymentTitle from "./PaymentTitle";
 import TotalStatus from "./TotalStatus";
-import WalletAddress from "./WalletAddress";
 
 interface PaymentDetails {
   amount: string | number;
@@ -46,35 +44,35 @@ export function formatDate(isoDate: string) {
   return date.toLocaleDateString("en-US", options);
 }
 
-export const getStatusColor = (status: string) => {
-  switch (status) {
-    case "Succeeded":
-      return "#0E5D33";
-    case "Cancelled":
-      return "#C41200";
-    case "Pending":
-      return "#876401";
-    case "Refunded":
-      return "#4B5563";
-    default:
-      return "black";
-  }
-};
+// export const getStatusColor = (status: string) => {
+//   switch (status) {
+//     case "Succeeded":
+//       return "#0E5D33";
+//     case "Cancelled":
+//       return "#C41200";
+//     case "Pending":
+//       return "#876401";
+//     case "Refunded":
+//       return "#4B5563";
+//     default:
+//       return "black";
+//   }
+// };
 
-export const getStatusImage = (status: string) => {
-  switch (status) {
-    case "Succeeded":
-      return greencheck;
-    case "Cancelled":
-      return x;
-    case "Pending":
-      return clockclockwise;
-    case "Refunded":
-      return arrowcounterclockwise;
-    default:
-      return null;
-  }
-};
+// export const getStatusImage = (status: string) => {
+//   switch (status) {
+//     case "Succeeded":
+//       return greencheck;
+//     case "Cancelled":
+//       return x;
+//     case "Pending":
+//       return clockclockwise;
+//     case "Refunded":
+//       return arrowcounterclockwise;
+//     default:
+//       return null;
+//   }
+// };
 
 const Payment = ({ paymentDetails }: { paymentDetails: PaymentDetails }) => {
   const [isRefundModalOpen, setIsRefundModalOpen] = useState(false);
