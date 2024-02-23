@@ -17,7 +17,7 @@ const Details: React.FC<CustomerDetails> = ({ CustomerDetails }) => {
     <div>
       <div className="section-title">
         <div className="flex items-center gap-2">
-          <button onClick={toggleDropdown}>
+          {/* <button onClick={toggleDropdown}>
             <Image
               src={caretdown}
               alt="arrow"
@@ -25,7 +25,7 @@ const Details: React.FC<CustomerDetails> = ({ CustomerDetails }) => {
                 isDetailsExpanded ? "" : "-rotate-90"
               } `}
             />
-          </button>
+          </button> */}
           <h4 className="">
             Details
           </h4>
@@ -43,7 +43,7 @@ const Details: React.FC<CustomerDetails> = ({ CustomerDetails }) => {
 
           <div className="customer-details">
             <div className="flex flex-col mb-4">
-              <p className="bold">
+              <p className="title">
                 Name
               </p>
               <p className="text-s">
@@ -51,7 +51,7 @@ const Details: React.FC<CustomerDetails> = ({ CustomerDetails }) => {
               </p>
             </div>
               <div className="flex flex-col mb-4">
-              <p className="bold">
+              <p className="title">
                 Email
               </p>
               <p className="">
@@ -59,7 +59,7 @@ const Details: React.FC<CustomerDetails> = ({ CustomerDetails }) => {
               </p>
             </div>
             <div className="flex flex-col">
-              <p className="bold">
+              <p className="title">
                 Wallet
               </p>
               <p className="truncate">

@@ -196,7 +196,7 @@ const PaymentTable: React.FC<TableProps> = ({
     if (height < 950) return 10;
     if (height < 1000) return 11;
     if (height < 1050) return 12;
-    if (height < 1100) return 13;
+    if (height < 1100) return 18;
     if (height < 1150) return 14;
     if (height < 1200) return 15;
     return 16;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { TailSpin } from "react-loader-spinner";
 import x from "@/components/assets/images/XBlack.svg";
 import Image from "next/image";
-import checkcircle from "@/components/assets/images/CheckCircleGreen.svg";
+import checkcircle from "@/components/assets/images/CheckCircleBlue.svg";
 import exporticon from "@/components/assets/images/ExportViolet.svg";
 import ViewReceiptModal, {
   ReceiptDetails,
@@ -81,7 +81,7 @@ const ReceiptHistory = (receiptDetails: any) => {
   };
 
   return (
-    <div className="w-full flex flex-col gap-4 mt-5 mb-5">
+    <div className="section-wrap">
       <div className="section-title">
         <div>
           <h4>
@@ -112,12 +112,12 @@ const ReceiptHistory = (receiptDetails: any) => {
                 Export receipt
               </CSVLink>
               {showMessage && (
-                <div className="absolute top-10 -left-40 gap-2 lg:w-[334px] h-24 text-indigo-900 poppins-remove mt-2 bg-white shadow-md rounded-md flex flex-col justify-center items-center self-end p-5">
+                <div className="download-box">
                   <div className="flex items-center justify-between">
                     {message === "Downloading CSV" ? (
-                      <TailSpin height={30} width={30} color="black" />
+                      <TailSpin height={30} width={30} color="#5545fa" />
                     ) : (
-                      <Image src={checkcircle} alt="complete" className="" />
+                      <Image height={30} width={30} src={checkcircle} alt="complete" />
                     )}
                     <button
                       onClick={handleCloseMessage}
@@ -126,7 +126,7 @@ const ReceiptHistory = (receiptDetails: any) => {
                       <Image src={x} alt="close" className="" />
                     </button>
                   </div>
-                  <p className="text-[#252C32] text-xl text-center poppins-remove font-semibold mb-3">
+                  <p>
                     {message}
                   </p>
                 </div>
@@ -144,7 +144,8 @@ const ReceiptHistory = (receiptDetails: any) => {
         />
       )}
 
-      <p className="text-[#6A7781] poppins-remove mt-4 lg:mt-0">
+      <p className="title">
+        Last Download:&nbsp;
         {receiptDetails?.receiptDetails?.receiptTimestamp !== "N/A"
           ? moment(receiptDetails?.receiptDetails?.receiptTimestamp).format(
               "MMM DD, YYYY h:mm A"

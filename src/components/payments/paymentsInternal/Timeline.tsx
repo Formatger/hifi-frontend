@@ -1,6 +1,6 @@
 import exporticon from "../../assets/images/Export.svg";
 import Image from "next/image";
-import checkcircle from "../../assets/images/CheckCircleLightGreen.svg";
+import checkcircle from "../../assets/images/CheckCircleGreen.svg";
 import cardholder from "../../assets/images/Cardholder.svg";
 import { formatDate } from "./Payment";
 import clockclockwise from "../../assets/images/ClockClockwise.svg";
@@ -19,41 +19,43 @@ const Timeline = ({ timelineDetails }: { timelineDetails: TimelineProps }) => {
           Timeline
         </h4>
       </div>
-      <div className="flex flex-col">
-        <div className="flex gap-3 items-start py-2">
-          <div className="flex flex-col items-center">
-            <Image src={checkcircle} alt="" className="mt-1" />
-            <div className="w-px h-6 bg-[#E5E9EB]"></div>
+      <div className="column-wrap">
+        
+        <div className="timeline-item-wrap">
+          <div className="timeline-img">
+            <Image src={checkcircle} alt="" className="" />
+            <div className="time-line"></div>
           </div>
-          <div className="flex flex-col">
-            <div className="text-[#4B5563] text-remove  font-remove poppins-remove ">
+          <div className="column-wrap">
+            <div className="title">
               Payment Succeeded
             </div>
-            <div className="text-[#4B5563] text-sm  font-remove poppins-remove ">
+            <div className="item">
               {moment(timelineDetails?.paymentSucceededDate).format(
                 "MMM DD, YYYY h:mm A"
               )}
             </div>
           </div>
         </div>
-        <div className="flex gap-3 items-start py-2">
-          <div className="flex flex-col items-center">
+
+        <div className="timeline-item-wrap">
+          <div className="timeline-img">
             <Image src={cardholder} alt="" className="mt-1" />
-            <div className="w-px h-6 bg-[#E5E9EB]"></div>
-          </div>{" "}
-          <div className="flex flex-col">
-            <div className="text-[#4B5563] text-remove  font-remove poppins-remove ">
+            <div className="time-line"></div>
+          </div>
+          <div className="column-wrap">
+            <div className="title">
               Payment Initiated
             </div>
-            <div className="text-[#4B5563] text-sm  font-remove poppins-remove ">
+            <div className="item">
               {moment(timelineDetails?.paymentStartedDate).format(
                 "MMM DD, YYYY h:mm A"
               )}
             </div>
           </div>
         </div>
+
       </div>
-      <hr className="h-px bg-black w-full" />
     </div>
   );
 };

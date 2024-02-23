@@ -12,7 +12,8 @@ import Customers from "../assets/images/customers.svg";
 import Global from "../assets/images/global.svg";
 import { BiX } from "react-icons/bi";
 import { useRouter } from "next/router";
-import HifiLogo from "@/components/assets/images/hifi-logo.svg";
+// import HifiLogo from "@/components/assets/images/hifi-logo.svg";
+import HifiLogo from "@/components/assets/images/hifi-logo-white.svg";
 
 const svgIconClass = "svg-icon";
 
@@ -261,9 +262,9 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
                   <Link
                     href={"/dashboard/" + data?.url}
                     className={`navlink-wrap ${
-                      data?.hookValue ? "navlink-active" : "navlink-inactive"
+                      data?.hookValue ? "navlink-active" : "navlink"
                     }`}
-                  >
+                  >  
                     <div>
                       <Image
                         src={
@@ -271,7 +272,8 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
                             ? data?.imageSrcSelect
                             : data?.imageSrc
                         }
-                        className={`nav-image ${data?.hookValue ? 'white-icon' : ''}`}
+                        // className={`nav-image ${data?.hookValue ? 'invert-icon' : ''}`}
+                        className={`nav-image ${data?.hookValue ? '' : 'invert-icon'}`}
                         alt="logo"
                       />
                     </div>
@@ -283,7 +285,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
               );
             })}
           </ul>
-          <div>
+          <div className="extra-nav-links">
             <li>
               <Link
                 href={"https://docs.hifibridge.com/reference/getting-started"}
@@ -291,10 +293,10 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
                 className="navlink-wrap"
               >
                 <div>
-                  <Image src={Documentation} className="nav-image" alt="logo" />
+                  <Image src={Documentation} className="nav-image invert-icon" alt="logo" />
                 </div>
                 <div>
-                  Documentation
+                  <p>Documentation</p>
                 </div>
               </Link>
             </li>
@@ -305,10 +307,10 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
                 className="navlink-wrap"
               >
                 <div>
-                  <Image src={Logout} className="nav-image" alt="logo" />
+                  <Image src={Logout} className="nav-image invert-icon" alt="logo" />
                 </div>
                 <div>
-                  Logout
+                  <p>Logout</p>
                 </div>
               </Link>
             </li>

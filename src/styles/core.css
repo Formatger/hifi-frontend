@@ -86,12 +86,27 @@
 
   /* Colors */
 
+  /* sidebar white mode */
+  --sidebar-bg: var(--grey);
+  --nav-font: var(--dark);
+  --nav-font-active: var(--white);
+  --nav-bg: var(--main);
+  --nav-bg-hover: var(--grey2);
+
+  /* sidebar blue mode */
+  --sidebar-bg: var(--main);
+  --nav-font: var(--white);
+  --nav-font-active: var(--dark);
+  --nav-bg: var(--white);
+  --nav-bg-hover: var(--blue1);
+
+  /**/
+
   --white: white;
   --black: var(--dark2);
   --main: var(--blue);
 
   --text: var(--dark3);
-  --sidebar: var(--grey);
   --border: 1px solid var(--grey3);
   --sborder: 1px solid var(--grey2);
 
@@ -118,6 +133,8 @@
   --blue3: #c3bdff;
   --blue4: #e6e5f7;
   
+  --darkgreen: #139b8e;
+
   --green: #02cfbb;
   --green2: hsl(174, 40%, 70%);
   --green4: #e4fbeb;
@@ -192,15 +209,13 @@
   color: var(--main);
 }
 
-
 .blue-text {
   color: var(--main);
 }
 
 .grey-text {
-  color: var(--dark5);
+  color: var(--dark4);
 }
-
 
 .custom-modal-overlay {
   position: fixed;
@@ -265,7 +280,10 @@
   text-align: center;
 }
 
-
+.column-wrap {
+  display: flex;
+  flex-direction: column;
+}
 
 /* Text */
 
@@ -575,6 +593,102 @@ select {
   background-color: #062a5d10;
   border-color: #c2cbd6;
 }
+
+/* ToolTip */
+
+.tooltip-box {
+  position: relative;
+  padding: var(--m2);
+  border-radius: var(--r2);
+  background-color: white;
+  border: 1px solid var(--grey3);
+  box-shadow: var(--sh-box);
+}
+
+.tooltip-box.down {
+  width: 100%;
+  min-width: 240px;
+}
+
+.tooltip-box p {
+  font-size: var(--text-ss);
+  color: var(--dark2);
+}
+
+.tooltip-box.chart p {
+  text-transform: uppercase;
+}
+
+.tooltip-box::before,
+.tooltip-box::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+}
+
+.tooltip-box::before {
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  border-width: 8px;
+  border-color: transparent var(--white) transparent transparent ;
+  z-index: 2;
+}
+
+.tooltip-box::after {
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  border-width: 9px;
+  border-color: transparent var(--grey3) transparent transparent ;
+}
+
+.tooltip-box.down::before {
+  top: 100%;
+  right: 50%;
+  transform: translateX(45%);
+  border-width: 8px;
+  border-color: var(--white) transparent transparent  transparent ;
+  z-index: 2;
+}
+
+.tooltip-box.down::after {
+  top: 101%;
+  right: 50%;
+  transform: translateX(45%);
+  border-width: 9px;
+  border-color: var(--grey3) transparent transparent transparent ;
+}
+
+/* Hover Tip Box */
+
+.tip-box {
+  position: absolute;
+  top: -300%;
+  z-index: 20;
+}
+
+.tip-wrap {
+  padding: var(--m3);
+  background: var(--grey);
+  border: var(--border);
+}
+
+/* .tip-wrap {
+  padding: var(--m3);
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background: var(--grey);
+  border: var(--border);
+}
+.tip-text {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  line-height: normal;
+} */
+
 
 /* Images */
 

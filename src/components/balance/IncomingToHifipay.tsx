@@ -25,36 +25,33 @@ interface TransactionsProps {
 
 export default function IncomingToHifipay(props: TransactionsProps) {
   return (
-    <div className="lg:w-[70%] py-2.5">
-      <div className="w-full pr-2.5 py-2.5 bg-white border-b border-gray-200 flex items-center">
-        <div className="text-[#111012] text-xl font-semibold leading-loose">
+    <div className="section-wrap">
+      <div className="section-title">
+        <h4>
           Incoming to HIFI Pay
-        </div>
+        </h4>
       </div>
-      <div className="w-full py-2 bg-white border-b border-gray-200 flex gap-5">
-        <div className="w-[55%]">
-          <div className="text-[#4B5563] text-remove  font-remove leading-normal">
+      <div className="balances-text">
+          <p>
             These amounts are estimated because transactions are still
-            accumulating. Payouts are scheduled to{" "}
-            <span className="">automatically send monthly.</span>
-          </div>
-        </div>
+            accumulating. Payouts are scheduled to automatically send daily.
+          </p>
       </div>
-      <div className="w-full py-1 bg-white flex gap-5">
-        <p className="blue-text bold">
+      <div className="total-wrap">
+        <p className="bold">
           Transactions since last payout
         </p>
       </div>
       {props?.TransactionData?.map((transaction, id) => (
         <div
           key={id}
-          className="w-full py-1 bg-white flex items-center justify-between"
+          className="bal-amount-wrap"
         >
-          <div className="text-[#4B5563] text-remove  font-remove">
+          <div className="grey-text">
             {transaction?.total_no} {transaction?.name}
           </div>
-          <div className="flex gap-2">
-            <div className="text-remove  font-remove leading-normal text-[#4B5563]">
+          <div className="">
+            <div className="grey-text">
               {transaction?.status === "negative"
                 ? `- ${transaction?.usd}`
                 : `${transaction?.usd}`}
@@ -63,12 +60,41 @@ export default function IncomingToHifipay(props: TransactionsProps) {
         </div>
       ))}
       {props?.TotalTransaction?.map((data, idx) => (
-        <div key={idx}>
-          <div className="w-full py-1 bg-white border-b border-gray-200 flex items-center justify-between">
-            <div className="w-full flex items-start justify-between">
-              <div className="text-remove font-semibold leading-normal text-[#4B5563]">
-                {data?.name}
-              </div>
+        <div className="" key={idx}>
+
+          <div className="total-wrap">
+            <div className="bold">
+              {data?.name}
+            </div>
+            <div className="bold">
+              {data?.usd}
+            </div>
+          </div>
+
+          <div className="total-wrap">
+            <div className="bold">
+              Total for {moment().format("MMMM YYYY")}
+            </div>
+            <div className="bold">
+              {data?.usd}
+            </div>
+          </div>
+
+          <div className="total-wrap">
+            <div className="bold">
+              Total overall
+            </div>
+            <div className="bold">
+              {data?.usd}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+
               {/* <div className="hidden md:flex items-start">
                 <div className="w-6 h-6 p-0.5">
                   <div
@@ -90,35 +116,3 @@ export default function IncomingToHifipay(props: TransactionsProps) {
                   positive.
                 </div>
               </div> */}
-              <div className="flex gap-2 items-center">
-                <div className="text-remove font-semibold leading-normal text-[#4B5563]">
-                  {data?.usd}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="w-full py-1 bg-white border-b border-gray-200 flex items-center justify-between">
-            <div className="text-remove font-semibold leading-normal">
-              Total for {moment().format("MMMM YYYY")}
-            </div>
-            <div className="flex gap-2 items-center">
-              <div className="text-remove font-semibold leading-normal">
-                {data?.usd}
-              </div>
-            </div>
-          </div>
-          <div className="w-full py-1 bg-white flex items-center justify-between">
-            <div className="text-remove font-semibold leading-normal">
-              Total overall
-            </div>
-            <div className="flex gap-2 items-center">
-              <div className="text-remove font-semibold leading-normal">
-                {data?.usd}
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}

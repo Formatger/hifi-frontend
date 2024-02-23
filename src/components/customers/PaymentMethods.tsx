@@ -70,70 +70,72 @@ const PaymentMethods = ({ payment_method_wallets }: any) => {
             </button> */}
           </div>
           {activeMethod === index && (
+            <div className="small-table-wrap">
+              <table className="details-table">
+                <tbody>
+                  <tr className="details-table-row customer">
+                    <td className="first-column">
+                      <p>
+                        Currency Paid
+                      </p>
+                      <p>
+                        Currency Received
+                      </p>
+                      <p>
+                        Exchange Rate
+                      </p>
+                      <p>
+                        Blockchain Record
+                      </p>
+                      <p>
+                        Wallet Address
+                      </p>
+                      <p>
+                        Type
+                      </p>
+                      <p>
+                        Issuer
+                      </p>
+                      <p className="hidden">
+                        Signature Check
+                      </p>
+                    </td>
 
-            <table className="pay-method-table">
-              <tr className="pay-method customer">
-                <td className="first-column">
-                  <p>
-                    Currency Paid
-                  </p>
-                  <p>
-                    Currency Received
-                  </p>
-                  <p>
-                    Exchange Rate
-                  </p>
-                  <p>
-                    Blockchain Record
-                  </p>
-                  <p>
-                    Wallet Address
-                  </p>
-                  <p>
-                    Type
-                  </p>
-                  <p>
-                    Issuer
-                  </p>
-                  <p className="hidden">
-                    Signature Check
-                  </p>
-                </td>
-
-                <td className="second-column">
-                  <p className="uppercase">
-                    {method?.currency_paid}
-                  </p>
-                  <p className="uppercase">
-                    {method?.currency_received}
-                  </p>
-                  <p className="uppercase">
-                    {method?.exchange_rate}
-                  </p>
-                  <a
-                    href={`${CRYPTOADDRESS}/${method?.wallet_address}`}
-                    target="_blank"
-                    className="blue-text underline"
-                  >
-                    {method?.blockchain_record}
-                  </a>
-                  <p className="truncate">
-                    {method?.wallet_address}
-                  </p>
-                  <p>
-                    {method?.type}
-                  </p>
-                  <p>
-                    {method?.issuer}
-                  </p>
-                  <p className="hidden">
-                    {method?.signature_check}
-                    <Image src={checkcircle} alt="check" className="" />
-                  </p>
-                </td>
-              </tr>
-            </table>
-
+                    <td className="second-column">
+                      <p className="uppercase">
+                        {method?.currency_paid}
+                      </p>
+                      <p className="uppercase">
+                        {method?.currency_received}
+                      </p>
+                      <p className="uppercase">
+                        {method?.exchange_rate}
+                      </p>
+                      <a
+                        href={`${CRYPTOADDRESS}/${method?.wallet_address}`}
+                        target="_blank"
+                        className="blue-text underline"
+                      >
+                        {method?.blockchain_record}
+                      </a>
+                      <p className="truncate">
+                        {method?.wallet_address}
+                      </p>
+                      <p>
+                        {method?.type}
+                      </p>
+                      <p>
+                        {method?.issuer}
+                      </p>
+                      <p className="hidden">
+                        {method?.signature_check}
+                        <Image src={checkcircle} alt="check" className="" />
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           )}
         </>
       ))}

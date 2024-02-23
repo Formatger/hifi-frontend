@@ -1,5 +1,5 @@
 import moment from "moment";
-import { formatDate } from "./Payment";
+import { formatDate } from "../Payment";
 
 const LastUpdated = ({ lastUpdated }: { lastUpdated: string }) => {
   return (

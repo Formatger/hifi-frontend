@@ -25,12 +25,12 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
                 {item?.label}
               </span>
             ) : (
-              <a href={item.link} className="text-[#111012] w-max-40 truncate">
+              <a href={item.link}>
                 {item?.label}
               </a>
             )}
             {index < items?.length - 1 && (
-              <div className="text-gray-400">
+              <div>
                 <Image src={CaretRight} alt="CaretRight" className="bread-arrow" />
               </div>
             )}

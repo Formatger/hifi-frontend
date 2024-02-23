@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import WhiteLogo from "../assets/images/whitelogo.png";
 import Check from "../assets/images/check.png";
-import HifiLogoWhite from "@/components/assets/images/hifisvgwhite.svg";
 import HifiLogo from "../assets/images/hifi-logo.svg";
 import Check6 from "@/components/assets/images/check6.svg";
 
