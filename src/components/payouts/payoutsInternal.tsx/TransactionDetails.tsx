@@ -34,9 +34,9 @@ const TransactionDetailItem: FC<TransactionDetailItemProps> = ({
       }`}
     >
       <div className="h-6 justify-start items-center gap-3.5 inline-flex">
-        <div className="text-[#4B5563] text-remove  font-remove poppins-remove leading-normal">
+        <p>
           {label}
-        </div>
+        </p>
       </div>
       <div className="justify-start items-center gap-2 inline-flex">
         {label === "Bank of America" && (
@@ -44,27 +44,24 @@ const TransactionDetailItem: FC<TransactionDetailItemProps> = ({
             <Image src={Bank} alt="Layer 1" />
           </div>
         )}
-        <div className="text-[#252C32] text-remove  font-remove poppins-remove leading-normal">
+        <div className="">
           {isCurrency && "$"}
           {label === "Fees" && "$"}
           {value}
         </div>
         {label === "Fees" && (
           <div
-            className="w-6 h-6 flex-col justify-center items-center flex relative"
+            className="tooltip-wrap"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
             <Image src={info} alt="Info" />
             {isHovered && (
-              <div className="absolute -top-[82px] -left-[28px] z-20">
-                <div className="w-[334px] h-[72px] px-5 py-3 bg-gradient-to-b from-[#6200EE] via-[#8B37FB] to-[#9747FF] rounded-md justify-start items-end inline-flex">
-                  <div className="grow shrink basis-0 text-white text-remove  font-remove poppins-remove leading-normal">
-                    Fees for ACH bank transfers are automatically applied.
-                  </div>
-                </div>
-                <div>
-                  <Image src={Hover} alt="hover" />
+              <div className="tip-box">
+                <div className="tip-wrap tooltip-box down">
+                  <p>
+                  Fees for ACH bank transfers are automatically applied.
+                  </p>
                 </div>
               </div>
             )}

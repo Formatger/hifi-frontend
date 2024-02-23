@@ -68,10 +68,11 @@ const TransactionSection = ({ transactionSummaryData }: any) => {
 
   return (
     <div className="bg-white flex-col justify-start items-start inline-flex mb-4 gap-3">
-      <p className="text-[#111012] text-xl font-semibold poppins-remove leading-loose">
+      <div className="section-title">
+      <h4>
         Transaction Summary
-      </p>
-
+      </h4>
+      </div>
       {/* <div className="grow shrink basis-0 self-stretch w-full sm:w-[452px] border-t border-b border-gray-200 py-5">
       <span className="poppins-remove text-[#4B5563]">
         These amounts are estimated because transactions are still accumulating.

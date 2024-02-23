@@ -132,16 +132,17 @@ const Balance = () => {
           <MainLoader />
         ) : (
           <>
+           <div className="balances-wrap">
             <Totalbalance
               title={" USD Balance"}
               TotalbalanceData={TotalbalanceData}
             />
-            <div className="hidden lg:block w-[96.5%] mx-5 h-px relative bg-[#E5E9EB] my-5"></div>
+            {/* <div className="balances-section"></div> */}
             <IncomingToHifipay
               TransactionData={TransactionData}
               TotalTransaction={TotalTransaction}
             />
-            <div className="hidden lg:block w-[96.5%] mx-5 h-px relative bg-[#E5E9EB] my-5"></div>
+            <div className="balances-section"></div>
             <OutGoinghifipay
               TotalTransaction={
                 balanceData?.total_outgoing
@@ -150,6 +151,7 @@ const Balance = () => {
               }
             />
             <div className="mb-10"></div>
+            </div>
           </>
         )}
       </div>

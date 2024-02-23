@@ -38,14 +38,14 @@
 
 .sticky-heading-column {
   position: sticky;
-  top: 74px;
+  top: 10px;
   padding: 24px;
   padding-bottom: 0;
   z-index: 20;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  gap: var(--m6);
+  gap: var(--m9);
 }
 
 .bread-arrow {
@@ -167,45 +167,10 @@
   padding: var(--padBox);
 }
 
-/* Tooltip Box */
+/* Chart Tooltip Box */
 
-.tooltip-box {
-  position: relative;
-  padding: 8px;
-  border-radius: 6px;
-  background-color: #ffffff;
-  border: 1px solid var(--grey3);
-  box-shadow: var(--sh-box);
-}
-
-.tooltip-box p {
-  font-size: var(--text-ss);
+.chart-tooltip p {
   text-transform: uppercase;
-  color: var(--dark4);
-}
-
-.tooltip-box::before,
-.tooltip-box::after {
-  content: "";
-  position: absolute;
-  border-style: solid;
-}
-
-.tooltip-box::before {
-  top: 50%;
-  right: 100%;
-  transform: translateY(-50%);
-  border-width: 8px;
-  border-color: transparent var(--white) transparent transparent ;
-  z-index: 2;
-}
-
-.tooltip-box::after {
-  top: 50%;
-  right: 100%;
-  transform: translateY(-50%);
-  border-width: 9px;
-  border-color: transparent var(--grey3) transparent transparent ;
 }
 
 .chart-dot {
@@ -523,8 +488,8 @@
   flex-direction: column;
   justify-content: center;    
   border-right: none;
-  min-width: 180px;
-  width: 25%;
+  /* min-width: 180px; */
+  width: 100%;
 }
 .truncated {
   overflow: hidden;
@@ -532,8 +497,6 @@
   white-space: nowrap;
   max-width: 140px;
 }
-
-
 
 @media (min-width: 1024px) {
   .summary-item {
@@ -583,6 +546,52 @@
   margin-bottom: 8px;
 }
 
+/* Payout Summary */
 
+.tooltip-wrap {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 
+/* Balances */
 
+.balances-wrap {
+  width: 90%;
+}
+
+@media (min-width: 1024px) {
+  .balances-wrap {
+    width: 70%;
+  }
+}
+
+.balances-text {
+  width: 60%;
+  color: var(--dark4);
+  font-weight: 350;
+  font-size: var(--text-s);
+}
+
+.total-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 4px;
+  border-bottom: var(--sborder);
+  margin-bottom: 4px;
+}
+
+.bal-amount-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5px;
+}
+
+.first-item {
+font-weight: bold;
+}

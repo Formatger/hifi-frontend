@@ -28,8 +28,8 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({
 }) => {
   if (active && payload) {
     return (
+    <div className="chart-tooltip">
       <div className="tooltip-box">
-        <div className="tooltip-arrow"></div>
          {payload.map((entry, index) => (
          <p key={index}>     
          <span
@@ -40,6 +40,7 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({
           </p>
         ))}
       </div>
+    </div>
     );
   }
 

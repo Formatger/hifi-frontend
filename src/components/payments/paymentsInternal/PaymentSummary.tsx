@@ -1,8 +1,8 @@
 import React from "react";
-import LastUpdated from "./LastUpdated";
-import PaymentMethod from "./PaymentMethod";
-import RiskEvaluation from "./RiskEvaluation";
-import WalletAddress from "./WalletAddress";
+import LastUpdated from "./discard/LastUpdated";
+import PaymentMethod from "./discard/PaymentMethod";
+import RiskEvaluation from "./discard/RiskEvaluation";
+import WalletAddress from "./modals/WalletAddress";
 
 import moment from "moment";
 import Link from "next/link";
@@ -47,12 +47,18 @@ const PaymentSummary = ({
 
 
       <div className="summary-item">
-        <p className="title">Last Updated</p>
-        <p className="item">{moment(paymentDetails?.createDate).format("MMM DD, YYYY h:mm A")}</p>
+        <p className="title">
+          Last Updated
+        </p>
+        <p className="item">
+          {moment(paymentDetails?.createDate).format("MMM DD, YYYY h:mm A")}
+        </p>
       </div>
 
       <div className="summary-item">
-        <p className="title">Wallet Address</p>
+        <p className="title">
+          Wallet Address
+        </p>
         <Link
           href={`https://goerli.etherscan.io/address/${paymentDetails.customerAddress}`}
           target="_blank"
@@ -63,14 +69,21 @@ const PaymentSummary = ({
       </div>
 
       <div className="summary-item">
-        <p className="title">Payment Method</p>
-        <p className="item">{paymentDetails.payment_method}</p>
+        <p className="title">
+          Payment Method
+        </p>
+        <p className="item">
+          {paymentDetails.payment_method}
+        </p>
       </div>
 
       <div className="summary-item">
-        <p className="title">Order ID</p>
+        <p className="title">
+          Order ID
+        </p>
         <p className="item">
-          {paymentDetails.actual_order_id}</p>
+          {paymentDetails.actual_order_id}
+        </p>
       </div>
 
     </div>
