@@ -34,7 +34,7 @@
   z-index: 30;
   padding-left: 20px;
   padding-right: 30px;
-  /* background: var(--grey); */
+  background: var(--white);
   border-bottom: var(--border);
 }
 
@@ -158,6 +158,11 @@
   padding: var(--m3);
   border-radius: var(--r1);
   cursor: pointer;
+}
+
+
+.exit-button svg {
+filter: invert();
 }
 
 /* Mobile Button */
@@ -408,7 +413,7 @@
 
 /* temporary */
 @media (max-width: 700px) {
-  .addfilter,
+  .addfilter-btn,
   .clear-btn,
   .filter-item-wrap {
     display: none;
