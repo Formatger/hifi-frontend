@@ -115,30 +115,30 @@ const UploadLogo = () => {
           <MainLoader />
       ) : (
         <>
-          <div className="flex flex-col lg:flex-row items-center gap-10 border-b border-[#E5E9EB] py-5 lg:py-0 lg:pb-5">
+          <div className="upload-wrap">
             {displayLogo ? (
-              <div className="flex flex-col">
-                <p className="text-[#111012] text-remove font-semibold poppins-remove">
-                  Business profile logo
-                </p>
+              <div className="column-wrap">
+                  {/* <p className="bold">
+                    Business Logo
+                  </p> */}
                 <Image
                   src={displayLogo}
                   alt="profile"
-                  width={70}
-                  height={70}
+                  width={100}
+                  height={100}
                   className="mt-4 rounded-full"
                 />
               </div>
             ) : (
               <Image src={profileicon} alt="profile" />
             )}
-            <div className="flex flex-col">
-              {displayLogo ? null : (
+            <div className="column-wrap">
+              {!displayLogo ? null : (
                 <>
-                  <p className="text-[#111012] text-remove font-semibold poppins-remove">
+                  <p className="bold">
                     Upload your business logo
                   </p>
-                  <p className="text-[#4B5563] text-remove  font-remove poppins-remove">
+                  <p className="text-s-thin">
                     Suggested logo size 300px x 300px
                   </p>
                 </>
@@ -153,16 +153,10 @@ const UploadLogo = () => {
               >
                 Remove Logo
               </button>
-              <button
-                className="w-[123px] h-8 py-1 bg-[#6200EE] rounded-md text-stone-50 poppins-remove "
-                onClick={handleClickChooseFile}
-              >
-                Change Logo
-              </button>
             </div> */}
                 {role === "0" || role === "1" ? (
                   <button
-                    className="sec-button lg:ml-auto"
+                    className="sec-button"
                     onClick={openPopup}
                   >
                     Upload logo
@@ -173,7 +167,7 @@ const UploadLogo = () => {
               </>
             ) : (
               <button
-                className="w-[123px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] blue-text poppins-remove lg:ml-auto"
+                className="sec-button"
                 onClick={openPopup}
               >
                 Upload logo
@@ -199,12 +193,12 @@ const UploadLogo = () => {
       >
         <div className="flex flex-col lg:w-[452px] items-center justify-center gap-4  rounded-2xl border shadow-lg">
           <div className="h-[80px] w-full bg-[#F6F8F9] border-[#E5E9EB] border flex items-center justify-center relative rounded-t-2xl">
+            <h4 className="">
+              Upload business logo
+            </h4>
             <button onClick={closePopup}>
               <Image src={x} alt="close" className="top-2 right-2 absolute" />
             </button>
-            <p className="text-[#111012] text-[23px] font-semibold poppins-remove leading-loose">
-              Upload business logo
-            </p>
           </div>
           <Image src={uploadsimple} alt="" />
           <div className="flex flex-col px-3 lg:px-0">
@@ -217,7 +211,7 @@ const UploadLogo = () => {
           </div>
           {!loader ? (
             <button
-              className="popup-button"
+              className="modal-button"
               onClick={handleClickChooseFile}
               disabled={loader}
             >

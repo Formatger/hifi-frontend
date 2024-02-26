@@ -28,27 +28,22 @@ const TransactionDetailItem: FC<TransactionDetailItemProps> = ({
   };
 
   return (
-    <div
-      className={`h-12 flex-col justify-start items-start inline-flex lg:border-r border-gray-200 lg:${
-        label === "Paid out" ? "pr-5" : "px-5"
-      }`}
-    >
-      <div className="h-6 justify-start items-center gap-3.5 inline-flex">
+    <div className="summary-item">
+
+      <div className="text-s-thin">
         <p>
           {label}
         </p>
       </div>
-      <div className="justify-start items-center gap-2 inline-flex">
-        {label === "Bank of America" && (
-          <div className="w-6 h-6 relative flex-col justify-center items-center flex">
-            <Image src={Bank} alt="Layer 1" />
-          </div>
-        )}
-        <div className="">
+
+      <div className="pay-item">
+        
+        <div>
           {isCurrency && "$"}
           {label === "Fees" && "$"}
           {value}
         </div>
+
         {label === "Fees" && (
           <div
             className="tooltip-wrap"
@@ -69,7 +64,7 @@ const TransactionDetailItem: FC<TransactionDetailItemProps> = ({
         )}
 
         {isCurrency && (
-          <div className="w-[37px] h-[22px] px-1.5 py-0.5 text-xs bg-[#E5E9EB] rounded justify-center items-center flex">
+          <div className="small-tag grey">
             <p>USD</p>
           </div>
         )}
@@ -93,19 +88,19 @@ interface TransactionDetailsProps {
 const TransactionDetails: FC<TransactionDetailsProps> = ({
   transactionDetails,
 }) => (
-  <div className="py-4 flex flex-col lg:flex-row bg-white justify-start items-start gap-4">
+  <div className="pay-summary-wrap">
+    
     <TransactionDetailItem
       label="Paid out"
       value={`${moment(transactionDetails?.createDate).format(
         "MMM DD, YYYY h:mm A"
       )}`}
     />
-
     <TransactionDetailItem
       label={transactionDetails.bank_name}
       value={transactionDetails.account_number}
     />
-    <TransactionDetailItem label="Count" value={transactionDetails.count} />
+    {/* <TransactionDetailItem label="Count" value={transactionDetails.count} /> */}
     <TransactionDetailItem
       label="Gross"
       value={formatOtherCurrency(transactionDetails.gross)}
@@ -124,3 +119,10 @@ const TransactionDetails: FC<TransactionDetailsProps> = ({
 );
 
 export default TransactionDetails;
+
+
+        {/* {label === "Bank of America" && (
+          <div className="w-6 h-6 relative flex-col justify-center items-center flex">
+            <Image src={Bank} alt="Layer 1" />
+          </div>
+        )} */}

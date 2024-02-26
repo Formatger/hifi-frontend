@@ -160,7 +160,6 @@
   cursor: pointer;
 }
 
-
 .exit-button svg {
 filter: invert();
 }
@@ -227,16 +226,16 @@ filter: invert();
   border-radius: 50%;
   transition: background-color 0.3s ease;
 }
-
-.active-page {
-  background-color: var(--grey2);
-  /* border: var(--sborder); */
-  font-weight: 500;
+.page-item:hover {
+  background: var(--grey2);
 }
 
-/* .page-item:hover {
-  background: var(--grey2);
-} */
+.active-page,
+.active-page:hover {
+  background-color: var(--blue1);
+  color: var(--white);
+  font-weight: 500;
+}
 
 .previous-button,
 .next-button {
@@ -246,6 +245,22 @@ filter: invert();
   font-size: 16px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.page-item-count {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--blue1);
+  font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+  .page-item-count {
+    text-align: left;
+  }
+}
+
 
 /* Icons */
 
@@ -295,7 +310,7 @@ filter: invert();
 
 .Table {
   width: 100%;
-  margin-top: var(--m6);
+  /* margin-top: var(--m6); */
   font-size: var(--text-s);
   /* background: var(--grey);
   border: var(--sborder);
@@ -322,7 +337,7 @@ filter: invert();
   color: var(--dark2);
   text-transform: uppercase;
   font-weight: 600;
-  padding: var(--padCell)
+  padding: var(--pad-cell)
 }
 
 .table-row {
@@ -345,7 +360,7 @@ filter: invert();
 
 .table-col {
   text-align: left;
-  padding: var(--padCell)
+  padding: var(--pad-cell)
     /* border: 1px solid red; */
 }
 
@@ -371,6 +386,7 @@ filter: invert();
 .status-tab-container {
   position: relative;
   border-bottom: var(--sborder);
+  margin-bottom: var(--m4);
 }
 
 .myTabRoot {

@@ -25,27 +25,29 @@ interface TransactionsProps {
 
 export default function IncomingToHifipay(props: TransactionsProps) {
   return (
-    <div className="section-wrap">
+    <div className="section-wrap balances">
       <div className="section-title">
         <h4>
-          Incoming to HIFI Pay
+          Incoming to HIFI
         </h4>
       </div>
-      <div className="balances-text">
-          <p>
+      <div className="sidetxt-wrap">
+          <p className="text-s-grey">
             These amounts are estimated because transactions are still
             accumulating. Payouts are scheduled to automatically send daily.
           </p>
       </div>
+
       <div className="total-wrap">
         <p className="bold">
           Transactions since last payout
         </p>
       </div>
+
       {props?.TransactionData?.map((transaction, id) => (
         <div
           key={id}
-          className="bal-amount-wrap"
+          className="amount-wrap"
         >
           <div className="grey-text">
             {transaction?.total_no} {transaction?.name}
@@ -59,6 +61,7 @@ export default function IncomingToHifipay(props: TransactionsProps) {
           </div>
         </div>
       ))}
+
       {props?.TotalTransaction?.map((data, idx) => (
         <div className="" key={idx}>
 
@@ -93,26 +96,3 @@ export default function IncomingToHifipay(props: TransactionsProps) {
     </div>
   );
 }
-
-
-              {/* <div className="hidden md:flex items-start">
-                <div className="w-6 h-6 p-0.5">
-                  <div
-                    className={`w-5 h-5 -ml-1 relative ${
-                      data?.status === "negative" ? "flex" : "hidden"
-                    }`}
-                  >
-                    <Image src={warning} alt="warning" />
-                  </div>
-                </div>
-                <div
-                  className={`w-[350px] text-remove  font-remove leading-normal ${
-                    data?.status === "negative"
-                      ? "text-[#D5672B]"
-                      : "blue-text"
-                  }`}
-                >
-                  Payouts will resume when your available transactions are
-                  positive.
-                </div>
-              </div> */}

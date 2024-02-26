@@ -43,15 +43,15 @@ const Details: React.FC<CustomerDetails> = ({ CustomerDetails }) => {
 
           <div className="customer-details">
             <div className="flex flex-col mb-4">
-              <p className="title">
+              <p className="text-s-grey">
                 Name
               </p>
-              <p className="text-s">
+              <p className="text-small">
                 {CustomerDetails.name}
               </p>
             </div>
               <div className="flex flex-col mb-4">
-              <p className="title">
+              <p className="text-s-grey">
                 Email
               </p>
               <p className="">
@@ -59,7 +59,7 @@ const Details: React.FC<CustomerDetails> = ({ CustomerDetails }) => {
               </p>
             </div>
             <div className="flex flex-col">
-              <p className="title">
+              <p className="text-s-grey">
                 Wallet
               </p>
               <p className="truncate">

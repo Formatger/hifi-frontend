@@ -61,7 +61,7 @@ const Balance = () => {
 
   const TotalbalanceData = [
     {
-      title: "Currently on the way to your bank account.",
+      title: "Total since last payout",
       usd: balanceData?.currently_way_to_bank_account
         ? formatCurrency(balanceData?.currently_way_to_bank_account)
         : formatCurrency(0),
@@ -91,7 +91,7 @@ const Balance = () => {
       status: "positive",
     },
     {
-      name: "refund",
+      name: "refunds",
       total_no: balanceData?.refund_count ? balanceData?.refund_count : 0,
       usd: balanceData?.refund
         ? formatCurrency(balanceData?.refund)
@@ -112,7 +112,7 @@ const Balance = () => {
 
   const TotalTransaction = [
     {
-      name: "Total transactions",
+      name: "Total",
       usd: balanceData?.total
         ? formatCurrency(balanceData?.total)
         : formatCurrency(0),

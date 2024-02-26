@@ -54,10 +54,10 @@ const ProfileInfo = (userData: any) => {
 
   return (
     <>
-      <div className="flex items-center justify-between border-b border-[#E5E9EB] py-5">
-        <h1 className="h1">
-          Profile
-        </h1>
+      <div className="section-title">
+        <h4 className="">
+          Account Settings
+        </h4>
 
         {/* {isEditing ? (
           <div className="flex items-center gap-4">
@@ -84,11 +84,13 @@ const ProfileInfo = (userData: any) => {
           </button>
         )} */}
       </div>
-      <div className="flex flex-col gap-5 lg:gap-10">
-        <div className="flex flex-col lg:flex-row gap-5 lg:gap-20 items-center">
-          <p className="text-[#111012] text-remove font-semibold poppins-remove w-20">
+      <div className="settings-box">
+        <div className="row-wrap">
+          <div className="first-column">
+          <p className="bold">
             Email
           </p>
+          </div>
           {/* {isEditing ? (
             <>
               <input
@@ -99,15 +101,19 @@ const ProfileInfo = (userData: any) => {
               />
             </>
           ) : ( */}
-          <p className="text-[#252C32] text-remove  font-remove poppins-remove">
+          <div className="second-column">
+          <p className="">
             {userData?.userData?.data?.email}
           </p>
+          </div>
           {/* )} */}
         </div>
-        <div className="flex  flex-col lg:flex-row gap-5 lg:gap-20 items-center">
-          <p className="text-[#111012] text-remove font-semibold poppins-remove w-20">
-            Name
-          </p>
+        <div className="row-wrap">
+          <div className="first-column">
+            <p className="bold">
+              Name
+            </p>
+          </div>
           {/* {isEditing ? (
             <>
               <input
@@ -118,15 +124,19 @@ const ProfileInfo = (userData: any) => {
               />
             </>
           ) : ( */}
-          <p className="text-[#252C32] text-remove  font-remove poppins-remove">
-            {userData?.userData?.data?.name}
-          </p>
+          <div className="second-column">
+            <p className="">
+              {userData?.userData?.data?.name}
+            </p>
+          </div>
           {/* )} */}
         </div>
-        <div className="flex  flex-col lg:flex-row gap-5 lg:gap-20 items-center">
-          <p className="text-[#111012] text-remove font-semibold poppins-remove w-20">
-            Password
-          </p>
+        <div className="row-wrap">
+          <div className="first-column">
+            <p className="bold">
+              Password
+            </p>
+          </div>
           {isEditing ? (
             <div className="flex items-center gap-3">
               <button
@@ -140,21 +150,24 @@ const ProfileInfo = (userData: any) => {
               </button>
             </div>
           ) : (
-            <div className="flex items-center gap-3">
-              <p className="text-[#252C32] flex justify-center items-center text-center pt-[8px] text-remove  font-remove poppins-remove">
-                {password}
-              </p>
-              {role === "0" || role === "1" ? (
-                <button onClick={openPasswordModal}>
-                  <Image src={pencilsimple} alt="icon" className="" />
-                </button>
-              ) : (
-                ""
-              )}
+            <div className="second-column">
+              <div className="row-wrap-3">
+                <p className="password-text">
+                  {password}
+                </p>
+                {role === "0" || role === "1" ? (
+                  <button onClick={openPasswordModal}>
+                    <Image src={pencilsimple} alt="icon" className="" />
+                  </button>
+                ) : (
+                  ""
+                )}
+              </div>
             </div>
           )}
         </div>
       </div>
+      
       <ChangePasswordModal
         isOpen={passwordModal}
         closeModal={closePasswordModal}

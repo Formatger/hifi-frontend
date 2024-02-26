@@ -39,13 +39,13 @@ const Profile = () => {
 
   return (
     <div className="main-container">
-      <div className="w-full">
+      <div className="page-container">
         <Header />
         {loader ? (
             <MainLoader />
         ) : (
           <>
-            <div className="w-full p-3 lg:p-6 ">
+            <div className="">
               <div className="w-full p-3 lg:py-3 flex flex-col mt-3 lg:mt-0 gap-4">
                 {/* <Breadcrumbs items={items} /> */}
                 <UploadLogo />
@@ -59,7 +59,7 @@ const Profile = () => {
                   </p>
                   <div className="flex flex-col lg:flex-row items-start lg:items-start justify-between gap-5 lg:gap-0">
                     <div className="flex flex-col lg:w-[80%]">
-                      <div className=" text-[#4B5563] text-remove  font-remove font-poppins leading-normal">
+                      <div className="text-s-thin">
                         By closing your account, you will not be able to access
                         your financial data for reporting and tax purposes,
                         create future charges and refunds, and respond to new
@@ -73,7 +73,7 @@ const Profile = () => {
                         before closing your Hifi account. */}
                       </div>
                     </div>
-                    <button className="w-[142px] h-8 text-[#F9F9F7] poppins-remove py-1 bg-[#F00] rounded-md">
+                    <button className="sec-button red">
                       Close Account
                     </button>
                   </div>

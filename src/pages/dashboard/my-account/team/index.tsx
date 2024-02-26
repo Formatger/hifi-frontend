@@ -138,13 +138,12 @@ const Team = () => {
       <div className="w-full">
         <Header />
         <div className="w-full p-3 lg:px-6 relative">
-          <div className="w-full flex flex-col  mt-3  sticky top-[105px] lg:top-[78px] z-20 bg-white gap-4">
+          <div className="sticky-heading">
             <Breadcrumbs items={items} />
-
-            <h1 className="h1">
-              Team
-            </h1>
           </div>
+          <h1 className="h1">
+            Team
+          </h1>
           {/* <div className="flex items-center py-6 gap-5">
             <div className="">
               <ToggleButton />
@@ -159,8 +158,9 @@ const Team = () => {
               </p>
             </div>
           </div> */}
-          <div className="w-full flex flex-col lg:flex-row items-start lg:items-center justify-end py-4 border-b border-[#E5E9EB] gap-3 lg:gap-0">
-            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-2">
+          <div className="section-title">
+            <div></div>
+            <div className="button-wrap">
               {/* <Button label="Filter" iconSrc={Funnel} /> */}
               <div className="relative">
                 <CSVLink
@@ -182,12 +182,12 @@ const Team = () => {
                   )}
                 </CSVLink>
                 {showMessage && (
-                  <div className="absolute top-10 -left-40 gap-2 lg:w-[334px] h-24 text-indigo-900 poppins-remove mt-2 bg-white shadow-md rounded-md flex flex-col justify-center items-center self-end p-5">
+                  <div className="download-box">
                     <div className="flex items-center justify-between">
                       {message === "Downloading CSV" ? (
                         <TailSpin height={30} width={30} color="black" />
                       ) : (
-                        <Image src={checkcircle} alt="complete" className="" />
+                        <Image height={30} width={30} src={checkcircle} alt="complete" className="" />
                       )}
                       <button
                         onClick={handleCloseMessage}
@@ -196,7 +196,7 @@ const Team = () => {
                         <Image src={x} alt="close" className="" />
                       </button>
                     </div>
-                    <p className="text-[#252C32] text-xl text-center poppins-remove font-semibold mb-3">
+                    <p className="">
                       {message}
                     </p>
                   </div>
@@ -204,17 +204,14 @@ const Team = () => {
               </div>
 
               {role === "0" || role === "1" ? (
-                <div
-                  className="flex items-center cursor-pointer rounded-md justify-center gap-2 bg-[#5545fa] w-[167px] h-8"
+                <button
+                  className="sec-button blue"
+                  type="button"
                   onClick={openNewCustomerModal}
                 >
-                  <div className="w-6 h-6 p-0.5 flex items-center">
-                    <Image src={newcustomericon} alt="NewCustomerIcon" />
-                  </div>
-                  <button className="text-[#F9F9F7] text-remove  font-remove poppins-remove">
-                    New Member
-                  </button>
-                </div>
+                  <Image src={newcustomericon} alt="NewCustomerIcon" />
+                  <span>New Member</span>
+                </button>
               ) : (
                 <></>
               )}

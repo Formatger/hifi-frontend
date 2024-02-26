@@ -61,7 +61,7 @@ const PaymentMethodFull = ({
                 >
                   {paymentMethodDetails?.blockchain_record}
               </Link>
-              <p className="truncate">
+              <p className="truncated">
                 {paymentMethodDetails?.wallet_address}
                 </p>
               <p>

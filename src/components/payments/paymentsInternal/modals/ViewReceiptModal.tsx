@@ -123,110 +123,112 @@ const ViewReceiptModal: React.FC<{
       isOpen={true}
       onRequestClose={handleClose}
       contentLabel="View Receipt"
-      className="w-[90%] max-h-[90vh] sidebarModal rounded-lg lg:w-[400px] shadow-xl bg-white"
-      overlayClassName="overlay"
+      className="modal-container"
+      overlayClassName="modal-overlay"
     >
-      <div className="h-[80px]  bg-gray-50 border-gray-200 border flex rounded-t-lg items-center justify-center relative">
+      <div className="modal-header">
         <button onClick={handleClose}>
-          <Image src={x} alt="close" className="top-2 right-2 absolute" />
+          <Image src={x} alt="close" className="close-btn" />
         </button>
-        <h2 className="font-semibold text-[#111012] mt-4 poppins-remove text-[23px]">
+        <h5>
           View Receipt
-        </h2>
+        </h5>
       </div>
-      <div className="flex max-h-[60vh] overflow-y-auto overflow-x-hidden flex-col p-4 gap-4">
-        
-        <div>
-         <StatusIndicator action={receiptDetails.status} />        
-        </div>
+      <div className="modal-box-content">
+        <div className="modal-content">
+          
+          <div>
+          <StatusIndicator action={receiptDetails.status} />        
+          </div>
 
-        <div className="flex flex-col gap-1 p-2">
-          <p className="text-gray-800 text-remove font-semibold poppins-remove leading-normal">
-            {moment(receiptDetails.createDate).format("MMM DD, YYYY h:mm A")}
-          </p>
-          <p className="text-[#4B5563] text-remove  font-remove poppins-remove leading-normal">
-            Order ID
-          </p>
-          <p className="text-gray-800 text-remove  font-remove poppins-remove leading-normal">
-            {receiptDetails.actual_order_id}
-          </p>
-        </div>
-        <p className="text-[#4B5563] text-remove  font-remove poppins-remove leading-normal  w-full p-2 flex flex-wrap gap-2">
-          <span className=""> You made a payment of</span>
-          <span className="font-semibold whitespace-nowrap">
-            {formatCurrency(receiptDetails.fiatCurrencyAmount)} USD
-          </span>
-          to
-          <span className="font-semibold">{receiptDetails?.receiver}</span>
-        </p>
-        <table className="table-auto w-full">
-          <tbody>
-            <tr className="text-[#111012] font-medium poppins-remove border-b border-gray-200 h-10">
-              <td className="p-2 w-[70%]">DESCRIPTION</td>
-              <td className="p-2 w-[30%]">SUBTOTAL</td>
-            </tr>
-            <tr className=" border-y border-gray-200 h-20">
-              <td className="text-[#4B5563]  font-remove p-2">
-                {receiptDetails.description}
-              </td>
-              <td className="text-gray-800 font-semibold ">
-                <div className="flex items-center gap-3 p-2">
-                  {formatCurrency(receiptDetails.amount)}
-                  <p className="w-[37px] h-[22px] px-1.5 py-0.5 text-xs bg-gray-200 rounded justify-center items-center flex">
-                    <p>USD</p>
-                  </p>
-                </div>
-              </td>
-            </tr>
-            <tr className="h-10 border-b border-gray-200">
-              <td className="text-[#111012] font-medium p-2">TOTAL</td>
-              <td className="text-gray-800 font-semibold flex items-center gap-3 p-2 align-middle">
-                {formatCurrency(receiptDetails.amount)}
-                <div className="w-[37px] h-[22px] px-1.5 py-0.5 text-xs bg-gray-200 rounded justify-center items-center flex">
-                  <p>USD</p>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div className="flex flex-col p-2">
-          <p className="w-[394px] text-[#111012] text-remove font-medium poppins-remove uppercase leading-normal tracking-tight">
-            Paid with
-          </p>
-          <div className="flex items-center gap-2">
-            <Image
-              src={getWalletIcon(receiptDetails?.walletType)}
-              alt="crypto"
-              width={17}
-              height={17}
-              className=""
-            />
-            <p className="blue-text2 truncate">
-              {receiptDetails.customerAddress}
+          <div className="flex flex-col gap-1 p-2">
+            <p className="text-gray-800 text-remove font-semibold poppins-remove leading-normal">
+              {moment(receiptDetails.createDate).format("MMM DD, YYYY h:mm A")}
+            </p>
+            <p className="text-[#4B5563] text-remove  font-remove poppins-remove leading-normal">
+              Order ID
+            </p>
+            <p className="text-gray-800 text-remove  font-remove poppins-remove leading-normal">
+              {receiptDetails.actual_order_id}
             </p>
           </div>
+          <p className="text-[#4B5563] text-remove  font-remove poppins-remove leading-normal  w-full p-2 flex flex-wrap gap-2">
+            <span className=""> You made a payment of</span>
+            <span className="font-semibold whitespace-nowrap">
+              {formatCurrency(receiptDetails.fiatCurrencyAmount)} USD
+            </span>
+            to
+            <span className="font-semibold">{receiptDetails?.receiver}</span>
+          </p>
+          <table className="table-auto w-full">
+            <tbody>
+              <tr className="text-[#111012] font-medium poppins-remove border-b border-gray-200 h-10">
+                <td className="p-2 w-[70%]">DESCRIPTION</td>
+                <td className="p-2 w-[30%]">SUBTOTAL</td>
+              </tr>
+              <tr className=" border-y border-gray-200 h-20">
+                <td className="text-[#4B5563]  font-remove p-2">
+                  {receiptDetails.description}
+                </td>
+                <td className="text-gray-800 font-semibold ">
+                  <div className="flex items-center gap-3 p-2">
+                    {formatCurrency(receiptDetails.amount)}
+                    <p className="w-[37px] h-[22px] px-1.5 py-0.5 text-xs bg-gray-200 rounded justify-center items-center flex">
+                      <p>USD</p>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr className="h-10 border-b border-gray-200">
+                <td className="text-[#111012] font-medium p-2">TOTAL</td>
+                <td className="text-gray-800 font-semibold flex items-center gap-3 p-2 align-middle">
+                  {formatCurrency(receiptDetails.amount)}
+                  <div className="w-[37px] h-[22px] px-1.5 py-0.5 text-xs bg-gray-200 rounded justify-center items-center flex">
+                    <p>USD</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div className="flex flex-col p-2">
+            <p className="w-[394px] text-[#111012] text-remove font-medium poppins-remove uppercase leading-normal tracking-tight">
+              Paid with
+            </p>
+            <div className="flex items-center gap-2">
+              <Image
+                src={getWalletIcon(receiptDetails?.walletType)}
+                alt="crypto"
+                width={17}
+                height={17}
+                className=""
+              />
+              <p className="truncate">
+                {receiptDetails.customerAddress}
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="w-full flex h-[80px] rounded-b-lg items-center justify-between bg-gray-50 p-2 lg:p-5">
-        <button
-          className="popup-button grey"
-          onClick={handleClose}
-          type="button"
-        >
-          Cancel
-        </button>
-        <button className="popup-button">
-          <CSVLink
-            data={getCSVData(receiptDetails)}
-            filename="receipt.csv"
-            target="_blank"
-            className=""
-            onClick={handleExport}
-          >
-            Export
-          </CSVLink>
-        </button>
+        <div className="modal-footer">
+            <button
+              className="modal-button grey"
+              onClick={handleClose}
+              type="button"
+            >
+              Cancel
+            </button>
+            <button className="modal-button">
+              <CSVLink
+                data={getCSVData(receiptDetails)}
+                filename="receipt.csv"
+                target="_blank"
+                className=""
+                onClick={handleExport}
+              >
+                Export
+              </CSVLink>
+            </button>
+          </div>
       </div>
     </Modal>
   );

@@ -89,7 +89,7 @@ const Items: React.FC<ItemsProps> = ({ currentItems }) => {
                         />
                       </div> */}
                       <div className="table-cell">
-                        <span className="wallet-tag">
+                        <span className="medium-tag">
                           {row?.inwardCurrency}
                         </span>
                       </div>

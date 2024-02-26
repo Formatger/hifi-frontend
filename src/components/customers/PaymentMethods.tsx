@@ -53,7 +53,7 @@ const PaymentMethods = ({ payment_method_wallets }: any) => {
                   <p className="method-name">
                     {method.name}
                     {method.default && (
-                      <span className="default-tag">
+                      <span className="small-tag">
                         Default
                       </span>
                     )}

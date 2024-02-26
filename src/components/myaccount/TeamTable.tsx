@@ -42,15 +42,15 @@ const TeamTable: React.FC<TeamTableProps> = ({ teamData }) => {
             >
               <td className="table-col">
                 <div className="table-cell">
-                  {/* <p className="text-[#111012] gap-3 flex items-center text-remove font-semibold poppins-remove leading-normal">
+                  {/* <p className="">
                   {item.name}
-                  <span className="bg-violet-200 text-[#111012] text-xs font-semibold px-1.5 py-0.5 rounded">
+                  <span className="small-tag grey">
                     You
                   </span>
-                </p> */}
-                  <p className="text-[#4B5563] text-remove  font-remove poppins-remove leading-normal flex items-center gap-3">
-                    <div className="flex items-start justify-center flex-col">
-                      <div className="poppins-remove text-[#111012] font-semibold flex items-start justify-start flex-row">
+                  </p> */}
+                  <p className="">
+                    <div className="">
+                      <div className="row-wrap">
                         <div className="pr-[10px] capitalize">
                           {item?.fullName}
                         </div>
@@ -59,7 +59,7 @@ const TeamTable: React.FC<TeamTableProps> = ({ teamData }) => {
                           {" "}
                           {item?.roleName === "SUPER_ADMIN" &&
                             item?.email === email && (
-                              <span className="default-tag grey">
+                              <span className="small-tag grey">
                                 You
                               </span>
                             )}
@@ -68,7 +68,7 @@ const TeamTable: React.FC<TeamTableProps> = ({ teamData }) => {
                       <div className="flex gap-3 items-center">
                         {item?.email}
                         {email === item?.email && role !== "0" && (
-                          <span className="bg-violet-200 text-[#111012] text-xs font-semibold px-1.5 py-0.5 rounded">
+                          <span className="small-tag grey">
                             You
                           </span>
                         )}
