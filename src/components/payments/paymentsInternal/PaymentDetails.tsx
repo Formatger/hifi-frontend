@@ -118,9 +118,9 @@ const PaymentDetails = ({ paymentDetails }: any) => {
               <p>Customer ID</p>
               <p>Order ID</p>
               <p>Statement Descriptor</p>
-              <p>Amount</p>
-              <p>Fee</p>
-              <p>Net</p>
+              <p>Amount (USD)</p>
+              <p>Fee (USD)</p>
+              <p>Net (USD)</p>
               <p>Status</p>
               <p>Description</p>
             </td>
@@ -131,19 +131,19 @@ const PaymentDetails = ({ paymentDetails }: any) => {
                   ? `${formatCurrency(paymentDetails?.amount)}`
                   : paymentDetails?.amount}
               </p>
-              <p>
+              <p className="uppercase">
                 {paymentDetails?.transaction_fee +
                   paymentDetails?.cryptoCurrencyAmount}{" "}
                 {paymentDetails?.cryptoCurrency}
               </p>
-              <p>
+              <p className="uppercase">
                 {paymentDetails?.transaction_fee} {paymentDetails?.cryptoCurrency}
               </p>
-              <p>
+              <p className="uppercase">
                 {paymentDetails?.cryptoCurrencyAmount}{" "}
                 {paymentDetails?.cryptoCurrency}
               </p>
-              <p>
+              <p className="truncated">
                 {paymentDetails?.customerAddress}
               </p>
               <p>

@@ -1,0 +1,138 @@
+/* Modal Buttons */
+
+.modal-button {
+  border-radius: 6px;
+  min-height: 34px;
+  min-width: 90px;
+  padding: 0 10px;
+  background-color: #5545fa;
+  border: 1px solid #5545fa;
+  color: white;
+}
+
+.modal-button.grey {
+  background-color: white; /* --Grey */
+  border: 1px solid #dbdbf0; /* --Grey3 */
+  color: #242145; /* --Dark */
+}
+
+.modal-button.grey:hover {
+  filter:brightness(100%);
+}
+
+.modal-button:hover {
+  filter:brightness(110%);
+}
+
+.modal-button[disabled] {
+  opacity: 0.4;
+  filter: saturate(80%);
+  filter: hue-rotate(-8deg);
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  filter: brightness(400%);
+}
+
+/* Modal Container */
+
+.modal-container {
+  width: 90%;
+  position: relative;
+  border-radius: 14px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  background-color: white;
+  max-height: 90vh;
+}
+
+@media (min-width: 640px) {
+  .modal-container {
+    max-width: 450px;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-header {
+  height: 80px;
+  background: #F6F8F9;
+  border: 1px solid #E5E9EB;
+  background: #5545fa;
+  border: 1px solid #5545fa;
+  display: flex;
+  border-radius: 14px 14px 0 0;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  color: white;
+  font-weight: 500;
+  font-size: 26px !important;
+}
+
+.modal-header h5 {
+  font-size: 22px !important;
+  font-weight: 400;
+  letter-spacing: 0.02rem;
+}
+
+.modal-box-content {
+ position: relative;
+  max-height: 80vh;
+  overflow: auto;
+  width: 100%;
+  background-color: #ffffff;
+  border-left: 1px solid #E5E9EB;
+  border-bottom: 1px solid #E5E9EB;
+  border-radius: 0 0 16px 16px;
+}
+
+.modal-content {
+  padding: 20px;
+  overflow: auto;
+  max-height: 60vh;
+}
+
+.modal-box-content {
+  position: relative;
+   max-height: 80vh;
+   overflow: auto;
+   width: 100%;
+   background-color: #ffffff;
+   border-left: 1px solid #E5E9EB;
+   border-bottom: 1px solid #E5E9EB;
+   border-radius: 0 0 16px 16px;
+ }
+
+.modal-footer {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F6F8F9;
+  padding: 8px;
+  /* border-radius: 0 0 16px 16px; */
+  padding: 20px;
+}
+
+  @media (min-width: 1024px) {
+
+    .modal-footer {
+      padding: 20px;
+    }
+  }

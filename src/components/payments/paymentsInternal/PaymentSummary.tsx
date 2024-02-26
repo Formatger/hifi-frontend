@@ -2,31 +2,32 @@ import React from "react";
 import LastUpdated from "./discard/LastUpdated";
 import PaymentMethod from "./discard/PaymentMethod";
 import RiskEvaluation from "./discard/RiskEvaluation";
-import WalletAddress from "./modals/WalletAddress";
+import WalletAddress from "./WalletAddress";
 
 import moment from "moment";
 import Link from "next/link";
 
 interface PaymentSummary {
-  amount: string | number;
-  amount_paid: string | number;
-  transaction_fee: string | number;
-  status: string;
   createDate: string;
-  payment_method: string;
-  risk_evaluation: number;
-  customer: string;
-  statement_descriptor: string | null;
-  fiatCurrency: number;
-  fees: string | number;
-  net: number;
-  order_id: string;
-  customerAddress: string;
-  description: string | null;
-  fiatCurrencyAmount: any;
   actual_order_id: any;
-  cryptoCurrency: any;
-  cryptoCurrencyAmount: any;
+  customerAddress: string;
+  amount: string | number;
+  payment_method: string;
+
+  // amount_paid: string | number;
+  // transaction_fee: string | number;
+  // status: string;
+  // risk_evaluation: number;
+  // customer: string;
+  // statement_descriptor: string | null;
+  // fiatCurrency: number;
+  // fees: string | number;
+  // net: number;
+  // order_id: string;
+  // description: string | null;
+  // fiatCurrencyAmount: any;
+  // cryptoCurrency: any;
+  // cryptoCurrencyAmount: any;
 }
 
 const formatWalletName = (wallet: any) => {
@@ -43,45 +44,44 @@ const PaymentSummary = ({
       {/* <LastUpdated lastUpdated={paymentDetails?.createDate} />
       <WalletAddress walletaddress={paymentDetails?.customerAddress} />
       <PaymentMethod payment_method={paymentDetails?.payment_method} />
-      <RiskEvaluation order_id={paymentDetails?.actual_order_id} /> */}
-
+      <RiskEvaluation order_id={paymentDetails?.actual_order_id} /> 
+      <Customer customer={paymentDetails?.customer} /> */}
 
       <div className="summary-item">
-        <p className="title">
+        <p className="text-s-grey">
           Last Updated
         </p>
-        <p className="item">
+        <p className="mall">
           {moment(paymentDetails?.createDate).format("MMM DD, YYYY h:mm A")}
         </p>
       </div>
-
       <div className="summary-item">
-        <p className="title">
+        <p className="text-s-grey">
           Wallet Address
         </p>
         <Link
           href={`https://goerli.etherscan.io/address/${paymentDetails.customerAddress}`}
           target="_blank"
-          className="blue-text underline truncated"
+          className="text-small blue-text underline truncated"
           >
           {paymentDetails.customerAddress}
         </Link>
       </div>
 
       <div className="summary-item">
-        <p className="title">
+        <p className="text-s-grey">
           Payment Method
         </p>
-        <p className="item">
+        <p className="text-small">
           {paymentDetails.payment_method}
         </p>
       </div>
 
       <div className="summary-item">
-        <p className="title">
+        <p className="text-s-grey">
           Order ID
         </p>
-        <p className="item">
+        <p className="text-small">
           {paymentDetails.actual_order_id}
         </p>
       </div>
@@ -93,4 +93,3 @@ const PaymentSummary = ({
 export default PaymentSummary;
 
 
-{/* <Customer customer={paymentDetails?.customer} /> */}

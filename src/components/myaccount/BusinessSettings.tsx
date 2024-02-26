@@ -4,15 +4,15 @@ import Link from "next/link";
 const BusinessSettings = () => {
   return (
     <div className="flex flex-col mt-6">
-      <div className="flex flex-col border-b border-b-[#E5E9EB] py-3 gap-2">
-        <h1 className="h1">
+      <div className="section-title">
+        <h4>
           Business Settings
-        </h1>
-        <p className="text-remove  text-[#4B5563] poppins-remove">
+        </h4>
+      </div>
+      <p className="text-s-thin">
           Please select a link to view your business and team account
           information.
         </p>
-      </div>
       <ul className="mt-5 flex flex-col gap-2">
         <li className="blue-text">
           <Link href="/dashboard/my-account/bankaccounts" className="">

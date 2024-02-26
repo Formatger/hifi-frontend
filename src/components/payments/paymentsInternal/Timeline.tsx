@@ -27,10 +27,10 @@ const Timeline = ({ timelineDetails }: { timelineDetails: TimelineProps }) => {
             <div className="time-line"></div>
           </div>
           <div className="column-wrap">
-            <div className="title">
+            <div className="text-s-grey">
               Payment Succeeded
             </div>
-            <div className="item">
+            <div className="text-small">
               {moment(timelineDetails?.paymentSucceededDate).format(
                 "MMM DD, YYYY h:mm A"
               )}
@@ -44,10 +44,10 @@ const Timeline = ({ timelineDetails }: { timelineDetails: TimelineProps }) => {
             <div className="time-line"></div>
           </div>
           <div className="column-wrap">
-            <div className="title">
+            <div className="text-s-grey">
               Payment Initiated
             </div>
-            <div className="item">
+            <div className="text-small">
               {moment(timelineDetails?.paymentStartedDate).format(
                 "MMM DD, YYYY h:mm A"
               )}

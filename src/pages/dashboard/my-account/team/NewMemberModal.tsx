@@ -54,19 +54,19 @@ const NewMemberModal: React.FC<NewMemberModalProps> = ({
         isOpen={isOpen}
         onRequestClose={closeModal}
         contentLabel="Add Account Modal"
-        className="w-[90%] sidebarModal relative rounded-lg poppins-remove sm:w-[452px] shadow-xl bg-white max-h-[90vh]"
-        overlayClassName="bg-black bg-opacity-60 fixed inset-0 flex justify-center items-center z-50"
+        className="modal-container"
+        overlayClassName="modal-overlay"
       >
-        <div className="h-[80px] bg-[#F6F8F9] border-[#E5E9EB] border flex rounded-t-lg items-center justify-center sticky top-0 z-20">
+        <div className="modal-header">
           <button className="" onClick={closeModal}>
-            <Image src={x} alt="close" className="top-2 right-2 absolute" />
+            <Image src={x} alt="close" className="close-btn" />
           </button>
-          <h2 className="font-semibold  text-neutral-900 mt-4 poppins-remove text-[23px]">
+          <h5>
             Invite team members
-          </h2>
+          </h5>
         </div>
 
-        <div className="relative max-h-[80vh] overflow-auto w-full bg-white border-l border-t border-b border-[#E5E9EB]">
+        <div className="modal-box-content">
           <Formik
             initialValues={{
               email: "",
@@ -146,10 +146,10 @@ const NewMemberModal: React.FC<NewMemberModalProps> = ({
                 </div>
               </div>
               <AutoSubmitToken setFormValue={setFormValue} />
-              <div className="sticky bottom-0 w-full z-10">
-                <div className="flex h-[80px] rounded-b-lg items-center justify-between bg-[#F6F8F9] p-2 lg:p-5">
+              <div className="">
+                <div className="modal-footer">
                   <button
-                    className="popup-button grey"
+                    className="modal-button grey"
                     onClick={closeModal}
                   >
                     Cancel
@@ -163,7 +163,7 @@ const NewMemberModal: React.FC<NewMemberModalProps> = ({
                       <button
                         type="submit"
                         disabled={!formValue?.email}
-                        className="popup-button">
+                        className="modal-button">
                         Confirm
                       </button>
                     </>

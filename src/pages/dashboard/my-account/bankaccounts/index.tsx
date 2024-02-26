@@ -222,7 +222,7 @@ const BankAccounts = () => {
                                         : account.currency}
                                     </span>
                                     {account.verificationSent === true && (
-                                      <span className="default-tag grey">
+                                      <span className="small-tag grey">
                                         Default
                                       </span>
                                     )}

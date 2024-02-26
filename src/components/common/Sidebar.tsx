@@ -46,7 +46,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
 
   const sidebarData = [
     {
-      title: "Dashboard",
+      title: "Home",
       imageSrc: House,
       hookValue: dashboard,
       imageSrcSelect: House,
@@ -88,7 +88,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
       imageSrcSelect: Global,
     },
     {
-      title: "MyAccount",
+      title: "Settings",
       url: "my-account",
       imageSrc: MyAccount,
       hookValue: myAccount,
@@ -272,13 +272,12 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
                             ? data?.imageSrcSelect
                             : data?.imageSrc
                         }
-                        // className={`nav-image ${data?.hookValue ? 'invert-icon' : ''}`}
                         className={`nav-image ${data?.hookValue ? '' : 'invert-icon'}`}
                         alt="logo"
                       />
                     </div>
                     <div>
-                      {data?.title === "MyAccount" ? "My Account" : data?.title}
+                      {data?.title}
                     </div>
                   </Link>
                 </li>

@@ -200,14 +200,14 @@ const AuthCode = () => {
                   test
                 </div>
               )}
-              <div className="footnote-wrap">
+              {/* <div className="footnote-wrap">
                 <div className="auth-link">
                   Use another authentication method
                 </div>
                 <div className="auth-link">
                   Need help authenticating?
                 </div>
-              </div>
+              </div> */}
             </div>
           {/* </div> */}
         </div>

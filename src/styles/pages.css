@@ -62,12 +62,18 @@
 
 .section-title {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
+  gap: var(--m3);
   margin-bottom: var(--m4);
   padding-top: var(--m5);
   padding-bottom: var(--m3);
   border-bottom: 1px solid #E5E9EB;
+}
+
+.sidetxt-wrap {
+  width: 100%;
+  margin-bottom: var(--m2);
 }
 
 /* .h1-wrap {
@@ -90,10 +96,20 @@
   margin-bottom: 20px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 640px) {
   .h1 {
     font-size: 28px;
   }
+  .section-title {
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+  }
+  .sidetxt-wrap {
+    width: 70%;
+    margin-bottom: var(--m2);
+  }
+  
 }
 
 /* ------ Dashboard / Overview Page -------*/
@@ -135,7 +151,7 @@
   width: 100%;
   border: var(--sborder);
   border-radius: var(--radius);
-  padding: var(--padBox);
+  padding: var(--pad-box);
   /* box-shadow: var(--sh-box); */
 }
 
@@ -164,7 +180,7 @@
   justify-content: center;
   border: var(--sborder);
   border-radius: var(--radius);
-  padding: var(--padBox);
+  padding: var(--pad-box);
 }
 
 /* Chart Tooltip Box */
@@ -247,19 +263,6 @@
   width: 20%;
 }
 
-.wallet-tag {
-  background-color: #E5E9EB;
-  color: var(--dark);
-  border-radius: 4px;
-  padding-left: 6px;
-  padding-right: 6px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  margin-right: 6px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
 /* Customer Details */
 
 .customer-page {
@@ -276,18 +279,6 @@
 }
 .customer-right {
   width: 100%;
-}
-
-@media (min-width: 1024px) {
-  .customer-page {
-    flex-direction: row;
-  }
-  .customer-left {
-    width: 30%;
-  }
-  .customer-right {
-    width: 60%;
-  }
 }
 
 .arrow-btn {
@@ -320,6 +311,18 @@
 
 .customer-details {
   padding: var(--m2) 0;
+}
+
+@media (min-width: 1024px) {
+  .customer-page {
+    flex-direction: row;
+  }
+  .customer-left {
+    width: 30%;
+  }
+  .customer-right {
+    width: 60%;
+  }
 }
 
 /* Details Table */
@@ -409,7 +412,7 @@
   color: var(--dark5);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 640px) {
   .total-status-container {
       flex-direction: row;
       gap: 0;
@@ -457,13 +460,10 @@
 
 /* PaymentSummary */
 
-.item {
-  color: var(--dark);
-  font-size: var(--text-s);
-}
-.title {
-  color: var(--dark5);
-  font-weight: 350;
+.pay-item {
+  display: flex;
+  align-items: center;
+  gap: var(--m2);
   font-size: var(--text-s);
 }
 
@@ -475,14 +475,6 @@
   gap: var(--m5);
 }
 
-@media (min-width: 1024px) {
-  .pay-summary-wrap {
-    flex-direction: row;
-    align-items: center;
-    gap: 0;
-  }
-}
-
 .summary-item {
   display: flex;
   flex-direction: column;
@@ -491,6 +483,7 @@
   /* min-width: 180px; */
   width: 100%;
 }
+
 .truncated {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -499,6 +492,13 @@
 }
 
 @media (min-width: 1024px) {
+
+  .pay-summary-wrap {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+  }
+
   .summary-item {
     padding-left: 20px;
     padding-right: 20px;
@@ -513,7 +513,6 @@
 
   }
 }
-
 
 /* ReceiptHistory */
 
@@ -560,21 +559,18 @@
 
 /* Balances */
 
+.section-wrap.balances {
+  margin-top: var(--m4);
+}
+
 .balances-wrap {
-  width: 90%;
+  width: 100%;
 }
 
 @media (min-width: 1024px) {
   .balances-wrap {
-    width: 70%;
+    width: 80%;
   }
-}
-
-.balances-text {
-  width: 60%;
-  color: var(--dark4);
-  font-weight: 350;
-  font-size: var(--text-s);
 }
 
 .total-wrap {
@@ -584,14 +580,56 @@
   padding-bottom: 4px;
   border-bottom: var(--sborder);
   margin-bottom: 4px;
+  font-weight: 600;
 }
 
-.bal-amount-wrap {
+.amount-wrap {
   display: flex;
   justify-content: space-between;
-  padding-top: 5px;
+  padding-top: 8px;
 }
 
-.first-item {
-font-weight: bold;
+/* Account Settings */
+
+.password-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8px;
 }
+
+.settings-box .first-column {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  min-width: 150px;
+}
+
+.settings-box .second-column {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.upload-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--m7);
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .upload-wrap {
+    flex-direction: row;
+    padding-bottom: 20px;
+    text-align: left;
+  }
+
+  .upload-wrap .sec-button {
+    margin-left: auto;
+  }
+}
+
+/* Team Settings */
+

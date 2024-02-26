@@ -74,13 +74,13 @@
   --toolbar-h: 74px;
   --sidebar-w: 274px;
   --btn-h: 34px;
-  --padding: var(--m6);
+  --padding: var(--m7);
 
   --btn-rad: var(--r1);
 
-  --padBox: var(--m5);
+  --pad-box: var(--m5);
   --radius: var(--r4);
-  --padCell: var(--m2) var(--m3);
+  --pad-cell: var(--m2) var(--m3);
 
   --r: 1px solid red;
 
@@ -119,10 +119,10 @@
   --dark5: hsl(242, 0%, 45%);
   --dark6: hsl(242, 0%, 50%);
 
-  --grey: hsl(240, 50%, 99%);
-  --grey1: hsl(240, 50%, 97%);
-  --grey2: hsl(240, 40%, 93%);
-  --grey3: hsl(240, 40%, 90%);
+  --grey: hsl(240, 30%, 99%);
+  --grey1: hsl(240, 30%, 97%);
+  --grey2: hsl(240, 30%, 93%);
+  --grey3: hsl(240, 30%, 90%);
   --grey4: hsl(240, 10%, 80%);
   --grey5: hsl(240, 10%, 70%);
   --grey6: hsl(240, 10%, 65%);
@@ -141,6 +141,7 @@
 
   --dgreen: #02cf8b;
 
+  --darkred: hsl(8, 100%, 25%);
   --red: hsl(8, 100%, 56%);
   --red2: hsl(1, 100%, 75%);
   --red3: hsl(1, 100%, 80%);
@@ -268,6 +269,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  text-align: left;
 }
 
 .row-align-center  {
@@ -346,6 +348,22 @@ h6 {
   font-weight: 600;
 }
 
+.text-small {
+  font-size: var(--text-s);
+}
+
+.text-s-thin {
+  color: var(--dark4);
+  font-weight: 350;
+  font-size: var(--text-s);
+}
+
+.text-s-grey {
+  color: var(--dark5);
+  font-weight: 350;
+  font-size: var(--text-s);
+}
+
 .fake-link {
   color: var(--main);
   text-decoration: underline;
@@ -391,14 +409,12 @@ button[disabled] {
   min-height: var(--btn-h);
 }
 
-.app-button:hover,
-.popup-button:hover {
+.app-button:hover {
   filter:brightness(110%);
 }
 
 .app-button:hover[disabled],
-button[disabled],
-.popup-button[disabled] {
+button[disabled] {
   opacity: 0.4;
   filter: saturate(80%);
   filter: hue-rotate(-8deg);
@@ -427,6 +443,19 @@ button[disabled],
   color: var(--main);
 }
 
+.sec-button.blue {
+  background: var(--main);
+  color: var(--white);
+  border: 1px solid var(--main);
+  font-weight: 300;
+}
+.sec-button.red {
+  background: var(--red3);
+  color: var(--darkred);
+  border: 1px solid var(--red);
+  font-weight: 400;
+}
+
 .small-btn {
   display: flex;
   align-items: center;
@@ -445,27 +474,16 @@ button[disabled],
 
 }
 
-.popup-button {
-  border-radius: 6px;
-  min-height: 34px;
-  min-width: 90px;
-  padding: 0 10px;
-  background-color: #5545fa;
-  border: 1px solid #5545fa;
-  color: white;
-}
-
-.popup-button.grey {
-  background-color: white; /* --Grey */
-  border: 1px solid #dbdbf0; /* --Grey3 */
-  color: #242145; /* --Dark */
-}
-
-.popup-button.grey:hover {
-  filter:brightness(100%);
-}
-
 /* Input */
+
+.main-input {
+  width: 100%;
+  height: 38px;
+  padding: var(--m2);
+  background: var(--white);
+  border-radius: var(--r2);
+  border: var(--border);
+}
 
 .app-input {
   width: 100%;
@@ -474,15 +492,6 @@ button[disabled],
   background: var(--white);
   border-radius: var(--btn-rad);
   border: var(--sborder);
-}
-
-.auth-input {
-  width: 100%;
-  height: 38px;
-  padding: var(--m2);
-  background-color: white;
-  border-radius: var(--r3);
-  border: 1px solid var(--grey2);
 }
 
 input:focus {
@@ -515,16 +524,13 @@ select {
 
 /* Tags */
 
-.default-tag {
+.small-tag {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
+  width: fit-content;
   height: 20px; 
-  padding-left: 1.5px;
-  padding-right: 1.5px;
-  padding-top: 0.5px;
-  padding-bottom:  0.5px;
+  padding: var(--m1);  
   background-color: var(--main);
   color: var(--white);
   font-size: 11px;
@@ -532,10 +538,21 @@ select {
   border-radius: var(--r1);
 }
 
-.default-tag.grey {
-  background-color: var(--blue4);
+.small-tag.grey {
+  background-color: var(--grey2);
   color: var(--dark);
+  font-weight: 500;
   height: 18px; 
+}
+
+.medium-tag {
+  background: var(--grey2);
+  color: var(--dark);
+  border-radius: var(--r1);
+  padding: 4px 6px;
+  margin-right: 6px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 /* Status Label */
@@ -871,25 +888,3 @@ abbr:where([title]) {
     transform: scaleX(0);
   }
 }
-
-
-/* .inputStyle {
-  width: 3rem !important;
-  height: 3rem;
-  margin: 1px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  background: var(--neutrals-white-pure, #fff);
-  background: red !important;
-  border: 1px solid #ff0000 !important;
-}
-
-@media (max-width: 700px) {
-  .inputStyle {
-    width: 2rem !important;
-    height: 2rem;
-    margin: 1px;
-    font-size: 1rem;
-  }
-} */

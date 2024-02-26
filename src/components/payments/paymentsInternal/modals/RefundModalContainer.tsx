@@ -311,26 +311,26 @@ const RefundModal: React.FC<RefundModalProps> = ({
       <Modal
         isOpen={isOpen}
         onRequestClose={toggleModal}
-        className="w-[90%] max-h-[90vh] sidebarModal rounded-lg lg:w-[400px] shadow-xl bg-white"
-        overlayClassName="custom-modal-overlay"
+        className="modal-container"
+        overlayClassName="modal-overlay"
         contentLabel="Refund Initiation"
       >
         <div className="">
           <ToastContainer />
-          <div className="h-[80px] bg-gray-50 sticky top-0 border-gray-200 border flex rounded-t-lg items-center justify-center z-20">
+          <div className="modal-header">
             <button className="" onClick={toggleModal}>
-              <Image src={x} alt="close" className="top-2 right-2 absolute" />
+              <Image src={x} alt="close" className="close-btn" />
             </button>
-            <h2 className="font-semibold  text-[#111012] mt-4 poppins-remove text-[23px]">
+            <h5>
               {currentStep === "initiation"
                 ? "Refund Initiation"
                 : currentStep === "confirmation"
                 ? "Refund Confirmation"
                 : "Refund Underway"}
-            </h2>
+            </h5>
           </div>
           {currentStep === "initiation" && (
-            <div className="">
+            <div className="modal-box-content">
               <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
@@ -340,7 +340,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
               >
                 <Form>
                   <>
-                    <div className="overflow-auto max-h-[60vh] p-4 px-2">
+                    <div className="modal-content">
                       <div className="relative flex flex-col  p-2 lg:p-5">
                         <div className="font-medium text-black poppins-remove">
                           SELECT REFUND AMOUNT*
@@ -443,9 +443,9 @@ const RefundModal: React.FC<RefundModalProps> = ({
 
                       <AutoSubmitToken setFormValue={setFormValue} />
                     </div>
-                    <div className="w-full flex h-[80px] rounded-b-lg items-center justify-between bg-gray-50 p-2 lg:p-5 sticky bottom-0 mt-2">
+                    <div className="modal-footer">
                       <button
-                        className="h-8 w-20 blue-text border bg-white rounded-md border-gray-200"
+                        className="modal-button grey"
                         type="submit"
                         onClick={toggleModal}
                       >
@@ -535,7 +535,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                   </label>
                 </div>
               </div>
-              <div className="w-full flex h-[80px] rounded-b-lg items-center justify-between bg-gray-50 p-2 lg:p-5 sticky bottom-0">
+              <div className="modal-footer">
                 <button
                   className="h-8 w-20 blue-text border rounded-md border-gray-200"
                   type="submit"

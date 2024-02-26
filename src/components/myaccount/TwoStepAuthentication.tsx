@@ -39,12 +39,12 @@ const TwoStepAuthentication = () => {
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row gap-4 lg:gap-0 mt-5 py-4 border-b border-[#E5E9EB]">
-        <div className="flex flex-col">
-          <p className="text-[#111012] mb-2 text-remove lg:text-xl font-semibold poppins-remove">
+      <div className="section-title">
+        <div className="">
+          <h5>
             Two-Step authentication
-          </p>
-          <div className="text-[#4B5563] text-remove  font-remove poppins-remove">
+          </h5>
+          <div className="sidetxt-wrap text-s-thin mt-3">
             Increase security for your account by using multiple authentication
             steps.
           </div>
@@ -66,7 +66,7 @@ const TwoStepAuthentication = () => {
           <Image src={x} alt="x" className="" />
         </button>
       </div> */}
-      <p className="text-remove  font-remove text-[#4B5563] font-poppins leading-normal">
+      <p className="text-s-thin">
         If you lose your mobile device or security key, you can{" "}
         <button className="blue-text underline" onClick={openScanQrModal}>
           generate a backup code
@@ -87,9 +87,9 @@ const TwoStepAuthentication = () => {
         <Modal isOpen={isInstructionModalOpen} onClose={closeInstructionModal}>
           <div className="mt-2">
             <div className="flex items-center justify-center flex-col gap-5">
-              <p className="mb-4 text-lg font-semibold">
+              <h5>
                 Instructions for Two-Step Authentication
-              </p>
+              </h5>
               <div className="mb-4 flex flex-col items-center justify-center gap-3">
                 <Image src={enterotpscreen} alt="Enter OTP Screen" width={442} height={482} />
                 <p>STEP 1: Click on Scan QR</p>
