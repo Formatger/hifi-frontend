@@ -156,35 +156,38 @@ const BankAccounts = () => {
   return (
     <>
       <ToastContainer />
-      <div className="main-container">
+      <div className="main-container" id="bank">
         <div className="w-full">
           <Header />
-          <div className="w-full p-3 lg:px-6 ">
-            <div className="w-full px-3 flex flex-col mt-3 gap-4 relative">
-              <div className="sticky top-[105px] lg:top-[78px] z-20 bg-white flex flex-col gap-4 ">
-                <Breadcrumbs items={items} />
-                <h1 className="h1">
-                  Bank Accounts
-                </h1>
-              </div>
-              {/* {bankdata?.length > 0 ? (
+          <div className="sticky-heading">
+            <Breadcrumbs items={items} />
+          </div>
+          <div className="page-container">
+            <div>
+              <h1 className="h1">
+                Bank Accounts
+              </h1>
+              {bankdata?.length > 0 ? (
                 <></>
               ) : (
                 <>
                   {" "}
                   {role === "0" || role === "1" ? (
-                    <button
-                      className=" text-[#F9F9F7] w-[162px] h-8 poppins-remove flex items-center justify-center gap-2 rounded-md ml-auto"
-                      onClick={openAddAccountModal}
-                    >
-                      <Image src={plus} alt="plus" className="" />
-                      Add Account
-                    </button>
+                    <div className="section-title">
+                      <div></div>
+                      <button
+                        className="sec-button blue"
+                        onClick={openAddAccountModal}
+                      >
+                        <Image src={plus} alt="plus" className="" />
+                        Add Account
+                      </button>
+                    </div>
                   ) : (
                     <></>
                   )}
                 </>
-              )} */}
+              )}
 
               <div className="w-full overflow-y-scroll overflow-x-auto lg:overflow-hidden">
                 {loader ? (
@@ -194,7 +197,7 @@ const BankAccounts = () => {
                     {bankdata?.length > 0 ? (
                       <>
                         {" "}
-                        <table className="w-full ">
+                        <table className="w-full">
                           <thead>
                             <tr className=" text-[#111012] text-left poppins-remove font-semibold border-y border-y-[#E5E9EB] h-14">
                               <th className="py-2 px-4">CURRENCY</th>

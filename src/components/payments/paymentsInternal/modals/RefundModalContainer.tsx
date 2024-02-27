@@ -11,9 +11,9 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { TailSpin } from "react-loader-spinner";
 import OtpInput from "react-otp-input";
 import { formatOtherCurrency } from "@/utils/formatOtherCurrency";
+import Loading from "@/components/auth/Loading";
 
 interface RefundModalProps {
   isOpen?: boolean;
@@ -51,38 +51,22 @@ interface PaymentDetailsProps {
   net: any;
 }
 
-const ModalHeader: React.FC<{ title: string; toggleModal: () => void }> = ({
-  title,
-  toggleModal,
-}) => {
-  return (
-    <div className="h-[80px] bg-gray-50 border-gray-200 border flex rounded-t-lg items-center justify-center relative">
-      <button className="" onClick={toggleModal}>
-        <Image src={x} alt="close" className="top-2 right-2 absolute" />
-      </button>
-      <h2 className="font-semibold  text-[#111012] mt-4 poppins-remove text-[23px]">
-        {title}
-      </h2>
-    </div>
-  );
-};
-
 const RenderRadiobutton = ({ name, value, title, selectedoption }: any) => {
   return (
-    <div className="grow shrink basis-0 h-8 p-1 justify-start items-center gap-1 flex mt-[6px]">
-      <div className="w-6 h-6 relative">
+    <div className="radio-button-wrap">
+      <div className="row-wrap">
         <Field
           type="radio"
-          className="w-4 h-4 left-[2px] top-[3px] absolute custom-radio"
+          className="custom-radio"
           name={name}
           value={value}
         />
       </div>
       <label
-        className={`grow shrink basis-0 text-remove leading-normal ${
+        className={`grow shrink basis-0 ${
           selectedoption === value
-            ? "blue-text font-semibold"
-            : "text-[#4B5563]  font-remove"
+            ? "blue-text bold"
+            : ""
         }`}
       >
         {title}
@@ -258,30 +242,6 @@ const RefundModal: React.FC<RefundModalProps> = ({
     }
   };
 
-  // useEffect(() => {
-  //   if (rid) {
-  //     setTimeout(() => {
-  //       setState(!state);
-  //       if (atxid === "null") {
-  //         getStatus();
-  //       }
-  //     }, 5000);
-  //   }
-  // }, [state, atxid, getStatus, rid]);
-
-  // const getStatus = () => {
-  //   const baseUrl: any = process.env.NEXT_PUBLIC_API_BASE_URL;
-  //   const userId = localStorage.getItem("userId");
-  //   axios
-  //     .get(baseUrl + `/user/${userId}/refund/${rid}/status`)
-  //     .then((response) => {
-  //       setatxid(response?.data?.data?.aTxId);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
-
   useEffect(() => {
     const getStatus = () => {
       const baseUrl: any = process.env.NEXT_PUBLIC_API_BASE_URL;
@@ -315,7 +275,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
         overlayClassName="modal-overlay"
         contentLabel="Refund Initiation"
       >
-        <div className="">
+        <div className="refund-modal">
           <ToastContainer />
           <div className="modal-header">
             <button className="" onClick={toggleModal}>
@@ -341,8 +301,8 @@ const RefundModal: React.FC<RefundModalProps> = ({
                 <Form>
                   <>
                     <div className="modal-content">
-                      <div className="relative flex flex-col  p-2 lg:p-5">
-                        <div className="font-medium text-black poppins-remove">
+                      <div className="modal-section">
+                        <div className="modal-subtitle">
                           SELECT REFUND AMOUNT*
                         </div>
                         <div className="relative w-full">
@@ -361,43 +321,47 @@ const RefundModal: React.FC<RefundModalProps> = ({
                           <ErrorMessage
                             name="refundType"
                             component="div"
-                            className="error text-[red] absolute -bottom-[22px] left-[4px]"
+                            className="warning-text-3"
                           />
                         </div>
-                        {formValue?.refundType === "Full" ? (
-                          <div className="bg-gray-50 flex items-center mt-7 px-2 h-9 border border-[#E5E9EB] rounded-lg">
-                            {formatOtherCurrency(paymentDetails?.amount)}
-                          </div>
-                        ) : (
-                          <Field
-                            type="tel"
-                            className="bg-gray-50 mt-7 px-2 h-9 border border-[#E5E9EB] rounded-lg"
-                            id="amount"
-                            placeholder="amount"
-                            name="amount"
-                            disabled={formValue?.refundType === "Full"}
-                          />
-                        )}
+                        <div className="mt-2">
+                          {formValue?.refundType === "Full" ? (
+                            <div className="main-input">
+                              {formatOtherCurrency(paymentDetails?.amount)}
+                            </div>
+                          ) : (
+                            <Field
+                              type="tel"
+                              className="main-input"
+                              id="amount"
+                              placeholder="amount"
+                              name="amount"
+                              disabled={formValue?.refundType === "Full"}
+                            />
+                          )}
 
-                        <ErrorMessage
-                          name="amount"
-                          component="div"
-                          className="error text-[red] px-2 lg:px-5 pb-2 lg:pb-5 absolute bottom-[-26px] left-[4px]"
-                        />
+                          <ErrorMessage
+                            name="amount"
+                            component="div"
+                            className="warning-text-3"
+                          />
+                        </div>
                       </div>
-                      <div className="flex relative flex-col gap-3 lg:gap-2 p-2 lg:p-5">
-                        <div className="font-medium text-black poppins-remove">
+                      <div className="modal-section">
+                        <div className="modal-subtitle">
                           SELECT REFUND REASON*
                         </div>
-                        <ReasonDropdown />
-                        <ErrorMessage
-                          name="reason"
-                          component="div"
-                          className="error text-[red] px-2 lg:px-5 pb-2 lg:pb-5 absolute bottom-[-25px] left-[4px]"
-                        />
+                        <div>
+                          <ReasonDropdown />
+                          <ErrorMessage
+                            name="reason"
+                            component="div"
+                            className="warning-text-3"
+                          />
+                        </div>
                       </div>
-                      <div className=" relative flex flex-col  p-2 lg:p-5">
-                        <div className="font-medium text-black poppins-remove">
+                      <div className="modal-section">
+                        <div className="modal-subtitle">
                           CONFIRM RECIPIENT WALLET ADDRESS*
                         </div>
 
@@ -417,28 +381,30 @@ const RefundModal: React.FC<RefundModalProps> = ({
                         <ErrorMessage
                           name="walletOption"
                           component="div"
-                          className="error text-[red] absolute px-2 lg:px-5 pb-2 lg:pb-5 bottom-[40px] left-[4px]"
+                          className="warning-text-3"
                         />
-                        {formValue?.walletOption === "Original" ? (
-                          <div className="flex items-center truncate bg-gray-50 mt-7 px-2 h-9 border border-[#E5E9EB] rounded-lg">
-                            {paymentDetails?.customerAddress}
-                          </div>
-                        ) : (
-                          <Field
-                            type="text"
-                            className="bg-gray-50 mt-7 px-2 h-9 border border-[#E5E9EB] rounded-lg"
-                            id="wallet"
-                            name="wallet"
-                            placeholder="wallet address"
-                            disabled={formValue?.walletOption === "Original"}
-                          />
-                        )}
+                        <div className="mt-2">
+                          {formValue?.walletOption === "Original" ? (
+                            <div className="main-input disabled truncate">
+                              {paymentDetails?.customerAddress}
+                            </div>
+                          ) : (
+                            <Field
+                              type="text"
+                              className="main-input"
+                              id="wallet"
+                              name="wallet"
+                              placeholder="wallet address"
+                              disabled={formValue?.walletOption === "Original"}
+                            />
+                          )}
 
-                        <ErrorMessage
-                          name="wallet"
-                          component="div"
-                          className="error text-[red] px-2 lg:px-5 pb-2 lg:pb-5 absolute bottom-[-25px] left-[4px]"
-                        />
+                          <ErrorMessage
+                            name="wallet"
+                            component="div"
+                            className="warning-text-3"
+                          />
+                        </div>
                       </div>
 
                       <AutoSubmitToken setFormValue={setFormValue} />
@@ -452,7 +418,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                         Cancel
                       </button>
                       <button
-                        className="main-grad text-[#F9F9F7]  flex items-center justify-center gap-3 h-8 w-28 rounded-md"
+                        className="modal-button"
                         type="submit"
                       >
                         Continue
@@ -465,16 +431,16 @@ const RefundModal: React.FC<RefundModalProps> = ({
             </div>
           )}
           {currentStep === "confirmation" && (
-            <div className="">
-              <div className="overflow-auto max-h-[60vh] p-4 px-2 ">
-                <div className="flex flex-col gap-2 p-5">
+            <div className="modal-box-content">
+              <div className="modal-content">
+                <div className="modal-section">
                   <label
                     htmlFor="amount"
-                    className="text-[#111012] font-semibold"
+                    className="modal-subtitle"
                   >
                     SELECT REFUND AMOUNT*
                   </label>
-                  <label className="flex gap-3 ">
+                  <label className="modal-subtitle">
                     <p className="text-[#4B5563]">
                       $
                       {formValue?.amount === 0
@@ -483,51 +449,54 @@ const RefundModal: React.FC<RefundModalProps> = ({
                     </p>
                   </label>
                 </div>
-                <div className="flex flex-col gap-2 p-5">
+                <div className="modal-section">
                   <label
                     htmlFor="reason"
-                    className="text-[#111012] font-semibold"
+                    className="modal-subtitle"
                   >
                     REFUND REASON
                   </label>
                   <p className="text-[#4B5563]">{formValue?.reason}</p>
                 </div>
-                <div className="flex flex-col gap-2 p-5">
+                <div className="modal-section">
                   <label
                     htmlFor="reason"
-                    className="text-[#111012] font-semibold"
+                    className="modal-subtitle"
                   >
                     RECIPIENT WALLET ADDRESS
                   </label>
-                  <p className="text-[#4B5563]">
+                  <div className="address-box-wrap">
+                  <p className="address-box">
                     {formValue?.wallet === ""
                       ? paymentDetails?.customerAddress
                       : formValue?.wallet}
                   </p>
+                  </div>
                 </div>
-                <button
-                  className="flex items-center justify-center gap-3 blue-text ml-auto mr-5 w-20 h-8 bg-[#F9F9F7] border border-gray-200 rounded-md"
+                {/* <button
+                  className="small-btn"
                   onClick={handleEditClick}
                 >
                   <Image src={pencilsimple} alt="edit" className="" />
                   <span>Edit</span>
-                </button>
-                <div className="w-full flex justify-center items-center">
-                  <hr className="h-px bg-black w-[90%] my-5 self-center text-center" />
+                </button> */}
+
+                <div>
+                  <hr />
                 </div>
 
-                <div className="flex items-start gap-2 p-5">
+                <div className="terms-box">
                   <input
                     type="checkbox"
                     id="confirmAccuracy"
                     name="confirmAccuracy"
-                    className="blue-text mt-2"
+                    className="custom-checkbox"
                     onChange={handleCheckboxChange}
                     checked={confirmAccuracy}
                   />
                   <label
                     htmlFor="confirmAccuracy"
-                    className="text-[#4B5563] poppins-remove"
+                    className="text-s-thin"
                   >
                     By checking this box you are confirming that all of the
                     above details are accurate. Please review closely and make
@@ -537,22 +506,14 @@ const RefundModal: React.FC<RefundModalProps> = ({
               </div>
               <div className="modal-footer">
                 <button
-                  className="h-8 w-20 blue-text border rounded-md border-gray-200"
+                  className="modal-button grey"
                   type="submit"
                   onClick={toggleModal}
                 >
                   Cancel
                 </button>
                 <button
-                  className={` ${
-                    !confirmAccuracy || loader
-                      ? "bg-[#B0BABF]"
-                      : "main-grad  border-[#6200EE] border-[1px]"
-                  } flex items-center justify-center  text-[#F9F9F7] gap-3 h-8 w-[120px] rounded-md  ${
-                    !confirmAccuracy || loader
-                      ? "text-[#F9F9F7]"
-                      : "text-stone-50"
-                  }`}
+                  className="modal-button"
                   type="button"
                   onClick={handleContinueClick}
                   disabled={!confirmAccuracy || loader}
@@ -560,75 +521,66 @@ const RefundModal: React.FC<RefundModalProps> = ({
                   {!loader ? (
                     <>
                       {" "}
-                      <span className="pb-1">Continue</span>
+                      <span className="">Continue</span>
                       <Image src={arrowright} alt="arrow" className="" />
                     </>
                   ) : (
-                    <div className="self-stretch justify-center items-center gap-2 inline-flex">
-                      <TailSpin
-                        height="20"
-                        width="20"
-                        color="white"
-                        ariaLabel="tail-spin-loading"
-                        radius="1"
-                        wrapperStyle={{}}
-                        wrapperClass=""
-                        visible={true}
-                      />
-                    </div>
+                    <Loading />
+                    // <div className="self-stretch justify-center items-center gap-2 inline-flex">
+                    //   <TailSpin
+                    //     height="20"
+                    //     width="20"
+                    //     color="white"
+                    //     ariaLabel="tail-spin-loading"
+                    //     radius="1"
+                    //     wrapperStyle={{}}
+                    //     wrapperClass=""
+                    //     visible={true}
+                    //   />
+                    // </div>
                   )}
                 </button>
               </div>
             </div>
           )}
           {currentStep === "underway" && (
-            <div className="px-2 pt-4">
-              <div className="flex flex-col gap-2 px-5 py-2">
-                <h2 className=" text-[#111012] text-remove font-semibold poppins-remove uppercase leading-normal tracking-tight">
-                  PROCESSING TIME
-                </h2>
-                <p className=" text-[#4B5563] text-remove  font-remove poppins-remove leading-normal">
-                  Refunds typically take sometime to process. We appreciate your
-                  patience as we work to complete the refund transactions.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 px-5 py-2">
-                <h2 className=" text-[#111012] text-remove font-semibold poppins-remove uppercase leading-normal tracking-tight">
-                  STATUS UPDATES
-                </h2>
-                <p className=" text-[#4B5563] text-remove  font-remove poppins-remove leading-normal">
-                  Check status in the Payments Detail view of the Payments
-                  dashboard.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 px-5 py-2">
-                <h2 className=" text-[#111012] text-remove font-semibold poppins-remove uppercase leading-normal tracking-tight">
-                  OTP
-                </h2>
-                <p className=" text-[#4B5563] text-remove  font-remove poppins-remove leading-normal">
-                  Please wait for 2 mintues to recieve otp into your email id.
-                </p>
-                <div className="-mt-1 lg:mt-2 relative flex items-center justify-center">
-                  <OtpInput
-                    value={otp}
-                    onChange={handleChange}
-                    numInputs={6}
-                    containerStyle=""
-                    inputStyle="inputStyle"
-                    renderInput={(props, keys) => (
-                      <>
-                        {keys === 0 && (
-                          <div className="authkey left">
-                            <input
-                              {...props}
-                              inputMode="numeric"
-                              className="authkey-number"
-                            />
-                          </div>
-                        )}
-                        {keys === 3 && (
-                          <div className="authkey-space-wrap">
-                            <hr className="authkey-space" />
+            <div className="modal-box-content">
+              <div className="modal-content">
+                <div className="modal-section">
+                  <p className="modal-subtitle">
+                    PROCESSING TIME
+                  </p>
+                  <p className="text-s-thin">
+                    Refunds typically take sometime to process. We appreciate your
+                    patience as we work to complete the refund transactions.
+                  </p>
+                </div>
+                <div className="modal-section">
+                  <p className="modal-subtitle">
+                    STATUS UPDATES
+                  </p>
+                  <p className="text-s-thin">
+                    Check status in the Payments Detail view of the Payments
+                    dashboard.
+                  </p>
+                </div>
+                <div className="modal-section">
+                  <p className="modal-subtitle">
+                    OTP
+                  </p>
+                  <p className="text-s-thin">
+                    Please wait for 2 mintues to recieve otp into your email id.
+                  </p>
+                  <div className="authcode-wrap">
+                    <OtpInput
+                      value={otp}
+                      onChange={handleChange}
+                      numInputs={6}
+                      containerStyle=""
+                      inputStyle="inputStyle"
+                      renderInput={(props, keys) => (
+                        <>
+                          {keys === 0 && (
                             <div className="authkey left">
                               <input
                                 {...props}
@@ -636,56 +588,65 @@ const RefundModal: React.FC<RefundModalProps> = ({
                                 className="authkey-number"
                               />
                             </div>
-                          </div>
-                        )}
-                        {keys === 1 && (
-                          <div className="authkey center">
-                            <input
-                              {...props}
-                              inputMode="numeric"
-                              className="authkey-number"
-                            />
-                          </div>
-                        )}
-                        {keys === 4 && (
-                          <div className="authkey center">
-                            <input
-                              {...props}
-                              inputMode="numeric"
-                              className="authkey-number"
-                            />
-                          </div>
-                        )}
-                        {keys === 2 && (
-                          <div className="authkey right">
-                            <input
-                              {...props}
-                              inputMode="numeric"
-                              className="authkey-number"
-                            />
-                          </div>
-                        )}
-                        {keys === 5 && (
-                          <div className="authkey right">
-                            <input
-                              {...props}
-                              inputMode="numeric"
-                              className="authkey-number"
-                            />
-                          </div>
-                        )}
-                      </>
-                    )}
-                  />
+                          )}
+                          {keys === 3 && (
+                            <div className="authkey-space-wrap">
+                              <hr className="authkey-space" />
+                              <div className="authkey left">
+                                <input
+                                  {...props}
+                                  inputMode="numeric"
+                                  className="authkey-number"
+                                />
+                              </div>
+                            </div>
+                          )}
+                          {keys === 1 && (
+                            <div className="authkey center">
+                              <input
+                                {...props}
+                                inputMode="numeric"
+                                className="authkey-number"
+                              />
+                            </div>
+                          )}
+                          {keys === 4 && (
+                            <div className="authkey center">
+                              <input
+                                {...props}
+                                inputMode="numeric"
+                                className="authkey-number"
+                              />
+                            </div>
+                          )}
+                          {keys === 2 && (
+                            <div className="authkey right">
+                              <input
+                                {...props}
+                                inputMode="numeric"
+                                className="authkey-number"
+                              />
+                            </div>
+                          )}
+                          {keys === 5 && (
+                            <div className="authkey right">
+                              <input
+                                {...props}
+                                inputMode="numeric"
+                                className="authkey-number"
+                              />
+                            </div>
+                          )}
+                        </>
+                      )}
+                    />
+                  </div>
                 </div>
               </div>
-              <div className="w-full flex h-[80px] mt-5 rounded-b-lg items-center justify-center bg-gray-50 p-2 lg:p-5">
+              <div className="modal-footer">
+                <div></div>
                 <button
-                  className={`${
-                    otp.length > 5
-                      ? "main-grad hover:bg-[#F6F8F9] hover:blue-text border-[#6200EE] border-[1px]"
-                      : "bg-[#B0BABF]"
-                  } text-stone-50 flex items-center justify-center gap-3 h-8 w-[178px] self-center rounded-md`}
+                  className="modal-button"
                   type="button"
                   onClick={onSubmit}
                   disabled={otp.length > 5 ? false : true}

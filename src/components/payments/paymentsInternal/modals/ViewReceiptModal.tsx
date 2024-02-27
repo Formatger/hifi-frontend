@@ -137,53 +137,62 @@ const ViewReceiptModal: React.FC<{
       <div className="modal-box-content">
         <div className="modal-content">
           
-          <div>
-          <StatusIndicator action={receiptDetails.status} />        
+          <div className="modal-status">
+            <StatusIndicator action={receiptDetails.status} />        
           </div>
 
-          <div className="flex flex-col gap-1 p-2">
-            <p className="text-gray-800 text-remove font-semibold poppins-remove leading-normal">
+          <div className="column-wrap gap-3 p-2">
+            <div className="">
+              <p className="modal-subtitle">
+                Date
+              </p>
+              <p className="text-s-thin">
               {moment(receiptDetails.createDate).format("MMM DD, YYYY h:mm A")}
-            </p>
-            <p className="text-[#4B5563] text-remove  font-remove poppins-remove leading-normal">
-              Order ID
-            </p>
-            <p className="text-gray-800 text-remove  font-remove poppins-remove leading-normal">
-              {receiptDetails.actual_order_id}
-            </p>
+              </p>
+            </div>
+            <div className="">
+              <p className="modal-subtitle">
+                Order ID
+              </p>
+              <p className="id-wrap mt-1">
+                {receiptDetails.actual_order_id}
+              </p>
+            </div>
           </div>
-          <p className="text-[#4B5563] text-remove  font-remove poppins-remove leading-normal  w-full p-2 flex flex-wrap gap-2">
+          {/* <p className="text-[#4B5563] w-full p-2 flex flex-wrap gap-2">
             <span className=""> You made a payment of</span>
             <span className="font-semibold whitespace-nowrap">
               {formatCurrency(receiptDetails.fiatCurrencyAmount)} USD
             </span>
             to
             <span className="font-semibold">{receiptDetails?.receiver}</span>
-          </p>
+          </p> */}
           <table className="table-auto w-full">
             <tbody>
-              <tr className="text-[#111012] font-medium poppins-remove border-b border-gray-200 h-10">
-                <td className="p-2 w-[70%]">DESCRIPTION</td>
-                <td className="p-2 w-[30%]">SUBTOTAL</td>
+              <tr className="bold">
+                <td className="p-2 w-[70%] modal-subtitle">Description</td>
+                <td className="p-2 w-[30%] modal-subtitle">Subtotal</td>
               </tr>
-              <tr className=" border-y border-gray-200 h-20">
-                <td className="text-[#4B5563]  font-remove p-2">
+              <tr className="border-y border-gray-200 h-20">
+                <td className="text-s-thin p-2">
                   {receiptDetails.description}
                 </td>
-                <td className="text-gray-800 font-semibold ">
+                <td className="">
                   <div className="flex items-center gap-3 p-2">
                     {formatCurrency(receiptDetails.amount)}
-                    <p className="w-[37px] h-[22px] px-1.5 py-0.5 text-xs bg-gray-200 rounded justify-center items-center flex">
+                    <p className="small-tag grey">
                       <p>USD</p>
                     </p>
                   </div>
                 </td>
               </tr>
-              <tr className="h-10 border-b border-gray-200">
-                <td className="text-[#111012] font-medium p-2">TOTAL</td>
-                <td className="text-gray-800 font-semibold flex items-center gap-3 p-2 align-middle">
+              <tr className="">
+                <td className="bold p-2">
+                  Total
+                </td>
+                <td className="bold flex items-center gap-3 p-2">
                   {formatCurrency(receiptDetails.amount)}
-                  <div className="w-[37px] h-[22px] px-1.5 py-0.5 text-xs bg-gray-200 rounded justify-center items-center flex">
+                  <div className="small-tag grey">
                     <p>USD</p>
                   </div>
                 </td>
@@ -192,20 +201,22 @@ const ViewReceiptModal: React.FC<{
           </table>
 
           <div className="flex flex-col p-2">
-            <p className="w-[394px] text-[#111012] text-remove font-medium poppins-remove uppercase leading-normal tracking-tight">
-              Paid with
+            <p className="modal-subtitle">
+              Payment Method
             </p>
             <div className="flex items-center gap-2">
-              <Image
+              {/* <Image
                 src={getWalletIcon(receiptDetails?.walletType)}
                 alt="crypto"
                 width={17}
                 height={17}
                 className=""
-              />
-              <p className="truncate">
-                {receiptDetails.customerAddress}
-              </p>
+              /> */}
+              <div className="address-box-wrap mt-2">
+                <p className="address-box">
+                  {receiptDetails.customerAddress}
+                </p>
+              </div>
             </div>
           </div>
         </div>

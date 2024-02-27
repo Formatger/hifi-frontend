@@ -39,15 +39,18 @@ const Profile = () => {
 
   return (
     <div className="main-container">
-      <div className="page-container">
+      <div>
         <Header />
         {loader ? (
             <MainLoader />
         ) : (
-          <>
-            <div className="">
-              <div className="w-full p-3 lg:py-3 flex flex-col mt-3 lg:mt-0 gap-4">
+          <> 
+            <div className="page-container">
+              <div className="">
                 {/* <Breadcrumbs items={items} /> */}
+                <h1 className="h1">
+                  Settings
+                </h1>
                 <UploadLogo />
                 <ProfileInfo userData={userData} />
                 <TwoStepAuthentication />

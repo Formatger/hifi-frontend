@@ -218,19 +218,7 @@
   color: var(--dark4);
 }
 
-.custom-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/* 
 .overlay {
   background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
@@ -242,7 +230,7 @@
   justify-content: center;
   align-items: center;
   z-index: 50;
-}
+} */
 
 /* Spacing */
 
@@ -294,6 +282,7 @@ body {
   font-size: 0.9375rem;
   outline: none;
   color:hsl(245, 30%, 18%);
+  outline: none;
 }
 
 h1 {
@@ -370,20 +359,23 @@ h6 {
   margin: var(--m1);
 }
 
-.warning-text {
+.warning-text,
+.warning-text-2,
+.warning-text-3,
+.warning-text-4 {
   color: var(--red);
   font-size: var(--text-xs);
   margin-top: var(--m1);
   font-weight: 300;
   position: absolute;
 }
-
 .warning-text-2 {
-  color: var(--red);
-  font-size: var(--text-xs);
   margin-top: var(--m2);
-  font-weight: 300;
-  position: absolute;
+}
+.warning-text-3 {
+  position: relative;
+  top: 0px;
+  left: 4px;
 }
 
 /* Button */
@@ -395,6 +387,7 @@ a:active,
 a:focus,
 a:hover {
   cursor: pointer;
+  outline: none;
 }
 
 button[disabled] {
@@ -483,6 +476,10 @@ button[disabled] {
   background: var(--white);
   border-radius: var(--r2);
   border: var(--border);
+}
+
+.main-input.disabled {
+  background: var(--grey);
 }
 
 .app-input {
@@ -745,6 +742,8 @@ select {
 .custom-radio {
   cursor: pointer;
   accent-color: var(--main);
+  width: 16px;
+  height: auto;
 }
 
 .custom-axis-label {

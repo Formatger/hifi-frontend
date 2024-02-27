@@ -135,17 +135,18 @@ const CustomerDetail = () => {
   return (
     <div className="main-container">
       <div className="w-full">
+        <div className="sticky-heading">
+          <Breadcrumbs items={breadcrumbItems} />
+        </div>
         <Header />
+
         <div className="">
-          <div className="sticky-heading">
-            <Breadcrumbs items={breadcrumbItems} />
-          </div>
           {loader ? (
             <MainLoader />
           ) : (
             <>
               {" "}
-              <div className="page-container sub">
+              <div className="page-container">
                 <div className="customer-page">
                   <div className="customer-left">
                     <Customer CustomerDetails={CustomerDetails} />

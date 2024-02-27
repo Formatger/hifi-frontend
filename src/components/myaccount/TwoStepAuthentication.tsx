@@ -39,11 +39,11 @@ const TwoStepAuthentication = () => {
 
   return (
     <>
-      <div className="section-title">
+      <div className="section-title mt-4">
         <div className="">
-          <h5>
+          <h6 className="bold">
             Two-Step authentication
-          </h5>
+          </h6>
           <div className="sidetxt-wrap text-s-thin mt-3">
             Increase security for your account by using multiple authentication
             steps.
