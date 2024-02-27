@@ -11,18 +11,18 @@ import Loading from "@/components/auth/Loading";
 import MainLoader from "@/components/common/Loader";
 import { useRouter } from "next/router";
 
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    border: "0px",
-    padding: "0px",
-  },
-};
+// const customStyles = {
+//   content: {
+//     top: "50%",
+//     left: "50%",
+//     right: "auto",
+//     bottom: "auto",
+//     marginRight: "-50%",
+//     transform: "translate(-50%, -50%)",
+//     border: "0px",
+//     padding: "0px",
+//   },
+// };
 
 const UploadLogo = () => {
   const [isPopupOpen, setPopupOpen] = useState(false);
@@ -133,7 +133,7 @@ const UploadLogo = () => {
               <Image src={profileicon} alt="profile" />
             )}
             <div className="column-wrap">
-              {!displayLogo ? null : (
+              {displayLogo ? null : (
                 <>
                   <p className="bold">
                     Upload your business logo
@@ -188,40 +188,48 @@ const UploadLogo = () => {
       <Modal
         isOpen={isPopupOpen}
         onRequestClose={closePopup}
-        style={customStyles}
+        className="modal-container"
+        overlayClassName="modal-overlay"  
         contentLabel="Upload Business Logo"
       >
-        <div className="flex flex-col lg:w-[452px] items-center justify-center gap-4  rounded-2xl border shadow-lg">
-          <div className="h-[80px] w-full bg-[#F6F8F9] border-[#E5E9EB] border flex items-center justify-center relative rounded-t-2xl">
-            <h4 className="">
+        <div className="">
+          <div className="modal-header">
+            <h5>
               Upload business logo
-            </h4>
+            </h5>
             <button onClick={closePopup}>
-              <Image src={x} alt="close" className="top-2 right-2 absolute" />
+              <Image src={x} alt="close" className="close-btn" />
             </button>
           </div>
-          <Image src={uploadsimple} alt="" />
-          <div className="flex flex-col px-3 lg:px-0">
-            <p className="text-gray-800 text-remove font-semibold poppins-remove leading-normal">
-              Drop your image here to upload
-            </p>
-            <p className="text-[#4B5563] text-remove  font-remove poppins-remove leading-normal">
-              Works with any .JPG or .PNG File.
-            </p>
-          </div>
-          {!loader ? (
-            <button
-              className="modal-button"
-              onClick={handleClickChooseFile}
-              disabled={loader}
-            >
-              Choose File
-            </button>
-          ) : (
-            <Loading />
-          )}
 
-          <div className="bg-[#F6F8F9] w-full h-7 mt-auto"></div>
+          <div className="modal-box-content">
+            <div className="modal-content">
+              <div className="upload-wrap">
+                <Image src={uploadsimple} width="60" height="60" alt="" />
+                <div className="column-wrap">
+                  <p className="bold">
+                    Drop your image here to upload
+                  </p>
+                  <p className="">
+                    Works with any .JPG or .PNG File.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="modal-footer center">
+                {!loader ? (
+                  <button
+                    className="modal-button"
+                    onClick={handleClickChooseFile}
+                    disabled={loader}
+                  >
+                    Choose File
+                  </button>
+                ) : (
+                  <Loading />
+                )}
+              </div>
+          </div>
         </div>
       </Modal>
     </div>

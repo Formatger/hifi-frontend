@@ -48,7 +48,7 @@ const Payout = ({ order_id, receiptDetails }: any) => {
             <Image src={cardholder} alt="cardholder" />
             <p>ACH PAYOUT</p>
           </div>
-          <div className="address-box">
+          <div className="id-wrap">
               {order_id}
             {/* <Image src={cardholder} alt="cardholder" className="order-1" /> */}
           </div>

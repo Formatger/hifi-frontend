@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "@/components/common/Header";
 import Sidebar from "@/components/common/Sidebar";
-import Customerheader from "@/components/customers/customerheader";
 import CustomerTable from "@/components/customers/table";
 import FilterSection from "@/components/payments/FilterSection";
 import FilterHeader from "@/components/payments/Filterheader";
@@ -228,12 +227,14 @@ const Customer = () => {
   };
 
   return (
-    <div className="main-container">
+    <div className="main-container" id="customer">
       <Header />
-      <div className="page-container" id="customer">
-        <div>
-          <div className="page-head">
-            <Customerheader />
+      <div className="page-container">
+        <div className="page-head">
+          <div className="h1-wrap">
+            <h1 className="h1">
+              Customers
+            </h1>
           </div>
           <FilterHeader
             items={tabItems}

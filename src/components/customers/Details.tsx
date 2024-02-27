@@ -37,7 +37,7 @@ const Details: React.FC<CustomerDetails> = ({ CustomerDetails }) => {
 
       {isDetailsExpanded && (
         <div className="">
-          <p className="customer-id">
+          <p className="id-wrap">
             {CustomerDetails?.latest_order_id}
           </p>
 
