@@ -135,7 +135,7 @@ const CustomerDetail = () => {
   return (
     <div className="main-container">
       <div className="w-full">
-        <div className="sticky-heading">
+        <div className="fixed-heading">
           <Breadcrumbs items={breadcrumbItems} />
         </div>
         <Header />

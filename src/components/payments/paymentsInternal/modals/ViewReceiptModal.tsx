@@ -213,7 +213,7 @@ const ViewReceiptModal: React.FC<{
                 className=""
               /> */}
               <div className="address-box-wrap mt-2">
-                <p className="address-box">
+                <p className="address-box truncated">
                   {receiptDetails.customerAddress}
                 </p>
               </div>

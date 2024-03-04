@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import bank from "@/components/assets/images/Bank.svg";
+import bank from "@/components/assets/images/bank.svg";
 import pencilsimple from "@/components/assets/images/PencilSimpleBlack.svg";
 
 const Entry2 = ({ status }: { status?: string }) => {

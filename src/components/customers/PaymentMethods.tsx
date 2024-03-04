@@ -118,7 +118,7 @@ const PaymentMethods = ({ payment_method_wallets }: any) => {
                       >
                         {method?.blockchain_record}
                       </a>
-                      <p className="truncate">
+                      <p className="truncated">
                         {method?.wallet_address}
                       </p>
                       <p>

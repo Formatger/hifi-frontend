@@ -242,6 +242,7 @@ const Sidebar: React.FC<SidebarProps> = ({ layout }) => {
         aria-label="Sidebar"
       >
         {/* sidebar */}
+        
         <div className="logo-box">
           <Image src={HifiLogo} alt="logo" className="dash-logo" />
           <div 

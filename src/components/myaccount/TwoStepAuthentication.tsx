@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import x from "@/components/assets/images/XViolet.svg";
 import ScanQr from "@/components/auth/ScanQr";
 import QRCode from "qrcode.react";
 import { RootState } from "../../store/store";

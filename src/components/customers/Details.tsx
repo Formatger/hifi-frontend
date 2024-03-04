@@ -62,7 +62,7 @@ const Details: React.FC<CustomerDetails> = ({ CustomerDetails }) => {
               <p className="text-s-grey">
                 Wallet
               </p>
-              <p className="truncate">
+              <p className="truncated">
                 {CustomerDetails?.wallet}
               </p>
             </div>

@@ -3,7 +3,7 @@ import { TailSpin } from "react-loader-spinner";
 import x from "@/components/assets/images/XBlack.svg";
 import Image from "next/image";
 import checkcircle from "@/components/assets/images/CheckCircleBlue.svg";
-import exporticon from "@/components/assets/images/ExportViolet.svg";
+import exporticon from "@/components/assets/images/export.svg";
 import ViewReceiptModal, {
   ReceiptDetails,
 } from "@/components/payments/paymentsInternal/modals/ViewReceiptModal";

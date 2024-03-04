@@ -179,10 +179,12 @@ const Userid = () => {
     <div className="main-container">
       <div className="w-full">
         <Header />
+        <div className="fixed-heading">
+          <Breadcrumbs items={breadcrumbItems} />
+        </div>
         {transactionData && transactionSummaryData && (
           <>
-            <div className="sticky-heading-column">
-              <Breadcrumbs items={breadcrumbItems} />
+            <div className="sticky-heading">
               <Payout receiptDetails={receiptDetails} order_id={transferId} />
             </div>
 

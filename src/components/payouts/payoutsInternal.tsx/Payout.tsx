@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import TotalStatus from "@/components/payments/paymentsInternal/TotalStatus";
 import Image from "next/image";
-import exporticon from "@/components/assets/images/ExportViolet.svg";
+import exporticon from "@/components/assets/images/export.svg";
 import { TailSpin } from "react-loader-spinner";
 import x from "@/components/assets/images/XBlack.svg";
 import checkcircle from "@/components/assets/images/CheckCircleGreen.svg";
-import cardholder from "@/components/assets/images/Cardholder.svg";
+import cardholder from "@/components/assets/images/CardHolder.svg";
 import { CSVLink } from "react-csv";
 
 const Payout = ({ order_id, receiptDetails }: any) => {
