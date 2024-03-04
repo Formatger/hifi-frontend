@@ -1,7 +1,6 @@
-import exporticon from "../../assets/images/Export.svg";
 import Image from "next/image";
 import checkcircle from "../../assets/images/CheckCircleGreen.svg";
-import cardholder from "../../assets/images/Cardholder.svg";
+import cardholder from "../../assets/images/pay.svg";
 import { formatDate } from "./Payment";
 import clockclockwise from "../../assets/images/ClockClockwise.svg";
 import moment from "moment";

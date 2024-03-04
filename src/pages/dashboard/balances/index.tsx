@@ -4,7 +4,7 @@ import Header from "@/components/common/Header";
 import Balanceheader from "@/components/balance/Balanceheader";
 import Totalbalance from "@/components/balance/Totalbalance";
 import IncomingToHifipay from "@/components/balance/IncomingToHifipay";
-import Plusicon from "@/components/assets/images/Plus.svg";
+import Plusicon from "@/components/assets/images/plus-white.svg";
 import Question from "@/components/assets/images/Question.svg";
 import warning from "@/components/assets/images/WarningCircle.svg";
 import OutGoinghifipay from "@/components/balance/OutGoinghifipay";

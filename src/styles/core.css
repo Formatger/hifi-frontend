@@ -75,6 +75,7 @@
   --sidebar-w: 274px;
   --btn-h: 34px;
   --padding: var(--m7);
+  --m-padding: var(--m5);
 
   --btn-rad: var(--r1);
 
@@ -361,8 +362,7 @@ h6 {
 
 .warning-text,
 .warning-text-2,
-.warning-text-3,
-.warning-text-4 {
+.warning-text-3 {
   color: var(--red);
   font-size: var(--text-xs);
   margin-top: var(--m1);
@@ -551,6 +551,20 @@ select {
   font-weight: 600;
   text-transform: uppercase;
 }
+
+.coming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: var(--m3);  
+  background-color: var(--main);
+  color: var(--white);
+  font-weight: 400;
+  border-radius: var(--r3);
+  margin-top: 200px;
+}
+
 
 /* Status Label */
 

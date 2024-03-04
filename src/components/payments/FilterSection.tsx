@@ -1,9 +1,9 @@
 import React, { ButtonHTMLAttributes, useState, useEffect } from "react";
 import CrossIcon from "../assets/images/Cross.svg";
-import Funnel from "../assets/images/Funnel.svg";
+import Filter from "../assets/images/filter.svg";
 import Image from "next/image";
 import plusicon from "../assets/images/Icon.svg";
-import x from "@/components/assets/images/XViolet.svg";
+import x from "@/components/assets/images/x-blue.svg";
 import xcircle from "@/components/assets/images/XCircle.svg";
 import caretdown from "@/components/assets/images/caretDown.svg";
 import arrowbenddownright from "@/components/assets/images/ArrowBendDownRight.svg";
@@ -234,7 +234,7 @@ export const AddFilterButton = ({ showDateButton }: any) => {
       onClick={showDateButton}
       className="sec-button addfilter-btn"
     >
-      <Image src={Funnel} alt="filter" className="" />
+      <Image src={Filter} alt="filter" className="" />
       Add Filters
     </button>
   );

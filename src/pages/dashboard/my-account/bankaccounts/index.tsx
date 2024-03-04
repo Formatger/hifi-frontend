@@ -2,9 +2,9 @@ import Header from "@/components/common/Header";
 import Sidebar from "@/components/common/Sidebar";
 import Breadcrumbs from "@/components/payments/Breadcrumbs";
 import React, { useState, useEffect } from "react";
-import plus from "@/components/assets/images/Plus2.svg";
+import plus from "@/components/assets/images/plus-white.svg";
 import Image from "next/image";
-import bank from "@/components/assets/images/Bank.svg";
+import bank from "@/components/assets/images/bank.svg";
 import info from "@/components/assets/images/Info.svg";
 import { number } from "yup";
 import pencilsimple from "@/components/assets/images/PencilSimpleBlack.svg";
@@ -159,7 +159,7 @@ const BankAccounts = () => {
       <div className="main-container" id="bank">
         <div className="w-full">
           <Header />
-          <div className="sticky-heading">
+          <div className="fixed-heading">
             <Breadcrumbs items={items} />
           </div>
           <div className="page-container">

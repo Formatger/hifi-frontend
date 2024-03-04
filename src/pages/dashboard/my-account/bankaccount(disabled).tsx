@@ -2,7 +2,7 @@ import React from "react";
 import Sidebar from "@/components/common/Sidebar";
 import Header from "@/components/common/Header";
 import ExportReportBtn from "@/components/common/ExportReportBtn";
-import plus from "@/components/assets/images/Plus2.svg";
+import plus from "@/components/assets/images/plus-white.svg";
 import Image from "next/image";
 import PersonalInformation from "@/components/myaccount/PersonalInformation";
 import SecuritySettings from "@/components/myaccount/SecuritySettings";

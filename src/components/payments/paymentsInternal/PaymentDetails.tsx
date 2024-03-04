@@ -180,8 +180,8 @@ const PaymentDetails = ({ paymentDetails }: any) => {
               <p>
                 {getStatusText(paymentDetails?.status)}
               </p>
-              <p>
-                <span className="w-auto overflow-hidden text-ellipsis">
+              <p className="truncated">
+                <span className="w-auto truncated">
                   {paymentDetails?.description
                     ? paymentDetails?.description
                     : "N/A"}

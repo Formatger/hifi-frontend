@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import pencilsimple from "@/components/assets/images/PencilSimple.svg";
+import pencilsimple from "@/components/assets/images/edit.svg";
 import ChangePasswordModal from "@/components/myaccount/ChangePassowrdModal";
-import x from "@/components/assets/images/XViolet.svg";
+import x from "@/components/assets/images/x-blue.svg";
+// import UploadLogo from "@/components/myaccount/UploadLogo";
 
 const ProfileInfo = (userData: any) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -58,8 +59,7 @@ const ProfileInfo = (userData: any) => {
         <h4 className="">
           Account Settings
         </h4>
-
-        {/* {isEditing ? (
+            {/* {isEditing ? (
           <div className="flex items-center gap-4">
             <button
               className="w-[87px] h-8 py-1 bg-[#F6F8F9] rounded-md border border-[#E5E9EB] blue-text poppins-remove flex items-center justify-center gap-3"
@@ -84,6 +84,7 @@ const ProfileInfo = (userData: any) => {
           </button>
         )} */}
       </div>
+      {/* <UploadLogo /> */}
       <div className="settings-box">
         <div className="row-wrap">
           <div className="first-column">

@@ -4,18 +4,18 @@ import Header from "@/components/common/Header";
 import Sidebar from "@/components/common/Sidebar";
 import Breadcrumbs from "@/components/payments/Breadcrumbs";
 import Search from "@/components/payments/Search";
-import Funnel from "@/components/assets/images/Funnel.svg";
+import Filter from "@/components/assets/images/filter.svg";
 import ExportReportBtn from "@/components/common/ExportReportBtn";
 import Image from "next/image";
 import x from "@/components/assets/images/XBlack.svg";
 
-import newcustomericon from "@/components/assets/images/newcustomer.svg";
+import Plusicon from "@/components/assets/images/plus-white.svg";
 import TeamTable from "@/components/myaccount/TeamTable";
 import NewCustomerModal from "./NewMemberModal";
 import checkcircle from "@/components/assets/images/CheckCircleGreen.svg";
 
 import { CSVLink } from "react-csv";
-import downloadsimple from "@/components/assets/images/downloadsimple.svg";
+import exporticon from "@/components/assets/images/export.svg";
 import axios from "axios";
 import { TailSpin } from "react-loader-spinner";
 import MainLoader from "@/components/common/Loader";
@@ -138,7 +138,7 @@ const Team = () => {
     <div className="main-container" id="team">
       <div className="w-full">
         <Header />
-        <div className="sticky-heading">
+        <div className="fixed-heading">
             <Breadcrumbs items={items} />
         </div>
         <div className="page-container">
@@ -149,7 +149,7 @@ const Team = () => {
           <div className="section-title">
             <div></div>
             <div className="button-wrap">
-              {/* <Button label="Filter" iconSrc={Funnel} /> */}
+              {/* <Button label="Filter" iconSrc={Filter} /> */}
               <div className="relative">
                 <CSVLink
                   data={getCSVData(teamData)}
@@ -162,7 +162,7 @@ const Team = () => {
                       className="sec-button"
                       type="button"
                     >
-                      <Image src={downloadsimple} alt="export" />
+                      <Image src={exporticon} alt="export" />
                       <span>Export Members</span>
                     </button>
                   ) : (
@@ -197,7 +197,7 @@ const Team = () => {
                   type="button"
                   onClick={openNewCustomerModal}
                 >
-                  <Image src={newcustomericon} alt="NewCustomerIcon" />
+                  <Image src={Plusicon} alt="NewCustomerIcon" />
                   <span>New Member</span>
                 </button>
               ) : (

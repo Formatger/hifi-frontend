@@ -246,8 +246,10 @@ const Userid = () => {
     <div className="main-container">
       <div className="w-full">
         <Header />
-        <div className="sticky-heading-column">
+        <div className="fixed-heading">
           <Breadcrumbs items={breadcrumbItems} />
+        </div>
+        <div className="sticky-heading">
           {transactionData && <Payment paymentDetails={payment_details} />}
         </div>
 

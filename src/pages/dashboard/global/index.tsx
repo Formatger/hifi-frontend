@@ -8,7 +8,9 @@ const Global = () => {
   return (
     <div className="main-container">
       <Header />
-      <p className="flex justify-center mt-[300px] blue-text">Coming Soon</p>
+      <div className="page-container flex justify-center "> 
+        <p className="coming-soon">Coming Soon</p>
+      </div>
     </div>
   );
 };

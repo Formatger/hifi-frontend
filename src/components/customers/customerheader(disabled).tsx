@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import NewCustomerIcon from "../assets/images/newcustomer.svg";
 import Search from "../payments/Search";
-import ExportReportBtn from "../common/ExportReportBtn";
 
 export default function Customerheader() {
   return (

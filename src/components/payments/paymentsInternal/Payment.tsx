@@ -4,7 +4,7 @@ import greencheck from "../../assets/images/greencheck.svg";
 import clockclockwise from "../../assets/images/ClockClockwise.svg";
 import x from "../../assets/images/X.svg";
 import arrowcounterclockwise from "../../assets/images/ArrowCounterClockwise.svg";
-import arrowbendupleft from "../../assets/images/ArrowBendUpLeft.svg";
+import rotateleft from "../../assets/images/rotateLeft.svg";
 import threedots from "../../assets/images/DotsThreeOutline.svg";
 import RefundModalContainer from "./modals/RefundModalContainer";
 import PaymentTitle from "./PaymentTitle";
@@ -109,7 +109,7 @@ const Payment = ({ paymentDetails }: { paymentDetails: PaymentDetails }) => {
                 className="sec-button"
                 onClick={openRefundModal}
               >
-                <Image src={arrowbendupleft} alt="arrow" className="" />
+                <Image src={rotateleft} alt="arrow" className="" />
                 <span>Refund</span>
               </button>
             )}

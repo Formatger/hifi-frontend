@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import Image from "next/image";
-import Bank from "@/components/assets/bank.svg";
+import Bank from "@/components/assets/images/bank.svg";
 import info from "@/components/assets/images/Info.svg";
 import Hover from "@/components/assets/images/hover.svg";
 import moment from "moment";

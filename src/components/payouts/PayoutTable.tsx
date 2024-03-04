@@ -9,7 +9,7 @@ import useWindowSize from "../../utils/useWindowSize";
 import threedots from "../assets/images/DotsThreeOutline.svg";
 import ReactPaginate from "react-paginate";
 import ReportsCount from "@/components/common/ReportsCount";
-import Bank from "@/components/assets/bank.svg";
+import Bank from "@/components/assets/images/bank.svg";
 import { useRouter } from "next/router";
 import { formatCurrency } from "@/utils/formatCurrency";
 import StatusIndicator from '@/components/common/StatusIndicator';

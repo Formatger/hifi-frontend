@@ -79,7 +79,7 @@
   align-items: center;
   justify-content: space-between;
   z-index: 40;
-  padding-top: 6px;
+  padding-top: var(--m3);
   height: var(--toolbar-h);
   padding-left: var(--m8);
 }
@@ -146,8 +146,8 @@
 
 .exit-button {
   position: absolute;
-  right: 20px;
-  top: 18px;
+  right: 24px;
+  top: 28px;
   color: var(--text);
   border: var(--border);
   display: flex;
@@ -161,7 +161,7 @@
 }
 
 .exit-button svg {
-filter: invert();
+filter: brightness(500%);
 }
 
 /* Mobile Button */
