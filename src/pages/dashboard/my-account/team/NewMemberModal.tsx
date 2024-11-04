@@ -96,7 +96,6 @@ const NewMemberModal: React.FC<NewMemberModalProps> = ({
                     position: toast.POSITION.TOP_RIGHT,
                   });
                   setLoader(false);
-                  console.log(error);
                 });
             }}
           >

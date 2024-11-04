@@ -81,23 +81,32 @@
   margin-bottom: var(--m2);
 }
 
-/* .h1-wrap {
-  position: -webkit-sticky;
-  position: sticky;
+.app-box {
+  border-radius: var(--r5);
   width: 100%;
-  top: 105px;
-  z-index: 20;
-  background-color: #fff;
 }
-@media (min-width: 1024px) {
-  .h1-wrap {
-    width: auto;
-    top: 78px;
-  }
-} */
+
+.box-header {
+  background: var(--grey2);
+  border-radius: var(--top-radius);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  padding: 0 var(--m5);
+  border: var(--border);
+  border-bottom: none;
+  min-height: 60px;
+}
+
+.box-content {
+  border: var(--sborder);
+  border-radius: var(--bottom-radius);
+  padding: var(--pad-box);
+  box-shadow: var(--sh-box);
+}
 
 .h1 {
-  font-size: 24px;
   margin-bottom: 20px;
 }
 
@@ -130,6 +139,22 @@
 }
 
 /* ------ Dashboard / Overview Page -------*/
+
+/* Get Started */
+
+.box-group {
+  width: 100%;
+  max-width: 600px;
+}
+
+.box {
+  padding: var(--pad-box);
+  background: var(--white);
+  border-radius: var(--r5);
+  border: var(--sborder);
+}
+
+/* Overview */
 
 #dashboard {
   display: flex;
@@ -540,8 +565,6 @@
 
 /* ReceiptHistory */
 
-
-
 /* Timeline */
 
 .timeline-img {
@@ -661,4 +684,51 @@
 #bank .section-title {
   padding-top: 0;
   flex-direction: row;
+}
+
+/* Generate API Key */
+
+.merchant-id {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 200px;
+}
+
+.apiheader-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+#apikeys .box-header {
+  height: 70px;
+  flex-wrap: wrap;
+}
+
+#apikeys .app-box {
+  margin-top: var(--m4);
+}
+
+@media (min-width: 640px) {
+
+  .merchant-id {
+    width: fit-content;
+  }
+  .apiheader-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* API Key Table*/
+
+.table-col.apiName {
+  width: 30%;
+}
+.table-col.apiDate {
+  width: 40%;
+}
+.table-col.apiId {
+  width: 20%;
 }

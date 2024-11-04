@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import GoogleButton from "@/components/auth/GoogleButton";
-import TextInput from "@/components/auth/TextInput";
 import LogoApp from "@/components/auth/LogoApp";
-import { Formik, Form, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import AutoSubmitToken from "@/components/auth/AutoSubmitToken";
 import axios from "axios";
@@ -14,6 +13,7 @@ import { RootState, AppDispatch } from "@/store/store";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loading from "@/components/auth/Loading";
+import PasswordCriteriaField from "@/components/auth/PasswordField";
 
 interface loginFormValues {
   email: any;
@@ -28,7 +28,6 @@ const Signin = () => {
   const dispatch: AppDispatch = useDispatch();
 
   const router = useRouter();
-  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   const initialValues = {
     email: user ? user.user?.email : "",
@@ -44,109 +43,76 @@ const Signin = () => {
 
   const onSubmit = async (values: loginFormValues) => {
     setLoader(true);
+    try {
+      const response = await axios.post("/api/auth/signin", values);
 
-    axios
-      .post(baseUrl + "/signin", {
-        email: values?.email,
-        password: values?.password,
-      })
-      .then((response) => {
-        dispatch(
-          setUser({
-            email: values?.email,
-            password: values?.password,
-            userID: response?.data?.data?.userId,
-            secret: response?.data?.data?.secret,
-            qr_code: response?.data?.data?.qr_code,
-          })
-        );
-        if (response?.data?.data?.invitedBy) {
-          localStorage.setItem("userId", response?.data?.data?.invitedBy);
-        } else {
-          localStorage.setItem("userId", response?.data?.data?.userId);
-        }
-        localStorage.setItem("role", response?.data?.data?.role);
-        localStorage.setItem("qr_code", response?.data?.data?.qr_code);
+      if (
+        response.data.message &&
+        response.data.message === "Sign in successful"
+      ) {
+        localStorage.setItem("userId", response.data.data.user.id);
+        localStorage.setItem("merchantId", response.data.data.merchantId);
+
         localStorage.setItem(
-          "businessName",
-          response?.data?.data?.businessName
+          "accessToken",
+          response.data.data.session.access_token
         );
-        localStorage.setItem("isVerified", response?.data?.data?.isVerified);
-        if (
-          response?.data?.message ==
-          "PLEASE VERIFY USER, OTP SENT SUCCESSFULLY!"
-        ) {
-          setTimeout(() => {
-            router.push({
-              pathname: "/auth/verifyemailotp",
-              query: { email: values?.email },
-            });
-          }, 2000);
-        } else {
-          setTimeout(() => {
-            setLoader(false);
-            localStorage.setItem("emailId", values?.email);
-            router.push("/auth/authcode");
-          }, 2000);
-        }
-        toast.success(
-          response?.data?.message ==
-            "PLEASE VERIFY USER, OTP SENT SUCCESSFULLY!"
-            ? response?.data?.message
-            : `Please open Authenticator app`,
-          {
-            position: toast.POSITION.TOP_RIGHT,
-          }
-        );
-      })
-      .catch((error) => {
-        setTimeout(() => {
-          setLoader(false);
-        }, 1000);
-        toast.error(error?.response?.data?.message, {
+        localStorage.setItem("role", response.data.data.user.role);
+        localStorage.setItem("qr_code", response.data.data.user.id); // FIXME: this should be qr_code
+        localStorage.setItem("businessName", response.data.data.user.email); // FIXME: this should be business name
+        toast.success("Signin successful!", {
           position: toast.POSITION.TOP_RIGHT,
         });
-        console.log(error);
+
+        router.push("/dashboard/dashboard");
+      }
+    } catch (error: any) {
+      let errorMessage = "An unexpected error occurred";
+      if (error.response.data.error) {
+        errorMessage = error.response.data.error;
+      }
+      toast.error(errorMessage, {
+        position: toast.POSITION.TOP_RIGHT,
       });
+      console.error(error);
+    } finally {
+      setLoader(false);
+    }
   };
+
   return (
     <>
       <ToastContainer />
       <div className="auth-container Signin">
         <div className="authbox-wrap">
           <div>
-              <LogoApp />
+            <LogoApp />
           </div>
           <div className="authbox">
-            <div className="authbox-title">
-              Sign in to your account
-            </div>
+            <div className="authbox-title">Sign in to your account</div>
             <div className="google-button-wrap">
               <GoogleButton />
             </div>
-              <div className="option-box">
-                <div className="option-line" />
-                <div className="option-text">
-                    or
-                </div>
-                <div className="option-line" />
-              </div>
+            <div className="option-box">
+              <div className="option-line" />
+              <div className="option-text">or</div>
+              <div className="option-line" />
+            </div>
             <Formik
               initialValues={initialValues}
               validationSchema={signInValidationSchema}
               onSubmit={onSubmit}
             >
-              {({ errors, touched }) => (
+              {({ errors, touched, isValid, dirty }) => (
                 <Form className="auth-form">
                   <div>
-                    <TextInput
+                    <Field
                       placeholder="Email address"
                       type="email"
                       name="email"
                       id="email"
-                      password={false}
-                      validation={errors?.email && touched?.email ? true : false}
-                    />
+                      className={`main-input ${ errors.email && touched.email ? "error" : "valid"}`}
+                      />
 
                     <ErrorMessage
                       name="email"
@@ -155,26 +121,20 @@ const Signin = () => {
                     />
                   </div>
                   <div>
-                    <TextInput
+                    <PasswordCriteriaField
                       placeholder="Password"
-                      type="password"
                       name="password"
-                      id="password"
-                      password={true}
-                      validation={errors?.email && touched?.email ? true : false}
-                    />
-                    <ErrorMessage
-                      name="password"
-                      component="div"
-                      className="warning-text"
+                      errorName="password"
+                      includePasswordCriteria={false}
                     />
                   </div>
                   <div>
-                  {!loader ? (
+                    {!loader ? (
                       <button
-                        disabled={formValue?.email && formValue?.password ? false : true}
+                        disabled={!(isValid && dirty)}
                         className="app-button"
-                        >
+                        type="submit"
+                      >
                         Sign in
                       </button>
                     ) : (
@@ -187,19 +147,13 @@ const Signin = () => {
             </Formik>
             <div className="footnote-wrap">
               <div>
-                <Link
-                  href="/auth/forgotpassword"
-                  className="auth-link">
+                <Link href="/auth/forgotpassword" className="auth-link">
                   Forgot password?
                 </Link>
               </div>
               <div>
-                <span>
-                  Don’t have an account?
-                </span>
-                <Link 
-                  href="/auth/signup"
-                  className="auth-link ml-text">
+                <span>Don’t have an account?</span>
+                <Link href="/auth/signup" className="auth-link ml-text">
                   Get Started.
                 </Link>
               </div>

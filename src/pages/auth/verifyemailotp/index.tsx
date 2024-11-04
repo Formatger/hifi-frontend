@@ -69,7 +69,6 @@ const VerifyEmailOtp = () => {
         toast.error("Enter valid otp and try again...!", {
           position: toast.POSITION.TOP_RIGHT,
         });
-        console.log(error);
       });
   };
 
@@ -95,7 +94,6 @@ const VerifyEmailOtp = () => {
         toast.error("Please try again...!", {
           position: toast.POSITION.TOP_RIGHT,
         });
-        console.log(error);
       });
   };
 

@@ -15,7 +15,6 @@ interface balanceHeaderProps {
 export default function Balanceheader(props: balanceHeaderProps) {
   return (
     <div 
-    // className="w-[100%] py-[10px] bg-white justify-between items-center inline-flex max-sm:flex-col sticky top-[105px] lg:top-[68px] z-20"
     >
       <div className="h1-wrap">
        <h1 className="h1">{props.title}</h1>

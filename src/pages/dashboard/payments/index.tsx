@@ -1,4 +1,4 @@
-import Sidebar from "@/components/common/Sidebar";
+import Sidebar from "@/components/common/navigation/Sidebar";
 import axios from "axios";
 import Header from "@/components/common/Header";
 import FilterHeader from "@/components/payments/Filterheader";
@@ -7,6 +7,9 @@ import { useEffect, useState } from "react";
 import PaymentTable from "@/components/payments/PaymentTable";
 import MainLoader from "@/components/common/Loader";
 import moment from "moment";
+import NoRecordsFound from "@/components/common/NoRecordsFound";
+import SetupBox from "@/components/payments/SetupBox";
+import Breadcrumbs from "@/components/payments/Breadcrumbs";
 
 interface PaymentsData {
   id: any;
@@ -21,6 +24,11 @@ interface PaymentsData {
   createDate: any;
   inwardCurrency: any;
 }
+
+const items = [
+  { label: "HIFI Pay", link: "./" },
+  { label: "Payments", link: "/", current: true },
+];
 
 const Payments = () => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -265,13 +273,17 @@ const Payments = () => {
   return (
     <div className="main-container">
       <Header />
+      <div className="fixed-heading">
+         <Breadcrumbs items={items} />
+      </div>
       <div className="page-container" id="payments">
         <div className="">
-          <div className="h1-wrap">
+          <div className="">
             <h1 className="h1">
               Payments
             </h1>
           </div>
+          <SetupBox />
           <FilterHeader
             items={tabItems}
             onTabClick={handleTabClick}
@@ -318,15 +330,7 @@ const Payments = () => {
         ) : (
           <>
             {paymentData?.length === 0 ? (
-              <div className="no-records-wrap">
-                <div className="bold">
-                  "No Records Found"
-                </div>
-                <div>
-                  There are no records matching your search criteria in the
-                  table.
-                </div>
-              </div>
+              <NoRecordsFound messageKey="search" />
             ) : (
               <div>
                 <PaymentTable

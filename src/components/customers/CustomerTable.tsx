@@ -6,9 +6,10 @@ import arrowcounterclockwise from "../assets/images/ArrowCounterClockwise.svg";
 import x from "../assets/images/X.svg";
 import moment from "moment";
 import threedots from "../assets/images/DotsThreeOutline.svg";
-import { formatCurrency } from "@/utils/formatCurrency";
+import { formatCurrency } from "../../utils/formatCurrency";
+
 import router from "next/router";
-import StatusIndicator from '@/components/common/StatusIndicator';
+import StatusIndicator from "../../components/common/StatusIndicator";
 
 const generateData = () => {
   const startDate = moment("2023-01-01");
@@ -49,7 +50,6 @@ const CustomerTable = ({ customerAll }: any) => {
     setTableData(data);
   }, []);
 
-
   const handleTableRowClick = (transfer_id: any) => {
     router.push({
       pathname: "/dashboard/payments/userid",
@@ -58,64 +58,62 @@ const CustomerTable = ({ customerAll }: any) => {
   };
 
   return (
-    <div 
+    <div
     // className="w-full mb-8 overflow-hidden rounded-lg shadow-xs text-sm"
     >
       <div className="section-box">
-      <div className="section-title">
-        <h4>
-          Payments
-        </h4>
-      </div>
+        <div className="section-title">
+          <h4>Payments</h4>
+        </div>
         <table className="Table">
-        <thead>
-              <tr className="table-head">
-                <th className="th-title">AMOUNT</th>
-                <th className="th-title">STATUS</th>
-                <th className="th-title">DESCRIPTION</th>
-                <th className="th-title">DATE</th>
-              </tr>
-            </thead>
+          <thead>
+            <tr className="table-head">
+              <th className="th-title">AMOUNT</th>
+              <th className="th-title">STATUS</th>
+              <th className="th-title">DESCRIPTION</th>
+              <th className="th-title">DATE</th>
+            </tr>
+          </thead>
           <tbody>
             {firstFourValues?.map((row: any, index: any) => (
               <tr
                 key={index}
-                  className="table-row"
+                className="table-row"
                 style={{ borderBottomColor: "#e5e9eb" }}
                 onClick={() => handleTableRowClick(row?.txHash)}
               >
-                 <td className="table-col">
-                    <div className="table-cell">
-                        <span className="cell-amount">
-                          {formatCurrency(row?.outwardBaseAmount)}
-                        </span>
-                        <span className="cell-currency">
-                          {/* {row?.currency} */}
-                          USD
-                        </span>
-                    </div>
-                  </td>
+                <td className="table-col">
+                  <div className="table-cell">
+                    <span className="cell-amount">
+                      {formatCurrency(row?.outwardBaseAmount)}
+                    </span>
+                    <span className="cell-currency">
+                      {/* {row?.currency} */}
+                      USD
+                    </span>
+                  </div>
+                </td>
 
-                  <td className="table-col">
-                      <div className="table-cell">
-                        <StatusIndicator action={row?.action} />
-                    </div>
-                  </td>
+                <td className="table-col">
+                  <div className="table-cell">
+                    <StatusIndicator action={row?.action} />
+                  </div>
+                </td>
 
-                  <td className="table-col">
-                    <div className="table-cell">
-                      {" "}
-                      {row?.description ? row?.description : "Null"}
-                    </div>
-                  </td>
+                <td className="table-col">
+                  <div className="table-cell">
+                    {" "}
+                    {row?.description ? row?.description : "Null"}
+                  </div>
+                </td>
 
-                  <td className="table-col">
-                    <div className="table-cell">
-                      {row.createDate
+                <td className="table-col">
+                  <div className="table-cell">
+                    {row.createDate
                       ? moment(row?.createDate).format("MMM DD, YYYY h:mm A")
                       : "Null"}
-                    </div>
-                  </td>
+                  </div>
+                </td>
               </tr>
             ))}
           </tbody>

@@ -1,5 +1,5 @@
 import Header from "@/components/common/Header";
-import Sidebar from "@/components/common/Sidebar";
+import Sidebar from "@/components/common/navigation/Sidebar";
 import SettingsForm from "@/components/myaccount/SettingsForm";
 import Breadcrumbs from "@/components/payments/Breadcrumbs";
 import React, { useState } from "react";

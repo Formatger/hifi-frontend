@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Header from "@/components/common/Header";
-import Sidebar from "@/components/common/Sidebar";
+import Sidebar from "@/components/common/navigation/Sidebar";
 import CustomerTable from "@/components/customers/table";
 import FilterSection from "@/components/payments/FilterSection";
 import FilterHeader from "@/components/payments/Filterheader";
 import moment from "moment";
 import axios from "axios";
 import MainLoader from "@/components/common/Loader";
+import NoRecordsFound from "@/components/common/NoRecordsFound";
+import Breadcrumbs from "@/components/payments/Breadcrumbs";
 
 interface User {
   createDate: any;
@@ -17,6 +19,11 @@ interface User {
   name: any;
   logoUrl: any;
 }
+
+const items = [
+  { label: "HIFI Pay", link: "./" },
+  { label: "Customers", link: "/", current: true },
+];
 
 const Customer = () => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -229,6 +236,9 @@ const Customer = () => {
   return (
     <div className="main-container" id="customer">
       <Header />
+      <div className="fixed-heading">
+         <Breadcrumbs items={items} />
+      </div>
       <div className="page-container">
         <div className="page-head">
           <div className="h1-wrap">
@@ -282,15 +292,7 @@ const Customer = () => {
         ) : (
           <>
             {customerData?.length === 0 ? (
-              <div className="no-records-wrap">
-                <div className="bold">
-                  "No Records Found"
-                </div>
-                <div className="m-4">
-                  There are no records matching your search criteria in the
-                  table.
-                </div>
-              </div>
+              <NoRecordsFound messageKey="default" />
             ) : (
               <div>
                 <CustomerTable

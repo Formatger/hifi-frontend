@@ -157,7 +157,6 @@ const RefundModal: React.FC<RefundModalProps> = ({
         toast.error("Enter valid otp and try again...!", {
           position: toast.POSITION.TOP_RIGHT,
         });
-        console.log(error);
       });
   };
 
@@ -252,7 +251,6 @@ const RefundModal: React.FC<RefundModalProps> = ({
           setatxid(response?.data?.data?.aTxId);
         })
         .catch((error) => {
-          console.log(error);
         });
     };
   
@@ -522,7 +520,6 @@ const RefundModal: React.FC<RefundModalProps> = ({
                     <>
                       {" "}
                       <span className="">Continue</span>
-                      <Image src={arrowright} alt="arrow" className="" />
                     </>
                   ) : (
                     <Loading />
@@ -652,7 +649,7 @@ const RefundModal: React.FC<RefundModalProps> = ({
                   disabled={otp.length > 5 ? false : true}
                 >
                   Return to Payment
-                  <Image src={arrowright} alt="arrow" className="mt-[2px]" />
+                  {/* <Image src={arrowright} alt="arrow" className="mt-[2px]" /> */}
                 </button>
               </div>
             </div>

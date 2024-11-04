@@ -4,7 +4,7 @@ import greencheck from "../assets/images/greencheck.svg";
 import BinanceLogo from "../assets/images/Binance logo.svg";
 import moment from "moment";
 import useWindowSize from "../../utils/useWindowSize";
-import Gear from "@/components/assets/images/Gear.svg";
+import Gear from "../../components/assets/images/Gear.svg";
 import ReactPaginate from "react-paginate";
 import ReportsCount from "@/components/common/ReportsCount";
 import { useRouter } from "next/router";
@@ -46,18 +46,10 @@ const Items: React.FC<ItemsProps> = ({ currentItems }) => {
           <table className="Table">
             <thead>
               <tr className="table-head">
-                <th className="th-title">
-                  NAME
-                </th>
-                <th className="th-title">
-                  EMAIL
-                </th>
-                <th className="th-title">
-                  WALLET ADDRESS
-                </th>
-                <th className="th-title">
-                  CREATED
-                </th>
+                <th className="th-title">NAME</th>
+                <th className="th-title">EMAIL</th>
+                <th className="th-title">WALLET ADDRESS</th>
+                <th className="th-title">CREATED</th>
               </tr>
             </thead>
             <tbody>
@@ -93,9 +85,7 @@ const Items: React.FC<ItemsProps> = ({ currentItems }) => {
                           {row?.inwardCurrency}
                         </span>
                       </div>
-                      <p className="truncate">
-                        {row?.customerAddress}
-                      </p>
+                      <p className="truncate">{row?.customerAddress}</p>
                     </div>
                   </td>
 
@@ -171,8 +161,7 @@ const CustomerTable: React.FC<TableProps> = ({
   count,
   showDateFilter,
 }) => {
-
-   const windowSize = useWindowSize();
+  const windowSize = useWindowSize();
 
   const calculateMaxRowsToShow = (height: number) => {
     if (height < 750) return 6;

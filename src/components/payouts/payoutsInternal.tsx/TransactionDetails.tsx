@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import Image from "next/image";
-import Bank from "@/components/assets/images/bank.svg";
+import Bank from "../../../components/assets/images/Bank.svg";
 import info from "@/components/assets/images/Info.svg";
 import Hover from "@/components/assets/images/hover.svg";
 import moment from "moment";
@@ -29,15 +29,11 @@ const TransactionDetailItem: FC<TransactionDetailItemProps> = ({
 
   return (
     <div className="summary-item">
-
       <div className="text-s-thin">
-        <p>
-          {label}
-        </p>
+        <p>{label}</p>
       </div>
 
       <div className="pay-item">
-        
         <div>
           {isCurrency && "$"}
           {label === "Fees" && "$"}
@@ -54,9 +50,7 @@ const TransactionDetailItem: FC<TransactionDetailItemProps> = ({
             {isHovered && (
               <div className="tip-box">
                 <div className="tip-wrap tooltip-box down">
-                  <p>
-                  Fees for ACH bank transfers are automatically applied.
-                  </p>
+                  <p>Fees for ACH bank transfers are automatically applied.</p>
                 </div>
               </div>
             )}
@@ -89,7 +83,6 @@ const TransactionDetails: FC<TransactionDetailsProps> = ({
   transactionDetails,
 }) => (
   <div className="pay-summary-wrap">
-    
     <TransactionDetailItem
       label="Paid out"
       value={`${moment(transactionDetails?.createDate).format(
@@ -120,9 +113,10 @@ const TransactionDetails: FC<TransactionDetailsProps> = ({
 
 export default TransactionDetails;
 
-
-        {/* {label === "Bank of America" && (
+{
+  /* {label === "Bank of America" && (
           <div className="w-6 h-6 relative flex-col justify-center items-center flex">
             <Image src={Bank} alt="Layer 1" />
           </div>
-        )} */}
+        )} */
+}

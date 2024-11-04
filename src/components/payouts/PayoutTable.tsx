@@ -9,10 +9,10 @@ import useWindowSize from "../../utils/useWindowSize";
 import threedots from "../assets/images/DotsThreeOutline.svg";
 import ReactPaginate from "react-paginate";
 import ReportsCount from "@/components/common/ReportsCount";
-import Bank from "@/components/assets/images/bank.svg";
+import Bank from "../../components/assets/images/Bank.svg";
 import { useRouter } from "next/router";
 import { formatCurrency } from "@/utils/formatCurrency";
-import StatusIndicator from '@/components/common/StatusIndicator';
+import StatusIndicator from "@/components/common/StatusIndicator";
 
 interface Item {
   // txId: any;
@@ -72,13 +72,13 @@ const Items: React.FC<ItemsProps> = ({ currentItems }) => {
         <div className="w-full overflow-x-auto">
           <table className="Table">
             <thead>
-            <tr className="table-head">
-              <th className="th-title">AMOUNT</th>
-              <th className="th-title">STATUS</th>
-              <th className="th-title">DESCRIPTION</th>
-              <th className="th-title">BANK ACCOUNT</th>
-              <th className="th-title">DATE</th>
-            </tr>
+              <tr className="table-head">
+                <th className="th-title">AMOUNT</th>
+                <th className="th-title">STATUS</th>
+                <th className="th-title">DESCRIPTION</th>
+                <th className="th-title">BANK ACCOUNT</th>
+                <th className="th-title">DATE</th>
+              </tr>
             </thead>
 
             <tbody>
@@ -90,18 +90,18 @@ const Items: React.FC<ItemsProps> = ({ currentItems }) => {
                 >
                   <td className="table-col">
                     <div className="table-cell">
-                        <span className="cell-amount">
-                          {formatCurrency(row?.outwardTotalAmount)}
-                        </span>
-                        <span className="cell-currency">
-                          {row?.outwardCurrency}
-                        </span>
+                      <span className="cell-amount">
+                        {formatCurrency(row?.outwardTotalAmount)}
+                      </span>
+                      <span className="cell-currency">
+                        {row?.outwardCurrency}
+                      </span>
                     </div>
                   </td>
 
                   <td className="table-col">
-                      <div className="table-cell">
-                        <StatusIndicator action={row?.action} />
+                    <div className="table-cell">
+                      <StatusIndicator action={row?.action} />
                     </div>
                   </td>
 
@@ -190,7 +190,6 @@ const PayoutTable: React.FC<TableProps> = ({
   count,
   showDateFilter,
 }) => {
-
   const windowSize = useWindowSize();
 
   const calculateMaxRowsToShow = (height: number) => {

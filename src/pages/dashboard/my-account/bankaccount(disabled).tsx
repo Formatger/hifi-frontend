@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "@/components/common/Sidebar";
+import Sidebar from "@/components/common/navigation/Sidebar";
 import Header from "@/components/common/Header";
 import ExportReportBtn from "@/components/common/ExportReportBtn";
 import plus from "@/components/assets/images/plus-white.svg";

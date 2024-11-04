@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import caretright from "@/components/assets/images/CaretRightBlack.svg";
-import coinbaseicon from "@/components/assets/images/Coinbase Icon.svg";
-import trustwallet from "@/components/assets/images/trustwallet.svg";
-import moment from "moment";
-import x from "@/components/assets/images/XBlue.svg";
-import checkcircle from "@/components/assets/images/CheckCircle.svg";
-import caretdown from "@/components/assets/images/caretDown.svg";
+import caretright from "../../components/assets/images/CaretRightBlack.svg";
+import checkcircle from "../../components/assets/images/CheckCircle.svg";
+import caretdown from "../../components/assets/images/caretDown.svg";
 import Link from "next/link";
-import { getWalletIcon } from "@/utils/getWalletIcon";
 
 const PaymentMethods = ({ payment_method_wallets }: any) => {
   const [activeMethod, setActiveMethod] = useState<number | null>(0);
@@ -27,9 +22,7 @@ const PaymentMethods = ({ payment_method_wallets }: any) => {
   return (
     <div>
       <div className="section-title">
-        <h4>
-          Payment methods
-        </h4>
+        <h4>Payment methods</h4>
       </div>
       {payment_method_wallets.map((method: any, index: any) => (
         <>
@@ -53,9 +46,7 @@ const PaymentMethods = ({ payment_method_wallets }: any) => {
                   <p className="method-name">
                     {method.name}
                     {method.default && (
-                      <span className="small-tag">
-                        Default
-                      </span>
+                      <span className="small-tag">Default</span>
                     )}
                   </p>
                   {/* <p className="text-[#4B5563] text-sm poppins-remove leading-normal">
@@ -75,42 +66,20 @@ const PaymentMethods = ({ payment_method_wallets }: any) => {
                 <tbody>
                   <tr className="details-table-row customer">
                     <td className="first-column">
-                      <p>
-                        Currency Paid
-                      </p>
-                      <p>
-                        Currency Received
-                      </p>
-                      <p>
-                        Exchange Rate
-                      </p>
-                      <p>
-                        Blockchain Record
-                      </p>
-                      <p>
-                        Wallet Address
-                      </p>
-                      <p>
-                        Type
-                      </p>
-                      <p>
-                        Issuer
-                      </p>
-                      <p className="hidden">
-                        Signature Check
-                      </p>
+                      <p>Currency Paid</p>
+                      <p>Currency Received</p>
+                      <p>Exchange Rate</p>
+                      <p>Blockchain Record</p>
+                      <p>Wallet Address</p>
+                      <p>Type</p>
+                      <p>Issuer</p>
+                      <p className="hidden">Signature Check</p>
                     </td>
 
                     <td className="second-column">
-                      <p className="uppercase">
-                        {method?.currency_paid}
-                      </p>
-                      <p className="uppercase">
-                        {method?.currency_received}
-                      </p>
-                      <p className="uppercase">
-                        {method?.exchange_rate}
-                      </p>
+                      <p className="uppercase">{method?.currency_paid}</p>
+                      <p className="uppercase">{method?.currency_received}</p>
+                      <p className="uppercase">{method?.exchange_rate}</p>
                       <a
                         href={`${CRYPTOADDRESS}/${method?.wallet_address}`}
                         target="_blank"
@@ -118,15 +87,9 @@ const PaymentMethods = ({ payment_method_wallets }: any) => {
                       >
                         {method?.blockchain_record}
                       </a>
-                      <p className="truncated">
-                        {method?.wallet_address}
-                      </p>
-                      <p>
-                        {method?.type}
-                      </p>
-                      <p>
-                        {method?.issuer}
-                      </p>
+                      <p className="truncated">{method?.wallet_address}</p>
+                      <p>{method?.type}</p>
+                      <p>{method?.issuer}</p>
                       <p className="hidden">
                         {method?.signature_check}
                         <Image src={checkcircle} alt="check" className="" />

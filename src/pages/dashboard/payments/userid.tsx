@@ -1,5 +1,5 @@
 import Header from "@/components/common/Header";
-import Sidebar from "@/components/common/Sidebar";
+import Sidebar from "@/components/common/navigation/Sidebar";
 import Breadcrumbs from "@/components/payments/Breadcrumbs";
 import Payment from "@/components/payments/paymentsInternal/Payment";
 import Timeline from "@/components/payments/paymentsInternal/Timeline";

@@ -1,288 +1,187 @@
-import React, { useState } from "react";
-import TextInput from "@/components/auth/TextInput";
-import LogoApp from "@/components/auth/LogoApp";
-import { Formik, Form, ErrorMessage } from "formik";
+import React, { useState, useEffect } from "react";
+import router, { useRouter } from "next/router";
+import { Formik, Form, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import AutoSubmitToken from "@/components/auth/AutoSubmitToken";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loading from "@/components/auth/Loading";
 import axios from "axios";
-import OtpInput from "react-otp-input";
+import PasswordField from "@/components/auth/PasswordField";
+import LogoApp from "@/components/auth/LogoApp";
+import { supabase } from "@/utils/supabaseConfig";
 
-interface loginFormValues {
+interface FormValues {
   password: string;
-  confirmPassword: any;
+  confirmPassword: string;
 }
 
 const ResetPassword = () => {
   const [loader, setLoader] = useState<boolean>(false);
   const [formValue, setFormValue] = useState<any>();
-  const [validation, setValidation] = useState<boolean>(false);
-  const [otp, setOtp] = useState<any>("");
-  const [Password, setPassword] = useState<any>("");
-  const [confirmpassword, setConfirmpassword] = useState<any>("");
-  const [isValid, setIsValid] = useState<boolean>(true);
-
+  const [accessToken, setAccessToken] = useState<string | null>(null);
   const router = useRouter();
 
-  const userId = router.query?.userId;
-
-  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-
-  const initialValues = {
+  const initialValues: FormValues = {
     password: "",
     confirmPassword: "",
   };
 
   const resetPasswordValidationSchema = Yup.object({
     password: Yup.string().required("New password is required"),
-    confirmPassword: Yup.string().oneOf(
-      [Yup.ref("password")],
-      "Passwords must match"
-    ),
+    confirmPassword: Yup.string()
+      .oneOf([Yup.ref("password")], "Passwords must match")
+      .required("Confirmation password is required"),
   });
 
-  const onSubmit = async (values: loginFormValues) => {
-    setValidation(true);
-    setConfirmpassword(values?.password);
-    setPassword(values?.confirmPassword);
-  };
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash.substr(1);
+      const result = hash.split("&").reduce(function (res: any, item) {
+        const parts = item.split("=");
+        res[parts[0]] = parts[1];
+        return res;
+      }, {});
 
-  const apiCall = () => {
-    axios
-      .patch(baseUrl + `/user/${userId}/resetpassword`, {
-        newPassword: Password,
-        confirmPassword: confirmpassword,
-      })
-      .then((response) => {
-        setLoader(false);
-        router.push("/auth/passwordchanged");
-      })
-      .catch((error) => {
-        setLoader(false);
-        toast.error(error?.response?.data?.message, {
-          position: toast.POSITION.TOP_RIGHT,
-        });
-        console.log(error);
-      });
-  };
+      setAccessToken(result["access_token"]);
+    }
+  }, []);
 
-  const onSubmit2 = () => {
+  // NEW SUBMIT CALLING SUPABASE FROM ENDPOINT
+
+  const onSubmit = async (
+    values: FormValues,
+    { setSubmitting }: FormikHelpers<FormValues>
+  ) => {
     setLoader(true);
-    axios
-      .post(baseUrl + `/user/${userId}/verifytotp`, {
-        userToken: otp,
-      })
-      .then((response) => {
-        apiCall();
-      })
-      .catch((error) => {
-        setLoader(false);
-        toast.error("Enter valid otp and try again...!", {
-          position: toast.POSITION.TOP_RIGHT,
-        });
-        console.log(error);
-      });
-  };
 
-  const handleChange = (otpValue: any) => {
-    // Custom validation logic (e.g., allowing only digits)
-    const validInput = /^[0-9]*$/.test(otpValue);
+    if (values.password !== values.confirmPassword) {
+      toast.error("Passwords do not match.");
+      setLoader(false);
+      setSubmitting(false);
+      return;
+    }
 
-    if (validInput) {
-      setOtp(otpValue);
-      setIsValid(true);
-    } else {
-      setIsValid(false);
+    try {
+      const response = await axios.post(
+        "/api/auth/updatepass",
+        {
+          password: values.password,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`, // Include the access token in the request
+          },
+        }
+      );
+
+      if (response.data.success) {
+        toast.success("User updated successfully.");
+        router.push("/auth/passwordchanged");
+      } else {
+        toast.error(`Error updating password: ${response.data.error}`);
+      }
+    } catch (error: any) {
+      toast.error(`Error updating password: ${error.message}`);
+      console.error("Error updating user:", error);
+    } finally {
+      setLoader(false);
+      setSubmitting(false);
     }
   };
+
+  // OLD SUBMIT WCALLING SUPABASE DIRECTLY
+
+  // const onSubmit = async (
+  //   values: FormValues,
+  //   { setSubmitting }: FormikHelpers<FormValues>
+  // ) => {
+  //   setLoader(true);
+  //   if (values.password !== values.confirmPassword) {
+  //     toast.error("Passwords do not match.");
+  //     setLoader(false);
+  //     setSubmitting(false);
+  //     return;
+  //   }
+
+  //   const { error } = await supabase.auth.updateUser({
+  //     password: values.password,
+  //   });
+
+  //   router.push("/auth/passwordchanged");
+
+  //   if (error) {
+  //     toast.error(`Error updating password: ${error.message}`);
+  //     console.error("Error updating user:", error);
+  //   } else {
+  //     toast.success(
+  //       "User updated successfully. Please sign in with your new password."
+  //     );
+  //     router.push("/auth/signin");
+  //   }
+
+  //   setLoader(false);
+  //   setSubmitting(false);
+  // };
 
   return (
     <>
       <ToastContainer />
       <div className="auth-container">
-          {/* <div>
+        <div className="authbox-wrap">
+          <div>
             <LogoApp />
-          </div> */}
-        <div className="authbox">
+          </div>
+          <div className="authbox">
+            <div className="authbox-title">Reset your password</div>
 
-          {!validation ? (
-            <>
-              <div className="authbox-title">
-                Reset your password
-              </div>
-
-              <div className="authbox-note">
-                Enter a new password to reset your password.
-              </div>
-
-              <Formik
-                initialValues={initialValues}
-                validationSchema={resetPasswordValidationSchema}
-                onSubmit={onSubmit}
-              >
+            <Formik
+              initialValues={initialValues}
+              validationSchema={resetPasswordValidationSchema}
+              onSubmit={onSubmit}
+            >
+              {({ isSubmitting, isValid, dirty }) => (
                 <Form className="auth-form">
                   <div>
-                    <TextInput
-                      placeholder="New Password"
-                      type="password"
+                    <PasswordField
                       name="password"
-                      id="password"
-                      password={false}
-                      validation={false}
-                    />
-
-                    <ErrorMessage
-                      name="password"
-                      component="div"
-                      className="warning-text"
+                      placeholder="New password"
+                      includePasswordCriteria={true}
+                      errorName="password"
                     />
                   </div>
                   <div>
-                    <TextInput
-                      placeholder="Re-enter new password"
-                      type="password"
+                    <PasswordField
                       name="confirmPassword"
-                      id="confirmPassword"
-                      password={false}
-                      validation={false}
-                    />
-
-                    <ErrorMessage
-                      name="confirmPassword"
-                      component="div"
-                      className="warning-text"
+                      placeholder="Confirm password"
+                      errorName="confirmPassword"
                     />
                   </div>
 
                   <div>
                     {!loader ? (
-                      <button className="app-button"
-                        disabled={
-                          formValue?.password && formValue?.confirmPassword
-                            ? false
-                            : true
-                        }>
-                          Reset Password
-                        </button>
+                      <button
+                        className="app-button"
+                        type="submit"
+                        disabled={!(isValid && dirty)}
+                      >
+                        Reset Password
+                      </button>
                     ) : (
                       <Loading />
                     )}
                   </div>
                   <AutoSubmitToken setFormValue={setFormValue} />
                 </Form>
-              </Formik>
-            </>
-          ) : (
-            <>
-              <div className="authbox-title">
-                Authentication
-              </div>
-              <div className="authbox-note">
-                To continue, please enter the 6-digit verification code
-                generated by your authenticator app.
-              </div>
-              <div className="authcode-wrap">
-                <OtpInput
-                  value={otp}
-                  onChange={handleChange}
-                  numInputs={6}
-                  renderInput={(props, keys) => (
-                    <>
-                       {keys === 0 && (
-                        <div className="authkey left">
-                          <input
-                            {...props}
-                            inputMode="numeric"
-                            className="authkey-number"
-                          />
-                        </div>
-                      )}
-                      {keys === 3 && (
-                        <div className="authkey-space-wrap">
-                          <hr className="authkey-space" />
-                          <div className="authkey left">
-                            <input
-                              {...props}
-                              inputMode="numeric"
-                              className="authkey-number"
-                            />
-                          </div>
-                        </div>
-                      )}
-                      {keys === 1 && (
-                        <div className="authkey center">
-                          <input
-                            {...props}
-                            inputMode="numeric"
-                            className="authkey-number"
-                          />
-                        </div>
-                      )}
-                      {keys === 4 && (
-                        <div className="authkey center">
-                          <input
-                            {...props}
-                            inputMode="numeric"
-                            className="authkey-number"
-                          />
-                        </div>
-                      )}
-                      {keys === 2 && (
-                        <div className="authkey right">
-                          <input
-                            {...props}
-                            inputMode="numeric"
-                            className="authkey-number"
-                          />
-                        </div>
-                      )}
-                      {keys === 5 && (
-                        <div className="authkey right">
-                          <input
-                            {...props}
-                            inputMode="numeric"
-                            className="authkey-number"
-                          />
-                        </div>
-                      )}
-                    </>
-                  )}
-                />
-                {!isValid && (
-                <div className="row-center">
-                   <p className="warning-text-2">Please enter numbers only</p>
-                </div>
-                )}
-              </div>
-
-              <div className="mt-box">
-                {!loader ? (
-                  <button
-                    className="app-button"
-                    onClick={onSubmit2}
-                    disabled={otp.length <= 5}
-                  >
-                    Confirm
-                  </button>
-                ) : (
-                  <Loading />
-                )}
-              </div>
-              
-              {/* <div className="footnote-wrap">
-                <div className="auth-link">
-                  Use another authentication method
-                </div>
-                <div className="auth-link">
-                  Need help authenticating?
-                </div>
-              </div> */}
-            </>
-          )}
+              )}
+            </Formik>
+            <div className="footnote">
+              <Link href="/auth/signin">
+                <div className="auth-link">Return to Sign In</div>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -3,7 +3,7 @@ import { TailSpin } from "react-loader-spinner";
 import x from "@/components/assets/images/XBlack.svg";
 import Image from "next/image";
 import checkcircle from "@/components/assets/images/CheckCircleBlue.svg";
-import exporticon from "@/components/assets/images/export.svg";
+import exporticon from "../../../components/assets/images/exporticon.svg";
 import ViewReceiptModal, {
   ReceiptDetails,
 } from "@/components/payments/paymentsInternal/modals/ViewReceiptModal";
@@ -84,15 +84,10 @@ const ReceiptHistory = (receiptDetails: any) => {
     <div className="section-wrap">
       <div className="section-title">
         <div>
-          <h4>
-            Receipt History
-          </h4>
+          <h4>Receipt History</h4>
         </div>
         <div className="button-wrap">
-          <button
-            className="sec-button"
-            onClick={handleViewReceipt}
-          >
+          <button className="sec-button" onClick={handleViewReceipt}>
             View receipt
           </button>
 
@@ -105,10 +100,7 @@ const ReceiptHistory = (receiptDetails: any) => {
                 className="sec-button"
                 onClick={handleExportReceipt}
               >
-                <Image
-                  src={exporticon}
-                  alt="export"
-                />
+                <Image src={exporticon} alt="export" />
                 Export receipt
               </CSVLink>
               {showMessage && (
@@ -117,7 +109,12 @@ const ReceiptHistory = (receiptDetails: any) => {
                     {message === "Downloading CSV" ? (
                       <TailSpin height={30} width={30} color="#5545fa" />
                     ) : (
-                      <Image height={30} width={30} src={checkcircle} alt="complete" />
+                      <Image
+                        height={30}
+                        width={30}
+                        src={checkcircle}
+                        alt="complete"
+                      />
                     )}
                     <button
                       onClick={handleCloseMessage}
@@ -126,9 +123,7 @@ const ReceiptHistory = (receiptDetails: any) => {
                       <Image src={x} alt="close" className="" />
                     </button>
                   </div>
-                  <p>
-                    {message}
-                  </p>
+                  <p>{message}</p>
                 </div>
               )}
             </div>

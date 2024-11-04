@@ -1,28 +1,27 @@
 import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import Header from "@/components/common/Header";
-import Sidebar from "@/components/common/Sidebar";
+import Sidebar from "@/components/common/navigation/Sidebar";
 import Breadcrumbs from "@/components/payments/Breadcrumbs";
-import Search from "@/components/payments/Search";
+import Search from "../../../../components/payments/Search";
 import Filter from "@/components/assets/images/filter.svg";
-import ExportReportBtn from "@/components/common/ExportReportBtn";
+import ExportReportBtn from "../../../../components/common/ExportReportBtn";
 import Image from "next/image";
 import x from "@/components/assets/images/XBlack.svg";
-
 import Plusicon from "@/components/assets/images/plus-white.svg";
 import TeamTable from "@/components/myaccount/TeamTable";
 import NewCustomerModal from "./NewMemberModal";
 import checkcircle from "@/components/assets/images/CheckCircleGreen.svg";
-
 import { CSVLink } from "react-csv";
-import exporticon from "@/components/assets/images/export.svg";
+import exporticon from "../../../../components/assets/images/exporticon.svg";
 import axios from "axios";
 import { TailSpin } from "react-loader-spinner";
 import MainLoader from "@/components/common/Loader";
 import moment from "moment";
+import NoRecordsFound from "@/components/common/NoRecordsFound";
 
 const items = [
-  { label: "My Account", link: "./" },
+  { label: "Settings", link: "./" },
   { label: "Team", link: "/", current: true },
 ];
 
@@ -35,7 +34,6 @@ const items = [
 //     lastLogin: "2023-10-15 14:30:00",
 //   },
 // ];
-
 
 // const ToggleButton = () => {
 //   const [isChecked, setIsChecked] = useState(false);
@@ -76,6 +74,7 @@ const Team = () => {
   const [message, setMessage] = useState("Downloading CSV");
   const [showMessage, setShowMessage] = useState(false);
   const [role, setRole] = useState<any>("");
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   useEffect(() => {
     setRole(localStorage.getItem("role"));
@@ -103,8 +102,6 @@ const Team = () => {
 
   useEffect(() => {
     const user_id = localStorage.getItem("userId");
-    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-
     const fetchData = async () => {
       setLoader(true);
       try {
@@ -113,7 +110,6 @@ const Team = () => {
         );
         const data = response?.data?.data;
         setTeamData(data);
-        setLoader(false);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -139,12 +135,10 @@ const Team = () => {
       <div className="w-full">
         <Header />
         <div className="fixed-heading">
-            <Breadcrumbs items={items} />
+          <Breadcrumbs items={items} />
         </div>
         <div className="page-container">
-          <h1 className="h1">
-            Team
-          </h1>
+          <h1 className="h1">Team</h1>
 
           <div className="section-title">
             <div></div>
@@ -158,10 +152,7 @@ const Team = () => {
                   onClick={handleExportReport}
                 >
                   {role === "0" || role === "1" ? (
-                    <button
-                      className="sec-button"
-                      type="button"
-                    >
+                    <button className="sec-button" type="button">
                       <Image src={exporticon} alt="export" />
                       <span>Export Members</span>
                     </button>
@@ -175,7 +166,13 @@ const Team = () => {
                       {message === "Downloading CSV" ? (
                         <TailSpin height={30} width={30} color="black" />
                       ) : (
-                        <Image height={30} width={30} src={checkcircle} alt="complete" className="" />
+                        <Image
+                          height={30}
+                          width={30}
+                          src={checkcircle}
+                          alt="complete"
+                          className=""
+                        />
                       )}
                       <button
                         onClick={handleCloseMessage}
@@ -184,9 +181,7 @@ const Team = () => {
                         <Image src={x} alt="close" className="" />
                       </button>
                     </div>
-                    <p className="">
-                      {message}
-                    </p>
+                    <p className="">{message}</p>
                   </div>
                 )}
               </div>
@@ -211,11 +206,7 @@ const Team = () => {
             ) : (
               <>
                 {teamData?.length === 0 ? (
-                  <div className="no-records-wrap">
-                    <div className="bold">
-                      "No Records Found"
-                    </div>
-                  </div>
+                  <NoRecordsFound messageKey="team" />
                 ) : (
                   <TeamTable teamData={teamData} />
                 )}

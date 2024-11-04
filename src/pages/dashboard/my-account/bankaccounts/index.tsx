@@ -1,10 +1,10 @@
 import Header from "@/components/common/Header";
-import Sidebar from "@/components/common/Sidebar";
+import Sidebar from "@/components/common/navigation/Sidebar";
 import Breadcrumbs from "@/components/payments/Breadcrumbs";
 import React, { useState, useEffect } from "react";
 import plus from "@/components/assets/images/plus-white.svg";
 import Image from "next/image";
-import bank from "@/components/assets/images/bank.svg";
+import bank from "../../../../components/assets/images/Bank.svg";
 import info from "@/components/assets/images/Info.svg";
 import { number } from "yup";
 import pencilsimple from "@/components/assets/images/PencilSimpleBlack.svg";
@@ -19,9 +19,10 @@ import Modal from "react-modal";
 import x from "@/components/assets/images/XBlack.svg";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import NoRecordsFound from "@/components/common/NoRecordsFound";
 
 const items = [
-  { label: "My Account", link: "./" },
+  { label: "Settings", link: "./" },
   { label: "Bank Accounts", link: "/", current: true },
 ];
 
@@ -118,7 +119,6 @@ const BankAccounts = () => {
         });
       })
       .catch((error) => {
-        console.log(error);
         setState(!state);
         toast.error("Please try again..!", {
           position: toast.POSITION.TOP_RIGHT,
@@ -145,7 +145,6 @@ const BankAccounts = () => {
         });
       })
       .catch((error) => {
-        console.log(error);
         setState(!state);
         toast.error("Please try again..!", {
           position: toast.POSITION.TOP_RIGHT,
@@ -164,15 +163,13 @@ const BankAccounts = () => {
           </div>
           <div className="page-container">
             <div>
-              <h1 className="h1">
-                Bank Accounts
-              </h1>
+              <h1 className="h1">Bank Accounts</h1>
               {bankdata?.length > 0 ? (
                 <></>
               ) : (
                 <>
                   {" "}
-                  {role === "0" || role === "1" ? (
+                  {/* {role === "0" || role === "1" ? ( */}
                     <div className="section-title">
                       <div></div>
                       <button
@@ -183,15 +180,15 @@ const BankAccounts = () => {
                         Add Account
                       </button>
                     </div>
-                  ) : (
+                  {/* ) : (
                     <></>
-                  )}
+                  )} */}
                 </>
               )}
 
               <div className="w-full overflow-y-scroll overflow-x-auto lg:overflow-hidden">
                 {loader ? (
-                   <MainLoader />
+                  <MainLoader />
                 ) : (
                   <>
                     {bankdata?.length > 0 ? (
@@ -284,14 +281,7 @@ const BankAccounts = () => {
                       </>
                     ) : (
                       <>
-                        <div className="no-records-wrap">
-                          <div className="bold">
-                            "No Records Found"
-                          </div>
-                          <div>
-                            Please add a bank account first.
-                          </div>
-                        </div>
+                        <NoRecordsFound messageKey="bank" />
                       </>
                     )}
                   </>

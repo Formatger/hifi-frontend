@@ -156,13 +156,13 @@ const ProfileInfo = (userData: any) => {
                 <p className="password-text">
                   {password}
                 </p>
-                {role === "0" || role === "1" ? (
+                {/* {role === "0" || role === "1" ? ( */}
                   <button onClick={openPasswordModal}>
                     <Image src={pencilsimple} alt="icon" className="" />
                   </button>
-                ) : (
+                {/* ) : (
                   ""
-                )}
+                )} */}
               </div>
             </div>
           )}
@@ -172,8 +172,8 @@ const ProfileInfo = (userData: any) => {
       <ChangePasswordModal
         isOpen={passwordModal}
         closeModal={closePasswordModal}
-        verification={verification}
-        setVerification={setVerification}
+        // verification={verification}
+        // setVerification={setVerification}
       />
     </>
   );

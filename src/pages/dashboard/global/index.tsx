@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import HifiLogo from "@/components/assets/images/hifi-logo.svg";
-import Sidebar from "@/components/common/Sidebar";
+import Sidebar from "@/components/common/navigation/Sidebar";
 import Header from "@/components/common/Header"
 
 const Global = () => {

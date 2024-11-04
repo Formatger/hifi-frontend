@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import TextInput from "@/components/auth/TextInput";
 import LogoApp from "@/components/auth/LogoApp";
-import { Formik, Form, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import AutoSubmitToken from "@/components/auth/AutoSubmitToken";
 import Link from "next/link";
@@ -9,19 +8,17 @@ import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loading from "@/components/auth/Loading";
+import { supabase } from "../../../utils/supabaseConfig";
 import axios from "axios";
 
-interface loginFormValues {
+interface resetFormValues {
   email: string;
 }
 
 const ForgotPassword = () => {
   const [loader, setLoader] = useState<boolean>(false);
   const [formValue, setFormValue] = useState<any>();
-
   const router = useRouter();
-
-  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   const initialValues = {
     email: "",
@@ -33,35 +30,43 @@ const ForgotPassword = () => {
       .required("Email is required"),
   });
 
-  const onSubmit = async (values: loginFormValues) => {
+  const onSubmit = async (values: resetFormValues) => {
     setLoader(true);
-
-    axios
-      .post(baseUrl + "/user/forgotpassword", {
-        email: values?.email,
-      })
-      .then((response) => {
-        setLoader(false);
-        router.push({
-          pathname: "/auth/passwordsent",
-          query: { email: values?.email },
-        });
-      })
-      .catch((error) => {
-        setLoader(false);
-        toast.error(error?.response?.data?.message, {
-          position: toast.POSITION.TOP_RIGHT,
-        });
-        console.log(error);
+    try {
+      const response = await axios.post('/api/auth/forgotpass', {
+        email: values.email,
       });
+
+      if (response.data.error) {
+        throw new Error(response.data.error);
+      }
+
+      toast.success("Password reset email sent successfully.", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+
+      router.push(`/auth/passwordsent?email=${encodeURIComponent(values.email)}`);
+    } catch (error: any) {
+      let errorMessage = "An unexpected error occurred";
+      if (error.response && error.response.data && error.response.data.message) {
+        errorMessage = error.response.data.message;
+      }
+      toast.error(errorMessage, {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      console.error(error);
+    } finally {
+      setLoader(false);
+    }
   };
+
   return (
     <>
       {" "}
       <ToastContainer />
       <div className="auth-container">
         <div className="authbox-wrap">
-          <div>
+            <div>
               <LogoApp />
             </div>
           <div className="authbox">
@@ -80,39 +85,40 @@ const ForgotPassword = () => {
               validationSchema={forgotPasswordValidationSchema}
               onSubmit={onSubmit}
             >
-              <Form className="auth-form">
-                <div className="auth-input">
-                  <TextInput
-                    placeholder="Email address"
-                    type="email"
-                    name="email"
-                    id="email"
-                    password={false}
-                    validation={false}
-                  />
+              {({ errors, touched, isValid, dirty }) => (
+                <Form className="auth-form">
+                  <div className="auth-input">
+                    <Field
+                      placeholder="Email address"
+                      type="email"
+                      name="email"
+                      id="email"
+                      className={`main-input ${ errors.email && touched.email ? "error" : "valid"}`}
+                    />
 
-                  <ErrorMessage
-                    name="email"
-                    component="div"
-                    className="warning-text"
-                  />
-                </div>
+                    <ErrorMessage
+                      name="email"
+                      component="div"
+                      className="warning-text"
+                    />
+                  </div>
 
-                <div>
-                  {!loader ? (
-                    <button
-                      disabled={formValue?.email ? false : true}
-                      className="app-button"
-                    >
-                    Send Email
-                    </button>
-                  ) : (
-                    <Loading />
-                  )}
-                </div>
-                
-                <AutoSubmitToken setFormValue={setFormValue} />
-              </Form>
+                  <div>
+                    {!loader ? (
+                      <button
+                        disabled={!(isValid && dirty)}
+                        className="app-button"
+                      >
+                      Send Email
+                      </button>
+                    ) : (
+                      <Loading />
+                    )}
+                  </div>
+                  
+                  <AutoSubmitToken setFormValue={setFormValue} />
+                </Form>
+              )}
             </Formik>
             <div className="footnote">
               <Link href="/auth/signin">
@@ -129,3 +135,4 @@ const ForgotPassword = () => {
 };
 
 export default ForgotPassword;
+

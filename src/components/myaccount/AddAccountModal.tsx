@@ -120,7 +120,6 @@ const AddAccountModal: React.FC<AddAccountModalProps> = ({
                     position: toast.POSITION.TOP_RIGHT,
                   });
                   setLoader(false);
-                  console.log(error);
                 });
             }}
           >

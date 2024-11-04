@@ -4,7 +4,7 @@ import greencheck from "../../assets/images/greencheck.svg";
 import clockclockwise from "../../assets/images/ClockClockwise.svg";
 import x from "../../assets/images/X.svg";
 import arrowcounterclockwise from "../../assets/images/ArrowCounterClockwise.svg";
-import rotateleft from "../../assets/images/rotateLeft.svg";
+import refund from "../../assets/images/refund-white.svg";
 import threedots from "../../assets/images/DotsThreeOutline.svg";
 import RefundModalContainer from "./modals/RefundModalContainer";
 import PaymentTitle from "./PaymentTitle";
@@ -44,36 +44,6 @@ export function formatDate(isoDate: string) {
   return date.toLocaleDateString("en-US", options);
 }
 
-// export const getStatusColor = (status: string) => {
-//   switch (status) {
-//     case "Succeeded":
-//       return "#0E5D33";
-//     case "Cancelled":
-//       return "#C41200";
-//     case "Pending":
-//       return "#876401";
-//     case "Refunded":
-//       return "#4B5563";
-//     default:
-//       return "black";
-//   }
-// };
-
-// export const getStatusImage = (status: string) => {
-//   switch (status) {
-//     case "Succeeded":
-//       return greencheck;
-//     case "Cancelled":
-//       return x;
-//     case "Pending":
-//       return clockclockwise;
-//     case "Refunded":
-//       return arrowcounterclockwise;
-//     default:
-//       return null;
-//   }
-// };
-
 const Payment = ({ paymentDetails }: { paymentDetails: PaymentDetails }) => {
   const [isRefundModalOpen, setIsRefundModalOpen] = useState(false);
   const role: any =
@@ -106,10 +76,10 @@ const Payment = ({ paymentDetails }: { paymentDetails: PaymentDetails }) => {
           <div className="button-wrap">
             {paymentDetails?.status !== "withdraw" && (
               <button
-                className="sec-button"
+                className="sec-button blue"
                 onClick={openRefundModal}
               >
-                <Image src={rotateleft} alt="arrow" className="" />
+                <Image src={refund} alt="arrow" className="" />
                 <span>Refund</span>
               </button>
             )}

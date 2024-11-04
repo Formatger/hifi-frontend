@@ -11,18 +11,17 @@ const RegistrationDone = () => {
         </div>
         <div className="authbox">
         <div className="authbox-title">
-            Check your Email
+            Resgistration successful!
           </div>
           <div className="authbox-note">
-            We have emailed you a Google Form link. Kindly check your email,
-            click the link, and complete the form. Thank you.
+            Welcome! You've successfully registered for the HIFI app. You can sign in now.
           </div>
           <div className="footnote">
             <Link
               href="/auth/signin"
               className="auth-link"
             >
-            Back to Sign In
+            Sign In
             </Link>
           </div>
         </div>

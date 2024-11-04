@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import caretdown from "@/components/assets/images/CaretDown563.svg";
+import caretdown from "../../components/assets/images/CaretDown563.svg";
 import Image from "next/image";
 
 interface CustomerDetails {

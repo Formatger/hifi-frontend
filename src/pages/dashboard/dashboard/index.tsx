@@ -1,15 +1,27 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "@/components/common/Sidebar";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import Sidebar from "@/components/common/navigation/Sidebar";
 import AccountOverview from "@/components/dashboard/AccountOverview";
 import TotalSales from "@/components/dashboard/TotalSales";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import PaymentsPayoutsCommon from "@/components/dashboard/PaymentsPayoutsCommon";
 import Header from "@/components/common/Header";
-import axios from "axios";
 import upstream from "@/components/assets/images/upstream.svg";
 import MainLoader from "@/components/common/Loader";
 import Link from "next/link";
 import { numericToWordMonth } from "@/utils/monthconverter";
+import NoRecordsFound from "@/components/common/NoRecordsFound";
+import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import axios from "axios";
+import { setHasApiKeys } from "@/store/slice/apiKeySlice";
+import Breadcrumbs from "@/components/payments/Breadcrumbs";
+
+const items = [
+  { label: "Home", link: "./" },
+  { label: "Dashboard", link: "/", current: true },
+];
 
 type MonthlyPurchase = {
   month: number;
@@ -88,7 +100,6 @@ type Data = {
 const Overview = () => {
   const [dashboardData, setDashboardData] = useState<Data>();
   const [loader, setLoader] = useState<boolean>(false);
-
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   useEffect(() => {
@@ -227,11 +238,11 @@ const Overview = () => {
     },
   ];
 
-  // const totalSalesData = [
-  //   { month: 10, eth: 0.02, btc: 0.05, usdc: 0.03 },
-  //   { month: 11, eth: 0.01222022, btc: 0.01222022, usdc: 0.01222022 },
-  //   { month: 12, eth: 0.01, btc: 0.03, usdc: 0.04 },
-  // ];
+  const totalSalesData = [
+    { month: 10, eth: 0.02, btc: 0.05, usdc: 0.03 },
+    { month: 11, eth: 0.01222022, btc: 0.01222022, usdc: 0.01222022 },
+    { month: 12, eth: 0.01, btc: 0.03, usdc: 0.04 },
+  ];
 
   const salesData = [
     {
@@ -301,7 +312,6 @@ const Overview = () => {
         (currencyData as any[]).forEach((entry: any) => {
           transformedMonthData[entry.currency] = entry.amount;
           transformedMonthData["monthName"] = entry.monthName;
-
         });
 
         result.push(transformedMonthData);
@@ -313,35 +323,21 @@ const Overview = () => {
 
   const transformedArray = transformSalesData(dashboardData?.totalSales);
 
-  const NoRecordsFound = ({ type }: { type: string }) => (
-    <div className="w-full text-xs lg:text-remove shadow border border-gray-200 mb-8 rounded-lg shadow-xs p-5">
-      <div className="w-full flex flex-col items-start  ">
-        <h1 className="mb-3 text-[#111012] text-lg font-semibold leading-loose">
-          <Link href={`${type === "Payments" ? "payments" : "payouts"}`}>
-            {type}
-          </Link>
-        </h1>
-        <p className="bold">
-          "No Records Found"
-        </p>
-      </div>
-    </div>
-  );
-
   return (
     <div className="main-container">
       <Header />
+      <div className="fixed-heading">
+        <Breadcrumbs items={items} />
+      </div>
       {loader ? (
-          <MainLoader />
+        <MainLoader />
       ) : (
         <>
           <div className="page-container" id="dashboard">
             <div className="summary-wrap">
               <DashboardHeader sections={sections} chartData={chartData} />
             </div>
-            <div
-              className="databox-group"
-            >
+            <div className="databox-group">
               <div className="databox-wrap account">
                 <AccountOverview
                   data={
@@ -351,9 +347,11 @@ const Overview = () => {
                   }
                   value={dashboardData?.totalRevenue}
                 />
-                {<TotalSales 
-                // chartdata={transformedArray} 
-                />}
+                {
+                  <TotalSales
+                  // chartdata={transformedArray}
+                  />
+                }
               </div>
 
               <div className="databox-wrap transactions">
@@ -364,7 +362,7 @@ const Overview = () => {
                     tableData={dashboardData?.paymentData}
                   />
                 ) : (
-                  <NoRecordsFound type="Payments" />
+                  <NoRecordsFound messageKey="search" />
                 )}
 
                 {dashboardData?.payoutData &&
@@ -374,7 +372,7 @@ const Overview = () => {
                     tableData={dashboardData?.payoutData}
                   />
                 ) : (
-                  <NoRecordsFound type="Payouts" />
+                  <NoRecordsFound messageKey="search" />
                 )}
               </div>
             </div>
@@ -385,8 +383,110 @@ const Overview = () => {
   );
 };
 
+const GetStarted = () => {
+  const router = useRouter();
+
+  const navApiKeys = () => {
+    router.push("/dashboard/my-account/apikeys");
+  };
+
+  return (
+    <div className="main-container">
+      <Header />
+      <div className="page-container" id="getstarted">
+        <div className="center-wrap">
+          <div className="box-group">
+            <div className="">
+              <h2>Welcome! Get Started with HIFI</h2>
+            </div>
+            <div className="app-box mt-5">
+              <div className="box-header">
+                <h4> Get your API Keys</h4>
+              </div>
+              <div className="box-content row-between">
+                <p>Get started with HIFI's API integration.</p>
+                <div className="button-wrap">
+                  <button className="sec-button blue" onClick={navApiKeys}>
+                    {/* <Image src={Plusicon} alt="NewCustomerIcon" /> */}
+                    <span>Get your API Keys</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="app-box mt-5">
+              <div className="box-header">
+                <h4> Quickstart Guide</h4>
+              </div>
+              <div className="box-content row-between">
+                <p>
+                  Visit our documentation on how to integrate HIFI to your
+                  business.
+                </p>
+                <div className="button-wrap">
+                  <button className="sec-button blue" onClick={navApiKeys}>
+                    {/* <Image src={Plusicon} alt="NewCustomerIcon" /> */}
+                    <span>Get your API Keys</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="app-box mt-5">
+              <div className="box-header">
+                <h4> Get your API Keys</h4>
+              </div>
+              <div className="box-content row-between">
+                <p>Get started with HIFI's API integration.</p>
+                <div className="button-wrap">
+                  <button className="sec-button blue" onClick={navApiKeys}>
+                    {/* <Image src={Plusicon} alt="NewCustomerIcon" /> */}
+                    <span>Get your API Keys</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const DashboardStart = () => {
+  const dispatch = useDispatch();
+  const hasApiKeys = useSelector((state: RootState) => state.apiKey.hasApiKeys);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const checkApiKeys = async () => {
+      const userId = localStorage.getItem('userId');
+      if (userId) {
+        try {
+          const response = await axios.get('https://localhost:5001/merchant/api-keys', {
+            params: { userId }
+          });
+          const hasKeys = response.data.data.length > 0;
+          dispatch(setHasApiKeys(hasKeys));
+          localStorage.setItem('hasApiKeys', JSON.stringify(hasKeys));
+        } catch (error) {
+          console.error('Error fetching API keys:', error);
+        }
+      }
+      setIsLoading(false);
+    };
+
+    checkApiKeys();
+  }, [dispatch]);
+
+  if (isLoading) {
+    return <MainLoader />;
+  }
+
+  return hasApiKeys ? <GetStarted /> : <Overview />;
+
+};
+
 const OverviewPage = () => {
-  return <Sidebar layout={<Overview />} />;
+  return <Sidebar layout={<DashboardStart />} />;
 };
 
 export default OverviewPage;

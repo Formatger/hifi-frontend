@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "@/components/common/Header";
-import Sidebar from "@/components/common/Sidebar";
+import Sidebar from "@/components/common/navigation/Sidebar";
 import Customer from "@/components/customers/Customer";
 import Details from "@/components/customers/Details";
 import CustomerTable from "@/components/customers/CustomerTable";
@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 import coinbaseicon from "@/components/assets/images/Coinbase Icon.svg";
 import metamaskicon from "@/components/assets/images/metamask.png";
 import MainLoader from "@/components/common/Loader";
+import NoRecordsFound from "@/components/common/NoRecordsFound";
 
 interface User {
   algoId: any;
@@ -154,11 +155,7 @@ const CustomerDetail = () => {
                   </div>
                   <div className="customer-right">
                     {customerAll?.length === 0 ? (
-                      <div className="no-records-wrap">
-                        <div className="bold">
-                          "No Records Found"
-                        </div>
-                      </div>
+                      <NoRecordsFound messageKey="default" />
                     ) : (
                       <CustomerTable customerAll={customerAll} />
                     )}

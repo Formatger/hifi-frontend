@@ -34,7 +34,6 @@ const paymentTableSlice = createSlice({
     setUser: (state, action: PayloadAction<Table | null>) => {
       state.paymentTable = action.payload;
     },
-    // Add more reducer actions here if needed
   },
 });
 

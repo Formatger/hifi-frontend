@@ -1,6 +1,7 @@
 // store.ts
 import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "./reducers";
+import uiReducer from './slice/uiSlice';
 
 const store = configureStore({
   reducer: rootReducer,

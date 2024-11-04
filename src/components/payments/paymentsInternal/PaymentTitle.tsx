@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import cardholder from "../../assets/images/CardHolder.svg";
+import cardholder from "../../../components/assets/images/Cardholder.svg";
+
 import Link from "next/link";
 
 interface PaymentTitleProps {

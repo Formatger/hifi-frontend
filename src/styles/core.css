@@ -83,6 +83,9 @@
   --radius: var(--r4);
   --pad-cell: var(--m2) var(--m3);
 
+  --top-radius: var(--r5) var(--r5) 0 0;
+  --bottom-radius: 0 0 var(--r5) var(--r5);
+
   --r: 1px solid red;
 
   /* Colors */
@@ -120,17 +123,17 @@
   --dark5: hsl(242, 0%, 45%);
   --dark6: hsl(242, 0%, 50%);
 
-  --grey: hsl(240, 30%, 99%);
-  --grey1: hsl(240, 30%, 97%);
-  --grey2: hsl(240, 30%, 93%);
-  --grey3: hsl(240, 30%, 90%);
+  --grey: hsl(240, 10%, 99%);
+  --grey1: hsl(240, 10%, 97%);
+  --grey2: hsl(240, 10%, 93%);
+  --grey3: hsl(240, 10%, 90%);
   --grey4: hsl(240, 10%, 80%);
   --grey5: hsl(240, 10%, 70%);
   --grey6: hsl(240, 10%, 65%);
 
   --blue: #5545fa;
-  --blue1: #5E5BFF;
-  --blue2: #8d83fb;
+  --blue1: #615ffe;
+  --blue2: #7370ff;
   --blue3: #c3bdff;
   --blue4: #e6e5f7;
   
@@ -146,6 +149,8 @@
   --red: hsl(8, 100%, 56%);
   --red2: hsl(1, 100%, 75%);
   --red3: hsl(1, 100%, 80%);
+
+  --sYellow: #fdff78;
 
   --sBlue: #D0CFFF;
   --sBlue2: #aba8ff;
@@ -261,6 +266,14 @@
   text-align: left;
 }
 
+.row-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--m3);
+}
+
 .row-align-center  {
   display: flex;
   flex-direction: row;
@@ -276,15 +289,20 @@
   flex-direction: column;
 }
 
-/* Text */
-
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 0.9375rem;
-  outline: none;
-  color:hsl(245, 30%, 18%);
-  outline: none;
+.left-wrap {
+  display: flex;
+  justify-content: flex-end;
 }
+
+.center-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 300px);
+}
+
+/* Text */
 
 h1 {
   font-size: 2.25rem;
@@ -366,8 +384,9 @@ h6 {
   color: var(--red);
   font-size: var(--text-xs);
   margin-top: var(--m1);
+  margin-bottom: -8px;
   font-weight: 300;
-  position: absolute;
+  /* position: absolute; */
 }
 .warning-text-2 {
   margin-top: var(--m2);
@@ -469,13 +488,25 @@ button[disabled] {
 
 /* Input */
 
+input {
+  width: 100%;
+}
+
 .main-input {
   width: 100%;
   height: 38px;
-  padding: var(--m2);
+  padding: var(--m2) var(--m3);
   background: var(--white);
   border-radius: var(--r2);
-  border: var(--border);
+  border: 1px solid;
+  border-color: var(--grey3);
+}
+
+.error {
+  border-color: red;
+}
+.valid {
+  border-color: var(--grey3);
 }
 
 .main-input.disabled {
@@ -565,6 +596,41 @@ select {
   margin-top: 200px;
 }
 
+/* Warning Modal Message */
+
+.warning-modal {
+  border: 1px solid #f3e482;
+  border-radius: var(--r2);
+  background: #fffbdf;
+  padding: 6px 10px;
+  margin-top: 10px;
+  color: #835c0d;
+  font-weight: 300;
+  font-size: var(--text-ss);
+
+}
+
+/* CopyClip */
+
+.copy-clip {
+  background: var(--grey1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copy-clip button{
+  background: var(--grey1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+
+.copy-clip img {
+  width: 16px;
+  height: 16px;
+}
 
 /* Status Label */
 

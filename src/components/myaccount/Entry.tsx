@@ -30,8 +30,8 @@ const Entry = ({ title }: any) => {
         <ChangePasswordModal
           isOpen={passwordModal}
           closeModal={closePasswordModal}
-          verification={verification}
-          setVerification={setVerification}
+          // verification={verification}
+          // setVerification={setVerification}
         />
       )}
     </>

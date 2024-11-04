@@ -1,4 +1,4 @@
-import Sidebar from "@/components/common/Sidebar";
+import Sidebar from "@/components/common/navigation/Sidebar";
 import axios from "axios";
 import Header from "@/components/common/Header";
 import FilterHeader from "@/components/payments/Filterheader";
@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import PayoutTable from "@/components/payouts/PayoutTable";
 import MainLoader from "@/components/common/Loader";
 import moment from "moment";
+import NoRecordsFound from "@/components/common/NoRecordsFound";
+import Breadcrumbs from "@/components/payments/Breadcrumbs";
 
 interface PayoutData {
   action: any;
@@ -33,6 +35,11 @@ interface PayoutData {
   id: any;
   price: any;
 }
+
+const items = [
+  { label: "Home", link: "./" },
+  { label: "Payouts", link: "/", current: true },
+];
 
 const Payouts = () => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -250,9 +257,12 @@ const Payouts = () => {
   return (
     <div className="main-container">
       <Header />
+      <div className="fixed-heading">
+         <Breadcrumbs items={items} />
+      </div>
       <div className="page-container" id="payouts">
         <div className="page-head">
-          <div className="h1-wrap">
+          <div className="">
             <h1 className="h1">
               Payouts
             </h1>
@@ -303,15 +313,7 @@ const Payouts = () => {
         ) : (
           <>
             {payoutData?.length === 0 ? (
-              <div className="no-records-wrap">
-                <div className="bold">
-                  "No Records Found"
-                </div>
-                <div className="m-4">
-                  There are no records matching your search criteria in the
-                  table.
-                </div>
-              </div>
+              <NoRecordsFound messageKey="search" />
             ) : (
               <div>
                 <PayoutTable

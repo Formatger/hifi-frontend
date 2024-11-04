@@ -3,7 +3,7 @@ import GoogleLogo from "../assets/images/googleLogo.svg";
 import Image from "next/image";
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import Loading from "@/components/auth/Loading";
+import Loading from "../../components/auth/Loading";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/router";
@@ -96,7 +96,6 @@ const GoogleButton = () => {
           toast.error(error?.response?.data?.message, {
             position: toast.POSITION.TOP_RIGHT,
           });
-          console.log(error);
         });
     } catch (error) {
       console.error("Google sign-in error:", error);

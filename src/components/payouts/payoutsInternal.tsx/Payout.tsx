@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import TotalStatus from "@/components/payments/paymentsInternal/TotalStatus";
 import Image from "next/image";
-import exporticon from "@/components/assets/images/export.svg";
+import exporticon from "../../../components/assets/images/exporticon.svg";
 import { TailSpin } from "react-loader-spinner";
 import x from "@/components/assets/images/XBlack.svg";
 import checkcircle from "@/components/assets/images/CheckCircleGreen.svg";
-import cardholder from "@/components/assets/images/CardHolder.svg";
+import cardholder from "../../../components/assets/images/Cardholder.svg";
 import { CSVLink } from "react-csv";
 
 const Payout = ({ order_id, receiptDetails }: any) => {
@@ -42,14 +42,14 @@ const Payout = ({ order_id, receiptDetails }: any) => {
 
   return (
     <>
-     <div className="pay-heading-wrap">
+      <div className="pay-heading-wrap">
         <div className="detail-type">
           <div className="row-wrap">
             <Image src={cardholder} alt="cardholder" />
             <p>ACH PAYOUT</p>
           </div>
           <div className="id-wrap">
-              {order_id}
+            {order_id}
             {/* <Image src={cardholder} alt="cardholder" className="order-1" /> */}
           </div>
         </div>
@@ -59,17 +59,14 @@ const Payout = ({ order_id, receiptDetails }: any) => {
             status={receiptDetails?.status}
             outwardCurrency={receiptDetails?.outwardCurrency}
           />
-          
+
           <div className="button-wrap">
             <CSVLink
               data={getCSVData(receiptDetails)}
               filename="receipt.csv"
               target="_blank"
             >
-              <button
-                className="sec-button"
-                onClick={handleExport}
-              >
+              <button className="sec-button" onClick={handleExport}>
                 <Image src={exporticon} alt="arrow" className="" />
                 <span>Export</span>
               </button>
@@ -80,7 +77,13 @@ const Payout = ({ order_id, receiptDetails }: any) => {
                   {message === "Downloading CSV" ? (
                     <TailSpin height={30} width={30} color="black" />
                   ) : (
-                    <Image height={30} width={30} src={checkcircle} alt="complete" className="" />
+                    <Image
+                      height={30}
+                      width={30}
+                      src={checkcircle}
+                      alt="complete"
+                      className=""
+                    />
                   )}
                   <button
                     onClick={handleCloseMessage}
@@ -89,9 +92,7 @@ const Payout = ({ order_id, receiptDetails }: any) => {
                     <Image src={x} alt="close" className="" />
                   </button>
                 </div>
-                <p>
-                  {message}
-                </p>
+                <p>{message}</p>
               </div>
             )}
           </div>

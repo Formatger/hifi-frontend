@@ -11,19 +11,6 @@ import Loading from "@/components/auth/Loading";
 import MainLoader from "@/components/common/Loader";
 import { useRouter } from "next/router";
 
-// const customStyles = {
-//   content: {
-//     top: "50%",
-//     left: "50%",
-//     right: "auto",
-//     bottom: "auto",
-//     marginRight: "-50%",
-//     transform: "translate(-50%, -50%)",
-//     border: "0px",
-//     padding: "0px",
-//   },
-// };
-
 const UploadLogo = () => {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [uploadedImage, setUploadedImage] = useState<any>(null);
@@ -50,7 +37,6 @@ const UploadLogo = () => {
         setLoadermain(false);
       })
       .catch((error) => {
-        console.log(error);
         setLoadermain(false);
       });
   }, [isPopupOpen, baseUrl]);
@@ -82,7 +68,6 @@ const UploadLogo = () => {
             position: toast.POSITION.TOP_RIGHT,
           });
           setLoader(false);
-          console.log(error);
         });
     }
   }, [uploadedImage, baseUrl, router]);
@@ -204,7 +189,7 @@ const UploadLogo = () => {
 
           <div className="modal-box-content">
             <div className="modal-content">
-              <div className="upload-wrap">
+              <div className="upload-logo-modal">
                 <Image src={uploadsimple} width="60" height="60" alt="" />
                 <div className="column-wrap">
                   <p className="bold">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Sidebar from "@/components/common/Sidebar";
+import Sidebar from "@/components/common/navigation/Sidebar";
 import Header from "@/components/common/Header";
 import Balanceheader from "@/components/balance/Balanceheader";
 import Totalbalance from "@/components/balance/Totalbalance";
@@ -11,6 +11,7 @@ import OutGoinghifipay from "@/components/balance/OutGoinghifipay";
 import { formatCurrency } from "@/utils/formatCurrency";
 import axios from "axios";
 import MainLoader from "@/components/common/Loader";
+import Breadcrumbs from "@/components/payments/Breadcrumbs";
 
 interface MyData {
   currently_way_to_bank_account: null | string;
@@ -28,6 +29,11 @@ interface MyData {
   total: number;
 }
 
+const items = [
+  { label: "Home", link: "./" },
+  { label: "Balances", link: "/", current: true },
+];
+
 const Balance = () => {
   const [balanceData, setBalanceData] = useState<MyData | any>({});
   const [loader, setLoader] = useState<boolean>(false);
@@ -36,6 +42,7 @@ const Balance = () => {
 
   useEffect(() => {
     const user_id = localStorage.getItem("userId");
+
     const apiUrl = baseUrl + `/user/${user_id}/balance`;
     setLoader(true);
     const fetchData = async () => {
@@ -123,6 +130,9 @@ const Balance = () => {
   return (
     <div className="main-container">
       <Header />
+      <div className="fixed-heading">
+        <Breadcrumbs items={items} />
+      </div>
       <div className="page-container" id="balances">
         <Balanceheader
           title={"Balances"}
@@ -132,25 +142,25 @@ const Balance = () => {
           <MainLoader />
         ) : (
           <>
-           <div className="balances-wrap">
-            <Totalbalance
-              title={" USD Balance"}
-              TotalbalanceData={TotalbalanceData}
-            />
-            {/* <div className="balances-section"></div> */}
-            <IncomingToHifipay
-              TransactionData={TransactionData}
-              TotalTransaction={TotalTransaction}
-            />
-            <div className="balances-section"></div>
-            <OutGoinghifipay
-              TotalTransaction={
-                balanceData?.total_outgoing
-                  ? formatCurrency(balanceData?.total_outgoing)
-                  : formatCurrency(0)
-              }
-            />
-            <div className="mb-10"></div>
+            <div className="balances-wrap">
+              <Totalbalance
+                title={" USD Balance"}
+                TotalbalanceData={TotalbalanceData}
+              />
+              {/* <div className="balances-section"></div> */}
+              <IncomingToHifipay
+                TransactionData={TransactionData}
+                TotalTransaction={TotalTransaction}
+              />
+              <div className="balances-section"></div>
+              <OutGoinghifipay
+                TotalTransaction={
+                  balanceData?.total_outgoing
+                    ? formatCurrency(balanceData?.total_outgoing)
+                    : formatCurrency(0)
+                }
+              />
+              <div className="mb-10"></div>
             </div>
           </>
         )}
